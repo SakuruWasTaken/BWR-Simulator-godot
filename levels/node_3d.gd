@@ -157,7 +157,7 @@ func _ready():
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	pass
 				
 func main_loop_timer_expire():
@@ -548,16 +548,21 @@ func rod_motion_button_pressed(parent, pressed):
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 	elif parent.name == "SCRAM":
+		var set_scram_reset_light_on = false
 		if not scram_active and pressed == true:
 			scram()
 			while scram_active == true:
 				if scram_timer >= 1:
 					scram_timer -= 1
-				print(scram_timer)
+				elif set_scram_reset_light_on == false:
+					set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
+					# small optimisation so we're not constantly getting the material and causing a bunch of lag
+					set_scram_reset_light_on = true
 				update_power()
 				await get_tree().create_timer(0.1).timeout
-	
+	elif parent.name == "Reset SCRAM":
 		if scram_active == true and self.scram_timer == 0 and pressed == true:
+			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
 			all_rods_in = false
 			scram_active = false
 			scram_timer = -1
