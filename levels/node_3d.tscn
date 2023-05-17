@@ -1,10 +1,9 @@
-[gd_scene load_steps=326 format=3 uid="uid://sbc5y8owctjw"]
+[gd_scene load_steps=325 format=3 uid="uid://sbc5y8owctjw"]
 
 [ext_resource type="Script" path="res://levels/node_3d.gd" id="1_dlw8v"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
 [ext_resource type="Material" uid="uid://dptsjp7wy2ev1" path="res://levels/panel material.tres" id="3_a1iqv"]
 [ext_resource type="Material" uid="uid://dvub7bi330a4b" path="res://levels/wall.tres" id="3_nb5cg"]
-[ext_resource type="Texture2D" uid="uid://bdgpoucf3ul8m" path="res://aa.PNG" id="3_p13oy"]
 [ext_resource type="AudioStream" uid="uid://cxu7ooirfysmk" path="res://Assets/Audio/ambient_sound.mp3" id="5_7cq8b"]
 [ext_resource type="AudioStream" uid="uid://dv76uhc3awp6t" path="res://Assets/Audio/alarm_loop.mp3" id="6_5luet"]
 [ext_resource type="PackedScene" uid="uid://cv0ro77tijim1" path="res://full_core_display_lights.tscn" id="7_5ybks"]
@@ -2345,13 +2344,6 @@ use_collision = true
 flip_faces = true
 size = Vector3(23.3561, 3.31346, 17.0579)
 material = ExtResource("3_nb5cg")
-
-[node name="Sprite3D" type="Sprite3D" parent="room"]
-transform = Transform3D(-4.76837e-07, 4.2, 1.83588e-07, 0, -1.83588e-07, 4.2, 4.2, 4.76837e-07, 0, -0.0785618, -1.65099, -9.04788)
-visible = false
-gi_mode = 0
-shaded = true
-texture = ExtResource("3_p13oy")
 
 [node name="Control Room Lights" type="Node" parent="."]
 
