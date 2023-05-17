@@ -1,4 +1,4 @@
-[gd_scene load_steps=1113 format=3 uid="uid://cv0ro77tijim1"]
+[gd_scene load_steps=1114 format=3 uid="uid://cv0ro77tijim1"]
 
 [ext_resource type="Script" path="res://levels/full_core_display.gd" id="1_layrc"]
 
@@ -191,29 +191,34 @@ emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gm1b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwtxq"]
 emission = Color(1, 0.537255, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reblf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3umi"]
 emission = Color(0, 0, 1, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_papkr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajrga"]
 emission = Color(1, 1, 1, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl0li"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq3sf"]
 emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivaa0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jm3s"]
 emission_enabled = true
 emission = Color(0, 1, 0, 1)
+backlight = Color(1, 0, 0, 1)
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qiudc"]
+emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
@@ -6258,12 +6263,12 @@ transform = Transform3D(1, 3.49412e-22, 0, 1.58818e-22, 1, 0, 0, 0, 1, 0.064, -2
 [node name="ACCUM" type="CSGBox3D" parent="06-31/ACCUM_SCRAM_IND"]
 transform = Transform3D(1, -2.98024e-08, 6.21724e-14, -5.96046e-08, 1, 0, -8.88181e-16, 0, 1, -0.0705411, -0.244523, -0.869091)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_0gm1b")
+material = SubResource("StandardMaterial3D_mwtxq")
 
 [node name="SCRAM" type="CSGBox3D" parent="06-31/ACCUM_SCRAM_IND"]
 transform = Transform3D(1, -2.98025e-08, 9.05942e-14, -5.96046e-08, 1, 0, -4.23516e-22, 0, 1, -0.0856774, -0.244523, -0.869091)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_reblf")
+material = SubResource("StandardMaterial3D_n3umi")
 
 [node name="Label3D" type="Label3D" parent="06-31/ACCUM_SCRAM_IND"]
 transform = Transform3D(-5.96046e-08, 1, 3.49412e-22, 0, -1.04308e-07, 1, 1, 8.9407e-08, 0, -0.0778155, -0.240956, -0.869091)
@@ -6284,12 +6289,12 @@ transform = Transform3D(1, 3.49412e-22, 0, 1.58818e-22, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="ROD" type="CSGBox3D" parent="06-31/ROD_DRIFT_IND"]
 transform = Transform3D(1, -2.98024e-08, 6.21724e-14, -5.96046e-08, 1, 0, -8.88182e-16, 0, 1, -0.0385427, -0.244525, -0.869091)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_papkr")
+material = SubResource("StandardMaterial3D_ajrga")
 
 [node name="DRIFT" type="CSGBox3D" parent="06-31/ROD_DRIFT_IND"]
 transform = Transform3D(1, -2.98025e-08, 9.05942e-14, -5.96046e-08, 1, 0, -4.23516e-22, 0, 1, -0.053679, -0.244525, -0.869091)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_vl0li")
+material = SubResource("StandardMaterial3D_hq3sf")
 
 [node name="Label3D" type="Label3D" parent="06-31/ROD_DRIFT_IND"]
 transform = Transform3D(-5.96046e-08, 1, 3.49412e-22, 0, -1.04308e-07, 1, 1, 8.9407e-08, 0, -0.0458171, -0.240959, -0.869092)
@@ -6310,12 +6315,12 @@ transform = Transform3D(1, 3.49412e-22, 0, 1.58818e-22, 1, 0, 0, 0, 1, 0, 0, 0.0
 [node name="FULL IN" type="CSGBox3D" parent="06-31/FULL_IN_OUT_IND"]
 transform = Transform3D(1, -2.98024e-08, 6.21724e-14, -5.96046e-08, 1, 0, -8.88182e-16, 0, 1, -0.0385432, -0.244527, -0.901089)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_ivaa0")
+material = SubResource("StandardMaterial3D_5jm3s")
 
 [node name="FULL OUT" type="CSGBox3D" parent="06-31/FULL_IN_OUT_IND"]
 transform = Transform3D(1, -2.98025e-08, 9.05942e-14, -5.96046e-08, 1, 0, -4.23516e-22, 0, 1, -0.0536795, -0.244527, -0.901089)
 size = Vector3(0.015, 0.007, 0.03)
-material = SubResource("StandardMaterial3D_tnjm6")
+material = SubResource("StandardMaterial3D_qiudc")
 
 [node name="Label3D" type="Label3D" parent="06-31/FULL_IN_OUT_IND"]
 transform = Transform3D(-5.96046e-08, 1, 3.49412e-22, 0, -1.04308e-07, 1, 1, 8.9407e-08, 0, -0.0458176, -0.24096, -0.901089)
