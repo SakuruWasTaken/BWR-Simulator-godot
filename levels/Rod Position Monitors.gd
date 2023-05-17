@@ -36,7 +36,7 @@ func _ready():
 			get_node("Rod Position Monitor %s/Insertion Text" % monitor).text = final_string
 
 func select_rod_button_pressed(parent):
-	$"/root/Node3d".set_object_emission("Control Room Panels/CSGPolygon3D3/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_monitor, selected_monitor], false)
+	$"/root/Node3d".set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_monitor, selected_monitor], false)
 	selected_monitor = int(str(parent.name))
 	selected_rods[selected_monitor] = $"/root/Node3d".selected_cr
-	$"/root/Node3d".set_object_emission("Control Room Panels/CSGPolygon3D3/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_monitor, selected_monitor], true)
+	$"/root/Node3d".set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_monitor, selected_monitor], true)

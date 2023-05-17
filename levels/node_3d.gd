@@ -12,8 +12,10 @@ var cr_direction = cr_directions.NOT_MOVING
 var cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 var cr_target_insertion = 0
 var cr_previous_insertion = 0
+var cr_drift_test = false
 var scram_timer = -1
 var all_rods_in = false
+var accum_trouble_ack = true
 
 var rod_withdraw_block = []
 var rod_insert_block = []
@@ -93,15 +95,15 @@ func generate_control_rods():
 
 				var rod_number = "%s-%s" % [x_str, y_str]
 				
-				var accum_node = get_node("Control Room Panels/full core display lights/%s/ACCUM_SCRAM_IND/ACCUM" % rod_number)
+				var accum_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ACCUM_SCRAM_IND/ACCUM" % rod_number)
 				var accum_material = accum_node.get_material()
-				var scram_node = get_node("Control Room Panels/full core display lights/%s/ACCUM_SCRAM_IND/SCRAM" % rod_number)
+				var scram_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ACCUM_SCRAM_IND/SCRAM" % rod_number)
 				var scram_material = scram_node.get_material()
-				var full_out_node = get_node("Control Room Panels/full core display lights/%s/FULL_IN_OUT_IND/FULL OUT" % rod_number)
+				var full_out_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/FULL_IN_OUT_IND/FULL OUT" % rod_number)
 				var full_out_material = full_out_node.get_material()
-				var full_in_node = get_node("Control Room Panels/full core display lights/%s/FULL_IN_OUT_IND/FULL IN" % rod_number)
+				var full_in_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/FULL_IN_OUT_IND/FULL IN" % rod_number)
 				var full_in_material = full_in_node.get_material()
-				var drift_node = get_node("Control Room Panels/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
+				var drift_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
 				var drift_material = drift_node.get_material()
 				
 				
@@ -111,6 +113,8 @@ func generate_control_rods():
 						"cr_scram": false,
 						"cr_accum_trouble": false,
 						"cr_drift_alarm": false,
+						# simulates the effect of some rods being slightly faster or slower than others
+						"cr_scram_insertion_speed": randf_range(2.15, 2.31),
 						"cr_full_core_display_nodes":
 						{
 							"accum": {
@@ -150,8 +154,19 @@ func generate_control_rods():
 
 func _ready():
 	generate_control_rods()
-			
 	
+#Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	#print(Engine.get_frames_per_second())
+	pass
+				
+func main_loop_timer_expire():
+	for rod_number in control_rods:
+		var rod_info = control_rods[rod_number]
+		# detect rods in odd numbered positions (drifting)
+		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
+			control_rods[rod_number]["cr_drift_alarm"] = true
+
 func make_string_two_digit(string):
 	if len(string) == 1:
 		return "0%s" % string
@@ -169,17 +184,13 @@ func set_rod_light_emission(rod_number, light, state):
 	
 func change_selected_rod(rod):
 	if moving_rods == []:
-		set_object_emission("Control Room Panels/Rod Select Panel/Rod Selectors/%s" % selected_cr, false)
-		set_object_emission("Control Room Panels/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, false)
+		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, false)
+		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, false)
 		selected_cr = rod
 		%"Rod Position Monitors".selected_rods[%"Rod Position Monitors".selected_monitor] = selected_cr
-		set_object_emission("Control Room Panels/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
-		set_object_emission("Control Room Panels/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true)
+		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
+		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#print(Engine.get_frames_per_second())
-	pass
 		
 func update_power():
 	# this is just testing code
@@ -188,7 +199,7 @@ func update_power():
 		decrease_rate = 750
 		
 	power = power-(power/decrease_rate)
-	$"Control Room Panels/CSGPolygon3D3/Thermal Power Display/Power".text = str(int(power))
+	$"Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display/Power".text = str(int(power))
 
 func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
 	change_selected_rod(parent_object.name)
@@ -206,14 +217,15 @@ func scram():
 
 			if scram_timer == -1:
 				scram_timer = 120
-			if cr_insertion != 0:
-				if scram_timer < 117:
+			elif scram_timer < 117:
 					cr_accum_trouble = true
+					accum_trouble_ack = false
+			if cr_insertion != 0:
 				if cr_insertion != 0 and scram_timer < 114:
 					if not rod_number in moving_rods:
 						moving_rods.append(rod_number)
 					# the time from full out to full in is around ~2.6 seconds
-					cr_insertion -= 2.23
+					cr_insertion -= rod_info["cr_scram_insertion_speed"]
 					if cr_insertion <= 0:
 						cr_insertion = 0
 			else:
@@ -246,7 +258,7 @@ func withdraw_selected_cr():
 	moving_rods.append(rod)
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 		
 	# insert (unlatch) for 0.6 seconds before withdrawal
 	var runs = 0
@@ -257,12 +269,12 @@ func withdraw_selected_cr():
 		runs += 1
 
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
 	
 	await get_tree().create_timer(randf_range(0, 0.15)).timeout
 	
 	cr_direction = cr_directions.WITHDRAW
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", true)
 	
 	# withdraw for 1.5 seconds
 	runs = 0
@@ -274,8 +286,8 @@ func withdraw_selected_cr():
 		runs += 1
 		
 	cr_direction = cr_directions.SETTLE
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", false)
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
 
 	# TODO: simulate switching overlap between withdraw control and settle control
 
@@ -299,7 +311,7 @@ func withdraw_selected_cr():
 		moving_rods.erase(rod)
 		
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 
 func insert_selected_cr():
 	if rod_insert_block != [] or cr_direction != 0:
@@ -317,7 +329,7 @@ func insert_selected_cr():
 	moving_rods.append(rod)
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 		
 	# insert for 2.9 seconds
 	var runs = 0
@@ -328,12 +340,12 @@ func insert_selected_cr():
 		runs += 1
 
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
 	
 	await get_tree().create_timer(randf_range(0, 0.15)).timeout
 	
 	cr_direction = cr_directions.SETTLE
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
 
 	# let the rod settle into the notch
 	runs = 0
@@ -355,7 +367,7 @@ func insert_selected_cr():
 		moving_rods.erase(rod)
 		
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 
 func continuous_withdraw_selected_cr():
 	if rod_withdraw_block != [] or cr_direction != 0:
@@ -374,7 +386,7 @@ func continuous_withdraw_selected_cr():
 	cr_target_insertion = insertion + 2
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 		
 	# insert (unlatch) for 0.6 seconds before withdrawal
 	var runs = 0
@@ -385,14 +397,14 @@ func continuous_withdraw_selected_cr():
 		runs += 1
 
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
 	
 	await get_tree().create_timer(randf_range(0, 0.15)).timeout
 	
 	cr_direction = cr_directions.WITHDRAW
 	cr_continuous_mode = cr_continuous_modes.WITHDRAWING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_lt", true)
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", true)
 	
 	# withdraw for 1.4 seconds each cycle
 	while cr_continuous_mode == 2 and rod_withdraw_block == [] and not scram_active and cr_target_insertion <= 46 or cr_target_insertion == 48:
@@ -416,9 +428,9 @@ func continuous_withdraw_selected_cr():
 	cr_previous_insertion = cr_target_insertion
 	cr_direction = cr_directions.SETTLE
 	cr_continuous_mode = cr_continuous_modes.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_lt", false)
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", false)
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
 
 	# TODO: simulate switching overlap between withdraw control and settle control
 
@@ -439,7 +451,7 @@ func continuous_withdraw_selected_cr():
 		moving_rods.erase(rod)
 		
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 	
 	#if rod_select_error:
 		#rod_withdraw_block.append({"type": "wdr_error", "rod": rod, "correct_position": int(self.previous_insertion)})
@@ -462,7 +474,7 @@ func continuous_insert_selected_cr():
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
 	cr_continuous_mode = cr_continuous_modes.INSERTING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 	
 	# withdraw for 1.4 seconds each cycle
 	while cr_continuous_mode == cr_continuous_modes.INSERTING and rod_insert_block == [] and not scram_active and cr_target_insertion >= 2 or cr_target_insertion == 0:
@@ -496,8 +508,8 @@ func continuous_insert_selected_cr():
 	cr_previous_insertion = cr_target_insertion
 	cr_direction = cr_directions.SETTLE
 	cr_continuous_mode = cr_continuous_modes.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", true)
 
 	# let the rod settle into the notch
 	var runs = 0
@@ -516,21 +528,27 @@ func continuous_insert_selected_cr():
 		moving_rods.erase(rod)
 		
 	cr_direction = cr_directions.NOT_MOVING
-	set_object_emission("Control Room Panels/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
+	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 
-func rod_motion_button_pressed(parent):
+func rod_motion_button_pressed(parent, pressed):
 	if parent.name == "Withdraw_pb":
-		withdraw_selected_cr()
+		if pressed == true:
+			withdraw_selected_cr()
 	elif parent.name == "Insert_pb":
-		insert_selected_cr()
+		if pressed == true:
+			insert_selected_cr()
 	elif parent.name == "ContWithdraw_pb":
-		continuous_withdraw_selected_cr()
+		if pressed == true:
+			continuous_withdraw_selected_cr()
+		else:
+			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 	elif parent.name == "ContInsert_pb":
-		continuous_insert_selected_cr()
-	elif parent.name == "ContStop_pb":
-		cr_continuous_mode = cr_continuous_modes.NOT_MOVING
+		if pressed == true:
+			continuous_insert_selected_cr()
+		else:
+			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 	elif parent.name == "SCRAM":
-		if not scram_active:
+		if not scram_active and pressed == true:
 			scram()
 			while scram_active == true:
 				if scram_timer >= 1:
@@ -538,11 +556,22 @@ func rod_motion_button_pressed(parent):
 				print(scram_timer)
 				update_power()
 				await get_tree().create_timer(0.1).timeout
-	elif parent.name == "Reset SCRAM":
-		if scram_active == true and self.scram_timer == 0:
+	
+		if scram_active == true and self.scram_timer == 0 and pressed == true:
 			all_rods_in = false
 			scram_active = false
 			scram_timer = -1
 			for rod_number in control_rods:
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
+				accum_trouble_ack = true
+	elif parent.name == "DriftTest_pb":
+		cr_drift_test = pressed
+	elif parent.name == "DriftReset_pb":
+		if pressed == true:
+			for rod_number in control_rods:
+				control_rods[rod_number]["cr_drift_alarm"] = false
+	elif parent.name == "AccumAck_pb":
+		accum_trouble_ack = true
+		
+		

@@ -5715,7 +5715,6 @@ script = ExtResource("1_layrc")
 
 [node name="02-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-19"]
@@ -5800,7 +5799,6 @@ line_spacing = -4.0
 
 [node name="06-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-19"]
@@ -5885,7 +5883,6 @@ line_spacing = -4.0
 
 [node name="06-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.0319999, 0, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-23"]
@@ -5970,7 +5967,6 @@ line_spacing = -4.0
 
 [node name="02-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.0319999, 0, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-23"]
@@ -6055,7 +6051,6 @@ line_spacing = -4.0
 
 [node name="02-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.128, -2.38419e-07, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-27"]
@@ -6140,7 +6135,6 @@ line_spacing = -4.0
 
 [node name="06-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.128, -2.38419e-07, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-27"]
@@ -6225,7 +6219,6 @@ line_spacing = -4.0
 
 [node name="06-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.16, -2.38419e-07, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-31"]
@@ -6310,7 +6303,6 @@ line_spacing = -4.0
 
 [node name="02-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.16, -2.38419e-07, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-31"]
@@ -6395,7 +6387,6 @@ line_spacing = -4.0
 
 [node name="02-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.256, -7.15256e-07, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-35"]
@@ -6480,7 +6471,6 @@ line_spacing = -4.0
 
 [node name="06-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.256, -7.15256e-07, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-35"]
@@ -6565,7 +6555,6 @@ line_spacing = -4.0
 
 [node name="06-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.288, -7.15256e-07, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-39"]
@@ -6650,7 +6639,6 @@ line_spacing = -4.0
 
 [node name="02-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.288, -8.34465e-07, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-39"]
@@ -6735,7 +6723,6 @@ line_spacing = -4.0
 
 [node name="02-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, -1.19209e-06, 0)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="02-43"]
@@ -6820,7 +6807,6 @@ line_spacing = -4.0
 
 [node name="06-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, -1.19209e-06, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-43"]
@@ -6905,7 +6891,6 @@ line_spacing = -4.0
 
 [node name="06-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.416, -1.19209e-06, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-47"]
@@ -6990,7 +6975,6 @@ line_spacing = -4.0
 
 [node name="06-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, -0.0960001, 0, 0.0320001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="06-15"]
@@ -7075,7 +7059,6 @@ line_spacing = -4.0
 
 [node name="10-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, -0.128, 0, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-11"]
@@ -7160,7 +7143,6 @@ line_spacing = -4.0
 
 [node name="14-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, -0.128, 0, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-11"]
@@ -7245,7 +7227,6 @@ line_spacing = -4.0
 
 [node name="14-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, -0.0960001, 0, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-15"]
@@ -7330,7 +7311,6 @@ line_spacing = -4.0
 
 [node name="10-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, -0.0960001, 0, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-15"]
@@ -7415,7 +7395,6 @@ line_spacing = -4.0
 
 [node name="10-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-19"]
@@ -7500,7 +7479,6 @@ line_spacing = -4.0
 
 [node name="14-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-19"]
@@ -7585,7 +7563,6 @@ line_spacing = -4.0
 
 [node name="14-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.0319999, 0, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-23"]
@@ -7670,7 +7647,6 @@ line_spacing = -4.0
 
 [node name="10-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77636e-15, 0, 1, 0.0319999, 0, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-23"]
@@ -7755,7 +7731,6 @@ line_spacing = -4.0
 
 [node name="10-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, -2.38419e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-27"]
@@ -7840,7 +7815,6 @@ line_spacing = -4.0
 
 [node name="14-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, -2.38419e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-27"]
@@ -7925,7 +7899,6 @@ line_spacing = -4.0
 
 [node name="14-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.16, -2.38419e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-31"]
@@ -8010,7 +7983,6 @@ line_spacing = -4.0
 
 [node name="10-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.16, -2.38419e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-31"]
@@ -8095,7 +8067,6 @@ line_spacing = -4.0
 
 [node name="10-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, -4.76837e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-35"]
@@ -8180,7 +8151,6 @@ line_spacing = -4.0
 
 [node name="14-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, -4.76837e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-35"]
@@ -8265,7 +8235,6 @@ line_spacing = -4.0
 
 [node name="14-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.288, -4.76837e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-39"]
@@ -8350,7 +8319,6 @@ line_spacing = -4.0
 
 [node name="10-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.288, -4.76837e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-39"]
@@ -8435,7 +8403,6 @@ line_spacing = -4.0
 
 [node name="10-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, -7.15256e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-43"]
@@ -8520,7 +8487,6 @@ line_spacing = -4.0
 
 [node name="14-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, -7.15256e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-43"]
@@ -8605,7 +8571,6 @@ line_spacing = -4.0
 
 [node name="14-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.416, -7.15256e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-47"]
@@ -8690,7 +8655,6 @@ line_spacing = -4.0
 
 [node name="10-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.416, -8.34465e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-47"]
@@ -8775,7 +8739,6 @@ line_spacing = -4.0
 
 [node name="10-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, -9.53674e-07, 0.128)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="10-51"]
@@ -8860,7 +8823,6 @@ line_spacing = -4.0
 
 [node name="14-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, -9.53674e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-51"]
@@ -8945,7 +8907,6 @@ line_spacing = -4.0
 
 [node name="14-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.544, -9.53674e-07, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-55"]
@@ -9030,7 +8991,6 @@ line_spacing = -4.0
 
 [node name="14-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.224, 0, 0.16)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="14-07"]
@@ -9115,7 +9075,6 @@ line_spacing = -4.0
 
 [node name="18-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.256, 0, 0.256)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-03"]
@@ -9200,7 +9159,6 @@ line_spacing = -4.0
 
 [node name="22-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.256, 0, 0.288)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-03"]
@@ -9285,7 +9243,6 @@ line_spacing = -4.0
 
 [node name="22-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.224, 0, 0.288)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-07"]
@@ -9370,7 +9327,6 @@ line_spacing = -4.0
 
 [node name="18-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.224, 0, 0.256)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-07"]
@@ -9455,7 +9411,6 @@ line_spacing = -4.0
 
 [node name="18-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.128, 9.53674e-07, 0.256001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-11"]
@@ -9540,7 +9495,6 @@ line_spacing = -4.0
 
 [node name="22-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.128, 9.53674e-07, 0.288001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-11"]
@@ -9625,7 +9579,6 @@ line_spacing = -4.0
 
 [node name="22-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.0960006, 9.53674e-07, 0.288001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-15"]
@@ -9710,7 +9663,6 @@ line_spacing = -4.0
 
 [node name="18-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.0960007, 9.53674e-07, 0.256001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-15"]
@@ -9795,7 +9747,6 @@ line_spacing = -4.0
 
 [node name="18-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -7.15256e-07, 9.53674e-07, 0.256004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-19"]
@@ -9880,7 +9831,6 @@ line_spacing = -4.0
 
 [node name="22-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -2.38419e-07, 1.90735e-06, 0.288004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-19"]
@@ -9965,7 +9915,6 @@ line_spacing = -4.0
 
 [node name="22-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, 0.0319984, 1.90735e-06, 0.288003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-23"]
@@ -10050,7 +9999,6 @@ line_spacing = -4.0
 
 [node name="18-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, 0.0319984, 9.53674e-07, 0.256002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-23"]
@@ -10135,7 +10083,6 @@ line_spacing = -4.0
 
 [node name="18-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0.127999, 1.90735e-06, 0.256005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-27"]
@@ -10220,7 +10167,6 @@ line_spacing = -4.0
 
 [node name="22-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0.128, 2.86102e-06, 0.288006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-27"]
@@ -10305,7 +10251,6 @@ line_spacing = -4.0
 
 [node name="22-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0.159998, 2.86102e-06, 0.288006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-31"]
@@ -10390,7 +10335,6 @@ line_spacing = -4.0
 
 [node name="18-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0.159998, 1.90735e-06, 0.256002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-31"]
@@ -10475,7 +10419,6 @@ line_spacing = -4.0
 
 [node name="18-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.255999, 3.8147e-06, 0.256006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-35"]
@@ -10560,7 +10503,6 @@ line_spacing = -4.0
 
 [node name="22-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.255999, 3.8147e-06, 0.288007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-35"]
@@ -10645,7 +10587,6 @@ line_spacing = -4.0
 
 [node name="22-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.287998, 2.86102e-06, 0.288006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-39"]
@@ -10730,7 +10671,6 @@ line_spacing = -4.0
 
 [node name="18-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.287998, 2.86102e-06, 0.256003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-39"]
@@ -10815,7 +10755,6 @@ line_spacing = -4.0
 
 [node name="18-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383999, 4.76837e-06, 0.256006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-43"]
@@ -10900,7 +10839,6 @@ line_spacing = -4.0
 
 [node name="22-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383999, 5.72205e-06, 0.288008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-43"]
@@ -10985,7 +10923,6 @@ line_spacing = -4.0
 
 [node name="22-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415998, 2.86102e-06, 0.288006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-47"]
@@ -11070,7 +11007,6 @@ line_spacing = -4.0
 
 [node name="18-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415997, 2.86102e-06, 0.256006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-47"]
@@ -11155,7 +11091,6 @@ line_spacing = -4.0
 
 [node name="18-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.16415e-09, -2.98023e-08, 1, 0.511998, 5.72205e-06, 0.256007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-51"]
@@ -11240,7 +11175,6 @@ line_spacing = -4.0
 
 [node name="22-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.16415e-09, -2.98023e-08, 1, 0.511999, 6.67572e-06, 0.288009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-51"]
@@ -11325,7 +11259,6 @@ line_spacing = -4.0
 
 [node name="22-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.16415e-09, -2.98023e-08, 1, 0.543998, 2.86102e-06, 0.288007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-55"]
@@ -11410,7 +11343,6 @@ line_spacing = -4.0
 
 [node name="18-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.16415e-09, -2.98023e-08, 1, 0.543997, 2.86102e-06, 0.256007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-55"]
@@ -11495,7 +11427,6 @@ line_spacing = -4.0
 
 [node name="18-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.639998, 6.67572e-06, 0.25601)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="18-59"]
@@ -11580,7 +11511,6 @@ line_spacing = -4.0
 
 [node name="22-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.639999, 8.58307e-06, 0.288011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="22-59"]
@@ -11665,7 +11595,6 @@ line_spacing = -4.0
 
 [node name="26-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.256, 1.90735e-06, 0.384001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-03"]
@@ -11750,7 +11679,6 @@ line_spacing = -4.0
 
 [node name="30-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.256, 9.53674e-07, 0.416)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-03"]
@@ -11835,7 +11763,6 @@ line_spacing = -4.0
 
 [node name="30-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.224, 9.53674e-07, 0.416002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-07"]
@@ -11920,7 +11847,6 @@ line_spacing = -4.0
 
 [node name="26-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.224, 9.53674e-07, 0.384001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-07"]
@@ -12005,7 +11931,6 @@ line_spacing = -4.0
 
 [node name="26-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.128001, 9.53674e-07, 0.384002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-11"]
@@ -12090,7 +12015,6 @@ line_spacing = -4.0
 
 [node name="30-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.128, 9.53674e-07, 0.416003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-11"]
@@ -12175,7 +12099,6 @@ line_spacing = -4.0
 
 [node name="30-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.0960009, 2.86102e-06, 0.416002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-15"]
@@ -12260,7 +12183,6 @@ line_spacing = -4.0
 
 [node name="26-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -0.0960009, 1.90735e-06, 0.384001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-15"]
@@ -12345,7 +12267,6 @@ line_spacing = -4.0
 
 [node name="26-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -1.19209e-06, 2.86102e-06, 0.384004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-19"]
@@ -12430,7 +12351,6 @@ line_spacing = -4.0
 
 [node name="30-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -2.38419e-07, 1.90735e-06, 0.416005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-19"]
@@ -12515,7 +12435,6 @@ line_spacing = -4.0
 
 [node name="30-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, 0.0319984, 2.86102e-06, 0.416004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-23"]
@@ -12600,7 +12519,6 @@ line_spacing = -4.0
 
 [node name="26-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, 0.0319979, 9.53674e-07, 0.384002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-23"]
@@ -12685,7 +12603,6 @@ line_spacing = -4.0
 
 [node name="26-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -6.98492e-10, -2.98023e-08, 1, 0.128, 2.86102e-06, 0.384005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-27"]
@@ -12770,7 +12687,6 @@ line_spacing = -4.0
 
 [node name="30-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -6.98492e-10, -2.98023e-08, 1, 0.127999, 3.8147e-06, 0.416007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-27"]
@@ -12855,7 +12771,6 @@ line_spacing = -4.0
 
 [node name="30-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -6.98492e-10, -2.98023e-08, 1, 0.159998, 4.76837e-06, 0.416006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-31"]
@@ -12940,7 +12855,6 @@ line_spacing = -4.0
 
 [node name="26-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -6.98492e-10, -2.98023e-08, 1, 0.159998, 1.90735e-06, 0.384002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-31"]
@@ -13025,7 +12939,6 @@ line_spacing = -4.0
 
 [node name="26-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.255999, 4.76837e-06, 0.384007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-35"]
@@ -13110,7 +13023,6 @@ line_spacing = -4.0
 
 [node name="30-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.255999, 4.76837e-06, 0.416009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-35"]
@@ -13195,7 +13107,6 @@ line_spacing = -4.0
 
 [node name="30-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.287998, 3.8147e-06, 0.416005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-39"]
@@ -13280,7 +13191,6 @@ line_spacing = -4.0
 
 [node name="26-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.287997, 4.76837e-06, 0.384004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-39"]
@@ -13365,7 +13275,6 @@ line_spacing = -4.0
 
 [node name="26-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.383998, 6.67572e-06, 0.384008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-43"]
@@ -13450,7 +13359,6 @@ line_spacing = -4.0
 
 [node name="30-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.383999, 8.58307e-06, 0.416009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-43"]
@@ -13535,7 +13443,6 @@ line_spacing = -4.0
 
 [node name="30-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.415998, 2.86102e-06, 0.416006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-47"]
@@ -13620,7 +13527,6 @@ line_spacing = -4.0
 
 [node name="26-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.415997, 3.8147e-06, 0.384006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-47"]
@@ -13705,7 +13611,6 @@ line_spacing = -4.0
 
 [node name="26-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.511998, 6.67572e-06, 0.384008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-51"]
@@ -13790,7 +13695,6 @@ line_spacing = -4.0
 
 [node name="30-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.511999, 7.62939e-06, 0.41601)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-51"]
@@ -13875,7 +13779,6 @@ line_spacing = -4.0
 
 [node name="30-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.543997, 2.86102e-06, 0.416007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-55"]
@@ -13960,7 +13863,6 @@ line_spacing = -4.0
 
 [node name="26-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.543996, 3.8147e-06, 0.384007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-55"]
@@ -14045,7 +13947,6 @@ line_spacing = -4.0
 
 [node name="26-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.639998, 6.67572e-06, 0.38401)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="26-59"]
@@ -14130,7 +14031,6 @@ line_spacing = -4.0
 
 [node name="30-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.639999, 9.53674e-06, 0.416011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="30-59"]
@@ -14215,7 +14115,6 @@ line_spacing = -4.0
 
 [node name="34-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.256, 2.86102e-06, 0.512002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-03"]
@@ -14300,7 +14199,6 @@ line_spacing = -4.0
 
 [node name="38-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.256, 9.53674e-07, 0.544001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-03"]
@@ -14385,7 +14283,6 @@ line_spacing = -4.0
 
 [node name="38-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.224, 1.90735e-06, 0.544003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-07"]
@@ -14470,7 +14367,6 @@ line_spacing = -4.0
 
 [node name="34-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.224, 1.90735e-06, 0.512003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-07"]
@@ -14555,7 +14451,6 @@ line_spacing = -4.0
 
 [node name="34-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.128001, 1.90735e-06, 0.512003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-11"]
@@ -14640,7 +14535,6 @@ line_spacing = -4.0
 
 [node name="38-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.128, 9.53674e-07, 0.544003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-11"]
@@ -14725,7 +14619,6 @@ line_spacing = -4.0
 
 [node name="38-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.0960009, 2.86102e-06, 0.544002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-15"]
@@ -14810,7 +14703,6 @@ line_spacing = -4.0
 
 [node name="34-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.0960013, 2.86102e-06, 0.512002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-15"]
@@ -14895,7 +14787,6 @@ line_spacing = -4.0
 
 [node name="34-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -1.43051e-06, 4.76837e-06, 0.512005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-19"]
@@ -14980,7 +14871,6 @@ line_spacing = -4.0
 
 [node name="38-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -2.38419e-07, 2.86102e-06, 0.544005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-19"]
@@ -15065,7 +14955,6 @@ line_spacing = -4.0
 
 [node name="38-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, 0.0319979, 4.76837e-06, 0.544005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-23"]
@@ -15150,7 +15039,6 @@ line_spacing = -4.0
 
 [node name="34-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, 0.0319977, 2.86102e-06, 0.512003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-23"]
@@ -15235,7 +15123,6 @@ line_spacing = -4.0
 
 [node name="34-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.128, 3.8147e-06, 0.512006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-27"]
@@ -15320,7 +15207,6 @@ line_spacing = -4.0
 
 [node name="38-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.127999, 4.76837e-06, 0.544007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-27"]
@@ -15405,7 +15291,6 @@ line_spacing = -4.0
 
 [node name="38-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.159998, 4.76837e-06, 0.544008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-31"]
@@ -15490,7 +15375,6 @@ line_spacing = -4.0
 
 [node name="34-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.159998, 2.86102e-06, 0.512003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-31"]
@@ -15575,7 +15459,6 @@ line_spacing = -4.0
 
 [node name="34-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.255998, 6.67572e-06, 0.512007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-35"]
@@ -15660,7 +15543,6 @@ line_spacing = -4.0
 
 [node name="38-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.255998, 4.76837e-06, 0.544011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-35"]
@@ -15745,7 +15627,6 @@ line_spacing = -4.0
 
 [node name="38-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.287998, 3.8147e-06, 0.544005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-39"]
@@ -15830,7 +15711,6 @@ line_spacing = -4.0
 
 [node name="34-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.86265e-09, -2.98023e-08, 1, 0.287997, 4.76837e-06, 0.512006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-39"]
@@ -15915,7 +15795,6 @@ line_spacing = -4.0
 
 [node name="34-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383998, 7.62939e-06, 0.512009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-43"]
@@ -16000,7 +15879,6 @@ line_spacing = -4.0
 
 [node name="38-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383998, 9.53674e-06, 0.54401)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-43"]
@@ -16085,7 +15963,6 @@ line_spacing = -4.0
 
 [node name="38-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415998, 3.8147e-06, 0.544006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-47"]
@@ -16170,7 +16047,6 @@ line_spacing = -4.0
 
 [node name="34-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415996, 4.76837e-06, 0.512007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-47"]
@@ -16255,7 +16131,6 @@ line_spacing = -4.0
 
 [node name="34-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.511997, 6.67572e-06, 0.512009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-51"]
@@ -16340,7 +16215,6 @@ line_spacing = -4.0
 
 [node name="38-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.511999, 8.58307e-06, 0.544011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-51"]
@@ -16425,7 +16299,6 @@ line_spacing = -4.0
 
 [node name="38-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.543997, 4.76837e-06, 0.544008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-55"]
@@ -16510,7 +16383,6 @@ line_spacing = -4.0
 
 [node name="34-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.543995, 4.76837e-06, 0.512008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-55"]
@@ -16595,7 +16467,6 @@ line_spacing = -4.0
 
 [node name="34-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.639998, 7.62939e-06, 0.512012)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="34-59"]
@@ -16680,7 +16551,6 @@ line_spacing = -4.0
 
 [node name="38-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.639999, 1.04904e-05, 0.544012)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="38-59"]
@@ -16765,7 +16635,6 @@ line_spacing = -4.0
 
 [node name="42-03" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.256001, 3.8147e-06, 0.640003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-03"]
@@ -16850,7 +16719,6 @@ line_spacing = -4.0
 
 [node name="46-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.224, 2.86102e-06, 0.672004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-07"]
@@ -16935,7 +16803,6 @@ line_spacing = -4.0
 
 [node name="42-07" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.224, 3.8147e-06, 0.640003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-07"]
@@ -17020,7 +16887,6 @@ line_spacing = -4.0
 
 [node name="42-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.128001, 2.86102e-06, 0.640003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-11"]
@@ -17105,7 +16971,6 @@ line_spacing = -4.0
 
 [node name="46-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.128, 9.53674e-07, 0.672004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-11"]
@@ -17190,7 +17055,6 @@ line_spacing = -4.0
 
 [node name="46-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.0960013, 4.76837e-06, 0.672003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-15"]
@@ -17275,7 +17139,6 @@ line_spacing = -4.0
 
 [node name="42-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 4.65661e-10, -2.98023e-08, 1, -0.0960014, 3.8147e-06, 0.640002)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-15"]
@@ -17360,7 +17223,6 @@ line_spacing = -4.0
 
 [node name="42-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -1.66893e-06, 4.76837e-06, 0.640005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-19"]
@@ -17445,7 +17307,6 @@ line_spacing = -4.0
 
 [node name="46-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -2.38419e-07, 2.86102e-06, 0.672006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-19"]
@@ -17530,7 +17391,6 @@ line_spacing = -4.0
 
 [node name="46-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, 0.0319979, 4.76837e-06, 0.672005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-23"]
@@ -17615,7 +17475,6 @@ line_spacing = -4.0
 
 [node name="42-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, 0.0319972, 2.86102e-06, 0.640005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-23"]
@@ -17700,7 +17559,6 @@ line_spacing = -4.0
 
 [node name="42-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.128, 3.8147e-06, 0.640007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-27"]
@@ -17785,7 +17643,6 @@ line_spacing = -4.0
 
 [node name="46-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.127999, 6.67572e-06, 0.672008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-27"]
@@ -17870,7 +17727,6 @@ line_spacing = -4.0
 
 [node name="46-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 5.72205e-06, 0.672008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-31"]
@@ -17955,7 +17811,6 @@ line_spacing = -4.0
 
 [node name="42-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 3.8147e-06, 0.640003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-31"]
@@ -18040,7 +17895,6 @@ line_spacing = -4.0
 
 [node name="42-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.255998, 6.67572e-06, 0.640008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-35"]
@@ -18125,7 +17979,6 @@ line_spacing = -4.0
 
 [node name="46-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.255998, 4.76837e-06, 0.672011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-35"]
@@ -18210,7 +18063,6 @@ line_spacing = -4.0
 
 [node name="46-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.287998, 4.76837e-06, 0.672005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-39"]
@@ -18295,7 +18147,6 @@ line_spacing = -4.0
 
 [node name="42-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.287997, 4.76837e-06, 0.640006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-39"]
@@ -18380,7 +18231,6 @@ line_spacing = -4.0
 
 [node name="42-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383998, 8.58307e-06, 0.64001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-43"]
@@ -18465,7 +18315,6 @@ line_spacing = -4.0
 
 [node name="46-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.383998, 1.04904e-05, 0.67201)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-43"]
@@ -18550,7 +18399,6 @@ line_spacing = -4.0
 
 [node name="46-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415997, 4.76837e-06, 0.672006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-47"]
@@ -18635,7 +18483,6 @@ line_spacing = -4.0
 
 [node name="42-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.415996, 5.72205e-06, 0.640007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-47"]
@@ -18720,7 +18567,6 @@ line_spacing = -4.0
 
 [node name="42-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.511997, 7.62939e-06, 0.640009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-51"]
@@ -18805,7 +18651,6 @@ line_spacing = -4.0
 
 [node name="46-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.511998, 9.53674e-06, 0.672012)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-51"]
@@ -18890,7 +18735,6 @@ line_spacing = -4.0
 
 [node name="46-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.543996, 4.76837e-06, 0.672008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="46-55"]
@@ -18975,7 +18819,6 @@ line_spacing = -4.0
 
 [node name="42-55" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.543995, 4.76837e-06, 0.640009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-55"]
@@ -19060,7 +18903,6 @@ line_spacing = -4.0
 
 [node name="42-59" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.639997, 8.58307e-06, 0.64001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="42-59"]
@@ -19145,7 +18987,6 @@ line_spacing = -4.0
 
 [node name="50-11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.128002, 2.86102e-06, 0.768004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-11"]
@@ -19230,7 +19071,6 @@ line_spacing = -4.0
 
 [node name="54-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.0960014, 4.76837e-06, 0.800004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-15"]
@@ -19315,7 +19155,6 @@ line_spacing = -4.0
 
 [node name="50-15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -0.096002, 3.8147e-06, 0.768004)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-15"]
@@ -19400,7 +19239,6 @@ line_spacing = -4.0
 
 [node name="50-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -1.66893e-06, 4.76837e-06, 0.768006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-19"]
@@ -19485,7 +19323,6 @@ line_spacing = -4.0
 
 [node name="54-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, -9.53674e-07, 3.8147e-06, 0.800006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-19"]
@@ -19570,7 +19407,6 @@ line_spacing = -4.0
 
 [node name="54-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, 0.0319972, 5.72205e-06, 0.800006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-23"]
@@ -19655,7 +19491,6 @@ line_spacing = -4.0
 
 [node name="50-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, 2.32831e-10, -2.98023e-08, 1, 0.0319965, 2.86102e-06, 0.768006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-23"]
@@ -19740,7 +19575,6 @@ line_spacing = -4.0
 
 [node name="50-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.128, 4.76837e-06, 0.768008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-27"]
@@ -19825,7 +19659,6 @@ line_spacing = -4.0
 
 [node name="54-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.128, 6.67572e-06, 0.800009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-27"]
@@ -19910,7 +19743,6 @@ line_spacing = -4.0
 
 [node name="54-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 6.67572e-06, 0.800009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-31"]
@@ -19995,7 +19827,6 @@ line_spacing = -4.0
 
 [node name="50-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 4.76837e-06, 0.768003)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-31"]
@@ -20080,7 +19911,6 @@ line_spacing = -4.0
 
 [node name="50-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.255997, 6.67572e-06, 0.768008)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-35"]
@@ -20165,7 +19995,6 @@ line_spacing = -4.0
 
 [node name="54-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.255998, 5.72205e-06, 0.800012)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-35"]
@@ -20250,7 +20079,6 @@ line_spacing = -4.0
 
 [node name="54-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.287998, 5.72205e-06, 0.800006)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-39"]
@@ -20335,7 +20163,6 @@ line_spacing = -4.0
 
 [node name="50-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999999, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.287997, 6.67572e-06, 0.768007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-39"]
@@ -20420,7 +20247,6 @@ line_spacing = -4.0
 
 [node name="50-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.383997, 8.58307e-06, 0.768011)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-43"]
@@ -20505,7 +20331,6 @@ line_spacing = -4.0
 
 [node name="50-51" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -9.31323e-10, -2.98023e-08, 1, 0.511997, 8.58307e-06, 0.768014)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-51"]
@@ -20590,7 +20415,6 @@ line_spacing = -4.0
 
 [node name="54-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.383998, 1.14441e-05, 0.80001)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-43"]
@@ -20675,7 +20499,6 @@ line_spacing = -4.0
 
 [node name="54-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.415996, 4.76837e-06, 0.800007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="54-47"]
@@ -20760,7 +20583,6 @@ line_spacing = -4.0
 
 [node name="50-47" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -2.32831e-10, 1, 2.98023e-08, -2.09548e-09, -2.98023e-08, 1, 0.415996, 5.72205e-06, 0.768009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="50-47"]
@@ -20845,7 +20667,6 @@ line_spacing = -4.0
 
 [node name="58-19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -1.66893e-06, 6.67572e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-19"]
@@ -20930,7 +20751,6 @@ line_spacing = -4.0
 
 [node name="58-23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, 0.0319963, 2.86102e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-23"]
@@ -21015,7 +20835,6 @@ line_spacing = -4.0
 
 [node name="58-27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.128, 4.76837e-06, 0.89601)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-27"]
@@ -21100,7 +20919,6 @@ line_spacing = -4.0
 
 [node name="58-31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 6.67572e-06, 0.896005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-31"]
@@ -21185,7 +21003,6 @@ line_spacing = -4.0
 
 [node name="58-35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.255996, 7.62939e-06, 0.896009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-35"]
@@ -21270,7 +21087,6 @@ line_spacing = -4.0
 
 [node name="58-39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.287997, 6.67572e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-39"]
@@ -21355,7 +21171,6 @@ line_spacing = -4.0
 
 [node name="58-43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.383997, 9.53674e-06, 0.896013)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-43"]
@@ -21440,7 +21255,6 @@ line_spacing = -4.0
 
 [node name="58-20" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, -1.66893e-06, 6.67572e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-20"]
@@ -21525,7 +21339,6 @@ line_spacing = -4.0
 
 [node name="58-24" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, 6.98492e-10, -2.98023e-08, 1, 0.0319963, 2.86102e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-24"]
@@ -21610,7 +21423,6 @@ line_spacing = -4.0
 
 [node name="58-28" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.128, 4.76837e-06, 0.89601)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-28"]
@@ -21695,7 +21507,6 @@ line_spacing = -4.0
 
 [node name="58-32" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.159998, 6.67572e-06, 0.896005)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-32"]
@@ -21780,7 +21591,6 @@ line_spacing = -4.0
 
 [node name="58-36" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.255996, 7.62939e-06, 0.896009)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-36"]
@@ -21865,7 +21675,6 @@ line_spacing = -4.0
 
 [node name="58-40" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999998, 0, 2.32831e-10, -6.98492e-10, 1, 2.98023e-08, -1.62981e-09, -2.98023e-08, 1, 0.287997, 6.67572e-06, 0.896007)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-40"]
@@ -21950,7 +21759,6 @@ line_spacing = -4.0
 
 [node name="58-44" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.999997, 0, 2.32831e-10, -4.65661e-10, 1, 2.98023e-08, -1.39698e-09, -2.98023e-08, 1, 0.383997, 9.53674e-06, 0.896013)
-gi_mode = 0
 script = SubResource("GDScript_fgurm")
 
 [node name="ACCUM_SCRAM_IND" type="CSGCombiner3D" parent="58-44"]
@@ -22035,7 +21843,6 @@ line_spacing = -4.0
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-15, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22067,7 +21874,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -1.06581e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D2"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22099,7 +21905,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -1.77636e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D3"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22131,7 +21936,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D4" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.4869e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D4"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22163,7 +21967,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D5" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.19744e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.512)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D5"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22195,7 +21998,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D6" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.26326e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D6"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22227,7 +22029,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D8" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.13163e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.128, 0.00199997, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D8"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22259,7 +22060,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D9" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.84217e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.128, 0.00199997, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D9"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22291,7 +22091,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D10" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.55271e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.128, 0.00199997, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D10"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22323,7 +22122,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D11" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.26326e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.128, 0.00199997, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D11"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22355,7 +22153,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D12" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.32907e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, -0.128, 0.00199997, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D12"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22387,7 +22184,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D7" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.32907e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0, 0.00199997, 0.768)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D7"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22419,7 +22215,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D13" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -1.77636e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D13"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22451,7 +22246,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D14" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.4869e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D14"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22483,7 +22277,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D15" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.19744e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D15"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22515,7 +22308,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D16" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.90799e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D16"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22547,7 +22339,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D17" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.61853e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D17"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22579,7 +22370,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D18" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.68434e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D18"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22611,7 +22401,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D19" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.75016e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.128, 0.00199986, 0.768)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D19"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22643,7 +22432,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D20" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.4869e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D20"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22675,7 +22463,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D21" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.19744e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D21"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22707,7 +22494,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D22" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.90799e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D22"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22739,7 +22525,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D23" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.61853e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D23"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22771,7 +22556,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D24" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.32907e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D24"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22803,7 +22587,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D25" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.39488e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D25"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22835,7 +22618,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D26" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -7.4607e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.256, 0.00199986, 0.768)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D26"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22867,7 +22649,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D27" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.19744e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D27"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22899,7 +22680,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D28" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.90799e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D28"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22931,7 +22711,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D29" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.61853e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D29"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22963,7 +22742,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D30" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.32907e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D30"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -22995,7 +22773,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D31" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.03961e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D31"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23027,7 +22804,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D32" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -7.10543e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D32"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23059,7 +22835,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D34" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -3.90799e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D34"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23091,7 +22866,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D35" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -4.61853e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D35"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23123,7 +22897,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D36" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -5.32907e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D36"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23155,7 +22928,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D37" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.03961e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D37"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23187,7 +22959,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D38" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.75016e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D38"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23219,7 +22990,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D40" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.03961e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.64, 0.00199986, 0.128)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D40"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23251,7 +23021,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D41" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -6.75016e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.64, 0.00199986, 0.256)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D41"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23283,7 +23052,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D42" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -7.4607e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.64, 0.00199986, 0.383999)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D42"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23315,7 +23083,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D43" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -8.17124e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.64, 0.00199986, 0.512001)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D43"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23347,7 +23114,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D39" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -7.81597e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.512, 0.00199986, 0.64)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D39"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)
@@ -23379,7 +23145,6 @@ script = SubResource("GDScript_fgurm")
 
 [node name="CSGCombiner3D33" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -8.17124e-14, 0, -3.55271e-15, 1, 0, -1.77637e-15, 0, 1, 0.384, 0.00199986, 0.768)
-gi_mode = 0
 
 [node name="02-19AS2" type="CSGBox3D" parent="CSGCombiner3D33"]
 transform = Transform3D(1, -2.98023e-08, -1.59872e-14, -5.96046e-08, 1, 0, -1.77636e-15, 0, 1, -0.0778174, -0.246506, -0.80509)

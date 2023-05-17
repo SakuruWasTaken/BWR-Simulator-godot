@@ -20,10 +20,13 @@ func update_full_core_display():
 			$"/root/Node3d".set_rod_light_emission(rod_number, "drift", rod_info["cr_drift_alarm"])
 			
 			# 18-59 has a slight offset to avoid it appearing desynced from the rest of the lights
-			if rod_info["cr_accum_trouble"] and (rod_number == "18-59" or cycles >= 0):
-				$"/root/Node3d".set_rod_light_emission(rod_number, "accum", true if cycles <= 1 else false)
+			if $"/root/Node3d".accum_trouble_ack == false:
+				if rod_info["cr_accum_trouble"] and (rod_number == "18-59" or cycles >= 0):
+					$"/root/Node3d".set_rod_light_emission(rod_number, "accum", true if cycles <= 1 else false)
+				else:
+					$"/root/Node3d".set_rod_light_emission(rod_number, "accum", false)
 			else:
-				$"/root/Node3d".set_rod_light_emission(rod_number, "accum", false)
+				$"/root/Node3d".set_rod_light_emission(rod_number, "accum", rod_info["cr_accum_trouble"])
 			if cycles >= 3:
 				cycles = -1
 			

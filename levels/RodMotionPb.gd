@@ -12,5 +12,5 @@ func _process(delta):
 
 func _on_input_event(camera, event, position, normal, shape_idx):
 	var mouse_click = event as InputEventMouseButton
-	if mouse_click and mouse_click.button_index == 1 and mouse_click.pressed:
-		$"/root/Node3d".rod_motion_button_pressed(get_parent())
+	if mouse_click and mouse_click.button_index == 1:
+		$"/root/Node3d".rod_motion_button_pressed(get_parent(), mouse_click.pressed)
