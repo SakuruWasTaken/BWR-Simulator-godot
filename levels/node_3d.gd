@@ -170,20 +170,24 @@ func main_loop_timer_expire():
 
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
 func add_withdraw_block(type):
-	rod_withdraw_block.append(type)
+	if "RWM" not in rod_withdraw_block:
+		rod_withdraw_block.append(type)
 	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
 	
 func add_insert_block(type):
-	rod_insert_block.append(type)
+	if "RWM" not in rod_insert_block:
+		rod_insert_block.append(type)
 	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
 
 func remove_withdraw_block(type):
-	rod_withdraw_block.erase(type)
+	if "RWM" in rod_withdraw_block:
+		rod_withdraw_block.erase(type)
 	if rod_withdraw_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
 	
 func remove_insert_block(type):
-	rod_insert_block.erase(type)
+	if "RWM" in rod_insert_block:
+		rod_insert_block.erase(type)
 	if rod_insert_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
 
