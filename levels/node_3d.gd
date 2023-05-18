@@ -109,7 +109,7 @@ func generate_control_rods():
 				
 
 				control_rods[rod_number] = {
-						"cr_insertion": 0.00 if rod_number in rods_not_full_out else 48.00,
+						"cr_insertion": 0.00 if rod_number in rods_not_full_out else 0.00,
 						"cr_scram": false,
 						"cr_accum_trouble": false,
 						"cr_drift_alarm": false,
@@ -167,16 +167,36 @@ func main_loop_timer_expire():
 		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
 			control_rods[rod_number]["cr_drift_alarm"] = true
 
+
+# TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
+func add_withdraw_block(type):
+	rod_withdraw_block.append(type)
+	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
+	
+func add_insert_block(type):
+	rod_insert_block.append(type)
+	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
+
+func remove_withdraw_block(type):
+	rod_withdraw_block.erase(type)
+	if rod_withdraw_block == []:
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
+	
+func remove_insert_block(type):
+	rod_insert_block.erase(type)
+	if rod_insert_block == []:
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
+
 func make_string_two_digit(string):
 	if len(string) == 1:
 		return "0%s" % string
 	return string
 	
 
-func set_object_emission(object, emission):
+func set_object_emission(object, state):
 	var node = get_node(object)
 	var material = node.get_material()
-	material.emission_enabled = emission
+	material.emission_enabled = state
 	node.set_material(material)
 	
 func set_rod_light_emission(rod_number, light, state):
