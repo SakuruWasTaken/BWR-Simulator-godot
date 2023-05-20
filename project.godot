@@ -15,6 +15,7 @@ run/main_scene="res://levels/node_3d.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://loading.png"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
