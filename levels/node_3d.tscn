@@ -1,4 +1,4 @@
-[gd_scene load_steps=348 format=3 uid="uid://sbc5y8owctjw"]
+[gd_scene load_steps=350 format=3 uid="uid://sbc5y8owctjw"]
 
 [ext_resource type="Script" path="res://levels/node_3d.gd" id="1_dlw8v"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -10,10 +10,13 @@
 [ext_resource type="Script" path="res://levels/RodSelectPb.gd" id="8_da7lx"]
 [ext_resource type="AudioStream" uid="uid://o256lmfhvx62" path="res://Assets/Audio/alarm1.mp3" id="9_0pufn"]
 [ext_resource type="Script" path="res://levels/RodMotionPb.gd" id="9_2sxlg"]
+[ext_resource type="Material" uid="uid://cpgjdyl15tmon" path="res://levels/beige plastic.tres" id="9_dbsck"]
+[ext_resource type="AudioStream" uid="uid://q6splpjvouo5" path="res://Assets/Audio/button_click.mp3" id="9_irtiu"]
+[ext_resource type="AudioStream" uid="uid://boliqkypuf7po" path="res://Assets/Audio/button_unclick.mp3" id="10_5jncs"]
 [ext_resource type="Script" path="res://levels/Rod Position Monitors.gd" id="10_701da"]
 [ext_resource type="Texture2D" uid="uid://c6kfewei10dfl" path="res://Assets/Textures/Full Core Display Background.PNG" id="10_a03q7"]
 [ext_resource type="Script" path="res://levels/Time Text.gd" id="10_ex6h8"]
-[ext_resource type="Script" path="res://levels/RodPositionIndicatorButton.gd" id="12_dhrlu"]
+[ext_resource type="Material" uid="uid://b0b37alwlfoju" path="res://levels/white metal.tres" id="10_rt8gm"]
 [ext_resource type="Texture2D" uid="uid://blb42sqhhnvov" path="res://Assets/Textures/Clock.png" id="13_rjxd0"]
 [ext_resource type="FontFile" uid="uid://b4hai6yx1qb1c" path="res://Assets/Fonts/DSEG7Classic-Italic.ttf" id="14_3lqpq"]
 [ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
@@ -23,7 +26,6 @@
 [ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://levels/display_material.tres" id="19_u33fp"]
 [ext_resource type="Texture2D" uid="uid://ovdpi0a6pnnf" path="res://Assets/Textures/Generator Load Placard.png" id="20_sst2y"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://black metal.tres" id="22_plvk7"]
-[ext_resource type="Texture2D" uid="uid://diy4oboa0qwj7" path="res://RWM.PNG" id="22_vr8wo"]
 [ext_resource type="Script" path="res://levels/RWM.gd" id="23_ovnd5"]
 [ext_resource type="Script" path="res://levels/RWM_Button.gd" id="24_wxd1m"]
 
@@ -1826,12 +1828,8 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ld251"]
 albedo_color = Color(1, 1, 1, 0.956863)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cya8a"]
-size = Vector3(0.0128027, 0.0292702, 0.0374513)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rwtx"]
 albedo_color = Color(1, 1, 1, 0.956863)
@@ -1843,8 +1841,9 @@ albedo_color = Color(1, 1, 1, 0.956863)
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6dgm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s5hk"]
 albedo_color = Color(1, 1, 1, 0.956863)
+emission_enabled = true
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
 
@@ -2407,6 +2406,8 @@ refraction_enabled = true
 emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npe0v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbcuu"]
 vertex_color_use_as_albedo = true
@@ -7725,6 +7726,37 @@ script = ExtResource("8_da7lx")
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_remvb")
 
+[node name="Button Click" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel"]
+stream = ExtResource("9_irtiu")
+max_distance = 3.0
+
+[node name="Button Unclick" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel"]
+stream = ExtResource("10_5jncs")
+max_distance = 3.0
+
+[node name="Annunciator Control Panel" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(1.60187e-07, 3.35276e-08, -0.6, 8.9407e-08, -0.6, 7.45058e-09, -0.6, -8.9407e-08, -1.71363e-07, 0.027135, 0.37079, 1.15418)
+visible = false
+polygon = PackedVector2Array(0.025, 0.15, 0, 0.175, 0, 0.3, 0.025, 0.325, 0.4, 0.325, 0.425, 0.3, 0.425, 0.175, 0.4, 0.15)
+depth = 0.04
+material = ExtResource("9_dbsck")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel"]
+transform = Transform3D(1, 5.96046e-08, -7.45058e-09, 2.98023e-08, 1, -7.45058e-09, -7.45058e-09, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/Node3D"]
+transform = Transform3D(1, -5.96046e-08, -1.11759e-07, -2.98023e-08, 1, -1.11759e-07, 1.3411e-07, 2.98023e-08, 1, 0.215474, 0.294663, -1.93715e-07)
+size = Vector3(0.130446, 0.0347056, 0.00717134)
+material = ExtResource("10_rt8gm")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/Node3D/CSGBox3D"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "ANNUNCIATOR"
+font_size = 22
+outline_size = 0
+
 [node name="reactor_alarm" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
 stream = ExtResource("9_0pufn")
@@ -7928,12 +7960,6 @@ text = "SELECTED
 ROD"
 font_size = 18
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1/1"]
-script = ExtResource("12_dhrlu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1/1/StaticBody3D"]
-shape = SubResource("BoxShape3D_cya8a")
-
 [node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
 sorting_offset = 20.0
@@ -7972,12 +7998,6 @@ modulate = Color(0, 0, 0, 1)
 text = "SELECTED
 ROD"
 font_size = 18
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2/2"]
-script = ExtResource("12_dhrlu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2/2/StaticBody3D"]
-shape = SubResource("BoxShape3D_cya8a")
 
 [node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
@@ -8018,12 +8038,6 @@ text = "SELECTED
 ROD"
 font_size = 18
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3/3"]
-script = ExtResource("12_dhrlu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3/3/StaticBody3D2"]
-shape = SubResource("BoxShape3D_cya8a")
-
 [node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
 sorting_offset = 20.0
@@ -8049,10 +8063,18 @@ sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0363257)
 material = ExtResource("19_u33fp")
 
+[node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
+sorting_offset = 20.0
+pixel_size = 0.0006
+modulate = Color(1, 0.772549, 0.560784, 1)
+text = "1   6"
+font_size = 48
+
 [node name="4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00871658, -0.0296409, -2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, -0.03, 0)
 size = Vector3(0.00259872, 0.0264591, 0.0363257)
-material = SubResource("StandardMaterial3D_v6dgm")
+material = SubResource("StandardMaterial3D_7s5hk")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.002, 0.002, 0)
@@ -8062,20 +8084,6 @@ modulate = Color(0, 0, 0, 1)
 text = "SELECTED
 ROD"
 font_size = 18
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4"]
-script = ExtResource("12_dhrlu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4/StaticBody3D2"]
-shape = SubResource("BoxShape3D_cya8a")
-
-[node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
-sorting_offset = 20.0
-pixel_size = 0.0006
-modulate = Color(1, 0.772549, 0.560784, 1)
-text = "1   6"
-font_size = 48
 
 [node name="Full Core Display" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 0.901, 1.459, -2.4)
@@ -10063,7 +10071,15 @@ visible = false
 sorting_offset = 10.0
 pixel_size = 0.0006
 shaded = true
-texture = ExtResource("22_vr8wo")
+texture = SubResource("CompressedTexture2D_npe0v")
+
+[node name="Button Click" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
+stream = ExtResource("9_irtiu")
+max_distance = 3.0
+
+[node name="Button Unclick" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
+stream = ExtResource("10_5jncs")
+max_distance = 3.0
 
 [node name="APRM Box 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
@@ -10305,10 +10321,6 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" method="_on_input_event"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1/1/StaticBody3D" to="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1/1/StaticBody3D" method="_on_input_event"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2/2/StaticBody3D" to="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2/2/StaticBody3D" method="_on_input_event"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3/3/StaticBody3D2" to="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3/3/StaticBody3D2" method="_on_input_event"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4/StaticBody3D2" to="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4/StaticBody3D2" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" method="_on_input_event"]

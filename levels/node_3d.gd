@@ -211,9 +211,9 @@ func change_selected_rod(rod):
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, false)
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, false)
 		selected_cr = rod
-		%"Rod Position Monitors".selected_rods[%"Rod Position Monitors".selected_monitor] = selected_cr
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true)
+		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
 
 		
 func update_power():
@@ -263,6 +263,9 @@ func scram():
 			control_rods[rod_number].cr_accum_trouble=cr_accum_trouble
 			control_rods[rod_number].cr_drift_alarm=cr_drift_alarm
 		await get_tree().create_timer(0.1).timeout
+	accum_trouble_ack = false
+	for rod_number in control_rods:
+		control_rods[rod_number].cr_accum_trouble = true
 	all_rods_in = true
 
 func withdraw_selected_cr():
@@ -403,7 +406,7 @@ func continuous_withdraw_selected_cr():
 	# TODO: rod overtravel check
 	if int(insertion) >= 48:
 		return
-		
+	cr_continuous_mode = cr_continuous_modes.WITHDRAWING
 	# time delay to unlatch control
 	await get_tree().create_timer(randf_range(0.00, 0.04)).timeout
 	moving_rods.append(rod)
@@ -426,7 +429,6 @@ func continuous_withdraw_selected_cr():
 	await get_tree().create_timer(randf_range(0, 0.15)).timeout
 	
 	cr_direction = cr_directions.WITHDRAW
-	cr_continuous_mode = cr_continuous_modes.WITHDRAWING
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_lt", true)
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_lt", true)
 	
@@ -492,12 +494,12 @@ func continuous_insert_selected_cr():
 		return
 		
 	# time delay to unlatch control
+	cr_continuous_mode = cr_continuous_modes.INSERTING
 	await get_tree().create_timer(randf_range(0.00, 0.04)).timeout
 	moving_rods.append(rod)
 	cr_target_insertion = insertion - 2
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
-	cr_continuous_mode = cr_continuous_modes.INSERTING
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 	
 	# withdraw for 1.4 seconds each cycle
