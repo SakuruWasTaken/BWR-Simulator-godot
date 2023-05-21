@@ -38,6 +38,7 @@ enum scram_types {
 }
 
 var scram_active = false
+var scram_type
 
 func generate_control_rods():
 	var rods_not_full_out = [
@@ -167,7 +168,6 @@ func main_loop_timer_expire():
 		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
 			control_rods[rod_number]["cr_drift_alarm"] = true
 
-
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
 func add_withdraw_block(type):
 	if "RWM" not in rod_withdraw_block:
@@ -228,7 +228,8 @@ func update_power():
 func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
 	change_selected_rod(parent_object.name)
 	
-func scram():
+func scram(type):
+	scram_type = type
 	var rods_in = 0
 	while rods_in < 185:
 		rods_in = 0
@@ -574,9 +575,9 @@ func rod_motion_button_pressed(parent, pressed):
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 	elif parent.name == "SCRAM":
-		var set_scram_reset_light_on = false
 		if not scram_active and pressed == true:
-			scram()
+			var set_scram_reset_light_on = false
+			scram(scram_types.MANUAL)
 			while scram_active == true:
 				if scram_timer >= 1:
 					scram_timer -= 1
