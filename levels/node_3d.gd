@@ -17,6 +17,8 @@ var scram_timer = -1
 var all_rods_in = false
 var accum_trouble_ack = true
 
+
+# TODO: add enums for the block reason
 var rod_withdraw_block = []
 var rod_insert_block = []
 
@@ -170,23 +172,23 @@ func main_loop_timer_expire():
 
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
 func add_withdraw_block(type):
-	if "RWM" not in rod_withdraw_block:
+	if type not in rod_withdraw_block:
 		rod_withdraw_block.append(type)
 	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
 	
 func add_insert_block(type):
-	if "RWM" not in rod_insert_block:
+	if type not in rod_insert_block:
 		rod_insert_block.append(type)
 	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
 
 func remove_withdraw_block(type):
-	if "RWM" in rod_withdraw_block:
+	if type in rod_withdraw_block:
 		rod_withdraw_block.erase(type)
 	if rod_withdraw_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
 	
 func remove_insert_block(type):
-	if "RWM" in rod_insert_block:
+	if type in rod_insert_block:
 		rod_insert_block.erase(type)
 	if rod_insert_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
@@ -230,6 +232,7 @@ func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_obj
 	
 func scram(type):
 	scram_type = type
+	add_withdraw_block("SCRAM")
 	var rods_in = 0
 	while rods_in < 185:
 		rods_in = 0
@@ -597,6 +600,7 @@ func rod_motion_button_pressed(parent, pressed):
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
 				accum_trouble_ack = true
+			remove_withdraw_block("SCRAM")
 	elif parent.name == "DriftTest_pb":
 		cr_drift_test = pressed
 	elif parent.name == "DriftReset_pb":

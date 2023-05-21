@@ -15,10 +15,8 @@ func check_rod_out_block(): return $"/root/Node3d".rod_withdraw_block != []
 func check_rwm_rod_block(): return $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_blocks != [] or $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".insert_blocks != []
 func check_rod_drift():
 	for rod_number in $"/root/Node3d".control_rods:
-		print(rod_number)
 		if $"/root/Node3d".control_rods[rod_number]["cr_drift_alarm"] == true:
 			return true
-	print("false")
 	return false
 # TODO: simulate scram channels (one of two taken twice logic)
 func check_manual_scram_a_trip(): return $"/root/Node3d".scram_active and $"/root/Node3d".scram_type == 0
@@ -95,9 +93,14 @@ func _ready():
 				annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
 				alarm_type = "Fast"
 			elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
-				if alarm_type != "Fast":
-					alarm_type = "Slow"
-				annunciators[annunciator_name]["material"].emission_enabled = active_clear_annunciators_lit
+				if condition:
+					annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
+					annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
+					alarm_type = "Fast"
+				else:
+					if alarm_type != "Fast":
+						alarm_type = "Slow"
+					annunciators[annunciator_name]["material"].emission_enabled = active_clear_annunciators_lit
 			elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
 				annunciators[annunciator_name]["material"].emission_enabled = true
 		
@@ -116,6 +119,20 @@ func _ready():
 		else: 
 			cycle = 0
 		
+		
+func control_button_pressed(parent):
+	if parent.name == "acknowledge":
+		$"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer".current_animation = "acknowledge_sw_animation"
+		for annunciator_name in annunciators:
+			var condition = call(annunciators[annunciator_name]["func"])
+			if condition == false:
+				if annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED or annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
+					annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE_CLEAR
+				elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
+					annunciators[annunciator_name]["state"] = annunciator_state.CLEAR
+			else:	
+				if annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
+					annunciators[annunciator_name]["state"] = annunciator_state.ACKNOWLEDGED
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

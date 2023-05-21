@@ -1,4 +1,4 @@
-[gd_scene load_steps=352 format=3 uid="uid://b2jiummu8audn"]
+[gd_scene load_steps=358 format=3 uid="uid://b2jiummu8audn"]
 
 [ext_resource type="Script" path="res://levels/node_3d.gd" id="1_dlw8v"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -18,8 +18,11 @@
 [ext_resource type="Material" uid="uid://b0b37alwlfoju" path="res://levels/white metal.tres" id="10_rt8gm"]
 [ext_resource type="AudioStream" uid="uid://o256lmfhvx62" path="res://Assets/Audio/reactor_alarm_loop_fast.mp3" id="13_muwa0"]
 [ext_resource type="Texture2D" uid="uid://blb42sqhhnvov" path="res://Assets/Textures/Clock.png" id="13_rjxd0"]
+[ext_resource type="Material" uid="uid://dfbljd3ypxq4g" path="res://levels/silver metal.tres" id="13_w2p6w"]
 [ext_resource type="FontFile" uid="uid://b4hai6yx1qb1c" path="res://Assets/Fonts/DSEG7Classic-Italic.ttf" id="14_3lqpq"]
+[ext_resource type="Script" path="res://levels/Reactor Annunciator Button.gd" id="14_ayasx"]
 [ext_resource type="AudioStream" uid="uid://dxrni2kk7ryhh" path="res://Assets/Audio/reactor_alarm_loop_slow.mp3" id="14_wxnme"]
+[ext_resource type="Animation" uid="uid://crw8i8mexnff8" path="res://levels/acknowledge_sw_animation.res" id="14_ykkhy"]
 [ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
 [ext_resource type="FontFile" uid="uid://jurw11mmjtbq" path="res://Assets/Fonts/PublicPixel.ttf" id="17_th8xm"]
 [ext_resource type="Texture2D" uid="uid://77nv46dqq8df" path="res://Assets/Textures/Power Display Background.png" id="18_12rln"]
@@ -1815,6 +1818,31 @@ emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
 clearcoat_roughness = 1.0
 refraction_enabled = true
+
+[sub_resource type="Animation" id="Animation_kmlud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.65344, 1.04854, 1.37416)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4ycu"]
+_data = {
+"RESET": SubResource("Animation_kmlud"),
+"acknowledge_sw_animation": ExtResource("14_ykkhy")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wasv2"]
+height = 0.121946
+radius = 0.0449449
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq633"]
 albedo_color = Color(0, 0, 0, 1)
@@ -7742,21 +7770,66 @@ polygon = PackedVector2Array(0.025, 0.15, 0, 0.175, 0, 0.3, 0.025, 0.325, 0.4, 0
 depth = 0.04
 material = ExtResource("9_dbsck")
 
-[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel"]
+[node name="placard" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel"]
 transform = Transform3D(1, 5.96046e-08, -7.45058e-09, 2.98023e-08, 1, -7.45058e-09, -7.45058e-09, 0, 1, 0, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/Node3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/placard"]
 transform = Transform3D(1, -5.96046e-08, -1.11759e-07, -2.98023e-08, 1, -1.11759e-07, 1.3411e-07, 2.98023e-08, 1, 0.215474, 0.294663, -1.93715e-07)
 size = Vector3(0.130446, 0.0347056, 0.00717134)
 material = ExtResource("10_rt8gm")
 
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/Node3D/CSGBox3D"]
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/placard/CSGBox3D"]
 transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
 pixel_size = 0.0004
 modulate = Color(0, 0, 0, 1)
 text = "ANNUNCIATOR"
 font_size = 22
 outline_size = 0
+
+[node name="switches" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel"]
+
+[node name="acknowledge" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches"]
+transform = Transform3D(1, -6.70552e-08, -7.7486e-07, 2.98023e-08, -1.11759e-07, -1, 0, 1, -1.49012e-08, 0.0812383, 0.230312, 0.00907706)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge"]
+transform = Transform3D(1, 7.45058e-09, 1.19209e-07, 0, 1, 0, 2.98023e-08, 0, 1, -4.76837e-07, 1.49012e-08, -9.53674e-07)
+radius = 0.031
+height = 0.036
+sides = 14
+material = ExtResource("13_w2p6w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge"]
+root_node = NodePath("AnimatableBody3D")
+libraries = {
+"": SubResource("AnimationLibrary_r4ycu")
+}
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer"]
+transform = Transform3D(-0.424264, -0.0605125, -0.419926, -1.75726e-07, 0.593866, -0.0855774, 0.424264, -0.0605123, -0.419927, 7.65344, 1.04854, 1.37416)
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer"]
+transform = Transform3D(-0.424264, -0.0605125, -0.419926, -1.83377e-07, 0.593866, -0.0855774, 0.424264, -0.0605123, -0.419927, 7.65344, 1.04854, 1.37416)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer/Node3D"]
+transform = Transform3D(1, 7.45058e-09, -5.96046e-08, 0, 1, 2.23517e-08, 1.19209e-07, 0, 1, 0, 0, 0)
+radius = 0.0280899
+height = 0.036
+sides = 14
+material = ExtResource("13_w2p6w")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer/Node3D"]
+transform = Transform3D(1, 8.9407e-08, 1.2815e-06, -2.23517e-08, -0.999999, -1.56462e-07, 5.06639e-07, -6.70552e-08, -1, 0, 0.00957344, 0)
+radius = 0.048
+height = 0.028
+cone = true
+material = ExtResource("10_rt8gm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge"]
+script = ExtResource("14_ayasx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, -7.45058e-09, 2.98023e-08, 7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wasv2")
 
 [node name="Reactor Alarm Loop Fast" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
@@ -10330,6 +10403,7 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" method="_on_input_event"]
