@@ -7821,6 +7821,7 @@ material = ExtResource("13_w2p6w")
 transform = Transform3D(1, 8.9407e-08, 1.2815e-06, -2.23517e-08, -0.999999, -1.56462e-07, 5.06639e-07, -6.70552e-08, -1, 0, 0.00957344, 0)
 radius = 0.048
 height = 0.028
+sides = 20
 cone = true
 material = ExtResource("10_rt8gm")
 

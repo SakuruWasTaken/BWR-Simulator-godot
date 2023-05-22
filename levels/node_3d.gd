@@ -245,9 +245,11 @@ func scram(type):
 
 			if scram_timer == -1:
 				scram_timer = 120
+			elif scram_timer == 110 and randi_range(1, 20) == 15 and cr_insertion != 0:
+				cr_drift_alarm = true
 			elif scram_timer < 106:
-					cr_accum_trouble = true
-					accum_trouble_ack = false
+				cr_accum_trouble = true
+				accum_trouble_ack = false
 			if cr_insertion != 0:
 				if cr_insertion != 0 and scram_timer < 114:
 					if not rod_number in moving_rods:
