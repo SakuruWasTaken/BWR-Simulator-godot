@@ -245,7 +245,7 @@ func scram(type):
 
 			if scram_timer == -1:
 				scram_timer = 120
-			elif scram_timer < 117:
+			elif scram_timer < 106:
 					cr_accum_trouble = true
 					accum_trouble_ack = false
 			if cr_insertion != 0:

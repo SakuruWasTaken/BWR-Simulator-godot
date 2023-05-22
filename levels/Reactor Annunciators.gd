@@ -18,9 +18,17 @@ func check_rod_drift():
 		if $"/root/Node3d".control_rods[rod_number]["cr_drift_alarm"] == true:
 			return true
 	return false
+func check_cr_accum_trouble():
+	for rod_number in $"/root/Node3d".control_rods:
+		if $"/root/Node3d".control_rods[rod_number]["cr_accum_trouble"] == true:
+			return true
+	return false
 # TODO: simulate scram channels (one of two taken twice logic)
 func check_manual_scram_a_trip(): return $"/root/Node3d".scram_active and $"/root/Node3d".scram_type == 0
 func check_manual_scram_b_trip(): return $"/root/Node3d".scram_active and $"/root/Node3d".scram_type == 0
+func check_auto_scram_a_trip(): return $"/root/Node3d".scram_active
+func check_auto_scram_b_trip(): return $"/root/Node3d".scram_active
+
 var annunciators = {
 	"rwm_rod_block": {
 		"box": 1,
@@ -56,6 +64,27 @@ var annunciators = {
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_manual_scram_b_trip"
+	},
+	"auto_scram_a_trip": {
+		"box": 2,
+		"lamp": "B1",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_auto_scram_a_trip"
+	},
+	"auto_scram_b_trip": {
+		"box": 2,
+		"lamp": "B2",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_auto_scram_b_trip"
+	},
+	"cr_accum_trouble": {
+		"box": 2,
+		"lamp": "F6",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_cr_accum_trouble"
 	},
 }
 
