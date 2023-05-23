@@ -1,4 +1,5 @@
 extends Node3D
+@onready var node_3d = $"/root/Node3d"
 
 var selected_group = 1
 
@@ -332,38 +333,16 @@ var select_groups = {
 var insertion
 var selected_rod_meter_number = 4
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 # TODO: this is actually not how these indicators work in real life, make these more realistic
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	while true:
 		await get_tree().create_timer(0.1).timeout
-		for monitor in select_groups[selected_group]:
-			var final_string
-			var rod_number = select_groups[selected_group][monitor]
-			if rod_number != "none":
-				final_string = ""
-				var first_number = true
-				if rod_number in $"/root/Node3d".moving_rods and not $"/root/Node3d".scram_active:
-					insertion = $"/root/Node3d".cr_previous_insertion
-				else:
-					insertion = $"/root/Node3d".control_rods[rod_number]["cr_insertion"]
-				for number in $"/root/Node3d".make_string_two_digit(str(int(insertion))):
-					if first_number == true:
-						final_string = "%s%s   " % [final_string, number]
-					else:
-						final_string = "%s%s" % [final_string, number]
-					first_number = false
-			else:
-				final_string = "     "
-			get_node("Rod Position Monitor %s/Insertion Text" % monitor).text = final_string
+
 
 func selected_rod_changed(rod):
-	$"/root/Node3d".set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_rod_meter_number, selected_rod_meter_number], false)
+	node_3d.set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_rod_meter_number, selected_rod_meter_number], false)
 	var done = false
 	if not rod in select_groups[selected_group]:
 		for group_number in select_groups:
@@ -384,4 +363,26 @@ func selected_rod_changed(rod):
 			if rod_number == rod:
 				selected_rod_meter_number = group_rod_number
 				break
-	$"/root/Node3d".set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_rod_meter_number, selected_rod_meter_number], true)
+	node_3d.set_object_emission("Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor %s/%s" % [selected_rod_meter_number, selected_rod_meter_number], true)
+
+
+func _on_timer_timeout():
+	for monitor in select_groups[selected_group]:
+		var final_string
+		var rod_number = select_groups[selected_group][monitor]
+		if rod_number != "none":
+			final_string = ""
+			var first_number = true
+			if rod_number in node_3d.moving_rods and not node_3d.scram_active:
+				insertion = node_3d.cr_previous_insertion
+			else:
+				insertion = node_3d.control_rods[rod_number]["cr_insertion"]
+			for number in node_3d.make_string_two_digit(str(int(insertion))):
+				if first_number == true:
+					final_string = "%s%s   " % [final_string, number]
+				else:
+					final_string = "%s%s" % [final_string, number]
+				first_number = false
+		else:
+			final_string = "     "
+		get_node("Rod Position Monitor %s/Insertion Text" % monitor).text = final_string

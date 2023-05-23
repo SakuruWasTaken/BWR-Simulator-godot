@@ -7880,7 +7880,9 @@ text = "88   88    88
 "
 font = ExtResource("14_3lqpq")
 font_size = 162
-script = ExtResource("10_ex6h8")
+
+[node name="Timer" type="Timer" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Clock"]
+autostart = true
 
 [node name="Thermal Power Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8)
@@ -8166,6 +8168,10 @@ modulate = Color(0, 0, 0, 1)
 text = "SELECTED
 ROD"
 font_size = 18
+
+[node name="Timer" type="Timer" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
+wait_time = 0.1
+autostart = true
 
 [node name="Full Core Display" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 0.901, 1.459, -2.4)
@@ -9699,6 +9705,10 @@ LOW SUCTION
 PRESSURE"
 font_size = 12
 
+[node name="Timer" type="Timer" parent="Control Room Panels/Main Panel Center/Annunciators"]
+wait_time = 0.1
+autostart = true
+
 [node name="Meters" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.915, 0.708, -2.4)
 
@@ -9760,6 +9770,7 @@ shaded = true
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "MANUAL
+
 
 AUTO"
 font_size = 18
@@ -10405,6 +10416,9 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" method="_on_input_event"]
+[connection signal="timeout" from="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Timer" to="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Time Text" method="_on_timer_timeout"]
+[connection signal="timeout" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Timer" to="Control Room Panels/Main Panel Center/Rod Position Monitors" method="_on_timer_timeout"]
+[connection signal="timeout" from="Control Room Panels/Main Panel Center/Annunciators/Timer" to="Control Room Panels/Main Panel Center/Annunciators" method="_on_timer_timeout"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" method="_on_input_event"]

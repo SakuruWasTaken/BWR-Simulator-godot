@@ -43,21 +43,6 @@ var scram_active = false
 var scram_type
 
 func generate_control_rods():
-	var rods_not_full_out = [
-		# this is a temp thing before RWM groups are implemented
-		"22-31",
-		"14-39",
-		"30-39",
-		"14-23",
-		"22-15",
-		"30-23",
-		"38-15",
-		"46-23",
-		"38-31",
-		"46-39",
-		"38-47",
-		"22-47",
-	]
 	var x = 18
 	var y = 59
 	var rods_to_generate = 0
@@ -112,7 +97,7 @@ func generate_control_rods():
 				
 
 				control_rods[rod_number] = {
-						"cr_insertion": 0.00 if rod_number in rods_not_full_out else 0.00,
+						"cr_insertion": 0.00,
 						"cr_scram": false,
 						"cr_accum_trouble": false,
 						"cr_drift_alarm": false,

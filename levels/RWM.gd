@@ -1,11 +1,13 @@
 # Details of RWM system control panel can be found in NRC document ML023020204
 extends CSGBox3D
+@onready var node_3d = $"/root/Node3d"
 
 @onready var rwm_button_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM".get_material()
 @onready var comp_button_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/COMP".get_material()
 @onready var program_button_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/PROGRAM".get_material()
 @onready var withdraw_block_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/INSERT_WITHDRAW_BLOCK/WITHDRAW BLOCK".get_material()
 @onready var insert_block_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/INSERT_WITHDRAW_BLOCK/INSERT BLOCK".get_material()
+@onready var select_error_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SELECT_ERROR/SELECT_ERROR".get_material()
 @onready var group_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group/Display/Text"
 @onready var withdraw_error_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Withdraw Error/Display/Text"
 @onready var insert_error_1_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display/Text"
@@ -15,6 +17,8 @@ extends CSGBox3D
 var rwm_initalized = false
 var rwm_inop = true
 var current_group = 0
+var current_group_rods = {}
+var select_error = false
 # TODO: add config so user can change options like this
 var current_sequence = "a"
 var withdraw_error = {
@@ -39,7 +43,7 @@ func format_string(string, remove_dashes = false):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if rwm_initalized:
-		group_text_object.text = format_string($"/root/Node3d".make_string_two_digit(str(current_group)))
+		group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
 	else:
 		# make displays blank
 		group_text_object.text = "   "
@@ -47,10 +51,18 @@ func _ready():
 		insert_error_1_text_object.text = "         "
 		insert_error_2_text_object.text = "         "
 		rwm_inop = true
-		$"/root/Node3d".set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
+		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
 	while true:
 		if not rwm_inop:
-			group_text_object.text = format_string($"/root/Node3d".make_string_two_digit(str(current_group)))
+			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
+			#print(current_group_rods)
+			select_error = true
+			for rod_number in current_group_rods:
+				if node_3d.selected_cr == rod_number:
+					select_error = false
+					break
+			
+			select_error_material.emission_enabled = select_error
 			# TODO: rod group detection stuff
 			pass
 		else:
@@ -59,10 +71,10 @@ func _ready():
 		
 		if withdraw_blocks != []:
 			withdraw_block_material.emission_enabled = true
-			$"/root/Node3d".add_withdraw_block("RWM")
+			node_3d.add_withdraw_block("RWM")
 		if insert_blocks != []:
 			insert_block_material.emission_enabled = true
-			$"/root/Node3d".add_insert_block("RWM")
+			node_3d.add_insert_block("RWM")
 			
 		await get_tree().create_timer(5).timeout
 
@@ -92,10 +104,11 @@ func button_pressed(parent, pressed):
 			rwm_initalized = true
 			rwm_inop = false
 			current_group = 1
-			withdraw_error = {}
+			current_group_rods = group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]
+			#withdraw_error = {}
 			withdraw_blocks.erase("rwm_inop")
 			withdraw_block_material.emission_enabled = false
-			$"/root/Node3d".remove_withdraw_block("RWM")
+			node_3d.remove_withdraw_block("RWM")
 		
 		
 # rod group data begins here

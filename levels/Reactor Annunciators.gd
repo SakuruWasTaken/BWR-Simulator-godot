@@ -1,4 +1,5 @@
 extends Node3D
+@onready var node_3d = $"/root/Node3d"
 
 var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annunciators/Annunciator Box %s/%s"
 @onready var alarm_audio_fast = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Fast"
@@ -11,23 +12,28 @@ enum annunciator_state {
 	ACTIVE_CLEAR, # Annunciator condition cleared, but not acknowledged, flashing slowly
 }
 
-func check_rod_out_block(): return $"/root/Node3d".rod_withdraw_block != []
+var cycle = 0
+var active_annunciators_lit
+var active_clear_annunciators_lit
+
+
+func check_rod_out_block(): return node_3d.rod_withdraw_block != []
 func check_rwm_rod_block(): return $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_blocks != [] or $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".insert_blocks != []
 func check_rod_drift():
-	for rod_number in $"/root/Node3d".control_rods:
-		if $"/root/Node3d".control_rods[rod_number]["cr_drift_alarm"] == true:
+	for rod_number in node_3d.control_rods:
+		if node_3d.control_rods[rod_number]["cr_drift_alarm"] == true:
 			return true
 	return false
 func check_cr_accum_trouble():
-	for rod_number in $"/root/Node3d".control_rods:
-		if $"/root/Node3d".control_rods[rod_number]["cr_accum_trouble"] == true:
+	for rod_number in node_3d.control_rods:
+		if node_3d.control_rods[rod_number]["cr_accum_trouble"] == true:
 			return true
 	return false
 # TODO: simulate scram channels (one of two taken twice logic)
-func check_manual_scram_a_trip(): return $"/root/Node3d".scram_active and $"/root/Node3d".scram_type == 0
-func check_manual_scram_b_trip(): return $"/root/Node3d".scram_active and $"/root/Node3d".scram_type == 0
-func check_auto_scram_a_trip(): return $"/root/Node3d".scram_active
-func check_auto_scram_b_trip(): return $"/root/Node3d".scram_active
+func check_manual_scram_a_trip(): return node_3d.scram_active and node_3d.scram_type == 0
+func check_manual_scram_b_trip(): return node_3d.scram_active and node_3d.scram_type == 0
+func check_auto_scram_a_trip(): return node_3d.scram_active
+func check_auto_scram_b_trip(): return node_3d.scram_active
 
 var annunciators = {
 	"rwm_rod_block": {
@@ -95,58 +101,6 @@ func _ready():
 	for annunciator_name in annunciators:
 		var annunciator_info = annunciators[annunciator_name]
 		annunciators[annunciator_name]["material"] = get_node(annunciator_path % [annunciator_info["box"], annunciator_info["lamp"]]).get_material()
-	
-	var cycle = 0
-	var active_annunciators_lit
-	var active_clear_annunciators_lit
-	while true:
-		await get_tree().create_timer(0.1).timeout
-		active_annunciators_lit = cycle % 2 == 1 
-		active_clear_annunciators_lit = cycle/4 % 2 == 1 
-		var alarm_type = "None"
-		for annunciator_name in annunciators:
-			var condition = call(annunciators[annunciator_name]["func"])
-			if condition == false:
-				if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
-					annunciators[annunciator_name]["material"].emission_enabled = false
-					continue
-				elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
-					annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE_CLEAR
-					
-			# there's probably a better way to do this
-			if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
-				annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
-				annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-				alarm_type = "Fast"
-			elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
-				annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-				alarm_type = "Fast"
-			elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
-				if condition:
-					annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
-					annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-					alarm_type = "Fast"
-				else:
-					if alarm_type != "Fast":
-						alarm_type = "Slow"
-					annunciators[annunciator_name]["material"].emission_enabled = active_clear_annunciators_lit
-			elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
-				annunciators[annunciator_name]["material"].emission_enabled = true
-		
-		if alarm_type == "None":
-			alarm_audio_fast.playing = false
-			alarm_audio_slow.playing = false
-		elif alarm_type == "Slow" and alarm_audio_slow.playing == false:
-			alarm_audio_fast.playing = false
-			alarm_audio_slow.playing = true
-		elif alarm_type == "Fast" and alarm_audio_fast.playing == false:
-			alarm_audio_fast.playing = true
-			alarm_audio_slow.playing = false
-		
-		if cycle <= 6:
-			cycle += 1
-		else: 
-			cycle = 0
 		
 		
 func control_button_pressed(parent):
@@ -163,6 +117,52 @@ func control_button_pressed(parent):
 				if annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
 					annunciators[annunciator_name]["state"] = annunciator_state.ACKNOWLEDGED
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+
+func _on_timer_timeout():
+	active_annunciators_lit = cycle % 2 == 1 
+	active_clear_annunciators_lit = cycle/4 % 2 == 1 
+	var alarm_type = "None"
+	for annunciator_name in annunciators:
+		var condition = call(annunciators[annunciator_name]["func"])
+		if condition == false:
+			if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
+				annunciators[annunciator_name]["material"].emission_enabled = false
+				continue
+			elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
+				annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE_CLEAR
+				
+		# there's probably a better way to do this
+		if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
+			annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
+			annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
+			alarm_type = "Fast"
+		elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
+			annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
+			alarm_type = "Fast"
+		elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
+			if condition:
+				annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
+				annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
+				alarm_type = "Fast"
+			else:
+				if alarm_type != "Fast":
+					alarm_type = "Slow"
+				annunciators[annunciator_name]["material"].emission_enabled = active_clear_annunciators_lit
+		elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
+			annunciators[annunciator_name]["material"].emission_enabled = true
+		
+	if alarm_type == "None":
+		alarm_audio_fast.playing = false
+		alarm_audio_slow.playing = false
+	elif alarm_type == "Slow" and alarm_audio_slow.playing == false:
+		alarm_audio_fast.playing = false
+		alarm_audio_slow.playing = true
+	elif alarm_type == "Fast" and alarm_audio_fast.playing == false:
+		alarm_audio_fast.playing = true
+		alarm_audio_slow.playing = false
+		
+	if cycle <= 6:
+		cycle += 1
+	else: 
+		cycle = 0
