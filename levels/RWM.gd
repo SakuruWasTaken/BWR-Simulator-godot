@@ -24,6 +24,9 @@ var current_sequence = "a"
 var withdraw_error = {
 	"02-19": 00
 }
+var insert_error = {
+	"02-19": 00
+}
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = []
 
@@ -57,13 +60,16 @@ func _ready():
 			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
 			#print(current_group_rods)
 			select_error = true
-			for rod_number in current_group_rods:
+			var group_info = groups["sequence_a"][current_group]
+			for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
+				if "|" in rod_number:
+					rod_number = rod_number.split("|")[0]
 				if node_3d.selected_cr == rod_number:
 					select_error = false
 					break
 			
 			select_error_material.emission_enabled = select_error
-			# TODO: rod group detection stuff
+			calculate_current_group()
 			pass
 		else:
 			if not "rwm_inop" in withdraw_blocks:
@@ -76,7 +82,9 @@ func _ready():
 			insert_block_material.emission_enabled = true
 			node_3d.add_insert_block("RWM")
 			
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(1).timeout
+		
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -105,12 +113,40 @@ func button_pressed(parent, pressed):
 			rwm_inop = false
 			current_group = 1
 			current_group_rods = group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]
-			#withdraw_error = {}
+			withdraw_error = {}
+			insert_error = {}
 			withdraw_blocks.erase("rwm_inop")
 			withdraw_block_material.emission_enabled = false
 			node_3d.remove_withdraw_block("RWM")
 		
-		
+func calculate_current_group():
+	# TODO: optimisations, realism improvements
+	for group_number in groups["sequence_a"]:
+		var group_info = groups["sequence_a"][group_number]
+		for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
+			if group_number < current_group:
+				break
+			if "|" in rod_number:
+				rod_number = rod_number.split("|")[0]
+
+			if int(node_3d.control_rods[rod_number]["cr_insertion"]) == group_info["max_position"] and not rod_number in node_3d.moving_rods:
+				if rod_number in current_group_rods:
+					current_group_rods.erase(rod_number)
+
+				if len(current_group_rods) == 0:
+					var current_group_info = groups["sequence_a"][current_group + 1]
+					var next_group_rods_formatted = []
+					var next_group_rods = group_rods["sequence_a"][current_group_info["rod_group"]]
+					for rod in next_group_rods:
+						if "|" in rod:
+							rod = rod_number.split("|")[0]
+						next_group_rods_formatted.append(rod)
+
+					current_group_rods = next_group_rods_formatted
+					current_group += 1
+					return
+			else:
+				break
 # rod group data begins here
 # TODO: add sequence B (found in NRC document ML20136H955)
 # TODO: extend sequence A to permit full withdrawal of all rods (if realistic)
