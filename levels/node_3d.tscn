@@ -1,4 +1,4 @@
-[gd_scene load_steps=358 format=3 uid="uid://wknjpui867j4"]
+[gd_scene load_steps=360 format=3 uid="uid://wknjpui867j4"]
 
 [ext_resource type="Script" path="res://levels/node_3d.gd" id="1_dlw8v"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -24,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://dxrni2kk7ryhh" path="res://Assets/Audio/reactor_alarm_loop_slow.mp3" id="14_wxnme"]
 [ext_resource type="Animation" uid="uid://crw8i8mexnff8" path="res://levels/acknowledge_sw_animation.res" id="14_ykkhy"]
 [ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
+[ext_resource type="Texture2D" uid="uid://c5hotgpj8wk1l" path="res://Assets/Textures/1.PNG" id="16_bdn4j"]
+[ext_resource type="Texture2D" uid="uid://cxlufikas88h7" path="res://Assets/Textures/2.PNG" id="17_ir5ie"]
 [ext_resource type="FontFile" uid="uid://jurw11mmjtbq" path="res://Assets/Fonts/PublicPixel.ttf" id="17_th8xm"]
 [ext_resource type="Texture2D" uid="uid://77nv46dqq8df" path="res://Assets/Textures/Power Display Background.png" id="18_12rln"]
 [ext_resource type="Texture2D" uid="uid://dcw77p7tx7qpt" path="res://Assets/Textures/Thermal Power Placard.png" id="19_pt3aj"]
@@ -7832,6 +7834,20 @@ script = ExtResource("14_ayasx")
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, -7.45058e-09, 2.98023e-08, 7.45058e-09, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_wasv2")
 
+[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(1.11759e-08, 1.49012e-08, -1, 0.280449, -0.959869, 0, -0.959868, -0.280449, -4.47035e-08, 0.0360011, 0.156286, 1.69892)
+sorting_offset = 5.0
+pixel_size = 0.0003
+shaded = true
+texture = ExtResource("16_bdn4j")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(4.47035e-08, 2.49594e-07, -1, -0.156831, -0.987625, 0, -0.987625, 0.156831, -4.47035e-08, 0.0360007, 0.12587, 1.8962)
+sorting_offset = 10.0
+pixel_size = 0.0003
+shaded = true
+texture = ExtResource("17_ir5ie")
+
 [node name="Reactor Alarm Loop Fast" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
 stream = ExtResource("13_muwa0")
@@ -8476,10 +8492,9 @@ sorting_offset = 10.0
 pixel_size = 0.001
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "WETWELL
-VACUUM
-RELIEF VALVE
-F910 OPEN"
+text = "ROD DRIVE
+CONTROL SYSTEM
+INOPERABLE"
 font_size = 12
 
 [node name="A4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
@@ -8570,10 +8585,9 @@ sorting_offset = 10.0
 pixel_size = 0.001
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "WETWELL
-VACUUM
-RELIEF VALVE
-F911 OPEN"
+text = "ROD POSITION
+INDICATING SYS
+INOPERABLE"
 font_size = 12
 
 [node name="A5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]

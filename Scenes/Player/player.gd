@@ -16,7 +16,7 @@ func _ready():
 func _physics_process(delta):
 	var tween = get_tree().create_tween()
 	if Input.is_key_pressed(KEY_F):
-		tween.tween_property($Head/Camera3d, "fov", 20, 0.1)
+		tween.tween_property($Head/Camera3d, "fov", 15, 0.1)
 	else:
 		tween.tween_property($Head/Camera3d, "fov", 75, 0.1)
 	tween.play()
