@@ -21,12 +21,8 @@ var current_group_rods = {}
 var select_error = false
 # TODO: add config so user can change options like this
 var current_sequence = "a"
-var withdraw_error = {
-	"02-19": 00
-}
-var insert_error = {
-	"02-19": 00
-}
+var withdraw_error = []
+var insert_error = []
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = []
 
@@ -57,6 +53,19 @@ func _ready():
 		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
 	while true:
 		if not rwm_inop:
+			# not a great way to do this, i should fix this
+			if withdraw_error != []:
+				for error in withdraw_error:
+					for rod_number in error:
+						if error[rod_number] != node_3d.control_rods[rod_number]["cr_insertion"]:
+							if not "Withdraw Error" in withdraw_blocks:
+								withdraw_blocks.append("Withdraw Error")
+								withdraw_error_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)))
+						else:
+							withdraw_error.erase(error)
+							if "Withdraw Error" in withdraw_blocks:
+								withdraw_blocks.erase("Withdraw Error")
+								withdraw_error_text_object.text = "         "
 			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
 			#print(current_group_rods)
 			select_error = true
@@ -78,9 +87,15 @@ func _ready():
 		if withdraw_blocks != []:
 			withdraw_block_material.emission_enabled = true
 			node_3d.add_withdraw_block("RWM")
+		else:
+			withdraw_block_material.emission_enabled = false
+			node_3d.remove_withdraw_block("RWM")
 		if insert_blocks != []:
 			insert_block_material.emission_enabled = true
 			node_3d.add_insert_block("RWM")
+		else:
+			insert_block_material.emission_enabled = false
+			node_3d.remove_insert_block("RWM")
 			
 		await get_tree().create_timer(1).timeout
 		
@@ -113,8 +128,6 @@ func button_pressed(parent, pressed):
 			rwm_inop = false
 			current_group = 1
 			current_group_rods = group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]
-			withdraw_error = {}
-			insert_error = {}
 			withdraw_blocks.erase("rwm_inop")
 			withdraw_block_material.emission_enabled = false
 			node_3d.remove_withdraw_block("RWM")

@@ -265,6 +265,7 @@ func withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
+	var correct_insertion = insertion
 	cr_target_insertion = insertion + 2
 
 	# TODO: rod overtravel check
@@ -321,8 +322,8 @@ func withdraw_selected_cr():
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
 
-	#if rod_select_error:
-		#rod_withdraw_block.append({"type": "wdr_error", "rod": rod, "correct_position": int(self.previous_insertion)})
+	if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error:
+		$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error.append({rod: int(correct_insertion)})
 
 	if not scram_active:
 		control_rods[rod].cr_insertion=cr_target_insertion
@@ -393,6 +394,7 @@ func continuous_withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
+	var correct_insertion = insertion
 
 	# TODO: rod overtravel check
 	if int(insertion) >= 48:
@@ -435,9 +437,9 @@ func continuous_withdraw_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_withdraw_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.WITHDRAWING and cr_target_insertion != 48:
-			#if glob.rod_select_error:
-				#glob.rod_withdraw_block.append({"type": "wdr_error", "rod": rod, "correct_position": int(cr_previous_insertion) - 2})
-				#break
+			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error:
+				$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error.append({rod: int(correct_insertion)})
+				break
 			cr_target_insertion += 2
 		else:
 			break
