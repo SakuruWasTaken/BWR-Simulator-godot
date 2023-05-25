@@ -1,6 +1,6 @@
-[gd_scene load_steps=1114 format=3 uid="uid://cv0ro77tijim1"]
+[gd_scene load_steps=1114 format=3]
 
-[ext_resource type="Script" path="res://levels/full_core_display.gd" id="1_layrc"]
+[ext_resource type="Script" path="res://Assets/Scripts/full_core_display.gd" id="1_layrc"]
 
 [sub_resource type="GDScript" id="GDScript_fgurm"]
 
