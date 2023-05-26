@@ -10056,7 +10056,7 @@ text = "0 2   1 9"
 font_size = 52
 
 [node name="dash" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0219998, 0, 4.76837e-07)
 sorting_offset = 20.0
 pixel_size = 0.0006
 shaded = true

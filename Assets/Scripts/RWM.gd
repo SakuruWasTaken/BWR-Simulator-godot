@@ -21,10 +21,10 @@ var current_group_rods = {}
 var select_error = false
 # TODO: add config so user can change options like this
 var current_sequence = "a"
-var withdraw_error = []
-var insert_error = []
+var withdraw_error = {}
+var insert_error = {}
 var withdraw_blocks = ["rwm_inop"]
-var insert_blocks = []
+var insert_blocks = ["rwm_inop"]
 
 func format_string(string, remove_dashes = false):
 	var final_string = ""
@@ -53,21 +53,55 @@ func _ready():
 		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
 	while true:
 		if not rwm_inop:
-			# not a great way to do this, i should fix this
-			if withdraw_error != []:
-				for error in withdraw_error:
-					for rod_number in error:
-						if error[rod_number] != node_3d.control_rods[rod_number]["cr_insertion"]:
-							if not "Withdraw Error" in withdraw_blocks:
-								withdraw_blocks.append("Withdraw Error")
-								withdraw_error_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)))
+			if withdraw_error != {}:
+				for rod_number in withdraw_error:
+					var correct_insertion = withdraw_error[rod_number]
+					if correct_insertion != int(node_3d.control_rods[rod_number]["cr_insertion"]):
+						if not "Withdraw Error" in withdraw_blocks:
+							withdraw_blocks.append("Withdraw Error")
+							withdraw_error_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
+					else:
+						withdraw_error.erase(rod_number)
+						if "Withdraw Error" in withdraw_blocks:
+							withdraw_blocks.erase("Withdraw Error")
+							withdraw_error_text_object.text = "         "
+			else:
+				if "Withdraw Error" in withdraw_blocks:
+					withdraw_blocks.erase("Withdraw Error")
+				withdraw_error_text_object.text = "         "
+			# TODO: this method of detecting insert errors is not entirely realistic, fix this
+			if insert_error != {}:
+				var insert_errors = 1
+				for rod_number in insert_error:
+					var correct_insertion = insert_error[rod_number]
+					if correct_insertion != int(node_3d.control_rods[rod_number]["cr_insertion"]):
+						if not "Insert Error" in insert_blocks:
+							if len(insert_error) >= 3:
+								insert_blocks.append("Insert Error")
+							if insert_errors == 1:
+								insert_error_1_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
+							elif insert_errors == 2:
+								insert_error_2_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
+							else:
+								pass
+					else:
+						if len(insert_error) <= 3:
+							insert_error.erase(rod_number)
+						if "Insert Error" in insert_blocks:
+							insert_blocks.erase("Insert Error")
+						if insert_errors == 1 or insert_errors == 2:
+							# will be reset on next cycle
+							insert_error_1_text_object.text = "         "
+							insert_error_2_text_object.text = "         "
 						else:
-							withdraw_error.erase(error)
-							if "Withdraw Error" in withdraw_blocks:
-								withdraw_blocks.erase("Withdraw Error")
-								withdraw_error_text_object.text = "         "
+							pass
+					insert_errors += 1
+			else:
+				if "Insert Error" in insert_blocks:
+					insert_blocks.erase("Insert Error")
+				insert_error_1_text_object.text = "         "
+				insert_error_2_text_object.text = "         "
 			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
-			#print(current_group_rods)
 			select_error = true
 			var group_info = groups["sequence_a"][current_group]
 			for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
@@ -124,13 +158,20 @@ func button_pressed(parent, pressed):
 	elif parent.name == "OUT_OF_SEQ_SYS_INIT":
 		if rwm_initalized == false:
 			# initialise RWM
-			rwm_initalized = true
-			rwm_inop = false
 			current_group = 1
-			current_group_rods = group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]
+			current_group_rods = []
+			# i do this because for some reason if i just directly assign current_group_rods to the data from that group,
+			# editing current_group_rods would then edit the original variable, i guess this is some feature of godot,
+			# but i do not want this, so i will do this instead to avoid that.
+			for rod in group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]:
+				current_group_rods.append(rod)
 			withdraw_blocks.erase("rwm_inop")
 			withdraw_block_material.emission_enabled = false
+			insert_blocks.erase("rwm_inop")
+			insert_block_material.emission_enabled = false
 			node_3d.remove_withdraw_block("RWM")
+			rwm_initalized = true
+			rwm_inop = false
 		
 func calculate_current_group():
 	# TODO: optimisations, realism improvements
@@ -154,7 +195,6 @@ func calculate_current_group():
 						if "|" in rod:
 							rod = rod_number.split("|")[0]
 						next_group_rods_formatted.append(rod)
-
 					current_group_rods = next_group_rods_formatted
 					current_group += 1
 					return
