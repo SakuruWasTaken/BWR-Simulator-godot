@@ -188,7 +188,6 @@ func set_object_emission(object, state):
 	var node = get_node(object)
 	var material = node.get_material()
 	material.emission_enabled = state
-	node.set_material(material)
 	
 func set_rod_light_emission(rod_number, light, state):
 	control_rods[rod_number]["cr_full_core_display_nodes"][light]["material"].emission_enabled = state
@@ -239,6 +238,7 @@ func scram(type):
 				if cr_insertion != 0 and scram_timer < 114:
 					if not rod_number in moving_rods:
 						moving_rods.append(rod_number)
+					# TODO: insertion time changes with RPV pressure
 					# the time from full out to full in is around ~2.6 seconds
 					cr_insertion -= rod_info["cr_scram_insertion_speed"]
 					if cr_insertion <= 0:

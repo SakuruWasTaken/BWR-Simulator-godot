@@ -4,6 +4,7 @@ var thread
 var cycles = 0
 var insertion
 var rpis_inop = false
+
 func _ready():
 	while true:
 		await get_tree().create_timer(0.1).timeout
