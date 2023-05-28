@@ -199,7 +199,7 @@ func change_selected_rod(rod):
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, false)
 		selected_cr = rod
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
-		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true)
+		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true if not $"Control Room Panels/Main Panel Center/Full Core Display/full core display lights".rpis_inop else false)
 		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
 
 		

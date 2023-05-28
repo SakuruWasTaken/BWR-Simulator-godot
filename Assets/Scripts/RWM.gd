@@ -8,6 +8,8 @@ extends CSGBox3D
 @onready var withdraw_block_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/INSERT_WITHDRAW_BLOCK/WITHDRAW BLOCK".get_material()
 @onready var insert_block_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/INSERT_WITHDRAW_BLOCK/INSERT BLOCK".get_material()
 @onready var select_error_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SELECT_ERROR/SELECT_ERROR".get_material()
+@onready var out_of_seq_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/OUT OF SEQ".get_material()
+@onready var system_init_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/SYSTEM INITIALIZE".get_material()
 @onready var group_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group/Display/Text"
 @onready var withdraw_error_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Withdraw Error/Display/Text"
 @onready var insert_error_1_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display/Text"
@@ -25,6 +27,7 @@ var withdraw_error = {}
 var insert_error = {}
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = ["rwm_inop"]
+var rwm_malfunction = false
 
 func format_string(string, remove_dashes = false):
 	var final_string = ""
@@ -101,6 +104,16 @@ func _ready():
 					insert_blocks.erase("Insert Error")
 				insert_error_1_text_object.text = "         "
 				insert_error_2_text_object.text = "         "
+				
+			if len(insert_error) >= 3 and node_3d.selected_cr not in insert_error:
+				if "Insert error with selection error" not in withdraw_blocks:
+					withdraw_blocks.append("Insert error with selection error")
+			else:
+				if "Insert error with selection error" in withdraw_blocks:
+					withdraw_blocks.erase("Insert error with selection error")
+			
+			out_of_seq_material.emission_enabled = len(insert_error) > 2 or withdraw_error != {}
+			
 			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
 			select_error = true
 			var group_info = groups["sequence_a"][current_group]
@@ -156,7 +169,8 @@ func button_pressed(parent, pressed):
 		# TODO: simulate RWM diagnostics
 		pass
 	elif parent.name == "OUT_OF_SEQ_SYS_INIT":
-		if rwm_initalized == false:
+		system_init_material.emission_enabled = pressed
+		if rwm_initalized == false and pressed and not rwm_malfunction:
 			# initialise RWM
 			current_group = 1
 			current_group_rods = []
@@ -172,7 +186,31 @@ func button_pressed(parent, pressed):
 			node_3d.remove_withdraw_block("RWM")
 			rwm_initalized = true
 			rwm_inop = false
+			
 		
+func set_rwm_inop(state):
+	if state == true:
+		rwm_malfunction = true
+		rwm_inop = true
+		rwm_initalized = false
+		current_group = 0
+		withdraw_block_material.emission_enabled = true
+		node_3d.add_withdraw_block("RWM")
+		withdraw_blocks.append("rwm_inop")
+		insert_block_material.emission_enabled = true
+		insert_blocks.append("rwm_inop")
+		node_3d.add_insert_block("RWM")
+		group_text_object.text = "   "
+		withdraw_error_text_object.text = "         "
+		insert_error_1_text_object.text = "         "
+		insert_error_2_text_object.text = "         "
+		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
+		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/COMP", true)
+		select_error_material.emission_enabled = false
+		out_of_seq_material.emission_enabled = false
+		
+	
+	
 func calculate_current_group():
 	# TODO: optimisations, realism improvements
 	for group_number in groups["sequence_a"]:

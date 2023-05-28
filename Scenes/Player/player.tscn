@@ -1,11 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://7gv6q50fuutj"]
+[gd_scene load_steps=12 format=3 uid="uid://7gv6q50fuutj"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1w47b"]
+[ext_resource type="Texture2D" uid="uid://bgt5enm00co77" path="res://Assets/Textures/gear-solid.svg" id="2_ey8iu"]
+[ext_resource type="Script" path="res://Scenes/Player/Overlay.gd" id="2_rao3u"]
+[ext_resource type="Script" path="res://Assets/Scripts/Settings Button.gd" id="3_6f2kk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emkox"]
 radius = 0.493347
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6b3ky"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxhm0"]
+font_size = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhc38"]
+size = Vector2(533.333, 560)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4jnw"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxk3n"]
+font_size = 22
+
+[sub_resource type="BoxMesh" id="BoxMesh_wk6fc"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1w47b")
@@ -28,7 +45,82 @@ far = 48.01
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -0.00588068, 0.463024)
 target_position = Vector3(60, 0, 0)
 
-[node name="Label" type="Label" parent="Head/Camera3d"]
-offset_right = 287.0
-offset_bottom = 140.0
-text = "Press F to zoom"
+[node name="Overlay" type="Node2D" parent="Head/Camera3d"]
+script = ExtResource("2_rao3u")
+
+[node name="Label" type="Label" parent="Head/Camera3d/Overlay"]
+offset_left = 58.0
+offset_top = 2.0
+offset_right = 266.0
+offset_bottom = 54.0
+text = "Tip: Press F to zoom
+Right click to move camera"
+label_settings = SubResource("LabelSettings_bxhm0")
+
+[node name="Settings Button" type="Sprite2D" parent="Head/Camera3d/Overlay"]
+position = Vector2(22, 21)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_ey8iu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Head/Camera3d/Overlay/Settings Button"]
+input_pickable = true
+script = ExtResource("3_6f2kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Camera3d/Overlay/Settings Button/StaticBody2D"]
+shape = SubResource("RectangleShape2D_vhc38")
+
+[node name="Settings Menu" type="Node2D" parent="Head/Camera3d/Overlay/Settings Button"]
+unique_name_in_owner = true
+visible = false
+
+[node name="RPIS" type="Label" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu"]
+z_index = 1
+offset_left = -146.667
+offset_top = 733.333
+offset_right = 650.333
+offset_bottom = 958.333
+scale = Vector2(10, 10)
+text = "Rod Position Indicating System"
+label_settings = SubResource("LabelSettings_p4jnw")
+
+[node name="RPIS" type="CheckBox" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu/RPIS"]
+offset_left = 260.0
+offset_right = 284.0
+offset_bottom = 24.0
+
+[node name="RWM" type="Label" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu"]
+z_index = 1
+offset_left = -146.667
+offset_top = 1026.67
+offset_right = 650.333
+offset_bottom = 1251.67
+scale = Vector2(10, 10)
+text = "Rod Worth Monitor (cannot be reset)"
+label_settings = SubResource("LabelSettings_p4jnw")
+
+[node name="RWM" type="CheckBox" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu/RWM"]
+offset_left = 260.0
+offset_top = 1.52588e-05
+offset_right = 284.0
+offset_bottom = 24.0
+
+[node name="Failures" type="Label" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu"]
+z_index = 1
+offset_left = -53.3333
+offset_top = 373.333
+offset_right = 211.667
+offset_bottom = 598.333
+scale = Vector2(10, 10)
+text = "Failures"
+label_settings = SubResource("LabelSettings_wxk3n")
+horizontal_alignment = 1
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu"]
+modulate = Color(0.439216, 0.439216, 0.439216, 1)
+position = Vector2(1280, 2053.33)
+scale = Vector2(3000, 3480.25)
+mesh = SubResource("BoxMesh_wk6fc")
+
+[connection signal="input_event" from="Head/Camera3d/Overlay/Settings Button/StaticBody2D" to="Head/Camera3d/Overlay/Settings Button/StaticBody2D" method="_on_input_event"]
+[connection signal="toggled" from="Head/Camera3d/Overlay/Settings Button/Settings Menu/RPIS/RPIS" to="Head/Camera3d/Overlay" method="_on_rpis_toggled"]
+[connection signal="toggled" from="Head/Camera3d/Overlay/Settings Button/Settings Menu/RWM/RWM" to="Head/Camera3d/Overlay" method="_on_rwm_toggled"]

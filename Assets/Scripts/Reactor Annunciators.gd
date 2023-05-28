@@ -4,6 +4,8 @@ extends Node3D
 var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annunciators/Annunciator Box %s/%s"
 @onready var alarm_audio_fast = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Fast"
 @onready var alarm_audio_slow = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Slow"
+@onready var rwm = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box"
+@onready var full_core_display = $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display/full core display lights"
 
 enum annunciator_state {
 	CLEAR, # Annuncuator not lit
@@ -18,7 +20,7 @@ var active_clear_annunciators_lit
 
 
 func check_rod_out_block(): return node_3d.rod_withdraw_block != []
-func check_rwm_rod_block(): return $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_blocks != [] or $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box".insert_blocks != []
+func check_rwm_rod_block(): return rwm.withdraw_blocks != [] or rwm.insert_blocks != []
 func check_rod_drift():
 	for rod_number in node_3d.control_rods:
 		if node_3d.control_rods[rod_number]["cr_drift_alarm"] == true:
@@ -29,6 +31,7 @@ func check_cr_accum_trouble():
 		if node_3d.control_rods[rod_number]["cr_accum_trouble"] == true:
 			return true
 	return false
+func check_rpis_inop(): return full_core_display.rpis_inop
 # TODO: simulate scram channels (one of two taken twice logic)
 func check_manual_scram_a_trip(): return node_3d.scram_active and node_3d.scram_type == 0
 func check_manual_scram_b_trip(): return node_3d.scram_active and node_3d.scram_type == 0
@@ -56,6 +59,13 @@ var annunciators = {
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_rod_drift"
+	},
+	"rpis_inop": {
+		"box": 1,
+		"lamp": "F4",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_rpis_inop"
 	},
 	"manual_scram_a_trip": {
 		"box": 2,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=359 format=3 uid="uid://eyj57tr68qk3"]
+[gd_scene load_steps=360 format=3 uid="uid://eyj57tr68qk3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dptsjp7wy2ev1" path="res://Assets/Materials/panel material.tres" id="5_0qdm2"]
 [ext_resource type="AudioStream" uid="uid://cxu7ooirfysmk" path="res://Assets/Audio/ambient_sound.mp3" id="5_7cq8b"]
 [ext_resource type="Material" uid="uid://d1scsatacyhl5" path="res://Assets/Materials/panel material 2.tres" id="6_o677x"]
-[ext_resource type="PackedScene" path="res://Assets/Scenes/full_core_display_lights.tscn" id="7_5ybks"]
+[ext_resource type="PackedScene" uid="uid://dyk86rtadlnxg" path="res://Assets/Scenes/full_core_display_lights.tscn" id="7_5ybks"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Motion Button.gd" id="7_e5c6q"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Select Button.gd" id="8_84o0r"]
 [ext_resource type="AudioStream" uid="uid://q6splpjvouo5" path="res://Assets/Audio/button_click.mp3" id="9_irtiu"]
@@ -2387,11 +2387,11 @@ backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpjcp"]
-emission = Color(1, 1, 0, 1)
+emission = Color(1, 0.509804, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i20os"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pst6"]
 emission = Color(1, 1, 1, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
@@ -2401,6 +2401,11 @@ size = Vector3(0.0339314, 0.0105296, 0.0476624)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfa7x"]
 emission = Color(1, 1, 0, 1)
+backlight = Color(1, 0, 0, 1)
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i20os"]
+emission = Color(1, 1, 1, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
@@ -8182,10 +8187,10 @@ wait_time = 0.1
 autostart = true
 
 [node name="Full Core Display" type="Node3D" parent="Control Room Panels/Main Panel Center"]
-transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 0.901, 1.459, -2.4)
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 0.901, 1.459, -2.4)
 
 [node name="full core display lights" parent="Control Room Panels/Main Panel Center/Full Core Display" instance=ExtResource("7_5ybks")]
-transform = Transform3D(1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73188e-15, -4.80825e-08, -1.1, -1.78814e-07, -0.481, -0.135, -0.272)
+transform = Transform3D(-1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73188e-15, -4.80825e-08, -1.1, -1.78814e-07, -0.481903, -0.141908, -0.272004)
 
 [node name="Full Core Display Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
@@ -8572,7 +8577,7 @@ size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_ui0hq")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1/F4"]
-transform = Transform3D(-7.10543e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 0, -5.96046e-08, 0.00259209, -0.00305176, 0.00127149)
+transform = Transform3D(-7.10543e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 0, -1.19209e-07, 0.00259209, -0.00305176, 0.0012722)
 sorting_offset = 10.0
 pixel_size = 0.001
 shaded = true
@@ -9812,10 +9817,10 @@ material = SubResource("StandardMaterial3D_rpjcp")
 [node name="SYSTEM INITIALIZE" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT"]
 transform = Transform3D(1, -2.98025e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0.0162184, 0, 0)
 size = Vector3(0.01749, 0.007, 0.0491032)
-material = SubResource("StandardMaterial3D_i20os")
+material = SubResource("StandardMaterial3D_4pst6")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT"]
-transform = Transform3D(-8.9407e-08, -1, -4.37114e-08, 6.31089e-30, -4.37114e-08, 1, -1, 8.9407e-08, 0, 0.00776339, 0.00352085, -0.00010252)
+transform = Transform3D(-8.9407e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 8.9407e-08, 0, 0.00776339, 0.00352097, -0.000102997)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
@@ -10196,12 +10201,6 @@ volume_db = 25.0
 max_db = -8.0
 autoplay = true
 max_distance = 5.0
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Main Loop Timer" type="Timer" parent="."]
 wait_time = 0.1
