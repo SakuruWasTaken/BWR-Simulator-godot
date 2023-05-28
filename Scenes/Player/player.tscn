@@ -84,6 +84,7 @@ text = "Rod Position Indicating System"
 label_settings = SubResource("LabelSettings_p4jnw")
 
 [node name="RPIS" type="CheckBox" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu/RPIS"]
+layout_mode = 0
 offset_left = 260.0
 offset_right = 284.0
 offset_bottom = 24.0
@@ -99,6 +100,7 @@ text = "Rod Worth Monitor (cannot be reset)"
 label_settings = SubResource("LabelSettings_p4jnw")
 
 [node name="RWM" type="CheckBox" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu/RWM"]
+layout_mode = 0
 offset_left = 260.0
 offset_top = 1.52588e-05
 offset_right = 284.0

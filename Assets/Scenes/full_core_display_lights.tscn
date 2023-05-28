@@ -7590,7 +7590,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhptu"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7598,7 +7597,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy0x4"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7606,7 +7604,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkuyn"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7614,7 +7611,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5whp"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7650,7 +7646,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ifo7"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7658,7 +7653,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iblyx"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7666,7 +7660,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2x4ip"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7674,7 +7667,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2eqn"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7934,7 +7926,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dq4d"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7942,7 +7933,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfdx0"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7950,7 +7940,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okbqj"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7958,7 +7947,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7j7m"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -7994,7 +7982,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufi7o"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -8002,7 +7989,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmt7h"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -8010,7 +7996,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts6wk"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -8018,7 +8003,6 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8iego"]
 albedo_color = Color(0.184314, 0.184314, 0.184314, 1)
-emission_enabled = true
 emission = Color(1, 0.537255, 0, 1)
 emission_energy_multiplier = 0.5
 backlight = Color(1, 0, 0, 1)
@@ -27254,7 +27238,7 @@ size = Vector3(0.015, 0.007, 0.03)
 material = SubResource("StandardMaterial3D_ee453")
 
 [node name="CD DOWN TEXT" type="Label3D" parent="LPRM 35"]
-transform = Transform3D(-5.9139e-08, 1, -2.32831e-10, 2.98023e-08, -1.05007e-07, 1, 1, 8.96398e-08, -2.98023e-08, -0.0778179, -0.240959, -0.80509)
+transform = Transform3D(-5.89062e-08, 1, -4.65661e-10, -2.98023e-08, -1.04774e-07, 1, 1, 9.03383e-08, 0, -0.0778179, -0.240959, -0.80509)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
@@ -27872,7 +27856,7 @@ size = Vector3(0.015, 0.007, 0.03)
 material = SubResource("StandardMaterial3D_6wqlt")
 
 [node name="CD DOWN TEXT" type="Label3D" parent="LPRM 41"]
-transform = Transform3D(-5.9139e-08, 1, -2.32831e-10, 2.98023e-08, -1.05007e-07, 1, 1, 8.96398e-08, -2.98023e-08, -0.0778179, -0.240959, -0.80509)
+transform = Transform3D(-5.89062e-08, 1, -4.65661e-10, -2.98023e-08, -1.04541e-07, 1, 1, 8.98726e-08, 0, -0.0778179, -0.240958, -0.80509)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
