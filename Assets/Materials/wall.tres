@@ -5,5 +5,4 @@ disable_ambient_light = true
 albedo_color = Color(0.921569, 0.866667, 0.823529, 1)
 metallic = 1.0
 roughness = 0.85
-clearcoat_enabled = true
-clearcoat = 0.11
+clearcoat = 0.0
