@@ -145,7 +145,7 @@ func _ready():
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	pass
 				
 func main_loop_timer_expire():
@@ -177,6 +177,9 @@ func remove_insert_block(type):
 		rod_insert_block.erase(type)
 	if rod_insert_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
+		
+func calculate_vertical_scale_position(indicated_value, meter_min_position, meter_max_position, scale_max):
+	return clamp((((scale_max - indicated_value)/(scale_max/(meter_min_position*2))) - meter_min_position), meter_max_position, meter_min_position)
 
 func make_string_two_digit(string):
 	if len(string) == 1:

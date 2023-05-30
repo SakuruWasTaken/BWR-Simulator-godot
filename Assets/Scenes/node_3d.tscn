@@ -1,4 +1,4 @@
-[gd_scene load_steps=362 format=3 uid="uid://eyj57tr68qk3"]
+[gd_scene load_steps=381 format=3 uid="uid://eyj57tr68qk3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -35,6 +35,9 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RWM.gd" id="33_f1vki"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Button.gd" id="34_cyh57"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
+[ext_resource type="Texture2D" uid="uid://bdja8642fcxto" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
+[ext_resource type="Script" path="res://Assets/Scenes/LPRM Meters.gd" id="36_b0odt"]
+[ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
 
 [sub_resource type="Environment" id="Environment_l5pxq"]
 background_color = Color(0.2139, 0.570975, 0.69, 1)
@@ -2456,6 +2459,150 @@ backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npe0v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ou7im"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf8ij"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j1c8"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7xrg"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpnu0"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an60g"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j80l0"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3w75"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ytu1"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmhut"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bsht"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouxuj"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75i34"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkh5g"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkk0l"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8qqr"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
 
 [node name="Node3d" type="Node3D"]
 script = ExtResource("1_eg7xd")
@@ -10299,6 +10446,889 @@ max_distance = 3.0
 [node name="Button Unclick" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
 stream = ExtResource("10_5jncs")
 max_distance = 3.0
+
+[node name="LPRM Meters" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+script = ExtResource("36_b0odt")
+
+[node name="LPRM 2 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_ou7im")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.04083, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_uf8ij")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0191699, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_1j1c8")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0791699, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_d7xrg")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.166703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_gpnu0")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.226703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_an60g")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.286703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_j80l0")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.346703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_g3w75")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 1 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_1ytu1")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 1 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.04083, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_tmhut")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 1 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0191699, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_3bsht")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 1 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0791699, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_ouxuj")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 3 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.166703, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_75i34")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 3 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.226703, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_mkh5g")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 3 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.286703, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_dkk0l")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 3 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.346703, 0.384)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+use_collision = true
+size = Vector3(0.002, 0.0239498, 0.0342472)
+material = SubResource("StandardMaterial3D_r8qqr")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
