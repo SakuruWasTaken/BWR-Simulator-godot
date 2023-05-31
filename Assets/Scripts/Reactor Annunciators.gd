@@ -33,10 +33,20 @@ func check_cr_accum_trouble():
 	return false
 func check_rpis_inop(): return full_core_display.rpis_inop
 # TODO: simulate scram channels (one of two taken twice logic)
-func check_manual_scram_a_trip(): return node_3d.scram_active and node_3d.scram_type == 0
-func check_manual_scram_b_trip(): return node_3d.scram_active and node_3d.scram_type == 0
-func check_auto_scram_a_trip(): return node_3d.scram_active
-func check_auto_scram_b_trip(): return node_3d.scram_active
+func check_manual_scram_a_trip():
+	if "A1" in node_3d.scram_breakers:
+		return node_3d.scram_breakers["A1"] == 0
+	elif "A2" in node_3d.scram_breakers:
+		return node_3d.scram_breakers["A2"] == 0
+	return false
+func check_manual_scram_b_trip():
+	if "B1" in node_3d.scram_breakers:
+		return node_3d.scram_breakers["B1"] == 0
+	elif "B2" in node_3d.scram_breakers:
+		return node_3d.scram_breakers["B2"] == 0
+	return false
+func check_auto_scram_a_trip(): return true if "A1" in node_3d.scram_breakers else true if "A2" in node_3d.scram_breakers else false
+func check_auto_scram_b_trip(): return true if "B1" in node_3d.scram_breakers else true if "B2" in node_3d.scram_breakers else false
 
 var annunciators = {
 	"rwm_rod_block": {

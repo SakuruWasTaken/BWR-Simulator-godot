@@ -1,4 +1,4 @@
-[gd_scene load_steps=381 format=3 uid="uid://eyj57tr68qk3"]
+[gd_scene load_steps=387 format=3 uid="uid://eyj57tr68qk3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -21,12 +21,15 @@
 [ext_resource type="Animation" uid="uid://crw8i8mexnff8" path="res://Assets/Animations/acknowledge_sw_animation.res" id="14_ix4fu"]
 [ext_resource type="AudioStream" uid="uid://dxrni2kk7ryhh" path="res://Assets/Audio/reactor_alarm_loop_slow.mp3" id="14_wxnme"]
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor Annunciator Button.gd" id="15_qx5fl"]
+[ext_resource type="Material" uid="uid://b4lnxjtl58v6j" path="res://Assets/Materials/red metal.tres" id="16_0ckwa"]
 [ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
 [ext_resource type="Texture2D" uid="uid://c5hotgpj8wk1l" path="res://Assets/Textures/1.PNG" id="16_bdn4j"]
+[ext_resource type="Material" uid="uid://bqkacchlwl8" path="res://Assets/Materials/red metal 2.tres" id="17_0oagq"]
 [ext_resource type="Texture2D" uid="uid://cxlufikas88h7" path="res://Assets/Textures/2.PNG" id="17_ir5ie"]
 [ext_resource type="FontFile" uid="uid://jurw11mmjtbq" path="res://Assets/Fonts/PublicPixel.ttf" id="17_th8xm"]
 [ext_resource type="Texture2D" uid="uid://77nv46dqq8df" path="res://Assets/Textures/Power Display Background.png" id="18_12rln"]
 [ext_resource type="Texture2D" uid="uid://dcw77p7tx7qpt" path="res://Assets/Textures/Thermal Power Placard.png" id="19_pt3aj"]
+[ext_resource type="Script" path="res://Assets/Scenes/Manual Scram Switch.gd" id="19_t6l2n"]
 [ext_resource type="Texture2D" uid="uid://ovdpi0a6pnnf" path="res://Assets/Textures/Generator Load Placard.png" id="20_sst2y"]
 [ext_resource type="Script" path="res://Assets/Scripts/Clock Text.gd" id="22_rjrtx"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Position Monitors.gd" id="28_ecrg0"]
@@ -83,9 +86,6 @@ refraction_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3e4rh"]
 size = Vector3(0.0144663, 0.0430282, 0.0426735)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kpsrp"]
-size = Vector3(0.0106093, 0.103149, 0.229792)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf88n"]
 vertex_color_use_as_albedo = true
@@ -1860,6 +1860,22 @@ _data = {
 height = 0.121946
 radius = 0.0449449
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yntni"]
+albedo_color = Color(1, 0, 0, 1)
+emission = Color(0.839216, 0.0627451, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asr2j"]
+albedo_color = Color(1, 0, 0, 1)
+emission = Color(0.839216, 0.0627451, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_picrq"]
+albedo_color = Color(1, 0, 0, 1)
+emission = Color(0.839216, 0.0627451, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6v41"]
+albedo_color = Color(1, 0, 0, 1)
+emission = Color(0.839216, 0.0627451, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq633"]
 albedo_color = Color(0, 0, 0, 1)
 refraction_enabled = true
@@ -1873,22 +1889,22 @@ clearcoat_roughness = 1.0
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ld251"]
-albedo_color = Color(1, 1, 1, 0.956863)
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rwtx"]
-albedo_color = Color(1, 1, 1, 0.956863)
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koaat"]
-albedo_color = Color(1, 1, 1, 0.956863)
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s5hk"]
-albedo_color = Color(1, 1, 1, 0.956863)
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 refraction_enabled = true
@@ -2460,78 +2476,6 @@ refraction_enabled = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npe0v"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ou7im"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf8ij"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j1c8"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7xrg"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpnu0"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an60g"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j80l0"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3w75"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-albedo_texture_force_srgb = true
-emission = Color(1, 0.839216, 0.666667, 1)
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ytu1"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
@@ -2560,6 +2504,42 @@ clearcoat_roughness = 1.0
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouxuj"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ou7im"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf8ij"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j1c8"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7xrg"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 albedo_texture_force_srgb = true
@@ -2604,6 +2584,42 @@ clearcoat = 0.16
 clearcoat_roughness = 1.0
 refraction_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpnu0"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an60g"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j80l0"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3w75"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture_force_srgb = true
+emission = Color(1, 0.839216, 0.666667, 1)
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
 [node name="Node3d" type="Node3D"]
 script = ExtResource("1_eg7xd")
 
@@ -2625,6 +2641,20 @@ use_collision = true
 size = Vector3(1.62321, 3.60393, 1.88328)
 material = ExtResource("3_e4fug")
 
+[node name="wall 3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85189, 1.77416, -9.39187)
+visible = false
+use_collision = true
+size = Vector3(1.62321, 3.60393, 2.03922)
+material = ExtResource("3_e4fug")
+
+[node name="wall 4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0958, 1.77416, 5.0127)
+visible = false
+use_collision = true
+size = Vector3(1.05083, 3.60393, 1.31751)
+material = ExtResource("3_e4fug")
+
 [node name="room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.657, -1.99925)
 use_collision = true
@@ -2638,7 +2668,7 @@ material = ExtResource("3_e4fug")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97985, 0.305383, -2.80668)
 
 [node name="SpotLight3D18" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.71023, 2.98549, -0.632608)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744919, 2.98549, -0.807545)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2650,8 +2680,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
+[node name="SpotLight3D19" type="SpotLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73867, 2.98549, -2.82196)
+light_bake_mode = 1
+spot_range = 10.65
+spot_attenuation = 1.6245
+spot_angle = 90.0
+spot_angle_attenuation = 1.6245
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.64547, 0.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
 [node name="SpotLight3D23" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.29977, 2.98549, -0.632608)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -0.807542)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2663,21 +2706,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D27" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.29977, 2.98549, -0.632607)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D27"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
 [node name="SpotLight3D35" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299767, 2.98549, 1.36739)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, 1.19245)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2690,7 +2720,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D39" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.29977, 2.98549, 1.36739)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, 1.19245)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2703,7 +2733,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D20" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.71023, 2.98549, -4.62261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -4.79755)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2716,7 +2746,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D25" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.29977, 2.98549, -4.62261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -4.79754)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2729,7 +2759,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D32" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.70023, 2.98549, -4.62261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -6.808)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2742,7 +2772,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D37" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299767, 2.98549, -2.62261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -2.79754)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2755,7 +2785,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D41" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.29977, 2.98549, -2.62261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -2.79755)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2768,7 +2798,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D21" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.71023, 2.98549, -8.64261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -8.81755)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2781,7 +2811,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D26" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.29977, 2.98549, -8.64261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -8.81755)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2793,21 +2823,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D33" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.29977, 2.98549, -8.64261)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D33"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
 [node name="SpotLight3D34" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.70023, 2.98549, -8.64261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -10.828)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2820,7 +2837,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D38" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299767, 2.98549, -6.64261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -6.81755)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2833,7 +2850,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D42" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.29977, 2.98549, -6.64261)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -6.81754)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2846,7 +2863,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D22" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.71023, 2.98549, -12.6626)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744919, 2.98549, -12.8375)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2859,7 +2876,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D47" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.29977, 2.98549, -12.6626)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -12.8375)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2871,21 +2888,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D48" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.29977, 2.98549, -12.6626)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D48"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
 [node name="SpotLight3D49" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.70023, 2.98549, -12.6626)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -14.5814)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2898,7 +2902,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D50" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299767, 2.98549, -10.6626)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -10.8375)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2911,7 +2915,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D51" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.29977, 2.98549, -10.6626)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -10.8375)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2923,60 +2927,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D53" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.71023, 2.98549, -16.4126)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D53"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D54" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.29977, 2.98549, -16.4126)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D54"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D55" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.29977, 2.98549, -16.4126)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D55"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D56" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.70023, 2.98549, -16.4126)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D56"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
 [node name="SpotLight3D57" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299767, 2.98549, -14.4126)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -14.5875)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -2989,7 +2941,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D58" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.29977, 2.98549, -14.4126)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -14.5875)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3033,7 +2985,7 @@ spot_angle = 90.0
 spot_angle_attenuation = 1.6245
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -1.46186)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -1.46186)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3046,7 +2998,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -3.46186)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -3.46186)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3059,7 +3011,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -5.46186)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -5.46186)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3072,7 +3024,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -7.46186)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -7.46186)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3085,7 +3037,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -9.46186)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -9.46186)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3098,7 +3050,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -11.4619)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -11.4619)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3111,7 +3063,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D17" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -13.4926)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -13.4926)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3124,7 +3076,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D11" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.70023, 2.98549, -15.3783)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.63396, 2.98549, -15.4976)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3137,7 +3089,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D12" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.86974, 2.98549, 3.3674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.64853, 2.98549, 2.55093)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3150,7 +3102,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D13" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.130257, 2.98549, 3.3674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.351464, 2.98549, 2.55093)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3163,7 +3115,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.13026, 2.98549, 3.3674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.35147, 2.98549, 2.55093)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3176,7 +3128,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D15" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.13026, 2.98549, 3.3674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.35147, 2.98549, 2.55093)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3189,7 +3141,7 @@ size = Vector3(1.64547, 0.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D16" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.13026, 2.98549, 3.3674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.35147, 2.98549, 2.55093)
 light_bake_mode = 1
 spot_range = 10.65
 spot_attenuation = 1.6245
@@ -3223,7 +3175,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.576687, 3.29949, 8.5602)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.576687, 3.29949, 8.94787)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3241,7 +3193,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.55757, 3.29949, 8.5602)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.55757, 3.29949, 8.94787)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3259,7 +3211,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.55556, 3.29949, 8.5602)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.55556, 3.29949, 8.94787)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3277,7 +3229,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.5879, 3.29949, 8.5602)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.5879, 3.29949, 8.94787)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3295,7 +3247,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.67768, 3.29949, 4.33892)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, 4.33892)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3313,7 +3265,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.67768, 3.29949, 0.33055)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, 0.33055)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3331,7 +3283,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.67768, 3.29949, -3.67406)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, -3.67406)
 light_color = Color(1, 0.839216, 0.666667, 1)
 light_energy = 10.0
 light_indirect_energy = 0.876
@@ -3450,33 +3402,10 @@ script = ExtResource("7_e5c6q")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
 
-[node name="SCRAM" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons"]
-transform = Transform3D(1, 7.45058e-08, 0, -1.3411e-07, 1, 0, 0, 0, 1, 0.0126211, 0.184998, -0.392984)
-use_collision = true
-size = Vector3(0.002, 0.102862, 0.230485)
-material = SubResource("StandardMaterial3D_ae41n")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/SCRAM"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "placeholder
-scram button"
-font_size = 64
-outline_size = 16
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/SCRAM"]
-script = ExtResource("7_e5c6q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/SCRAM/StaticBody3D"]
-shape = SubResource("BoxShape3D_kpsrp")
-
 [node name="Reset SCRAM" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons"]
 transform = Transform3D(1, 7.45058e-08, 0, -1.3411e-07, 1, 0, 0, 0, 1, 0.0128722, 0.278685, -0.392983)
 use_collision = true
-size = Vector3(0.002, 0.0639858, 0.0918639)
+size = Vector3(0.002, 0.0639858, 0.147124)
 material = SubResource("StandardMaterial3D_qf88n")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM"]
@@ -3485,8 +3414,8 @@ sorting_offset = 10.0
 pixel_size = 0.0005
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "Reset
- SCRAM"
+text = "placeholder
+scram reset"
 font_size = 48
 outline_size = 16
 
@@ -8106,6 +8035,370 @@ pixel_size = 0.0003
 shaded = true
 texture = ExtResource("17_ir5ie")
 
+[node name="SCRAM 1" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(1.60187e-07, 3.35276e-08, -0.6, 8.9407e-08, -0.6, 7.45058e-09, -0.6, -8.9407e-08, -1.71363e-07, 0.027, -0.073, 0.89)
+polygon = PackedVector2Array(0.025, 0.15, 0, 0.175, 0, 0.3, 0.025, 0.325, 0.4, 0.325, 0.425, 0.3, 0.425, 0.175, 0.4, 0.15)
+depth = 0.04
+material = ExtResource("16_0ckwa")
+
+[node name="placard" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1"]
+transform = Transform3D(1, 5.96046e-08, -7.45058e-09, 2.98023e-08, 1, -7.45058e-09, -7.45058e-09, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard"]
+transform = Transform3D(1, 3.57628e-07, -1.63913e-07, 1.78814e-07, 1, -5.21541e-08, 1.56462e-07, -3.72529e-08, 0.999999, 0.215475, 0.17695, 0)
+size = Vector3(0.1863, 0.0269469, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard/CSGBox3D"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "REACTOR MANUAL SCRAM TRIP 1"
+font_size = 22
+outline_size = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard"]
+transform = Transform3D(0.999998, 1.69873e-06, -3.50177e-07, 1.3411e-06, 0.999998, 8.9407e-08, 1.93715e-07, -1.41561e-07, 0.999997, 0.0999994, 0.297057, 5.96046e-08)
+size = Vector3(0.150357, 0.0338294, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard/CSGBox3D2"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "MANUAL SCRAM
+TRIP A1 SWITCH"
+font_size = 22
+outline_size = 0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard"]
+transform = Transform3D(0.999998, 2.47359e-06, -4.61936e-07, 2.05636e-06, 0.999997, 1.2666e-07, 1.86265e-07, -1.2666e-07, 0.999995, 0.324848, 0.296742, 5.06639e-07)
+size = Vector3(0.150357, 0.0338294, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/placard/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "MANUAL SCRAM
+TRIP B1 SWITCH"
+font_size = 22
+outline_size = 0
+
+[node name="switches" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1"]
+
+[node name="A1" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches"]
+transform = Transform3D(1, -6.70552e-08, -8.34465e-07, 2.98023e-08, -1.19209e-07, -1, 0, 1, -2.23517e-08, 0.0812383, 0.230312, 0.00907695)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1"]
+transform = Transform3D(1, 2.98023e-08, 2.38419e-07, -1.49012e-08, 0.999999, 5.21541e-08, -2.38419e-07, 2.98023e-08, 1, 0.0203876, -0.00974673, -3.8147e-06)
+radius = 0.031
+height = 0.036
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D"]
+transform = Transform3D(0.999999, 7.45058e-09, -4.17233e-07, -2.98023e-08, 1, -1.04308e-07, -2.38419e-07, -1.19209e-07, 0.999999, 0, 0.0235229, 0)
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, -1.49012e-08, -8.9407e-08, 7.45058e-09, 1, 7.45058e-09, 5.96046e-08, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/Node3D"]
+transform = Transform3D(1, 4.47035e-08, 5.06639e-07, -7.45058e-09, 1, -2.23517e-07, 5.06639e-07, -1.11759e-07, 0.999999, 2.86102e-06, 0.00387228, 3.8147e-06)
+radius = 0.0286684
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 1.49012e-08, 5.96046e-08, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4/Node3D"]
+transform = Transform3D(1, 7.45058e-09, 2.98023e-08, -2.23517e-08, 1, -1.49012e-08, 7.45058e-07, 7.45058e-09, 1, 0, 0, 0)
+flip_faces = true
+radius = 0.0281333
+height = 0.0491986
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, -7.45058e-09, 8.9407e-08, -2.98023e-08, 1, -7.45058e-08, 8.34465e-07, 2.23517e-08, 1, 1.90735e-06, 0.00109878, -6.67572e-06)
+flip_faces = true
+radius = 0.0270046
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 9.68575e-08, 8.04663e-07, 7.45058e-09, 1, -2.01166e-07, 3.8743e-07, -1.11759e-07, 0.999999, 0, -0.0108734, 0)
+radius = 0.0244681
+height = 0.036
+sides = 14
+material = ExtResource("16_0ckwa")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 6.70552e-08, 7.7486e-07, 2.23517e-08, -0.999999, 5.21541e-08, 1.07288e-06, -6.70552e-08, -0.999999, 3.8147e-06, -0.00160286, 3.8147e-06)
+radius = 0.0270134
+height = 0.028
+sides = 20
+cone = true
+material = SubResource("StandardMaterial3D_yntni")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1"]
+transform = Transform3D(1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 0.999999, -2.23517e-08, -5.96046e-08, 2.98023e-08, 1, 0.0206938, 1.49012e-07, -9.53674e-07)
+script = ExtResource("19_t6l2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/StaticBody3D"]
+transform = Transform3D(0.999999, 2.23517e-08, 1.19209e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wasv2")
+
+[node name="B1" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches"]
+transform = Transform3D(1, -8.19564e-08, -9.83477e-07, 2.98023e-08, -1.2666e-07, -1, 7.45058e-09, 1, -1.49012e-08, 0.300287, 0.230312, 0.00907704)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1"]
+transform = Transform3D(1, 2.98023e-08, 2.38419e-07, -1.49012e-08, 0.999999, 5.21541e-08, -2.38419e-07, 2.98023e-08, 1, 0.0203876, -0.00974673, -3.8147e-06)
+radius = 0.031
+height = 0.036
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D"]
+transform = Transform3D(0.999999, 7.45058e-09, -4.17233e-07, -2.98023e-08, 1, -1.04308e-07, -2.38419e-07, -1.19209e-07, 0.999999, 0, 0.0235229, 0)
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, -1.49012e-08, -8.9407e-08, 7.45058e-09, 1, 7.45058e-09, 5.96046e-08, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/Node3D"]
+transform = Transform3D(1, 4.47035e-08, 5.06639e-07, -7.45058e-09, 1, -2.23517e-07, 5.06639e-07, -1.11759e-07, 0.999999, 2.86102e-06, 0.00387228, 3.8147e-06)
+radius = 0.0286684
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 1.49012e-08, 5.96046e-08, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4/Node3D"]
+transform = Transform3D(1, 7.45058e-09, 2.98023e-08, -2.23517e-08, 1, -1.49012e-08, 7.45058e-07, 7.45058e-09, 1, 0, 0, 0)
+flip_faces = true
+radius = 0.0281333
+height = 0.0491986
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, -7.45058e-09, 8.9407e-08, -2.98023e-08, 1, -7.45058e-08, 8.34465e-07, 2.23517e-08, 1, 1.90735e-06, 0.00109878, -6.67572e-06)
+flip_faces = true
+radius = 0.0270046
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 9.68575e-08, 8.04663e-07, 7.45058e-09, 1, -2.01166e-07, 3.8743e-07, -1.11759e-07, 0.999999, 0, -0.0108734, 0)
+radius = 0.0244681
+height = 0.036
+sides = 14
+material = ExtResource("16_0ckwa")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 6.70552e-08, 7.7486e-07, 2.23517e-08, -0.999999, 5.21541e-08, 1.07288e-06, -6.70552e-08, -0.999999, 3.8147e-06, -0.00160286, 3.8147e-06)
+radius = 0.0270134
+height = 0.028
+sides = 20
+cone = true
+material = SubResource("StandardMaterial3D_asr2j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1"]
+transform = Transform3D(1, 2.23517e-08, 2.98023e-08, -7.45058e-09, 0.999999, -1.49012e-08, 2.98023e-08, 3.72529e-08, 1, 0.0206938, 1.49012e-07, -1.90735e-06)
+script = ExtResource("19_t6l2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 1.49012e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wasv2")
+
+[node name="SCRAM 2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(1.60187e-07, 3.35276e-08, -0.6, 8.9407e-08, -0.6, 7.45058e-09, -0.6, -8.9407e-08, -1.71363e-07, 0.0271352, -0.0733628, -0.629947)
+polygon = PackedVector2Array(0.025, 0.15, 0, 0.175, 0, 0.3, 0.025, 0.325, 0.4, 0.325, 0.425, 0.3, 0.425, 0.175, 0.4, 0.15)
+depth = 0.04
+material = ExtResource("16_0ckwa")
+
+[node name="placard" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2"]
+transform = Transform3D(1, 5.96046e-08, -7.45058e-09, 2.98023e-08, 1, -7.45058e-09, -7.45058e-09, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard"]
+transform = Transform3D(1, 3.57628e-07, -1.63913e-07, 1.78814e-07, 1, -5.21541e-08, 1.56462e-07, -3.72529e-08, 0.999999, 0.215475, 0.17695, 0)
+size = Vector3(0.1863, 0.0269469, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard/CSGBox3D"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "REACTOR MANUAL SCRAM TRIP 2"
+font_size = 22
+outline_size = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard"]
+transform = Transform3D(0.999998, 1.69873e-06, -3.50177e-07, 1.3411e-06, 0.999998, 8.9407e-08, 1.93715e-07, -1.41561e-07, 0.999997, 0.0999994, 0.297057, 5.96046e-08)
+size = Vector3(0.150357, 0.0338294, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard/CSGBox3D2"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "MANUAL SCRAM
+TRIP A2 SWITCH"
+font_size = 22
+outline_size = 0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard"]
+transform = Transform3D(0.999998, 2.47359e-06, -4.61936e-07, 2.05636e-06, 0.999997, 1.2666e-07, 1.86265e-07, -1.2666e-07, 0.999995, 0.324848, 0.296742, 5.06639e-07)
+size = Vector3(0.150357, 0.0338294, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/placard/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "MANUAL SCRAM
+TRIP B2 SWITCH"
+font_size = 22
+outline_size = 0
+
+[node name="switches" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2"]
+
+[node name="A2" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches"]
+transform = Transform3D(1, -6.70552e-08, -8.34465e-07, 2.98023e-08, -1.19209e-07, -1, 0, 1, -2.23517e-08, 0.0812383, 0.230312, 0.00907695)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2"]
+transform = Transform3D(1, 2.98023e-08, 2.38419e-07, -1.49012e-08, 0.999999, 5.21541e-08, -2.38419e-07, 2.98023e-08, 1, 0.0203876, -0.00974673, -3.8147e-06)
+radius = 0.031
+height = 0.036
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D"]
+transform = Transform3D(0.999999, 7.45058e-09, -4.17233e-07, -2.98023e-08, 1, -1.04308e-07, -2.38419e-07, -1.19209e-07, 0.999999, 0, 0.0235229, 0)
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, -1.49012e-08, -8.9407e-08, 7.45058e-09, 1, 7.45058e-09, 5.96046e-08, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/Node3D"]
+transform = Transform3D(1, 4.47035e-08, 5.06639e-07, -7.45058e-09, 1, -2.23517e-07, 5.06639e-07, -1.11759e-07, 0.999999, 2.86102e-06, 0.00387228, 3.8147e-06)
+radius = 0.0286684
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 1.49012e-08, 5.96046e-08, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4/Node3D"]
+transform = Transform3D(1, 7.45058e-09, 2.98023e-08, -2.23517e-08, 1, -1.49012e-08, 7.45058e-07, 7.45058e-09, 1, 0, 0, 0)
+flip_faces = true
+radius = 0.0281333
+height = 0.0491986
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, -7.45058e-09, 8.9407e-08, -2.98023e-08, 1, -7.45058e-08, 8.34465e-07, 2.23517e-08, 1, 1.90735e-06, 0.00109878, -6.67572e-06)
+flip_faces = true
+radius = 0.0270046
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 9.68575e-08, 8.04663e-07, 7.45058e-09, 1, -2.01166e-07, 3.8743e-07, -1.11759e-07, 0.999999, 0, -0.0108734, 0)
+radius = 0.0244681
+height = 0.036
+sides = 14
+material = ExtResource("16_0ckwa")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 6.70552e-08, 7.7486e-07, 2.23517e-08, -0.999999, 5.21541e-08, 1.07288e-06, -6.70552e-08, -0.999999, 3.8147e-06, -0.00160286, 3.8147e-06)
+radius = 0.0270134
+height = 0.028
+sides = 20
+cone = true
+material = SubResource("StandardMaterial3D_picrq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2"]
+transform = Transform3D(1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 0.999999, -2.23517e-08, -5.96046e-08, 2.98023e-08, 1, 0.0206938, 1.49012e-07, -9.53674e-07)
+script = ExtResource("19_t6l2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D"]
+transform = Transform3D(0.999999, 2.23517e-08, 1.19209e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wasv2")
+
+[node name="B2" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches"]
+transform = Transform3D(1, -8.19564e-08, -9.83477e-07, 2.98023e-08, -1.2666e-07, -1, 7.45058e-09, 1, -1.49012e-08, 0.300287, 0.230312, 0.00907704)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2"]
+transform = Transform3D(1, 2.98023e-08, 2.38419e-07, -1.49012e-08, 0.999999, 5.21541e-08, -2.38419e-07, 2.98023e-08, 1, 0.0203876, -0.00974673, -3.8147e-06)
+radius = 0.031
+height = 0.036
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D"]
+transform = Transform3D(0.999999, 7.45058e-09, -4.17233e-07, -2.98023e-08, 1, -1.04308e-07, -2.38419e-07, -1.19209e-07, 0.999999, 0, 0.0235229, 0)
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, -1.49012e-08, -8.9407e-08, 7.45058e-09, 1, 7.45058e-09, 5.96046e-08, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/Node3D"]
+transform = Transform3D(1, 4.47035e-08, 5.06639e-07, -7.45058e-09, 1, -2.23517e-07, 5.06639e-07, -1.11759e-07, 0.999999, 2.86102e-06, 0.00387228, 3.8147e-06)
+radius = 0.0286684
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 1.49012e-08, 5.96046e-08, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4/Node3D"]
+transform = Transform3D(1, 7.45058e-09, 2.98023e-08, -2.23517e-08, 1, -1.49012e-08, 7.45058e-07, 7.45058e-09, 1, 0, 0, 0)
+flip_faces = true
+radius = 0.0281333
+height = 0.0491986
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/Node3D/CSGCylinder3D4"]
+transform = Transform3D(1, -7.45058e-09, 8.9407e-08, -2.98023e-08, 1, -7.45058e-08, 8.34465e-07, 2.23517e-08, 1, 1.90735e-06, 0.00109878, -6.67572e-06)
+flip_faces = true
+radius = 0.0270046
+height = 0.0513917
+sides = 14
+material = ExtResource("17_0oagq")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 9.68575e-08, 8.04663e-07, 7.45058e-09, 1, -2.01166e-07, 3.8743e-07, -1.11759e-07, 0.999999, 0, -0.0108734, 0)
+radius = 0.0244681
+height = 0.036
+sides = 14
+material = ExtResource("16_0ckwa")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D"]
+transform = Transform3D(1, 6.70552e-08, 7.7486e-07, 2.23517e-08, -0.999999, 5.21541e-08, 1.07288e-06, -6.70552e-08, -0.999999, 3.8147e-06, -0.00160286, 3.8147e-06)
+radius = 0.0270134
+height = 0.028
+sides = 20
+cone = true
+material = SubResource("StandardMaterial3D_x6v41")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2"]
+transform = Transform3D(1, 2.23517e-08, 2.98023e-08, -7.45058e-09, 0.999999, -1.49012e-08, 2.98023e-08, 3.72529e-08, 1, 0.0206938, 1.49012e-07, -1.90735e-06)
+script = ExtResource("19_t6l2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 1.49012e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wasv2")
+
 [node name="Reactor Alarm Loop Fast" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
 stream = ExtResource("13_muwa0")
@@ -8288,7 +8581,7 @@ size = Vector3(0.00259872, 0.0538438, 0.0814249)
 material = SubResource("StandardMaterial3D_nq633")
 
 [node name="Rod Position Monitor 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.314, -0.079999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.314, -0.0799992)
 size = Vector3(0.016, 0.1, 0.1)
 material = SubResource("StandardMaterial3D_yf7ew")
 
@@ -8310,7 +8603,7 @@ size = Vector3(0.00259872, 0.0264591, 0.0363257)
 material = SubResource("StandardMaterial3D_ld251")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1/1"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.002, 0.002, 0)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00200033, 0.00199997, 2.38419e-07)
 sorting_offset = 30.0
 pixel_size = 0.0003
 modulate = Color(0, 0, 0, 1)
@@ -8349,7 +8642,7 @@ size = Vector3(0.00259872, 0.0264591, 0.0363257)
 material = SubResource("StandardMaterial3D_8rwtx")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2/2"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.002, 0.002, 0)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00200033, 0.00199997, 4.76837e-07)
 sorting_offset = 30.0
 pixel_size = 0.0003
 modulate = Color(0, 0, 0, 1)
@@ -8435,7 +8728,7 @@ size = Vector3(0.00259872, 0.0264591, 0.0363257)
 material = SubResource("StandardMaterial3D_7s5hk")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4/4"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.002, 0.002, 0)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00200033, 0.00199997, 2.38419e-07)
 sorting_offset = 30.0
 pixel_size = 0.0003
 modulate = Color(0, 0, 0, 1)
@@ -10450,446 +10743,6 @@ max_distance = 3.0
 [node name="LPRM Meters" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
 script = ExtResource("36_b0odt")
 
-[node name="LPRM 2 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_ou7im")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET D
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 2 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.04083, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_uf8ij")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET C
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 2 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0191699, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_1j1c8")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET B
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 2 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0791699, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_d7xrg")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET A
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 4 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.166703, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_gpnu0")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET D
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 4 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.226703, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_an60g")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET C
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 4 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.286703, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_j80l0")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET B
-BYPASS"
-font_size = 12
-outline_size = 16
-
-[node name="LPRM 4 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.346703, -0.383999)
-size = Vector3(0.0243752, 0.0582492, 0.187504)
-material = ExtResource("35_r1uh5")
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("36_4fyjx")
-
-[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
-sorting_offset = 10.0
-pixel_size = 0.0004
-shaded = true
-texture = ExtResource("37_l1t2u")
-region_enabled = true
-region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
-
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "0          25         50         75        100     125"
-font_size = 28
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
-sorting_offset = 20.0
-pixel_size = 0.0003
-modulate = Color(0, 0, 0, 1)
-text = "PERCENT POWER"
-font_size = 28
-
-[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
-
-[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
-use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
-material = SubResource("StandardMaterial3D_g3w75")
-
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light/Light"]
-transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0005
-shaded = true
-modulate = Color(0, 0, 0, 1)
-text = "DET A
-BYPASS"
-font_size = 12
-outline_size = 16
-
 [node name="LPRM 1 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, 0.384)
 size = Vector3(0.0243752, 0.0582492, 0.187504)
@@ -10931,7 +10784,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_1ytu1")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D/Bypass Light/Light"]
@@ -10986,7 +10839,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_tmhut")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C/Bypass Light/Light"]
@@ -11041,7 +10894,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_3bsht")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B/Bypass Light/Light"]
@@ -11096,10 +10949,230 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_ouxuj")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_ou7im")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.04083, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_uf8ij")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0191699, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0110002, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_1j1c8")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B/Bypass Light/Light"]
+transform = Transform3D(0, -7.45058e-09, -1, -8.9407e-08, -1, 7.10543e-15, -1, 5.96046e-08, -8.9407e-08, -0.00200081, 0, 0)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 2 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.0791699, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0110002, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_d7xrg")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A/Bypass Light/Light"]
 transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
 sorting_offset = 10.0
 pixel_size = 0.0005
@@ -11151,7 +11224,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_75i34")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D/Bypass Light/Light"]
@@ -11206,7 +11279,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_mkh5g")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C/Bypass Light/Light"]
@@ -11261,7 +11334,7 @@ font_size = 28
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B/Bypass Light"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_dkk0l")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B/Bypass Light/Light"]
@@ -11283,9 +11356,9 @@ material = ExtResource("35_r1uh5")
 [node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
 
 [node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A/Bypass Light"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0109997, 0, 0.153758)
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, 0.154)
 use_collision = true
-size = Vector3(0.002, 0.0239498, 0.0342472)
+size = Vector3(0.002, 0.026, 0.036)
 material = SubResource("StandardMaterial3D_r8qqr")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A/Bypass Light/Light"]
@@ -11330,6 +11403,226 @@ modulate = Color(0, 0, 0, 1)
 text = "PERCENT POWER"
 font_size = 28
 
+[node name="LPRM 4 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.166703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0110002, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_gpnu0")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET D
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 C" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.226703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0110002, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_an60g")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET C
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.286703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_j80l0")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET B
+BYPASS"
+font_size = 12
+outline_size = 16
+
+[node name="LPRM 4 A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, -0.346703, -0.383999)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("36_4fyjx")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, 0.0128028, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0          25         50         75        100     125"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "PERCENT POWER"
+font_size = 28
+
+[node name="Bypass Light" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
+
+[node name="Light" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.011, 0, -0.154)
+use_collision = true
+size = Vector3(0.002, 0.026, 0.036)
+material = SubResource("StandardMaterial3D_g3w75")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A/Bypass Light/Light"]
+transform = Transform3D(2.98023e-08, -7.45058e-09, -1, -8.9407e-08, -1, 0, -1, 5.96046e-08, -4.47035e-08, -0.00200027, 0, 4.76837e-07)
+sorting_offset = 10.0
+pixel_size = 0.0005
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DET A
+BYPASS"
+font_size = 12
+outline_size = 16
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
 stream = ExtResource("5_7cq8b")
@@ -11350,8 +11643,11 @@ max_distance = 5.0
 wait_time = 0.1
 autostart = true
 
+[node name="Main Loop Timer Fast" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" method="_on_input_event"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/SCRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/SCRAM/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb/StaticBody3D" method="_on_input_event"]
@@ -11545,6 +11841,10 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D" method="_on_input_event"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Timer" to="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Time Text" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Timer" to="Control Room Panels/Main Panel Center/Rod Position Monitors" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Annunciators/Timer" to="Control Room Panels/Main Panel Center/Annunciators" method="_on_timer_timeout"]
@@ -11553,3 +11853,4 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/StaticBody3D" method="_on_input_event"]
 [connection signal="timeout" from="Main Loop Timer" to="." method="main_loop_timer_expire"]
+[connection signal="timeout" from="Main Loop Timer Fast" to="." method="main_loop_timer_fast_expire"]

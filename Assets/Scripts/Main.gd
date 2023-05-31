@@ -42,6 +42,15 @@ enum scram_types {
 var scram_active = false
 var scram_type
 
+var scram_breakers = {}
+
+@onready var manual_scram_pb_materials = {
+	"A1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
+	"B1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
+	"A2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
+	"B2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
+}	
+
 func generate_control_rods():
 	var x = 18
 	var y = 59
@@ -145,7 +154,7 @@ func _ready():
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(Engine.get_frames_per_second())
+	print(Engine.get_frames_per_second())
 	pass
 				
 func main_loop_timer_expire():
@@ -154,6 +163,42 @@ func main_loop_timer_expire():
 		# detect rods in odd numbered positions (drifting)
 		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
 			control_rods[rod_number]["cr_drift_alarm"] = true
+
+func main_loop_timer_fast_expire():
+	if scram_breakers != {}:
+		var scram_breakers_open = 0
+		if "A1" in scram_breakers or "A2" in scram_breakers:
+			scram_breakers_open += 1
+			if not "A1" in scram_breakers:
+				scram_breakers["A1"] = scram_breakers["A2"]
+			else:
+				scram_breakers["A2"] = scram_breakers["A1"]
+			if scram_breakers["A1"] == scram_types.MANUAL:
+				manual_scram_pb_materials["A1"].emission_enabled = true
+				manual_scram_pb_materials["A2"].emission_enabled = true
+				
+		if "B1" in scram_breakers or "B2" in scram_breakers:
+			scram_breakers_open += 1
+			if not "B1" in scram_breakers:
+				scram_breakers["B1"] = scram_breakers["B2"]
+			else:
+				scram_breakers["B2"] = scram_breakers["B1"]
+			if scram_breakers["B1"] == scram_types.MANUAL:
+				manual_scram_pb_materials["B1"].emission_enabled = true
+				manual_scram_pb_materials["B2"].emission_enabled = true
+			if scram_breakers_open == 2:
+				if not scram_active:
+					var set_scram_reset_light_on = false
+					scram(scram_types.MANUAL)
+					while scram_active == true:
+						if scram_timer >= 1:
+							scram_timer -= 1
+						elif set_scram_reset_light_on == false:
+							set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
+							# small optimisation so we're not constantly getting the material and causing a bunch of lag
+							set_scram_reset_light_on = true
+						update_power()
+						await get_tree().create_timer(0.1).timeout
 
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
 func add_withdraw_block(type):
@@ -178,7 +223,7 @@ func remove_insert_block(type):
 	if rod_insert_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
 		
-func calculate_vertical_scale_position(indicated_value, meter_min_position, meter_max_position, scale_max):
+func calculate_vertical_scale_position(indicated_value, scale_max, meter_min_position = 0.071, meter_max_position = -0.071):
 	return clamp((((scale_max - indicated_value)/(scale_max/(meter_min_position*2))) - meter_min_position), meter_max_position, meter_min_position)
 
 func make_string_two_digit(string):
@@ -555,7 +600,9 @@ func continuous_insert_selected_cr():
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 
 func rod_motion_button_pressed(parent, pressed):
-	if parent.name == "Withdraw_pb":
+	if pressed == true and parent.name in ["A1", "A2", "B1", "B2"]:
+		scram_breakers[parent.name] = scram_types.MANUAL
+	elif parent.name == "Withdraw_pb":
 		if pressed == true:
 			withdraw_selected_cr()
 	elif parent.name == "Insert_pb":
@@ -571,30 +618,23 @@ func rod_motion_button_pressed(parent, pressed):
 			continuous_insert_selected_cr()
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
-	elif parent.name == "SCRAM":
-		if not scram_active and pressed == true:
-			var set_scram_reset_light_on = false
-			scram(scram_types.MANUAL)
-			while scram_active == true:
-				if scram_timer >= 1:
-					scram_timer -= 1
-				elif set_scram_reset_light_on == false:
-					set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
-					# small optimisation so we're not constantly getting the material and causing a bunch of lag
-					set_scram_reset_light_on = true
-				update_power()
-				await get_tree().create_timer(0.1).timeout
 	elif parent.name == "Reset SCRAM":
 		if scram_active == true and self.scram_timer == 0 and pressed == true:
 			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
 			all_rods_in = false
 			scram_active = false
+			scram_breakers = []
+			manual_scram_pb_materials["B1"].emission_enabled = true
+			manual_scram_pb_materials["B2"].emission_enabled = true
+			manual_scram_pb_materials["A1"].emission_enabled = true
+			manual_scram_pb_materials["A2"].emission_enabled = true
 			scram_timer = -1
 			for rod_number in control_rods:
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
 				accum_trouble_ack = true
 			remove_withdraw_block("SCRAM")
+		
 	elif parent.name == "DriftTest_pb":
 		cr_drift_test = pressed
 	elif parent.name == "DriftReset_pb":
