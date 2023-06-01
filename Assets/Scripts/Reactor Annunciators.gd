@@ -20,7 +20,6 @@ var active_clear_annunciators_lit
 
 func check_irm_downscale():
 	for irm_number in node_3d.intermidiate_range_monitors:
-		# TODO: downscale setpoint
 		if node_3d.intermidiate_range_monitors[irm_number]["adjusted_power"] < 5:
 			return true
 	return false
@@ -45,7 +44,7 @@ func check_rpis_inop(): return full_core_display.rpis_inop
 func check_lprm_downscale():
 	for lprm_number in node_3d.local_power_range_monitors:
 		for detector in node_3d.local_power_range_monitors[lprm_number]:
-			if node_3d.local_power_range_monitors[lprm_number][detector] < 3:
+			if node_3d.local_power_range_monitors[lprm_number][detector]["power"] < 3:
 				return true
 	return false
 func check_manual_scram_a_trip():

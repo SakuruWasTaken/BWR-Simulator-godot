@@ -215,17 +215,40 @@ func _ready():
 	var lprm_number = 1
 	while lprm_number <= 43:
 		local_power_range_monitors[lprm_number] = {
-			"D": 0.00,
-			"C": 0.00,
-			"B": 0.00,
-			"A": 0.00,
+			"D": {
+					"power": 0.00,
+					
+					# TODO: iirc this is adjustable in real life, verify this
+					"upscale_setpoint": 117.00,
+					
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/D DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/D UPSCALE" % [lprm_number]).get_material()
+			},
+			"C": {
+					"power": 0.00,
+					"upscale_setpoint": 117.00,
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/C DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/C UPSCALE" % [lprm_number]).get_material()
+			},
+			"B": {
+					"power": 0.00,
+					"upscale_setpoint": 117.00,
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/B DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/B UPSCALE" % [lprm_number]).get_material()
+			},
+			"A": {
+					"power": 0.00,
+					"upscale_setpoint": 117.00,
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/A DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/A UPSCALE" % [lprm_number]).get_material()
+			},
 		}
 		lprm_number += 1
 	generate_control_rods()
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(Engine.get_frames_per_second())
+	print(Engine.get_frames_per_second())
 	pass
 
 func open_scram_breakers(reason):
@@ -251,6 +274,18 @@ func main_loop_timer_expire():
 		add_withdraw_block("Mode Switch in Shutdown")
 	else:
 		remove_withdraw_block("Mode Switch in Shutdown")
+		
+	var irm_downscale = false
+	for irm_number in intermidiate_range_monitors:
+		if intermidiate_range_monitors[irm_number]["adjusted_power"] < 5 and not intermidiate_range_monitors[irm_number]["scale"] == 1:
+			irm_downscale = true
+			break
+			
+	if irm_downscale:
+		add_withdraw_block("IRM Downscale")
+	else:
+		remove_withdraw_block("IRM Downscale")
+		
 	
 	for rod_number in control_rods:
 		var rod_info = control_rods[rod_number]

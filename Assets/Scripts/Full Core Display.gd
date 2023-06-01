@@ -31,6 +31,11 @@ func _ready():
 				cycles = -1
 			
 		cycles += 1
+		
+		for lprm_number in node_3d.local_power_range_monitors:
+			for detector in node_3d.local_power_range_monitors[lprm_number]:
+				node_3d.local_power_range_monitors[lprm_number][detector]["full_core_display_downscale_light"].emission_enabled = true if node_3d.local_power_range_monitors[lprm_number][detector]["power"] < 3 else false
+				node_3d.local_power_range_monitors[lprm_number][detector]["full_core_display_upscale_light"].emission_enabled = true if node_3d.local_power_range_monitors[lprm_number][detector]["power"] > node_3d.local_power_range_monitors[lprm_number][detector]["upscale_setpoint"] else false
 			
 func set_rpis_inop(state):
 	rpis_inop = state
