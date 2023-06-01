@@ -1,4 +1,4 @@
-[gd_scene load_steps=387 format=3 uid="uid://eyj57tr68qk3"]
+[gd_scene load_steps=391 format=3 uid="uid://br4enssebpf1b"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -31,10 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://dcw77p7tx7qpt" path="res://Assets/Textures/Thermal Power Placard.png" id="19_pt3aj"]
 [ext_resource type="Script" path="res://Assets/Scenes/Manual Scram Switch.gd" id="19_t6l2n"]
 [ext_resource type="Texture2D" uid="uid://ovdpi0a6pnnf" path="res://Assets/Textures/Generator Load Placard.png" id="20_sst2y"]
+[ext_resource type="Material" uid="uid://bfcpxx4mjc36y" path="res://Assets/Materials/gold metal.tres" id="22_3oqyh"]
 [ext_resource type="Script" path="res://Assets/Scripts/Clock Text.gd" id="22_rjrtx"]
+[ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="24_mqur0"]
+[ext_resource type="Script" path="res://Assets/Scenes/Reactor Mode Switch.gd" id="25_2vb5h"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Position Monitors.gd" id="28_ecrg0"]
-[ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://Assets/Materials/display_material.tres" id="29_usfwl"]
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor Annunciators.gd" id="32_bwl8q"]
+[ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://Assets/Materials/black plastic 2.tres" id="33_11pre"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM.gd" id="33_f1vki"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Button.gd" id="34_cyh57"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
@@ -1876,6 +1879,9 @@ emission = Color(0.839216, 0.0627451, 0, 1)
 albedo_color = Color(1, 0, 0, 1)
 emission = Color(0.839216, 0.0627451, 0, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8lsb"]
+size = Vector3(0.0715077, 0.0977977, 0.0507525)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq633"]
 albedo_color = Color(0, 0, 0, 1)
 refraction_enabled = true
@@ -1890,23 +1896,23 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ld251"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 0.839216, 0.666667, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rwtx"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 0.839216, 0.666667, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koaat"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 0.839216, 0.666667, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s5hk"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 0.839216, 0.666667, 1)
 refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqlp2"]
@@ -2082,7 +2088,7 @@ emission = Color(1, 1, 0, 1)
 backlight = Color(1, 0.537255, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ssek"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvat3"]
 emission = Color(1, 1, 1, 1)
 backlight = Color(1, 0.537255, 0, 1)
 refraction_enabled = true
@@ -2635,12 +2641,6 @@ use_collision = true
 size = Vector3(7.425, 3.42, 0.42)
 material = ExtResource("3_e4fug")
 
-[node name="wall 2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072932, 1.77416, -9.60084)
-use_collision = true
-size = Vector3(1.62321, 3.60393, 1.88328)
-material = ExtResource("3_e4fug")
-
 [node name="wall 3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85189, 1.77416, -9.39187)
 visible = false
@@ -2667,505 +2667,648 @@ material = ExtResource("3_e4fug")
 [node name="normal" type="Node3D" parent="Control Room Lights"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97985, 0.305383, -2.80668)
 
-[node name="SpotLight3D18" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744919, 2.98549, -0.807545)
+[node name="SpotLight3D18" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -2.33875)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D18"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D19" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73867, 2.98549, -2.82196)
+[node name="SpotLight3D24" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(-4.37114e-08, 1, 1.91069e-15, 4.37114e-08, 0, 1, 1, 4.37114e-08, -4.37114e-08, -8.53326, 2.98549, -0.807544)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D24"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D28" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(-4.37114e-08, 1, 1.91069e-15, 4.37114e-08, 0, 1, 1, 4.37114e-08, -4.37114e-08, -8.53326, 2.98549, -6.80754)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D28"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D30" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(-4.37114e-08, 1, 1.91069e-15, 4.37114e-08, 0, 1, 1, 4.37114e-08, -4.37114e-08, -8.53326, 2.98549, -12.8075)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D30"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D33" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, -6.91056, 2.98549, 3.80954)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D33"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D36" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.73624, 2.98549, 5.90168)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D36"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D43" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26376, 2.98549, 5.90168)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D43"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
+size = Vector3(1.5, 1.5, 0.052)
+material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D19" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.73867, 2.98549, -4.35315)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
+light_bake_mode = 1
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D19"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D23" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -0.807542)
+[node name="SpotLight3D23" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -2.33874)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D23"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D35" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, 1.19245)
+[node name="SpotLight3D35" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -0.338757)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D35"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D39" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, 1.19245)
+[node name="SpotLight3D39" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -0.338744)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D39"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D20" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -4.79755)
+[node name="SpotLight3D20" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -6.32876)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D20"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D25" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -4.79754)
+[node name="SpotLight3D25" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -6.32873)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D25"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D32" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -6.808)
+[node name="SpotLight3D32" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.73491, 2.98549, -8.33921)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D32"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D37" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -2.79754)
+[node name="SpotLight3D37" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -4.32874)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D37"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D41" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -2.79755)
+[node name="SpotLight3D41" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -4.32875)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D41"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D21" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -8.81755)
+[node name="SpotLight3D21" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744917, 2.98549, -10.3488)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D21"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D26" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -8.81755)
+[node name="SpotLight3D26" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -10.3488)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D26"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D34" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -10.828)
+[node name="SpotLight3D34" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.73492, 2.98549, -12.3592)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D34"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D38" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -6.81755)
+[node name="SpotLight3D38" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -8.34876)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D38"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D42" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -6.81754)
+[node name="SpotLight3D42" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -8.34873)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D42"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D22" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744919, 2.98549, -12.8375)
+[node name="SpotLight3D22" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -14.3687)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D22"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D47" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -12.8375)
+[node name="SpotLight3D47" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -14.3687)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D47"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D49" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.73492, 2.98549, -14.5814)
+[node name="SpotLight3D50" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -12.3687)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D49"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D50" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -10.8375)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D50"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D51" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -10.8375)
+[node name="SpotLight3D51" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -12.3687)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.1487
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D51"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D57" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -14.5875)
+[node name="SpotLight3D2" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.66084, 2.98549, 0.610332)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D57"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D58" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -14.5875)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D58"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
-material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.13912, 2.98549, 1.08865)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D2"]
-transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 8.35188e-23, 4.83869e-14, 4.83869e-14, 1, -0.0071547, 0.00715446, 0.042223)
-size = Vector3(3.60242, 0.5, 0.052)
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 8.35188e-23, 5.90451e-14, 4.83869e-14, 1, -0.0720513, -0.0577421, 0.042223)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 1.07543, -1.07197, 0)
-light_energy = 2.0
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D2"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, -1.07983, 1.0706, 0)
-light_energy = 2.0
+[node name="SpotLight3D4" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -1.46186)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -1.46186)
-light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D4"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -3.46186)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D4"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D5" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -3.46186)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D5"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -5.46186)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D5"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D6" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -5.46186)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D6"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -7.46186)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D6"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D7" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -7.46186)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D7"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -9.46186)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D7"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D8" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -9.46186)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D8"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -11.4619)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D8"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D9" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -11.4619)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D9"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D17" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.6346, 2.98549, -13.4926)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D9"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D17" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.6346, 2.98549, -13.4926)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D17"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.48231e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D11" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.63396, 2.98549, -15.4976)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D17"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D11" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.63396, 2.98549, -15.4976)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D11"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 8.35188e-23, 1.67038e-22, -1.69407e-21, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D12" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.64853, 2.98549, 2.55093)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D11"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D12" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.64853, 2.98549, 1.58585)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D12"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D13" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.351464, 2.98549, 2.55093)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D12"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D13" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.351464, 2.98549, 1.58585)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D13"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D14" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.35147, 2.98549, 2.55093)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D13"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D14" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.35147, 2.98549, 1.58585)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D14"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D15" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.35147, 2.98549, 2.55093)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D14"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D15" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.35147, 2.98549, 1.58586)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D15"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D16" type="SpotLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.35147, 2.98549, 2.55093)
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D15"]
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
+
+[node name="SpotLight3D16" type="OmniLight3D" parent="Control Room Lights/normal"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.35147, 2.98549, 1.58586)
+light_energy = 0.712
+light_size = 0.5
+light_specular = 0.8
 light_bake_mode = 1
-spot_range = 10.65
-spot_attenuation = 1.6245
-spot_angle = 90.0
-spot_angle_attenuation = 1.6245
+omni_range = 6.5
+omni_attenuation = 1.93187
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Lights/normal/SpotLight3D16"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
-size = Vector3(1.64547, 0.5, 0.052)
+size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0)
+light_energy = 2.368
+spot_attenuation = 0.732043
+spot_angle = 90.41
+spot_angle_attenuation = 2.54912
 
 [node name="emergency" type="Node3D" parent="Control Room Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07921, 0, -5.28047)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.75412, 3.29949, 7.34259)
+[node name="SpotLight3D" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.16377, 3.29949, 6.773)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.3
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3174,16 +3317,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.576687, 3.29949, 8.94787)
+[node name="SpotLight3D2" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.0227, 3.29949, 8.47215)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3192,16 +3333,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.55757, 3.29949, 8.94787)
+[node name="SpotLight3D3" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.00358, 3.29949, 8.47215)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3210,16 +3349,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.55556, 3.29949, 8.94787)
+[node name="SpotLight3D4" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.00157, 3.29949, 8.47215)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3228,16 +3365,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.5879, 3.29949, 8.94787)
+[node name="SpotLight3D5" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -13.0339, 3.29949, 8.47215)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3246,16 +3381,62 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, 4.33892)
+[node name="SpotLight3D9" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.5879, 3.29949, -4.64795)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
+radius = 0.218
+height = 0.126
+sides = 16
+material = SubResource("StandardMaterial3D_yrvow")
+
+[node name="SpotLight3D11" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.95102, 3.29949, -4.64795)
+light_color = Color(1, 0.839216, 0.666667, 1)
+light_energy = 0.4
+light_size = 0.126
+light_bake_mode = 1
+omni_range = 20.0
+omni_attenuation = 1.56917
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
+radius = 0.218
+height = 0.126
+sides = 16
+material = SubResource("StandardMaterial3D_yrvow")
+
+[node name="SpotLight3D10" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.5879, 3.29949, 3.23744)
+light_color = Color(1, 0.839216, 0.666667, 1)
+light_energy = 0.4
+light_size = 0.126
+light_bake_mode = 1
+omni_range = 20.0
+omni_attenuation = 1.56917
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
+radius = 0.218
+height = 0.126
+sides = 16
+material = SubResource("StandardMaterial3D_yrvow")
+
+[node name="SpotLight3D6" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.83877, 3.29949, 3.8632)
+light_color = Color(1, 0.839216, 0.666667, 1)
+light_energy = 0.4
+light_size = 0.126
+light_bake_mode = 1
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D6"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3264,16 +3445,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, 0.33055)
+[node name="SpotLight3D7" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.83877, 3.29949, -0.145165)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D7"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3282,16 +3461,14 @@ height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28478, 3.29949, -3.67406)
+[node name="SpotLight3D8" type="OmniLight3D" parent="Control Room Lights/emergency"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.83877, 3.29949, -4.14978)
 light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 10.0
-light_indirect_energy = 0.876
+light_energy = 0.4
+light_size = 0.126
 light_bake_mode = 1
-spot_range = 15.763
-spot_attenuation = 1.68179
-spot_angle = 83.64
-spot_angle_attenuation = 50.2137
+omni_range = 20.0
+omni_attenuation = 1.56917
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Lights/emergency/SpotLight3D8"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0708041)
@@ -3299,12 +3476,6 @@ radius = 0.218
 height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Control Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0572739, 4.63738, -2.01748)
-size = Vector3(23.2302, 2.73993, 16.9692)
-origin_offset = Vector3(0.455078, -1.35996, -3.14014)
-interior = true
 
 [node name="Control Room Panels" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.9503)
@@ -8399,6 +8570,106 @@ script = ExtResource("19_t6l2n")
 transform = Transform3D(0.999999, 2.98023e-08, 1.49012e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_wasv2")
 
+[node name="Reactor Mode Switch" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls"]
+transform = Transform3D(-0.142629, -0.989776, 0, 0.989776, -0.142629, 0, 0, 0, 1, -0.0949658, -0.399629, 0.0799985)
+size = Vector3(0.0356622, 0.1, 0.1)
+material = ExtResource("35_r1uh5")
+
+[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(1, 0, 0, 0, 0.707106, -0.707106, 0, 0.707106, 0.707106, -4.29153e-06, 0.00191569, 1.43051e-06)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Handle"]
+transform = Transform3D(-4.22026e-08, -1, -8.05128e-09, 0.98289, -4.29635e-08, 0.184192, -0.184192, -1.40157e-10, 0.98289, 0.0170379, 0, 9.53674e-07)
+radius = 0.0261826
+height = 0.00748214
+sides = 16
+material = ExtResource("22_3oqyh")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Handle"]
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0.038794, 0.00263643, 0.000542641)
+polygon = PackedVector2Array(-0.007, 0.029, 0.00721955, 0.028877, 0.0156643, 0.0188636, 0.0235066, 0.00991976, 0.0268495, 0.00289452, 0.0266376, -0.00727749, 0.0230937, -0.0170125, 0.018697, -0.0298772, 0.0140157, -0.0401225, 0.000171661, -0.0439718, -0.0139725, -0.040054, -0.0170815, -0.0305395, -0.0213022, -0.0174571, -0.0252976, -0.0080446, -0.0254412, 0.0027411, -0.021368, 0.0117111, -0.0152748, 0.0189095)
+depth = 0.02
+material = ExtResource("22_3oqyh")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Handle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0296302, -0.0628256, 1.43051e-06)
+radius = 0.008
+height = 0.061
+material = ExtResource("22_3oqyh")
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15256e-07)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.04, 0, -0.04, 0.023, -0.02, 0.045, 0.02, 0.045, 0.04, 0.023, 0.04, 0, 0.03, 0, 0.03, 0.02, 0.017, 0.035, -0.017, 0.035, -0.03, 0.02, -0.03, 0)
+depth = 0.01
+material = ExtResource("33_11pre")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
+transform = Transform3D(-2.98023e-08, 0, 1, 0.756448, 0.654055, 0, -0.654055, 0.756448, -8.9407e-08, 0.0101671, 0.0313169, 0.026926)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "S/D"
+font_size = 16
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0101662, 0.0399157, 0.000132799)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "REFUEL"
+font_size = 16
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
+transform = Transform3D(-2.98023e-08, 0, 1, -0.756996, 0.653421, 0, -0.653421, -0.756996, -8.9407e-08, 0.0101657, 0.0305157, -0.0269325)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "START &
+HOT STBY"
+font_size = 11
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
+transform = Transform3D(0, -5.96046e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -8.9407e-08, 0.0101657, 0.0114739, -0.0348918)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "RUN"
+font_size = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(-1.19209e-07, 0, 0.999999, 0, 1, 0, -1, 0, -8.9407e-08, 0.00100422, 0.0760599, 9.53674e-07)
+size = Vector3(0.1021, 0.0269469, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/CSGBox3D"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "REACTOR MODE"
+font_size = 22
+outline_size = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+stream = ExtResource("24_mqur0")
+volume_db = -15.0
+max_db = 6.0
+max_distance = 5.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+script = ExtResource("25_2vb5h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
 [node name="Reactor Alarm Loop Fast" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
 stream = ExtResource("13_muwa0")
@@ -8429,10 +8700,10 @@ texture = ExtResource("13_rjxd0")
 
 [node name="Time Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Clock"]
 unique_name_in_owner = true
-transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225008, 0, 0.0395398)
+transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225008, 0, 0.0395403)
 sorting_offset = 30.0
 modulate = Color(1, 0, 0, 1)
-text = "14   46    24
+text = "88   88    88
 "
 font = ExtResource("14_3lqpq")
 font_size = 162
@@ -8468,7 +8739,7 @@ texture = ExtResource("16_47fu1")
 transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225002, 0.00746608, -0.292204)
 sorting_offset = 20.0
 modulate = Color(0.768627, 0.313726, 0.337255, 1)
-text = "100"
+text = "0"
 font = ExtResource("17_th8xm")
 font_size = 128
 horizontal_alignment = 2
@@ -8518,7 +8789,7 @@ texture = ExtResource("16_47fu1")
 transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225002, 0.00818086, -0.307641)
 sorting_offset = 20.0
 modulate = Color(0.768627, 0.313726, 0.337255, 1)
-text = "1200"
+text = "0"
 font = ExtResource("17_th8xm")
 font_size = 128
 horizontal_alignment = 2
@@ -8589,13 +8860,13 @@ material = SubResource("StandardMaterial3D_yf7ew")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00768661, 0.018, 0.0199997)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0368884)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Display Number Box2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765419, 0.0179846, -0.0195189)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0363257)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00871658, -0.0295155, -0.000236511)
@@ -8628,13 +8899,13 @@ material = SubResource("StandardMaterial3D_yf7ew")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00768661, 0.018, 0.0199997)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0368884)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Display Number Box2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765419, 0.0179846, -0.0195189)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0363257)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00871658, -0.0295155, 0)
@@ -8667,13 +8938,13 @@ material = SubResource("StandardMaterial3D_yf7ew")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00768661, 0.018, 0.0199997)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0368884)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Display Number Box2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765419, 0.0179846, -0.0195189)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0363257)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, -0.03, 0)
@@ -8706,13 +8977,13 @@ material = SubResource("StandardMaterial3D_yf7ew")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00768661, 0.018, 0.0199997)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0368884)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Display Number Box2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765419, 0.0179846, -0.0195189)
 sorting_offset = 10.0
 size = Vector3(0.00259872, 0.0490702, 0.0363257)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Insertion Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.00899887, 0.0200526, 0.000319719)
@@ -9280,7 +9551,7 @@ font_size = 12
 [node name="D6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
 transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
-material = SubResource("StandardMaterial3D_0ssek")
+material = SubResource("StandardMaterial3D_tvat3")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1/D6"]
 transform = Transform3D(-7.10543e-15, 1, 7.45061e-08, 1.19209e-07, 2.98023e-08, -1, -1, 0, -5.96046e-08, 0.00191689, -0.00305176, -0.00078392)
@@ -9340,7 +9611,7 @@ size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_pgjjs")
 
 [node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1/B7"]
-transform = Transform3D(-7.10543e-15, 1, 7.4506e-08, 1.19209e-07, 2.98023e-08, -1, -1, 0, -5.96046e-08, 0.00177073, -0.00305176, -0.000905991)
+transform = Transform3D(-7.10543e-15, 1, 7.4506e-08, 1.19209e-07, 2.98023e-08, -1, -1, 0, -1.19209e-07, 0.00177073, -0.00305176, -0.000905991)
 sorting_offset = 10.0
 pixel_size = 0.001
 shaded = true
@@ -10570,7 +10841,7 @@ material = ExtResource("35_r1uh5")
 
 [node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1"]
 size = Vector3(0.0433738, 0.0442212, 0.138161)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
@@ -10596,7 +10867,7 @@ material = ExtResource("35_r1uh5")
 
 [node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2"]
 size = Vector3(0.043, 0.044, 0.138)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
@@ -10622,7 +10893,7 @@ material = ExtResource("35_r1uh5")
 
 [node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Withdraw Error"]
 size = Vector3(0.043, 0.044, 0.138)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Withdraw Error/Display"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
@@ -10648,7 +10919,7 @@ material = ExtResource("35_r1uh5")
 
 [node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group"]
 size = Vector3(0.043, 0.044, 0.0633079)
-material = ExtResource("29_usfwl")
+material = ExtResource("33_11pre")
 
 [node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group/Display"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
@@ -11845,6 +12116,8 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D" method="mode_switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D2" to="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D" method="mode_switch_position_down"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Timer" to="Control Room Panels/Main Panel Center/Panel Top Meters/Clock/Time Text" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Rod Position Monitors/Timer" to="Control Room Panels/Main Panel Center/Rod Position Monitors" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control Room Panels/Main Panel Center/Annunciators/Timer" to="Control Room Panels/Main Panel Center/Annunciators" method="_on_timer_timeout"]

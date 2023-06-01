@@ -18,7 +18,17 @@ var cycle = 0
 var active_annunciators_lit
 var active_clear_annunciators_lit
 
-
+func check_irm_downscale():
+	for irm_number in node_3d.intermidiate_range_monitors:
+		# TODO: downscale setpoint
+		if node_3d.intermidiate_range_monitors[irm_number]["adjusted_power"] < 5:
+			return true
+	return false
+func check_aprm_downscale():
+	for aprm_number in node_3d.average_power_range_monitors:
+		if node_3d.average_power_range_monitors[aprm_number] < 3:
+			return true
+	return false
 func check_rod_out_block(): return node_3d.rod_withdraw_block != []
 func check_rwm_rod_block(): return rwm.withdraw_blocks != [] or rwm.insert_blocks != []
 func check_rod_drift():
@@ -32,23 +42,44 @@ func check_cr_accum_trouble():
 			return true
 	return false
 func check_rpis_inop(): return full_core_display.rpis_inop
-# TODO: simulate scram channels (one of two taken twice logic)
+func check_lprm_downscale():
+	for lprm_number in node_3d.local_power_range_monitors:
+		for detector in node_3d.local_power_range_monitors[lprm_number]:
+			if node_3d.local_power_range_monitors[lprm_number][detector] < 3:
+				return true
+	return false
 func check_manual_scram_a_trip():
 	if "A1" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["A1"] == 0
+		return node_3d.scram_breakers["A1"] in [0, 1]
 	elif "A2" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["A2"] == 0
+		return node_3d.scram_breakers["A2"] in [0, 1]
 	return false
 func check_manual_scram_b_trip():
 	if "B1" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["B1"] == 0
+		return node_3d.scram_breakers["B1"] in [0, 1]
 	elif "B2" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["B2"] == 0
+		return node_3d.scram_breakers["B2"] in [0, 1]
 	return false
 func check_auto_scram_a_trip(): return true if "A1" in node_3d.scram_breakers else true if "A2" in node_3d.scram_breakers else false
 func check_auto_scram_b_trip(): return true if "B1" in node_3d.scram_breakers else true if "B2" in node_3d.scram_breakers else false
+func check_reactor_mode_shutdown_bypass():
+	return node_3d.reactor_mode_shutdown_bypass
 
 var annunciators = {
+	"irm_downscale": {
+		"box": 1,
+		"lamp": "D6",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_irm_downscale"
+	},
+	"aprm_downscale": {
+		"box": 1,
+		"lamp": "D8",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_aprm_downscale"
+	},
 	"rwm_rod_block": {
 		"box": 1,
 		"lamp": "E6",
@@ -77,19 +108,12 @@ var annunciators = {
 		"state": annunciator_state.CLEAR,
 		"func": "check_rpis_inop"
 	},
-	"manual_scram_a_trip": {
-		"box": 2,
-		"lamp": "C1",
+	"lprm_downscale": {
+		"box": 1,
+		"lamp": "F8",
 		"material": null,
-		"state": annunciator_state.CLEAR,
-		"func": "check_manual_scram_a_trip"
-	},
-	"manual_scram_b_trip": {
-		"box": 2,
-		"lamp": "C2",
-		"material": null,
-		"state": annunciator_state.CLEAR,
-		"func": "check_manual_scram_b_trip"
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_lprm_downscale"
 	},
 	"auto_scram_a_trip": {
 		"box": 2,
@@ -104,6 +128,27 @@ var annunciators = {
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_auto_scram_b_trip"
+	},
+	"manual_scram_a_trip": {
+		"box": 2,
+		"lamp": "C1",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_manual_scram_a_trip"
+	},
+	"reactor_mode_shutdown_bypass": {
+		"box": 2,
+		"lamp": "D1",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_reactor_mode_shutdown_bypass"
+	},
+	"manual_scram_b_trip": {
+		"box": 2,
+		"lamp": "C2",
+		"material": null,
+		"state": annunciator_state.CLEAR,
+		"func": "check_manual_scram_b_trip"
 	},
 	"cr_accum_trouble": {
 		"box": 2,

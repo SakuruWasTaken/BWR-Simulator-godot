@@ -36,13 +36,75 @@ enum cr_continuous_modes {
 }
 
 enum scram_types {
-	MANUAL
+	MANUAL,
+	MODE_SHUTDOWN,
 }
+
+enum reactor_modes {
+	SHUTDOWN,
+	REFUEL,
+	STARTUP,
+	RUN,
+}
+
+var reactor_mode = reactor_modes.SHUTDOWN
+var reactor_mode_shutdown_bypass = true
+var reactor_mode_shutdown_timer = 0
 
 var scram_active = false
 var scram_type
 
 var scram_breakers = {}
+
+var average_power_range_monitors = {
+	"A": 0.00,
+	"B": 0.00,
+	"C": 0.00,
+	"D": 0.00,
+}
+var local_power_range_monitors = {}
+var intermidiate_range_monitors = {
+	"A": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"B": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"C": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"D": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"E": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"F": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"G": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+	"H": {
+		"scale": 1,
+		"power": 0.00,
+		"adjusted_power": 0.00,
+	},
+}
 
 @onready var manual_scram_pb_materials = {
 	"A1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
@@ -150,14 +212,46 @@ func generate_control_rods():
 			break
 
 func _ready():
+	var lprm_number = 1
+	while lprm_number <= 43:
+		local_power_range_monitors[lprm_number] = {
+			"D": 0.00,
+			"C": 0.00,
+			"B": 0.00,
+			"A": 0.00,
+		}
+		lprm_number += 1
 	generate_control_rods()
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	pass
-				
+
+func open_scram_breakers(reason):
+	scram_breakers["A1"] = reason
+	scram_breakers["A2"] = reason
+	scram_breakers["B1"] = reason
+	scram_breakers["B2"] = reason
+	
 func main_loop_timer_expire():
+	# mode switch shutdown scram logic
+	if reactor_mode == reactor_modes.SHUTDOWN and not reactor_mode_shutdown_bypass and not scram_active:
+		reactor_mode_shutdown_timer = 100
+		open_scram_breakers(scram_types.MODE_SHUTDOWN)
+	elif reactor_mode == reactor_modes.SHUTDOWN and scram_active and reactor_mode_shutdown_bypass != true:
+		reactor_mode_shutdown_timer -= 1
+		if reactor_mode_shutdown_timer == 0:
+			reactor_mode_shutdown_bypass = true
+	elif reactor_mode != reactor_modes.SHUTDOWN and reactor_mode_shutdown_bypass:
+		reactor_mode_shutdown_bypass = false
+	
+	# apply rod withdraw blocks
+	if reactor_mode == reactor_modes.SHUTDOWN:
+		add_withdraw_block("Mode Switch in Shutdown")
+	else:
+		remove_withdraw_block("Mode Switch in Shutdown")
+	
 	for rod_number in control_rods:
 		var rod_info = control_rods[rod_number]
 		# detect rods in odd numbered positions (drifting)
@@ -197,7 +291,6 @@ func main_loop_timer_fast_expire():
 							set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
 							# small optimisation so we're not constantly getting the material and causing a bunch of lag
 							set_scram_reset_light_on = true
-						update_power()
 						await get_tree().create_timer(0.1).timeout
 
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
@@ -248,16 +341,6 @@ func change_selected_rod(rod):
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true if not $"Control Room Panels/Main Panel Center/Full Core Display/full core display lights".rpis_inop else false)
 		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
-
-		
-func update_power():
-	# this is just testing code
-	var decrease_rate = 160
-	if power <= 6:
-		decrease_rate = 750
-		
-	power = power-(power/decrease_rate)
-	$"Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display/Power".text = str(int(power))
 
 func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
 	change_selected_rod(parent_object.name)
@@ -619,16 +702,22 @@ func rod_motion_button_pressed(parent, pressed):
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
 	elif parent.name == "Reset SCRAM":
-		if scram_active == true and self.scram_timer == 0 and pressed == true:
+		if not scram_active:
+			scram_breakers = {}
+			manual_scram_pb_materials["B1"].emission_enabled = false
+			manual_scram_pb_materials["B2"].emission_enabled = false
+			manual_scram_pb_materials["A1"].emission_enabled = false
+			manual_scram_pb_materials["A2"].emission_enabled = false
+		if scram_active and self.scram_timer == 0 and pressed:
 			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
 			all_rods_in = false
 			scram_active = false
-			scram_breakers = []
-			manual_scram_pb_materials["B1"].emission_enabled = true
-			manual_scram_pb_materials["B2"].emission_enabled = true
-			manual_scram_pb_materials["A1"].emission_enabled = true
-			manual_scram_pb_materials["A2"].emission_enabled = true
 			scram_timer = -1
+			scram_breakers = {}
+			manual_scram_pb_materials["B1"].emission_enabled = false
+			manual_scram_pb_materials["B2"].emission_enabled = false
+			manual_scram_pb_materials["A1"].emission_enabled = false
+			manual_scram_pb_materials["A2"].emission_enabled = false
 			for rod_number in control_rods:
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
