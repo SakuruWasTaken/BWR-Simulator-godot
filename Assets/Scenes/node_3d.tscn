@@ -1,4 +1,4 @@
-[gd_scene load_steps=391 format=3 uid="uid://br4enssebpf1b"]
+[gd_scene load_steps=402 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Motion Button.gd" id="7_e5c6q"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Select Button.gd" id="8_84o0r"]
 [ext_resource type="AudioStream" uid="uid://q6splpjvouo5" path="res://Assets/Audio/button_click.mp3" id="9_irtiu"]
+[ext_resource type="Script" path="res://Assets/Scripts/Selector Switch.gd" id="9_xa8sb"]
 [ext_resource type="AudioStream" uid="uid://boliqkypuf7po" path="res://Assets/Audio/button_unclick.mp3" id="10_5jncs"]
 [ext_resource type="Texture2D" uid="uid://c6kfewei10dfl" path="res://Assets/Textures/Full Core Display Background.PNG" id="10_a03q7"]
 [ext_resource type="Material" uid="uid://cpgjdyl15tmon" path="res://Assets/Materials/beige plastic.tres" id="11_03c2l"]
@@ -29,12 +30,12 @@
 [ext_resource type="FontFile" uid="uid://jurw11mmjtbq" path="res://Assets/Fonts/PublicPixel.ttf" id="17_th8xm"]
 [ext_resource type="Texture2D" uid="uid://77nv46dqq8df" path="res://Assets/Textures/Power Display Background.png" id="18_12rln"]
 [ext_resource type="Texture2D" uid="uid://dcw77p7tx7qpt" path="res://Assets/Textures/Thermal Power Placard.png" id="19_pt3aj"]
-[ext_resource type="Script" path="res://Assets/Scenes/Manual Scram Switch.gd" id="19_t6l2n"]
 [ext_resource type="Texture2D" uid="uid://ovdpi0a6pnnf" path="res://Assets/Textures/Generator Load Placard.png" id="20_sst2y"]
 [ext_resource type="Material" uid="uid://bfcpxx4mjc36y" path="res://Assets/Materials/gold metal.tres" id="22_3oqyh"]
 [ext_resource type="Script" path="res://Assets/Scripts/Clock Text.gd" id="22_rjrtx"]
+[ext_resource type="Script" path="res://Assets/Scripts/Manual Scram Switch.gd" id="24_gbxvt"]
 [ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="24_mqur0"]
-[ext_resource type="Script" path="res://Assets/Scenes/Reactor Mode Switch.gd" id="25_2vb5h"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor Mode Switch.gd" id="26_5ngi1"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Position Monitors.gd" id="28_ecrg0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor Annunciators.gd" id="32_bwl8q"]
 [ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://Assets/Materials/black plastic 2.tres" id="33_11pre"]
@@ -42,8 +43,8 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Button.gd" id="34_cyh57"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
 [ext_resource type="Texture2D" uid="uid://bdja8642fcxto" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
-[ext_resource type="Script" path="res://Assets/Scenes/LPRM Meters.gd" id="36_b0odt"]
 [ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
+[ext_resource type="Script" path="res://Assets/Scripts/LPRM Meters.gd" id="45_nuv7p"]
 
 [sub_resource type="Environment" id="Environment_l5pxq"]
 background_color = Color(0.2139, 0.570975, 0.69, 1)
@@ -69,6 +70,41 @@ emission = Color(1, 0.839216, 0.666667, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqmtb"]
 albedo_color = Color(0.533333, 0.615686, 0.623529, 1)
 refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt48e"]
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id4du"]
+albedo_color = Color(0.588235, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tppdu"]
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhd0c"]
+albedo_color = Color(0, 0.588235, 0, 1)
+emission = Color(0, 0.839216, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67pb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8lsb"]
+size = Vector3(0.0715077, 0.0977977, 0.0507525)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5do0h"]
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq5dy"]
+albedo_color = Color(0.588235, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6pyw"]
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw1vb"]
+albedo_color = Color(0, 0.588235, 0, 1)
+emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6s5vv"]
 vertex_color_use_as_albedo = true
@@ -1879,9 +1915,6 @@ emission = Color(0.839216, 0.0627451, 0, 1)
 albedo_color = Color(1, 0, 0, 1)
 emission = Color(0.839216, 0.0627451, 0, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_w8lsb"]
-size = Vector3(0.0715077, 0.0977977, 0.0507525)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq633"]
 albedo_color = Color(0, 0, 0, 1)
 refraction_enabled = true
@@ -2626,6 +2659,9 @@ clearcoat = 0.16
 clearcoat_roughness = 1.0
 refraction_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rryex"]
+transparency = 1
+
 [node name="Node3d" type="Node3D"]
 script = ExtResource("1_eg7xd")
 
@@ -2633,7 +2669,7 @@ script = ExtResource("1_eg7xd")
 environment = SubResource("Environment_l5pxq")
 
 [node name="Player" parent="." instance=ExtResource("1_eisjc")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 5.50407, 1.37346, 0.839859)
+transform = Transform3D(-0.999593, 0, -0.0285322, 0, 1, 0, 0.0285322, 0, -0.999593, -7.86706, 1.37346, 2.77193)
 
 [node name="wall" type="CSGBox3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.87195, 1.64062, 4.4364)
@@ -3494,6 +3530,314 @@ volume_db = 25.0
 max_db = -8.0
 autoplay = true
 max_distance = 5.0
+
+[node name="Electrical Panel" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 1.20613, 0.298524, -14.572)
+
+[node name="control_room_normal_lighting" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel"]
+transform = Transform3D(-1, 1.3411e-07, 0, -7.45058e-08, -1, 0, 0, 0, 1, 0.039, 0, 0)
+size = Vector3(0.0356622, 0.1, 0.1)
+material = ExtResource("35_r1uh5")
+
+[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(1, 0, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Lights"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -1.49012e-08, 0, 0, 0, 1, 5.66244e-07, 0.111657, -0.0285597)
+radius = 0.017
+height = 0.01
+sides = 10
+material = SubResource("StandardMaterial3D_tt48e")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Lights/On"]
+transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
+radius = 0.014
+rings = 5
+material = SubResource("StandardMaterial3D_id4du")
+
+[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Lights"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.112, 0.029)
+radius = 0.017
+height = 0.01
+sides = 10
+material = SubResource("StandardMaterial3D_tppdu")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Lights/Off"]
+transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
+radius = 0.014
+rings = 5
+material = SubResource("StandardMaterial3D_hhd0c")
+
+[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
+flip_faces = true
+radius = 0.00824928
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0588125, 1.43051e-06, -4.76837e-07)
+radius = 0.014
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000374436, 9.53674e-07)
+flip_faces = true
+radius = 0.00781379
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0218214, 1.43051e-06, -7.15256e-07)
+radius = 0.00888454
+height = 0.00273183
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle"]
+transform = Transform3D(1, 0, 0, 1.49012e-08, 1, 0, 0, 0, 1, -1.47223e-05, 0.00403357, 0.0100591)
+polygon = PackedVector2Array(0.100728, -0.013248, 0.101953, -0.0752368, 0.0894667, -0.0741262, 0.0809256, -0.0633183, 0.0809014, -0.051302, 0.0866342, -0.0240092, 0.0870524, -0.012404)
+depth = 0.02
+material = ExtResource("33_11pre")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, 2.23517e-07, 1.07, 0, 1.07, -3.72529e-08, -1.07, 0, -4.47035e-08, 0.021, 0.0469999, 0.101565)
+polygon = PackedVector2Array(0.108744, -0.0443115, 0.10631, -0.0371923, 0.0960698, -0.0126681, 0.0949333, -0.0117164, 0.0936432, -0.0129657, 0.0838408, -0.0366397, 0.081579, -0.0429978, 0.0833914, -0.051281, 0.0878973, -0.0555415, 0.0936937, -0.0579047, 0.101825, -0.0562472, 0.106539, -0.0519843)
+depth = 0.01
+material = SubResource("StandardMaterial3D_67pb6")
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15256e-07)
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Labels"]
+transform = Transform3D(-3.49246e-09, -5.96046e-08, 1, -0.707107, 0.707107, -4.47035e-08, -0.707107, -0.707107, -3.72529e-08, 0.0101658, 0.0327625, -0.0264907)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "ON"
+font_size = 20
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Labels"]
+transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "OFF"
+font_size = 20
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Labels"]
+transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "AUTO"
+font_size = 20
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Labels"]
+transform = Transform3D(-2.23517e-08, -0.999997, 0, 0.923878, -2.23517e-08, 0.382683, -0.382683, 2.23517e-08, 0.923879, 0.00507504, 0.00599289, -4.81606e-05)
+radius = 0.045
+height = 0.01
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Labels"]
+transform = Transform3D(7.45058e-09, -0.999997, -1.49012e-08, 0.923878, 3.72529e-08, 0.382683, -0.382683, 1.49012e-08, 0.923879, 0.00512251, 0.00599861, -2.38419e-07)
+sorting_offset = 10.0
+radius = 0.036
+height = 0.01
+material = ExtResource("35_r1uh5")
+
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(-1.19209e-07, 0, 0.999999, 0, 1, 0, -1, 0, -8.9407e-08, 0.00100422, 0.0760599, 9.53674e-07)
+size = Vector3(0.1021, 0.0269469, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/Placard"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "CONTROL ROOM LIGHTS
+(placeholder)"
+font_size = 18
+outline_size = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+stream = ExtResource("24_mqur0")
+volume_db = -18.0
+max_db = 6.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+script = ExtResource("9_xa8sb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="control_room_emergency_lighting" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel"]
+transform = Transform3D(-1, 1.19209e-07, -4.44089e-15, -7.45058e-08, -1, 0, -4.44089e-15, 0, 1, 0.0389991, -1.90735e-06, -0.16)
+size = Vector3(0.0356622, 0.1, 0.1)
+material = ExtResource("35_r1uh5")
+
+[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(1, 0, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Lights"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -1.49012e-08, 0, 0, 0, 1, 5.66244e-07, 0.111657, -0.0285597)
+radius = 0.017
+height = 0.01
+sides = 10
+material = SubResource("StandardMaterial3D_5do0h")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Lights/On"]
+transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
+radius = 0.014
+rings = 5
+material = SubResource("StandardMaterial3D_rq5dy")
+
+[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Lights"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.112, 0.029)
+radius = 0.017
+height = 0.01
+sides = 10
+material = SubResource("StandardMaterial3D_u6pyw")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Lights/Off"]
+transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
+radius = 0.014
+rings = 5
+material = SubResource("StandardMaterial3D_sw1vb")
+
+[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
+flip_faces = true
+radius = 0.00824928
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0588125, 1.43051e-06, -4.76837e-07)
+radius = 0.014
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000374436, 9.53674e-07)
+flip_faces = true
+radius = 0.00781379
+height = 0.084
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0218214, 1.43051e-06, -7.15256e-07)
+radius = 0.00888454
+height = 0.00273183
+sides = 12
+material = ExtResource("33_11pre")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle"]
+transform = Transform3D(1, 0, 0, 1.49012e-08, 1, 0, 0, 0, 1, -1.47223e-05, 0.00403357, 0.0100591)
+polygon = PackedVector2Array(0.100728, -0.013248, 0.101953, -0.0752368, 0.0894667, -0.0741262, 0.0809256, -0.0633183, 0.0809014, -0.051302, 0.0866342, -0.0240092, 0.0870524, -0.012404)
+depth = 0.02
+material = ExtResource("33_11pre")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Handle"]
+transform = Transform3D(-4.47035e-08, 2.23517e-07, 1.07, 0, 1.07, -3.72529e-08, -1.07, 0, -4.47035e-08, 0.021, 0.0469999, 0.101565)
+polygon = PackedVector2Array(0.108744, -0.0443115, 0.10631, -0.0371923, 0.0960698, -0.0126681, 0.0949333, -0.0117164, 0.0936432, -0.0129657, 0.0838408, -0.0366397, 0.081579, -0.0429978, 0.0833914, -0.051281, 0.0878973, -0.0555415, 0.0936937, -0.0579047, 0.101825, -0.0562472, 0.106539, -0.0519843)
+depth = 0.01
+material = SubResource("StandardMaterial3D_67pb6")
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15256e-07)
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Labels"]
+transform = Transform3D(-3.49246e-09, -5.96046e-08, 1, -0.707107, 0.707107, -4.47035e-08, -0.707107, -0.707107, -3.72529e-08, 0.0101658, 0.0327625, -0.0264907)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "ON"
+font_size = 20
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Labels"]
+transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "OFF"
+font_size = 20
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Labels"]
+transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
+sorting_offset = 10.0
+pixel_size = 0.0003
+text = "AUTO"
+font_size = 20
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Labels"]
+transform = Transform3D(-2.23517e-08, -0.999997, 0, 0.923878, -2.23517e-08, 0.382683, -0.382683, 2.23517e-08, 0.923879, 0.00507504, 0.00599289, -4.81606e-05)
+radius = 0.045
+height = 0.01
+material = ExtResource("33_11pre")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Labels"]
+transform = Transform3D(7.45058e-09, -0.999997, -1.49012e-08, 0.923878, 3.72529e-08, 0.382683, -0.382683, 1.49012e-08, 0.923879, 0.00512251, 0.00599861, -2.38419e-07)
+sorting_offset = 10.0
+radius = 0.036
+height = 0.01
+material = ExtResource("35_r1uh5")
+
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(-1.19209e-07, -1.49012e-08, 0.999999, -1.42109e-14, 1, 1.49012e-08, -1, -7.10543e-15, -8.9407e-08, 0.0010044, 0.0760598, 9.53674e-07)
+size = Vector3(0.1021, 0.0339464, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/Placard"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0004
+modulate = Color(0, 0, 0, 1)
+text = "CONTROL ROOM 
+EMERGENCY LIGHTS
+(placeholder)"
+font_size = 18
+outline_size = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+stream = ExtResource("24_mqur0")
+volume_db = -18.0
+max_db = 6.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+script = ExtResource("9_xa8sb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
 
 [node name="Main Panel Left Side" type="CSGPolygon3D" parent="Control Room Panels"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 9.79688, 0.806, 2.6389)
@@ -8317,7 +8661,7 @@ material = SubResource("StandardMaterial3D_yntni")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1"]
 transform = Transform3D(1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 0.999999, -2.23517e-08, -5.96046e-08, 2.98023e-08, 1, 0.0206938, 1.49012e-07, -9.53674e-07)
-script = ExtResource("19_t6l2n")
+script = ExtResource("24_gbxvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/StaticBody3D"]
 transform = Transform3D(0.999999, 2.23517e-08, 1.19209e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
@@ -8382,7 +8726,7 @@ material = SubResource("StandardMaterial3D_asr2j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1"]
 transform = Transform3D(1, 2.23517e-08, 2.98023e-08, -7.45058e-09, 0.999999, -1.49012e-08, 2.98023e-08, 3.72529e-08, 1, 0.0206938, 1.49012e-07, -1.90735e-06)
-script = ExtResource("19_t6l2n")
+script = ExtResource("24_gbxvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/StaticBody3D"]
 transform = Transform3D(0.999999, 2.98023e-08, 1.49012e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
@@ -8499,7 +8843,7 @@ material = SubResource("StandardMaterial3D_picrq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2"]
 transform = Transform3D(1, 2.98023e-08, 2.98023e-08, -1.49012e-08, 0.999999, -2.23517e-08, -5.96046e-08, 2.98023e-08, 1, 0.0206938, 1.49012e-07, -9.53674e-07)
-script = ExtResource("19_t6l2n")
+script = ExtResource("24_gbxvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/StaticBody3D"]
 transform = Transform3D(0.999999, 2.23517e-08, 1.19209e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
@@ -8564,7 +8908,7 @@ material = SubResource("StandardMaterial3D_x6v41")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2"]
 transform = Transform3D(1, 2.23517e-08, 2.98023e-08, -7.45058e-09, 0.999999, -1.49012e-08, 2.98023e-08, 3.72529e-08, 1, 0.0206938, 1.49012e-07, -1.90735e-06)
-script = ExtResource("19_t6l2n")
+script = ExtResource("24_gbxvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/StaticBody3D"]
 transform = Transform3D(0.999999, 2.98023e-08, 1.49012e-07, 0, 0.999999, 1.49012e-08, 0, 5.21541e-08, 1, 0, 0, 0)
@@ -8649,15 +8993,15 @@ font_size = 22
 outline_size = 0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 stream = ExtResource("24_mqur0")
-volume_db = -15.0
+volume_db = -18.0
 max_db = 6.0
-max_distance = 5.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("25_2vb5h")
+script = ExtResource("26_5ngi1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -11012,7 +11356,7 @@ stream = ExtResource("10_5jncs")
 max_distance = 3.0
 
 [node name="LPRM Meters" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
-script = ExtResource("36_b0odt")
+script = ExtResource("45_nuv7p")
 
 [node name="LPRM 1 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340462, 0.10083, 0.384)
@@ -11894,6 +12238,22 @@ BYPASS"
 font_size = 12
 outline_size = 16
 
+[node name="Indicator Dial" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Indicator Dial"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245528, 0.0563698, -1.38728)
+size = Vector3(0.0344247, 0.117, 0.117)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Meters/Indicator Dial"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.00621796, 0.0567113, -1.38727)
+visible = false
+radius = 0.054
+height = 0.004
+sides = 28
+smooth_faces = false
+material = SubResource("StandardMaterial3D_rryex")
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
 stream = ExtResource("5_7cq8b")
@@ -11918,6 +12278,10 @@ autostart = true
 wait_time = 0.05
 autostart = true
 
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_down"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical Panel/control_room_emergency_lighting/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" method="_on_input_event"]

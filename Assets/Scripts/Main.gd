@@ -248,7 +248,7 @@ func _ready():
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	pass
 
 func open_scram_breakers(reason):
