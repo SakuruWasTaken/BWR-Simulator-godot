@@ -47,6 +47,20 @@ enum reactor_modes {
 	RUN,
 }
 
+enum pump_status {
+	STANDBY,
+	STOPPING,
+	STARTING,
+	RUNNING,
+	TRIPPED,
+}
+
+enum valve_type {
+	motor_operated,
+	air_operated,
+	hydrualic_operated,
+}
+
 var reactor_mode = reactor_modes.SHUTDOWN
 var reactor_mode_shutdown_bypass = true
 var reactor_mode_shutdown_timer = 0
@@ -55,6 +69,8 @@ var scram_active = false
 var scram_type
 
 var scram_breakers = {}
+
+
 
 var average_power_range_monitors = {
 	"A": 0.00,
@@ -112,6 +128,63 @@ var intermidiate_range_monitors = {
 	"A2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/A2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 	"B2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 }	
+
+@onready var pumps = {
+	"crd_pump_a": {
+		"status": pump_status.RUNNING,
+		"auto_on": true,
+		"status_light_on": $"Control Room Panels/Main Panel Center/Controls/CRD System/crd_pump_a/Lights/On/CSGSphere3D".get_material(),
+		"status_light_off": $"Control Room Panels/Main Panel Center/Controls/CRD System/crd_pump_a/Lights/Off/CSGSphere3D".get_material(),
+		"starting_timer": 0,
+		"suction_pressure_trip_setpoint": 5, # inHg
+		"starting_flow_rate_increase": 0.2,
+		"stopping_flow_rate_decrease": 0.6,
+		"starting_required_flow": 20,
+		"current_flow": 47.00, # gpm
+		"max_flow": 200, # gpm
+		"electrical_bus": "SM-7",
+	},
+	"crd_pump_b": { 
+		"status": pump_status.STANDBY,
+		"auto_on": true,
+		"status_light_on": $"Control Room Panels/Main Panel Center/Controls/CRD System/crd_pump_b/Lights/On/CSGSphere3D".get_material(),
+		"status_light_off": $"Control Room Panels/Main Panel Center/Controls/CRD System/crd_pump_b/Lights/Off/CSGSphere3D".get_material(),
+		"starting_timer": 0,
+		"suction_pressure_trip_setpoint": 5, # inHg
+		"starting_flow_rate_increase": 0.2,
+		"stopping_flow_rate_decrease": 0.6,
+		"starting_required_flow": 20,
+		"current_flow": 0.00, # gpm
+		"max_flow": 200, # gpm
+		"electrical_bus": "SM-8",
+	},
+}
+
+func system_physics_timer_expire():
+	for pump_name in pumps:
+		var pump_info = pumps[pump_name]
+		if pump_info["status"] == pump_status.STARTING:
+			# blink green light while pump is starting
+			pump_info["current_flow"] += pump_info["starting_flow_rate_increase"]
+			pump_info["status_light_off"].emission_enabled = false
+			pump_info["status_light_on"].emission_enabled = true if pump_info["starting_timer"] <= 4 else false
+			if pump_info["starting_timer"] <= 9:
+				pump_info["starting_timer"] += 1
+			else:
+				pump_info["starting_timer"] = 0
+				
+			if pump_info["current_flow"] > pump_info["starting_required_flow"]:
+				pump_info["status"] = pump_status.RUNNING
+				pump_info["status_light_on"].emission_enabled = true
+				
+		if pump_info["status"] == pump_status.STOPPING or pump_info["status"] == pump_status.TRIPPED:
+			pump_info["current_flow"] = clampf(pump_info["current_flow"] - pump_info["stopping_flow_rate_decrease"], 0, 9999999)
+			pump_info["status_light_on"].emission_enabled = false
+			if pump_info["current_flow"] == 0:
+				pump_info["status"] = pump_status.STANDBY
+				pump_info["status_light_off"].emission_enabled = true
+		print(pump_info["current_flow"])
+			
 
 func generate_control_rods():
 	var x = 18

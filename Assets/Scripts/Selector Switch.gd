@@ -6,7 +6,7 @@ func control_room_emergency_lighting_switch(position):
 	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
 	
 	for node in $"/root/Node3d/Control Room Lights/emergency".get_children():
-		node.light_energy = 0.3 if lights_on else 0
+		node.light_energy = 0.4 if node.name != "SpotLight3D" and lights_on else 0.3 if lights_on else 0
 		for child_node in node.get_children():
 			child_node.get_material().emission_enabled = lights_on
 	on_light_material.emission_enabled = lights_on
@@ -25,6 +25,19 @@ func control_room_normal_lighting_switch(position):
 				child_node.light_energy = 2.368 if lights_on else 0
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
+
+func crd_pump_a_switch(position):
+	if position == 1:
+		node_3d.pumps["crd_pump_a"]["auto_on"] = true
+	else:
+		node_3d.pumps["crd_pump_a"]["auto_on"] = false
+		node_3d.pumps["crd_pump_a"]["status"] = node_3d.pump_status.STARTING if position == 2 else node_3d.pump_status.STOPPING if position == 0 and not node_3d.pumps["crd_pump_a"]["status"] == node_3d.pump_status.TRIPPED else node_3d.pump_status.STOPPING
+func crd_pump_b_switch(position): 
+	if position == 1:
+		node_3d.pumps["crd_pump_b"]["auto_on"] = true
+	else:
+		node_3d.pumps["crd_pump_b"]["auto_on"] = false
+		node_3d.pumps["crd_pump_b"]["status"] = node_3d.pump_status.STARTING if position == 2 else node_3d.pump_status.STOPPING if position == 0 and not node_3d.pumps["crd_pump_b"]["status"] == node_3d.pump_status.TRIPPED else node_3d.pump_status.STOPPING
 
 var switches = {
 	"control_room_emergency_lighting": {
@@ -47,8 +60,28 @@ var switches = {
 		"position": 1,
 		"momentary": false,
 	},
+	"crd_pump_a": {
+		"func": "crd_pump_a_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"crd_pump_b": {
+		"func": "crd_pump_b_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
 }
-@onready var pointer = $"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Momentary Switch/EDG 14 KV/Pointer"
+#@onready var pointer = $"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Momentary Switch/EDG 14 KV/Pointer"
 @onready var node_3d = $"/root/Node3d"
 #@onready var on_light_material = $"../Lights/On/CSGSphere3D".get_material() if "Momentary" not in get_parent().name else ""
 #@onready var off_light_material = $"../Lights/Off/CSGSphere3D".get_material() if "Momentary" not in get_parent().name else ""

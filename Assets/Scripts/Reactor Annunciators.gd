@@ -28,7 +28,6 @@ func check_aprm_downscale():
 		if node_3d.average_power_range_monitors[aprm_number] < 3:
 			return true
 	return false
-func check_rod_out_block(): return node_3d.rod_withdraw_block != []
 func check_rwm_rod_block(): return rwm.withdraw_blocks != [] or rwm.insert_blocks != []
 func check_rod_drift():
 	for rod_number in node_3d.control_rods:
@@ -65,54 +64,33 @@ func check_reactor_mode_shutdown_bypass():
 	return node_3d.reactor_mode_shutdown_bypass
 
 var annunciators = {
-	"irm_downscale": {
-		"box": 1,
-		"lamp": "D6",
-		"material": null,
-		"state": annunciator_state.ACKNOWLEDGED,
-		"func": "check_irm_downscale"
-	},
-	"aprm_downscale": {
-		"box": 1,
-		"lamp": "D8",
-		"material": null,
-		"state": annunciator_state.ACKNOWLEDGED,
-		"func": "check_aprm_downscale"
-	},
 	"rwm_rod_block": {
 		"box": 1,
-		"lamp": "E6",
+		"lamp": "F2",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_rwm_rod_block"
 	},
-	"rod_out_block": {
-		"box": 1,
-		"lamp": "E7",
-		"material": null,
-		"state": annunciator_state.ACKNOWLEDGED,
-		"func": "check_rod_out_block"
-	},
 	"rod_drift": {
 		"box": 1,
-		"lamp": "F7",
+		"lamp": "C5",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_rod_drift"
 	},
 	"rpis_inop": {
 		"box": 1,
-		"lamp": "F4",
+		"lamp": "B8",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_rpis_inop"
 	},
-	"lprm_downscale": {
+	"cr_accum_trouble": {
 		"box": 1,
-		"lamp": "F8",
+		"lamp": "F6",
 		"material": null,
-		"state": annunciator_state.ACKNOWLEDGED,
-		"func": "check_lprm_downscale"
+		"state": annunciator_state.CLEAR,
+		"func": "check_cr_accum_trouble"
 	},
 	"auto_scram_a_trip": {
 		"box": 2,
@@ -149,12 +127,26 @@ var annunciators = {
 		"state": annunciator_state.CLEAR,
 		"func": "check_manual_scram_b_trip"
 	},
-	"cr_accum_trouble": {
+	"aprm_downscale": {
 		"box": 2,
-		"lamp": "F6",
+		"lamp": "D8",
 		"material": null,
-		"state": annunciator_state.CLEAR,
-		"func": "check_cr_accum_trouble"
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_aprm_downscale"
+	},
+	"irm_downscale": {
+		"box": 2,
+		"lamp": "F7",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_irm_downscale"
+	},
+	"lprm_downscale": {
+		"box": 2,
+		"lamp": "F8",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_lprm_downscale"
 	},
 }
 

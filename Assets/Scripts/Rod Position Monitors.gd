@@ -337,8 +337,9 @@ var selected_rod_meter_number = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	while true:
-		await get_tree().create_timer(0.1).timeout
+	pass
+#	while true:
+#		await get_tree().create_timer(0.1).timeout
 
 
 func selected_rod_changed(rod):
