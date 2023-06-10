@@ -38,6 +38,12 @@ func crd_pump_b_switch(position):
 	else:
 		node_3d.pumps["crd_pump_b"]["auto_on"] = false
 		node_3d.pumps["crd_pump_b"]["status"] = node_3d.pump_status.STARTING if position == 2 else node_3d.pump_status.STOPPING if position == 0 and not node_3d.pumps["crd_pump_b"]["status"] == node_3d.pump_status.TRIPPED else node_3d.pump_status.STOPPING
+func DG2_voltage_reg_switch(position): print(position) # TODO
+func cb_DG2_mode_sel_switch(position): print(position) # TODO
+func cb_DG2_8_sync_sel_switch(position): print(position) # TODO
+func DG2_governor_control_switch(position): print(position) # TODO
+func cb_B_8_sync_sel_switch(position): print(position) # TODO
+func cb_8_3_sync_sel_switch(position): print(position) # TODO
 
 var switches = {
 	"control_room_emergency_lighting": {
@@ -80,6 +86,66 @@ var switches = {
 		"position": 1,
 		"momentary": false,
 	},
+	"DG2_voltage_reg_control": {
+		"func": "DG2_voltage_reg_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": true,
+	},
+	"cb_DG2_mode_sel": {
+		"func": "cb_DG2_mode_sel_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"cb_DG2_8_sync_sel": {
+		"func": "cb_DG2_8_sync_sel_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"DG2_governor_control": {
+		"func": "DG2_governor_control_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": true,
+	},
+	"cb_B_8_sync_sel": {
+		"func": "cb_B_8_sync_sel_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"cb_8_3_sync_sel": {
+		"func": "cb_8_3_sync_sel_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
 }
 #@onready var pointer = $"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Momentary Switch/EDG 14 KV/Pointer"
 @onready var node_3d = $"/root/Node3d"
@@ -114,7 +180,7 @@ func breaker_switch_position_up(camera, event, position, normal, shape_idx):
 				$"../AudioStreamPlayer3D".playing = true
 				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
 				call(switches[name]["func"], switches[name]["position"])
-		elif switches[name]["position"] == 2 and "Momentary" in get_parent().name:
+		elif switches[name]["position"] == 2 and switches[name]["momentary"]:
 			switches[name]["position"] = 1
 			$"../AudioStreamPlayer3D".playing = true
 			$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))

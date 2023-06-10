@@ -10,14 +10,60 @@ func _ready():
 func _process(delta):
 	pass
 
-func cb_85_82_switch(position):
-	print(position)
+func cb_85_82_switch(position): print(position) # TODO
+func DG2_switch(position): print(position) # TODO
+func cb_DG2_8_switch(position): print(position) # TODO
+func cb_B8_switch(position): print(position) # TODO
+func cb_8DG2_switch(position): print(position) # TODO
+func cb_8_85_1_switch(position): print(position) # TODO
+func cb_8_83_switch(position): print(position) # TODO
+func cb_8_81_switch(position): print(position) # TODO
+func cb_8_3_switch(position): print(position) # TODO
 
 @onready var switches = {
 	"cb_85_82": {
 		"func": "cb_85_82_switch",
 		"position": 1,
-		"momentary": false,
+		"indicator": $"../Indicator".get_material()
+	},
+	"DG2": {
+		"func": "DG2_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_DG2_8": {
+		"func": "cb_DG2_8_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_B8": {
+		"func": "cb_B8_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_8DG2": {
+		"func": "cb_8DG2_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_8_85_1": {
+		"func": "cb_8_85_1_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_8_83": {
+		"func": "cb_8_83_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_8_81": {
+		"func": "cb_8_81_switch",
+		"position": 1,
+		"indicator": $"../Indicator".get_material()
+	},
+	"cb_8_3": {
+		"func": "cb_8_3_switch",
+		"position": 1,
 		"indicator": $"../Indicator".get_material()
 	},
 }
