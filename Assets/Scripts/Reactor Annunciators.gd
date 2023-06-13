@@ -5,7 +5,7 @@ var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annun
 @onready var alarm_audio_fast = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Fast"
 @onready var alarm_audio_slow = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Slow"
 @onready var rwm = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box"
-@onready var full_core_display = $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display/full core display lights"
+@onready var full_core_display = $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display"
 
 enum annunciator_state {
 	CLEAR, # Annuncuator not lit

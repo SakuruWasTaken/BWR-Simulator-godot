@@ -18,8 +18,8 @@ extends CSGBox3D
 
 var rwm_initalized = false
 var rwm_inop = true
-var current_group = 0
-var current_group_rods = {}
+var current_group = 1
+var current_group_rods = []
 var select_error = false
 # TODO: add config so user can change options like this
 var current_sequence = "a"
@@ -172,7 +172,7 @@ func button_pressed(parent, pressed):
 		system_init_material.emission_enabled = pressed
 		if rwm_initalized == false and pressed and not rwm_malfunction:
 			# initialise RWM
-			current_group = 1
+			#current_group = 1
 			current_group_rods = []
 			# i do this because for some reason if i just directly assign current_group_rods to the data from that group,
 			# editing current_group_rods would then edit the original variable, i guess this is some feature of godot,

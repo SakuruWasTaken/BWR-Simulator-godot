@@ -1,4 +1,4 @@
-[gd_scene load_steps=453 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=460 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dptsjp7wy2ev1" path="res://Assets/Materials/panel material.tres" id="5_0qdm2"]
 [ext_resource type="AudioStream" uid="uid://cxu7ooirfysmk" path="res://Assets/Audio/ambient_sound.mp3" id="5_7cq8b"]
 [ext_resource type="Material" uid="uid://d1scsatacyhl5" path="res://Assets/Materials/panel material 2.tres" id="6_o677x"]
-[ext_resource type="PackedScene" uid="uid://dyk86rtadlnxg" path="res://Assets/Scenes/full_core_display_lights.tscn" id="7_5ybks"]
+[ext_resource type="PackedScene" uid="uid://b5asdvpyn3ryv" path="res://Assets/Scenes/full_core_display_lights.tscn" id="7_5ybks"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Motion Button.gd" id="7_e5c6q"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Select Button.gd" id="8_84o0r"]
 [ext_resource type="AudioStream" uid="uid://q6splpjvouo5" path="res://Assets/Audio/button_click.mp3" id="9_irtiu"]
@@ -14,11 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://boliqkypuf7po" path="res://Assets/Audio/button_unclick.mp3" id="10_5jncs"]
 [ext_resource type="Material" uid="uid://tpeayryyfc" path="res://Assets/Materials/blue label.tres" id="10_6mjji"]
 [ext_resource type="Texture2D" uid="uid://c6kfewei10dfl" path="res://Assets/Textures/Full Core Display Background.PNG" id="10_a03q7"]
-[ext_resource type="Script" path="res://Assets/Scenes/Breaker Switch.gd" id="10_vubro"]
 [ext_resource type="Material" uid="uid://cpgjdyl15tmon" path="res://Assets/Materials/beige plastic.tres" id="11_03c2l"]
 [ext_resource type="Material" uid="uid://b6spmkg43qdhs" path="res://Assets/Materials/red label.tres" id="11_6ojs0"]
 [ext_resource type="Texture2D" uid="uid://caapj14jhp8rt" path="res://Assets/Textures/Guages/Dial 1.png" id="12_67egb"]
 [ext_resource type="Material" uid="uid://b0b37alwlfoju" path="res://Assets/Materials/white metal.tres" id="12_nfrwy"]
+[ext_resource type="Script" path="res://Assets/Scripts/Breaker Switch.gd" id="12_qhcpc"]
 [ext_resource type="Material" uid="uid://dfbljd3ypxq4g" path="res://Assets/Materials/silver metal.tres" id="13_jukva"]
 [ext_resource type="AudioStream" uid="uid://o256lmfhvx62" path="res://Assets/Audio/reactor_alarm_loop_fast.mp3" id="13_muwa0"]
 [ext_resource type="Texture2D" uid="uid://blb42sqhhnvov" path="res://Assets/Textures/Clock.png" id="13_rjxd0"]
@@ -50,7 +50,10 @@
 [ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
 [ext_resource type="Script" path="res://Assets/Scripts/LPRM Meters.gd" id="45_nuv7p"]
 [ext_resource type="Texture2D" uid="uid://d1grgyrje82x6" path="res://Assets/Textures/Guages/Synchroscope.png" id="46_5t2ox"]
+[ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Main.gd" id="46_d783m"]
 [ext_resource type="Script" path="res://Assets/Scripts/Synchroscope.gd" id="46_svjcp"]
+[ext_resource type="PackedScene" uid="uid://dolcer3aevlui" path="res://Assets/Scenes/digital_rod_display.tscn" id="48_blkpi"]
+[ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Digital.gd" id="50_nnqwm"]
 
 [sub_resource type="Environment" id="Environment_l5pxq"]
 background_color = Color(0.2139, 0.570975, 0.69, 1)
@@ -105,6 +108,24 @@ emission = Color(1, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scp22"]
 albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqlp2"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture_force_srgb = true
+clearcoat = 0.16
+clearcoat_roughness = 1.0
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8pdf"]
+emission = Color(1, 1, 1, 1)
+backlight = Color(1, 0.537255, 0, 1)
+refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du5ym"]
+emission = Color(1, 1, 1, 1)
+backlight = Color(1, 0.537255, 0, 1)
+refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cimg4"]
 albedo_color = Color(0, 0, 0, 1)
@@ -2146,13 +2167,10 @@ emission_enabled = true
 emission = Color(1, 0.839216, 0.666667, 1)
 refraction_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqlp2"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0, 0, 1)
-albedo_texture_force_srgb = true
-clearcoat = 0.16
-clearcoat_roughness = 1.0
-refraction_enabled = true
+[sub_resource type="ViewportTexture" id="ViewportTexture_n6ky1"]
+viewport_path = NodePath("Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport")
+
+[sub_resource type="World3D" id="World3D_7ax74"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wtbb"]
 emission = Color(1, 0, 0, 1)
@@ -2870,7 +2888,7 @@ script = ExtResource("1_eg7xd")
 environment = SubResource("Environment_l5pxq")
 
 [node name="Player" parent="." instance=ExtResource("1_eisjc")]
-transform = Transform3D(-0.999979, 0, 0.00663236, 0, 1, 0, -0.00663236, 0, -0.999979, -9.76053, 1.37753, 2.94079)
+transform = Transform3D(-0.588802, 0, -0.808278, 0, 1, 0, 0.808278, 0, -0.588802, 5.82746, 1.37753, 1.32903)
 
 [node name="wall" type="CSGBox3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.87195, 1.64062, 4.4364)
@@ -4048,6 +4066,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
+[node name="Annunciators" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel"]
+transform = Transform3D(-0.142629, -0.989777, -1.77636e-15, 0.989777, -0.142629, -4.26326e-14, 1.45661e-13, 5.12672e-15, 1, -1.44315, -0.505126, 0.657299)
+
+[node name="Annunciator Box SM-8" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators"]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 1.69407e-21, -7.10543e-15, -1.69407e-21, 0.85, 0, 0.0454462, -1.8)
+size = Vector3(0.0433738, 0.472419, 1.00886)
+material = SubResource("StandardMaterial3D_lqlp2")
+
+[node name="Lights" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 8.47033e-22, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="A1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights"]
+transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_d8pdf")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights/A1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="B1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights/B1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
 [node name="SM-8 Section" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel"]
 transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, -3.19744e-14, -5.32907e-15, 4.9738e-14, 1, 2.38419e-07, 0.0359678, 0)
 
@@ -4068,8 +4125,8 @@ size = Vector3(0.00820124, 0.290639, 0.00675643)
 material = SubResource("StandardMaterial3D_cimg4")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Labels/DG section markers"]
-transform = Transform3D(2.98023e-08, 4.37115e-08, -1, 1, -4.37114e-08, -4.47035e-08, -4.37115e-08, -1, -4.37114e-08, 0.0379901, -0.325469, -1.57154)
-size = Vector3(0.00820124, 0.32423, 0.00675643)
+transform = Transform3D(-1.49012e-08, 4.37116e-08, -1, 1, -4.37114e-08, -8.9407e-08, -4.37115e-08, -1, -4.37114e-08, 0.0379897, -0.325337, -1.53119)
+size = Vector3(0.00820124, 0.404332, 0.00675643)
 material = SubResource("StandardMaterial3D_cimg4")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Labels/DG section markers"]
@@ -4098,7 +4155,7 @@ size = Vector3(0.00820124, 0.0291399, 0.00675643)
 material = SubResource("StandardMaterial3D_cimg4")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Labels/DG section markers"]
-transform = Transform3D(8.9407e-08, 2.98023e-08, -1, 0.707109, 0.707108, 0, 0.707107, -0.707108, -4.37114e-08, 0.0379808, -0.330669, -1.40615)
+transform = Transform3D(-1.49012e-08, -1.49012e-08, -1, 0.70711, 0.707108, -4.47035e-08, 0.707107, -0.707108, -4.37113e-08, 0.0379791, -0.330868, -1.32513)
 size = Vector3(0.00820124, 0.018874, 0.00675643)
 material = SubResource("StandardMaterial3D_cimg4")
 
@@ -4114,6 +4171,11 @@ material = SubResource("StandardMaterial3D_cimg4")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Labels/DG section markers"]
 transform = Transform3D(1.30219e-07, -0.989527, 0.144356, 1.262e-08, -0.144356, -0.989527, 1, 1.30676e-07, -6.31001e-09, -0.151997, -0.365481, -0.79369)
+size = Vector3(0.00820124, 0.384457, 0.00675643)
+material = SubResource("StandardMaterial3D_cimg4")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Labels/DG section markers"]
+transform = Transform3D(1.30219e-07, -0.989527, 0.144356, 1.262e-08, -0.144356, -0.989527, 1, 1.30676e-07, -6.31002e-09, -0.151998, -0.365481, -1.31948)
 size = Vector3(0.00820124, 0.384457, 0.00675643)
 material = SubResource("StandardMaterial3D_cimg4")
 
@@ -5318,7 +5380,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_85_82"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_85_82/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -5494,7 +5556,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8DG2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8DG2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -5669,7 +5731,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_DG2_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_DG2_8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -5851,7 +5913,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/DG2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/DG2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -6060,7 +6122,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_B8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_B8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -6235,7 +6297,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_85_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_85_1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -6392,7 +6454,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_83"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_83/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -6549,7 +6611,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_81"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_81/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -6739,7 +6801,7 @@ attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
-script = ExtResource("10_vubro")
+script = ExtResource("12_qhcpc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
@@ -12467,12 +12529,12 @@ size = Vector3(0.0916769, 0.0269469, 0.00717134)
 material = ExtResource("12_nfrwy")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/CRD System/crd_pump_a/Placard"]
-transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+transform = Transform3D(0.999999, 0, -1.49012e-08, -2.98023e-08, 1, 1.49012e-08, -2.98023e-08, 7.45058e-09, 0.999999, -9.53674e-07, -4.76837e-07, 0.00378257)
 pixel_size = 0.0004
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "CRD HYDRAULIC
-PUMP A"
+text = "PUMP
+CRD-P-1A"
 font_size = 18
 outline_size = 0
 
@@ -12627,8 +12689,8 @@ transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-
 pixel_size = 0.0004
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "CRD HYDRAULIC
-PUMP B"
+text = "PUMP
+CRD-P-1B"
 font_size = 18
 outline_size = 0
 
@@ -12996,17 +13058,45 @@ wait_time = 0.1
 autostart = true
 
 [node name="Full Core Display" type="Node3D" parent="Control Room Panels/Main Panel Center"]
+unique_name_in_owner = true
 transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 0.901, 1.459, -2.4)
+script = ExtResource("46_d783m")
 
-[node name="full core display lights" parent="Control Room Panels/Main Panel Center/Full Core Display" instance=ExtResource("7_5ybks")]
-transform = Transform3D(-1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73188e-15, -4.80825e-08, -1.1, -1.78814e-07, -0.481903, -0.141908, -0.272004)
+[node name="Analog" type="Node3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
+unique_name_in_owner = true
 
-[node name="Full Core Display Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
+[node name="Full Core Display Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Analog"]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sorting_offset = 2.0
 gi_mode = 0
 shaded = true
 texture = ExtResource("10_a03q7")
+
+[node name="full core display lights" parent="Control Room Panels/Main Panel Center/Full Core Display/Analog" instance=ExtResource("7_5ybks")]
+unique_name_in_owner = true
+transform = Transform3D(1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73188e-15, -4.80825e-08, -1.1, -1.78814e-07, -0.481903, -0.141908, -0.272004)
+
+[node name="Digital" type="Node3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
+unique_name_in_owner = true
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.264567, 0.0188403)
+size = Vector3(0.656706, 0.550643, 0.0413262)
+material = ExtResource("35_r1uh5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, -9.53674e-07, -0.264567, -0.00244284)
+pixel_size = 0.0008
+texture = SubResource("ViewportTexture_n6ky1")
+
+[node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+world_3d = SubResource("World3D_7ax74")
+size = Vector2i(640, 480)
+
+[node name="digital_rod_display" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport" instance=ExtResource("48_blkpi")]
+unique_name_in_owner = true
+script = ExtResource("50_nnqwm")
 
 [node name="Annunciators" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.917, 1.807, -2.4)

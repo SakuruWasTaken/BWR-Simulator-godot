@@ -4,6 +4,8 @@ var power = 100.00
 
 var thread
 
+var starting_rwm_group = 54
+
 var selected_cr = "02-19"
 # TODO: 185 rods
 var control_rods = {}
@@ -63,7 +65,7 @@ enum valve_type {
 
 var reactor_mode = reactor_modes.SHUTDOWN
 var reactor_mode_shutdown_bypass = true
-var reactor_mode_shutdown_timer = 0
+var reactor_mode_shutdown_timer = 100
 
 var scram_active = false
 var scram_type
@@ -227,15 +229,15 @@ func generate_control_rods():
 
 				var rod_number = "%s-%s" % [x_str, y_str]
 				
-				var accum_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ACCUM_SCRAM_IND/ACCUM" % rod_number)
+				var accum_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/%s/ACCUM_SCRAM_IND/ACCUM" % rod_number)
 				var accum_material = accum_node.get_material()
-				var scram_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ACCUM_SCRAM_IND/SCRAM" % rod_number)
+				var scram_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/%s/ACCUM_SCRAM_IND/SCRAM" % rod_number)
 				var scram_material = scram_node.get_material()
-				var full_out_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/FULL_IN_OUT_IND/FULL OUT" % rod_number)
+				var full_out_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/%s/FULL_IN_OUT_IND/FULL OUT" % rod_number)
 				var full_out_material = full_out_node.get_material()
-				var full_in_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/FULL_IN_OUT_IND/FULL IN" % rod_number)
+				var full_in_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/%s/FULL_IN_OUT_IND/FULL IN" % rod_number)
 				var full_in_material = full_in_node.get_material()
-				var drift_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
+				var drift_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
 				var drift_material = drift_node.get_material()
 				
 				
@@ -294,34 +296,43 @@ func _ready():
 					# TODO: iirc this is adjustable in real life, verify this
 					"upscale_setpoint": 117.00,
 					
-					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/D DOWNSCALE" % [lprm_number]).get_material(),
-					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/D UPSCALE" % [lprm_number]).get_material()
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/D DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/D UPSCALE" % [lprm_number]).get_material()
 			},
 			"C": {
 					"power": 0.00,
 					"upscale_setpoint": 117.00,
-					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/C DOWNSCALE" % [lprm_number]).get_material(),
-					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/C UPSCALE" % [lprm_number]).get_material()
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/C DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/C UPSCALE" % [lprm_number]).get_material()
 			},
 			"B": {
 					"power": 0.00,
 					"upscale_setpoint": 117.00,
-					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/B DOWNSCALE" % [lprm_number]).get_material(),
-					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/B UPSCALE" % [lprm_number]).get_material()
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/B DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/B UPSCALE" % [lprm_number]).get_material()
 			},
 			"A": {
 					"power": 0.00,
 					"upscale_setpoint": 117.00,
-					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/A DOWNSCALE" % [lprm_number]).get_material(),
-					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/LPRM %s/A UPSCALE" % [lprm_number]).get_material()
+					"full_core_display_downscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/A DOWNSCALE" % [lprm_number]).get_material(),
+					"full_core_display_upscale_light": get_node("Control Room Panels/Main Panel Center/Full Core Display/Analog/full core display lights/LPRM %s/A UPSCALE" % [lprm_number]).get_material()
 			},
 		}
 		lprm_number += 1
 	generate_control_rods()
+	for group_number in $"Control Room Panels/Main Panel Center/Meters/RWM Box".groups["sequence_a"]:
+		if group_number >= starting_rwm_group:
+			break
+		var group_info = $"Control Room Panels/Main Panel Center/Meters/RWM Box".groups["sequence_a"][group_number]
+		for rod_number in $"Control Room Panels/Main Panel Center/Meters/RWM Box".group_rods["sequence_a"][group_info["rod_group"]]:
+			if "|" in rod_number:
+				rod_number = rod_number.split("|")[0]
+			control_rods[rod_number]["cr_insertion"] = float(group_info["max_position"])
+	$"Control Room Panels/Main Panel Center/Meters/RWM Box".current_group = starting_rwm_group
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(Engine.get_frames_per_second())
+	print(Engine.get_frames_per_second())
 	pass
 
 func open_scram_breakers(reason):
@@ -333,14 +344,16 @@ func open_scram_breakers(reason):
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
 	if reactor_mode == reactor_modes.SHUTDOWN and not reactor_mode_shutdown_bypass and not scram_active:
-		reactor_mode_shutdown_timer = 100
 		open_scram_breakers(scram_types.MODE_SHUTDOWN)
 	elif reactor_mode == reactor_modes.SHUTDOWN and scram_active and reactor_mode_shutdown_bypass != true:
 		reactor_mode_shutdown_timer -= 1
 		if reactor_mode_shutdown_timer == 0:
 			reactor_mode_shutdown_bypass = true
+			reactor_mode_shutdown_timer = 100
 	elif reactor_mode != reactor_modes.SHUTDOWN and reactor_mode_shutdown_bypass:
 		reactor_mode_shutdown_bypass = false
+	else:
+		reactor_mode_shutdown_timer = 100
 	
 	# apply rod withdraw blocks
 	if reactor_mode == reactor_modes.SHUTDOWN:
@@ -443,11 +456,11 @@ func set_rod_light_emission(rod_number, light, state):
 	
 func change_selected_rod(rod):
 	if moving_rods == []:
+		var previous_selection = selected_cr
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, false)
-		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, false)
 		selected_cr = rod
 		set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/%s" % selected_cr, true)
-		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true if not $"Control Room Panels/Main Panel Center/Full Core Display/full core display lights".rpis_inop else false)
+		$"Control Room Panels/Main Panel Center/Full Core Display".selected_rod_changed(selected_cr, previous_selection)
 		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
 
 func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
@@ -512,7 +525,7 @@ func withdraw_selected_cr():
 		return
 		
 	# time delay to unlatch control
-	await get_tree().create_timer(randf_range(0.00, 0.04)).timeout
+	await get_tree().create_timer(randf_range(0.00, 0.06)).timeout
 	moving_rods.append(rod)
 	cr_previous_insertion = insertion
 	cr_direction = cr_directions.INSERT
