@@ -4,7 +4,7 @@ var power = 100.00
 
 var thread
 
-var starting_rwm_group = 54
+var starting_rwm_group = 1
 
 var selected_cr = "02-19"
 # TODO: 185 rods
