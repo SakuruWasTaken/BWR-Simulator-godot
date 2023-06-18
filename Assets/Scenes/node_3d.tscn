@@ -7135,6 +7135,262 @@ modulate = Color(0, 0, 0, 1)
 text = "KILOAMPS AC"
 font_size = 28
 
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.389, 1.23, -2.791)
+
+[node name="P840" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0553339, 0.842421, -0.484236)
+size = Vector3(0.176743, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Labels/P840"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P840"
+font_size = 64
+outline_size = 0
+
+[node name="P820" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53357, 0.842421, -0.484236)
+size = Vector3(0.176743, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Labels/P820"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P820"
+font_size = 64
+outline_size = 0
+
+[node name="P800" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0289, 0.842421, -0.484237)
+size = Vector3(0.176743, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Labels/P800"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P800"
+font_size = 64
+outline_size = 0
+
+[node name="Condensate Feed Panel" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel"]
+
+[node name="RFW Turbine A" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.893101)
+size = Vector3(0.231048, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels/RFW Turbine A"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RFW TURBINE A"
+font_size = 64
+outline_size = 0
+
+[node name="RFW Turbine B" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.82061)
+size = Vector3(0.231048, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels/RFW Turbine B"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RFW TURBINE B"
+font_size = 64
+outline_size = 0
+
+[node name="Condensate System" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -3.00657)
+size = Vector3(0.332435, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels/Condensate System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CONDENSATE SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Circ Water System" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842419, -4.05811)
+size = Vector3(0.332435, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Condensate Feed Panel/Labels/Circ Water System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CIRC WATER SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Service Systems Panel" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 9.53674e-07, 0, -3.71534)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel"]
+
+[node name="SW Loop A" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.16463)
+size = Vector3(0.231048, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/SW Loop A"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SW LOOP A"
+font_size = 64
+outline_size = 0
+
+[node name="SW Loop B" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -2.74186)
+size = Vector3(0.231048, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/SW Loop B"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SW LOOP B"
+font_size = 64
+outline_size = 0
+
+[node name="CIA A" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.45128)
+size = Vector3(0.131096, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/CIA A"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CIA-A"
+font_size = 64
+outline_size = 0
+
+[node name="CIA B" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -3.0135)
+size = Vector3(0.131096, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/CIA B"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CIA-A"
+font_size = 64
+outline_size = 0
+
+[node name="CAS" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.63907)
+size = Vector3(0.131096, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/CAS"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CAS"
+font_size = 64
+outline_size = 0
+
+[node name="TSW System" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.87567)
+size = Vector3(0.186931, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/TSW System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "TSW SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="RCC System" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -2.32675)
+size = Vector3(0.186931, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Service Systems Panel/Labels/RCC System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RCC SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Turbine Panel" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 1.43051e-06, 0, -5.97439)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel"]
+
+[node name="Turbine Control" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.573208, 0.825933, -1.22516)
+size = Vector3(0.261287, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels/Turbine Control"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "TURBINE CONTROL"
+font_size = 64
+outline_size = 0
+
+[node name="Turbine Auxiliaries" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -2.19531)
+size = Vector3(0.319424, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels/Turbine Auxiliaries"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "TURBINE AUXILIARIES"
+font_size = 64
+outline_size = 0
+
+[node name="Condenser Vacuum Control" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842419, -4.05029)
+size = Vector3(0.43444, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Turbine Panel/Labels/Condenser Vacuum Control"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "CONDENSER VACUUM CONTROL"
+font_size = 64
+outline_size = 0
+
 [node name="Main Panel Left Side" type="CSGPolygon3D" parent="Control Room Panels"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 9.89297, 0.806, 2.6389)
 use_collision = true
@@ -7149,6 +7405,278 @@ volume_db = 25.0
 max_db = -8.0
 autoplay = true
 max_distance = 5.0
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.389, 1.23, -4.161)
+
+[node name="P601" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.176743, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Labels/P601"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P601"
+font_size = 64
+outline_size = 0
+
+[node name="P602" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44262, 0.842421, -0.484236)
+size = Vector3(0.176743, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Labels/P602"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P602"
+font_size = 64
+outline_size = 0
+
+[node name="HPCS Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/HPCS Panel"]
+
+[node name="HPCS System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/HPCS Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.204045, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/HPCS Panel/Labels/HPCS System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "HPCS SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="RHR C B Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -0.822218)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/RHR C B Panel"]
+
+[node name="RHR C B System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/RHR C B Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.236174, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/RHR C B Panel/Labels/RHR C B System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RHR C/B SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Containment Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -2.28309)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel"]
+
+[node name="Isolation Control System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.401807, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels/Isolation Control System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "ISOLATION CONTROL SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="ADS 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.22929)
+size = Vector3(0.127913, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels/ADS 1"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "ADS 1"
+font_size = 64
+outline_size = 0
+
+[node name="Safety Relief Valves" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -1.67348)
+size = Vector3(0.338706, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels/Safety Relief Valves"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SAFETY RELIEF VALVES"
+font_size = 64
+outline_size = 0
+
+[node name="ADS 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, 0.242828)
+size = Vector3(0.127913, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Containment Panel/Labels/ADS 2"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "ADS 2"
+font_size = 64
+outline_size = 0
+
+[node name="LPCS Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -2.28309)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/LPCS Panel"]
+
+[node name="Isolation Control System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/LPCS Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -2.21392)
+size = Vector3(0.222158, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/LPCS Panel/Labels/Isolation Control System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "LPCS SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="RHR A Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -4.41603)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/RHR A Panel"]
+
+[node name="RHR A System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/RHR A Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.236174, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/RHR A Panel/Labels/RHR A System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RHR-A SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="RCIC Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -5.32389)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/RCIC Panel"]
+
+[node name="RCIC System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/RCIC Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.484236)
+size = Vector3(0.236174, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/RCIC Panel/Labels/RCIC System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RCIC SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Main Steam Line Drain Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -5.75108)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/Main Steam Line Drain Panel"]
+
+[node name="Main Steam Line Drains" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Main Steam Line Drain Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.810812)
+size = Vector3(0.366572, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Main Steam Line Drain Panel/Labels/Main Steam Line Drains"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "MAIN STEAM LINE DRAINS"
+font_size = 64
+outline_size = 0
+
+[node name="Reactor Water Cleanup Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -6.87732)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/Reactor Water Cleanup Panel"]
+
+[node name="Reactor Water Cleanup System" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Reactor Water Cleanup Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.453582)
+size = Vector3(0.482778, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Reactor Water Cleanup Panel/Labels/Reactor Water Cleanup System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "REACTOR WATER CLEANUP SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Radwaste" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Reactor Water Cleanup Panel/Labels"]
+transform = Transform3D(-4.28176e-08, -0.989776, -0.142629, -1.2469e-08, -0.142629, 0.989776, -1, 4.41583e-08, -6.2345e-09, -0.458801, 0.842421, -0.0383838)
+size = Vector3(0.20089, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Reactor Water Cleanup Panel/Labels/Radwaste"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RADWASTE"
+font_size = 64
+outline_size = 0
+
+[node name="Recirculation Panel" type="Node3D" parent="Control Room Panels/Main Panel Left Side"]
+transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 0, 0, -6.87732)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Left Side/Recirculation Panel"]
+
+[node name="Recirculation System Loop A" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Recirculation Panel/Labels"]
+transform = Transform3D(4.37114e-08, 0, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, -0.424503, 0.879794, -1.04771)
+size = Vector3(0.442987, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Recirculation Panel/Labels/Recirculation System Loop A"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RECIRCULATION SYSTEM LOOP A"
+font_size = 64
+outline_size = 0
+
+[node name="Recirculation System Loop B" type="CSGBox3D" parent="Control Room Panels/Main Panel Left Side/Recirculation Panel/Labels"]
+transform = Transform3D(4.37114e-08, 0, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, -0.424503, 0.8798, -1.88138)
+size = Vector3(0.442987, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Left Side/Recirculation Panel/Labels/Recirculation System Loop B"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RECIRCULATION SYSTEM LOOP B"
+font_size = 64
+outline_size = 0
 
 [node name="Main Panel Center" type="CSGPolygon3D" parent="Control Room Panels"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 9.63457, 0.806, 12.4748)
@@ -7254,6 +7782,35 @@ pixel_size = 0.0002
 transparent = false
 shaded = true
 texture = ExtResource("12_67egb")
+
+[node name="P603" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.903014, 2.07667, -2.3966)
+size = Vector3(0.176743, 0.0304335, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Labels/P603"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "H13-P603"
+font_size = 64
+outline_size = 0
+
+[node name="RFW Control System" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.900702, 0.33891, -4.2591)
+size = Vector3(0.338066, 0.0407552, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Labels/RFW Control System"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378275)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "RFW CONTROL SYSTEM
+"
+font_size = 64
+outline_size = 0
 
 [node name="Controls" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1, 1.278, 0.283, -2.4)
