@@ -84,6 +84,8 @@ func rpis_language_changed(language):
 		$"info/Core Flow/Label JP".visible = true
 		$"info/Core Flow/Label EN".visible = false
 	else:
+		$"Time And Date/Time And Date JP".visible = false
+		$"Time And Date/Time And Date EN".visible = true
 		$"control rod insertion JP".visible = false
 		$"control rod insertion EN".visible = true
 		$"info/Generator Load/Label JP".visible = false
