@@ -3,11 +3,12 @@ extends Node2D
 var insertion = 0
 var rpis_language = "EN"
 @onready var rwm = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box"
+var rpis_inop = false
 
 # called by the parent
 func initalise_rpis():
 	rpis_language_changed(rpis_language)
-	while $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display".mode == "Digital":
+	while $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display".mode == "Digital" and not rpis_inop:
 		var date = Time.get_date_dict_from_system()
 		var time = Time.get_time_dict_from_system()
 		$"Time And Date/Time And Date EN".text = "%s/%s/%s %s:%s" % [node_3d.make_string_two_digit(str(date.month)), date.day, str(date.year).right(2), time.hour, time.minute]
@@ -95,7 +96,8 @@ func rpis_language_changed(language):
 
 
 func set_rpis_inop(state):
-	pass
+	rpis_inop = state
+	
 
 func selected_rod_changed(rod_number, previous_selection):
 	pass

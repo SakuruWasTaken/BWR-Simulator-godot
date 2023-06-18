@@ -163,10 +163,11 @@ var intermidiate_range_monitors = {
 }
 
 func system_physics_timer_expire():
+	# TODO: finish this and add actual pump physics
 	for pump_name in pumps:
 		var pump_info = pumps[pump_name]
 		if pump_info["status"] == pump_status.STARTING:
-			# blink green light while pump is starting
+			# blink red light while pump is starting
 			pump_info["current_flow"] += pump_info["starting_flow_rate_increase"]
 			pump_info["status_light_off"].emission_enabled = false
 			pump_info["status_light_on"].emission_enabled = true if pump_info["starting_timer"] <= 4 else false
@@ -185,7 +186,7 @@ func system_physics_timer_expire():
 			if pump_info["current_flow"] == 0:
 				pump_info["status"] = pump_status.STANDBY
 				pump_info["status_light_off"].emission_enabled = true
-		print(pump_info["current_flow"])
+		#print(pump_info["current_flow"])
 			
 
 func generate_control_rods():
@@ -332,7 +333,7 @@ func _ready():
 	
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	pass
 
 func open_scram_breakers(reason):
@@ -437,8 +438,9 @@ func remove_insert_block(type):
 	if rod_insert_block == []:
 		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
 		
-func calculate_vertical_scale_position(indicated_value, scale_max, meter_min_position = 0.071, meter_max_position = -0.071):
-	return clamp((((scale_max - indicated_value)/(scale_max/(meter_min_position*2))) - meter_min_position), meter_max_position, meter_min_position)
+func calculate_vertical_scale_position(indicated_value, scale_max, meter_min_position = 0.071, meter_max_position = -0.071, scale_min = 0):
+	var a = float(meter_min_position) + (float(meter_max_position)-float(meter_min_position))*((float(indicated_value)-float(scale_min))/float(scale_max)-float(scale_min))
+	return clamp(a, meter_max_position if meter_max_position < meter_min_position else meter_min_position, meter_min_position if meter_max_position < meter_min_position else meter_max_position)
 
 func make_string_two_digit(string):
 	if len(string) == 1:

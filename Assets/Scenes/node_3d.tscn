@@ -1,4 +1,4 @@
-[gd_scene load_steps=460 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=466 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -25,6 +25,7 @@
 [ext_resource type="FontFile" uid="uid://b4hai6yx1qb1c" path="res://Assets/Fonts/DSEG7Classic-Italic.ttf" id="14_3lqpq"]
 [ext_resource type="Animation" uid="uid://crw8i8mexnff8" path="res://Assets/Animations/acknowledge_sw_animation.res" id="14_ix4fu"]
 [ext_resource type="AudioStream" uid="uid://dxrni2kk7ryhh" path="res://Assets/Audio/reactor_alarm_loop_slow.mp3" id="14_wxnme"]
+[ext_resource type="Texture2D" uid="uid://bdja8642fcxto" path="res://Assets/Textures/Meters/Meter 1.png" id="15_mw4ai"]
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor Annunciator Button.gd" id="15_qx5fl"]
 [ext_resource type="Material" uid="uid://b4lnxjtl58v6j" path="res://Assets/Materials/red metal.tres" id="16_0ckwa"]
 [ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
@@ -46,14 +47,17 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RWM.gd" id="33_f1vki"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Button.gd" id="34_cyh57"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
-[ext_resource type="Texture2D" uid="uid://bdja8642fcxto" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
 [ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
 [ext_resource type="Script" path="res://Assets/Scripts/LPRM Meters.gd" id="45_nuv7p"]
+[ext_resource type="Texture2D" uid="uid://nb4v3p7wt0g7" path="res://Assets/Textures/Meters/Meter Period.png" id="46_3cjjh"]
 [ext_resource type="Texture2D" uid="uid://d1grgyrje82x6" path="res://Assets/Textures/Guages/Synchroscope.png" id="46_5t2ox"]
 [ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Main.gd" id="46_d783m"]
 [ext_resource type="Script" path="res://Assets/Scripts/Synchroscope.gd" id="46_svjcp"]
 [ext_resource type="PackedScene" uid="uid://dolcer3aevlui" path="res://Assets/Scenes/digital_rod_display.tscn" id="48_blkpi"]
 [ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Digital.gd" id="50_nnqwm"]
+[ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
+[ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
+[ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
 
 [sub_resource type="Environment" id="Environment_l5pxq"]
 background_color = Color(0.2139, 0.570975, 0.69, 1)
@@ -2172,6 +2176,10 @@ viewport_path = NodePath("Control Room Panels/Main Panel Center/Full Core Displa
 
 [sub_resource type="World3D" id="World3D_7ax74"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_d6u1x"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wtbb"]
 emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0.537255, 0, 1)
@@ -2880,6 +2888,9 @@ refraction_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rryex"]
 transparency = 1
 blend_mode = 3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cm06n"]
+viewport_path = NodePath("Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D/SubViewport")
 
 [node name="Node3d" type="Node3D"]
 script = ExtResource("1_eg7xd")
@@ -6925,7 +6936,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Indicators/KV AC"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -6977,7 +6988,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Indicators/KV AC2"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -7029,7 +7040,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Indicators/KV AC3"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -7081,7 +7092,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Indicators/KA AC"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -13091,8 +13102,40 @@ pixel_size = 0.0008
 texture = SubResource("ViewportTexture_n6ky1")
 
 [node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+own_world_3d = true
 world_3d = SubResource("World3D_7ax74")
 size = Vector2i(640, 480)
+render_target_update_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Loading" type="Node2D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport"]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/Loading"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.0196078, 0.0196078, 0.0392157, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/Loading"]
+offset_left = 200.0
+offset_top = 190.0
+offset_right = 440.0
+offset_bottom = 310.0
+
+[node name="Label" type="Label" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/Loading/ColorRect3"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 42.0
+offset_right = 198.0
+offset_bottom = 81.0
+text = "PLEASE WAIT"
+label_settings = SubResource("LabelSettings_d6u1x")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="digital_rod_display" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport" instance=ExtResource("48_blkpi")]
 unique_name_in_owner = true
@@ -15094,7 +15137,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 D"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15149,7 +15192,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 C"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15204,7 +15247,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 B"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15259,7 +15302,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 1 A"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15314,7 +15357,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 D"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15369,7 +15412,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 C"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15424,7 +15467,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 B"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15479,7 +15522,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 2 A"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15534,7 +15577,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 D"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15589,7 +15632,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 C"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15644,7 +15687,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 B"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15718,7 +15761,7 @@ outline_size = 16
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 3 A"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15754,7 +15797,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 D"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15809,7 +15852,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 C"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15864,7 +15907,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 B"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -15919,7 +15962,7 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 pixel_size = 0.0004
 shaded = true
-texture = ExtResource("36_4fyjx")
+texture = ExtResource("15_mw4ai")
 
 [node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters/LPRM 4 A"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
@@ -16004,6 +16047,185 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-2.38419e-07, 0, 0.978, 0, 0.797, 0, -0.793, 0, -2.68221e-07, -0.00759697, 0, 0)
 pixel_size = 0.0002
 texture = ExtResource("46_5t2ox")
+
+[node name="Chart Recorder (TODO)" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.0208941, 0.0245609, -0.720695)
+size = Vector3(0.0198817, 0.144, 0.144)
+material = ExtResource("56_d4jl8")
+
+[node name="Display" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display"]
+transform = Transform3D(0, 0, 0.885, 0, 0.885, 0, -0.885, 0, 0, 0.0101166, 0.00991881, -0.000127792)
+pixel_size = 0.0004
+texture = SubResource("ViewportTexture_cm06n")
+
+[node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D"]
+size = Vector2i(320, 240)
+render_target_update_mode = 3
+
+[node name="Node2D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D/SubViewport" instance=ExtResource("57_ca2au")]
+
+[node name="Faceplate" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011549, 0.0641558, 1.0252e-05)
+size = Vector3(0.00672694, 0.0156348, 0.143817)
+material = ExtResource("56_d4jl8")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00252914, -0.0129162, 0.0697005)
+polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.006, 0.005, 0, 0.005)
+depth = 0.14
+material = ExtResource("56_d4jl8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120001, -0.0542381, 0)
+size = Vector3(0.00672694, 0.0351758, 0.143817)
+material = ExtResource("56_d4jl8")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290108, 0.0172113, 0.0699997)
+polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.00555706, 0.000411272, 0, 0.005)
+depth = 0.14
+material = ExtResource("56_d4jl8")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00900269, 0.0574737, -0.066817)
+polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
+depth = 0.1
+material = ExtResource("56_d4jl8")
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00909138, -0.0375184, 0.0667422)
+polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
+depth = 0.1
+material = ExtResource("56_d4jl8")
+
+[node name="SRM Period B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00340652, 0.41563, -0.69759)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+script = ExtResource("57_3ty5v")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("46_3cjjh")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(-8.9407e-08, 0, 1, -3.55271e-15, 1, 0, -1, -1.24345e-13, -8.9407e-08, 0.0129995, -0.00599957, 0.0587151)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999999, -4.37113e-08, 0.0123467, 0.0159373, -0.000539303)
+visible = false
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "10
+
+12
+
+15
+
+20
+
+
+30
+
+50
+
+100
+
+
+-100"
+font_size = 26
+line_spacing = -6.532
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999998, -4.37113e-08, 0.0123463, 0.0130606, -0.0636128)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "10
+
+12
+"
+font_size = 26
+line_spacing = -5.8
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999998, -4.37113e-08, 0.0123463, 0.0130606, -0.0116179)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "15
+
+20
+
+30
+"
+font_size = 26
+line_spacing = 2.495
+
+[node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999997, -4.37112e-08, 0.0123472, 0.00824451, 0.039225)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "50
+
+100"
+font_size = 26
+horizontal_alignment = 2
+line_spacing = -14.825
+
+[node name="Label3D7" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999997, -4.37112e-08, 0.0123467, 0.00824237, 0.0709411)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "-100"
+font_size = 26
+horizontal_alignment = 2
+line_spacing = -11.452
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(0, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -0.999999, -4.37113e-08, 0.0123463, 0.0142829, 0.0581849)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "∞"
+font_size = 64
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Period B"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "P
+E
+R
+I
+O
+D
+
+S
+E
+C
+O
+N
+D
+S"
+font_size = 24
+line_spacing = -10.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
