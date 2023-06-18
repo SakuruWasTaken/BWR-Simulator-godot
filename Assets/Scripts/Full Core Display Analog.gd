@@ -7,7 +7,6 @@ var insertion
 
 func initalise_rpis():
 	while $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display".mode == "Analog":
-		await get_tree().create_timer(0.1).timeout
 		for rod_number in node_3d.control_rods:
 			var rod_info = node_3d.control_rods[rod_number]
 			if rod_number in node_3d.moving_rods and not node_3d.scram_active:
@@ -31,6 +30,7 @@ func initalise_rpis():
 				cycles = -1
 			
 		cycles += 1
+		await get_tree().create_timer(0.1).timeout
 		
 		for lprm_number in node_3d.local_power_range_monitors:
 			for detector in node_3d.local_power_range_monitors[lprm_number]:

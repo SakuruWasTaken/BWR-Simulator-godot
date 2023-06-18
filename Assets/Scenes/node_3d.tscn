@@ -13089,15 +13089,11 @@ transform = Transform3D(1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73
 
 [node name="Digital" type="Node3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00651073, 0)
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.264567, 0.0188403)
-size = Vector3(0.656706, 0.550643, 0.0413262)
-material = ExtResource("35_r1uh5")
-
 [node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
-transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, -9.53674e-07, -0.264567, -0.00244284)
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, -1.90735e-06, -0.264567, -0.0119953)
 pixel_size = 0.0008
 texture = SubResource("ViewportTexture_n6ky1")
 
@@ -13112,13 +13108,14 @@ offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 1)
 
-[node name="Loading" type="Node2D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport"]
+[node name="Background" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport"]
 visible = false
-
-[node name="ColorRect2" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/Loading"]
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0.0196078, 0.0196078, 0.0392157, 1)
+
+[node name="Loading" type="Node2D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport"]
+visible = false
 
 [node name="ColorRect3" type="ColorRect" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/Loading"]
 offset_left = 200.0
@@ -13139,7 +13136,25 @@ vertical_alignment = 1
 
 [node name="digital_rod_display" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport" instance=ExtResource("48_blkpi")]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("50_nnqwm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29153e-06, -0.264567, -0.011457)
+flip_faces = true
+size = Vector3(0.508312, 0.373594, 0.011075)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.264567, 0.00379324)
+size = Vector3(0.656706, 0.550643, 0.0413262)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display/Digital/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0, -0.0158939)
+flip_faces = true
+size = Vector3(0.508312, 0.373594, 0.011075)
+material = ExtResource("33_11pre")
 
 [node name="Annunciators" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.917, 1.807, -2.4)
