@@ -1,4 +1,4 @@
-[gd_scene load_steps=466 format=3 uid="uid://cw4d4i2ykxkkg"]
+[gd_scene load_steps=467 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -68,6 +68,21 @@ sdfgi_min_cell_size = 0.003125
 sdfgi_cascade0_distance = 0.2
 sdfgi_max_distance = 3.2
 glow_normalized = true
+
+[sub_resource type="GDScript" id="GDScript_xudhy"]
+script/source = "extends Node
+
+var main_lights_on = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2igvy"]
 disable_ambient_light = true
@@ -2929,6 +2944,7 @@ size = Vector3(23.3561, 3.31346, 17.0579)
 material = ExtResource("3_e4fug")
 
 [node name="Control Room Lights" type="Node" parent="."]
+script = SubResource("GDScript_xudhy")
 
 [node name="normal" type="Node3D" parent="Control Room Lights"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97985, 0.305383, -2.80668)
@@ -4085,15 +4101,32 @@ transform = Transform3D(0.85, 0, 0, 0, 0.85, 1.69407e-21, -7.10543e-15, -1.69407
 size = Vector3(0.0433738, 0.472419, 1.00886)
 material = SubResource("StandardMaterial3D_lqlp2")
 
-[node name="Lights" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8"]
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8"]
 transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 8.47033e-22, 3.55271e-15, 0, 1, 0, 0, 0)
 
-[node name="A1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights"]
+[node name="AB1" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D"]
+transform = Transform3D(1, -1.42109e-14, 0, 1.42109e-14, 1, -4.23516e-22, -3.55271e-15, 4.23516e-22, 1, 0, 0, 0)
+
+[node name="A1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/AB1"]
 transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
 size = Vector3(0.038, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_d8pdf")
 
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights/A1"]
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/AB1/A1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.27055e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="B1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/AB1"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/AB1/B1"]
 transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
 sorting_offset = 10.0
 pixel_size = 0.001
@@ -4102,18 +4135,129 @@ modulate = Color(0, 0, 0, 1)
 text = "SPARE"
 font_size = 12
 
-[node name="B1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights"]
-transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
-size = Vector3(0.038, 0.005, 0.111)
-material = SubResource("StandardMaterial3D_du5ym")
+[node name="CD1" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D"]
+transform = Transform3D(1, -4.26326e-14, -7.10543e-15, 4.26326e-14, 1, -4.23516e-22, -1.06581e-14, 1.69407e-21, 1, 0, -0.0840001, 0)
 
-[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Lights/B1"]
+[node name="C1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/CD1"]
+transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_d8pdf")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/CD1/C1"]
 transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
 sorting_offset = 10.0
 pixel_size = 0.001
 shaded = true
 modulate = Color(0, 0, 0, 1)
 text = "SPARE"
+font_size = 12
+
+[node name="D1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/CD1"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/CD1/D1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="EF3" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D"]
+transform = Transform3D(1, -1.13687e-13, -1.77636e-14, 1.13687e-13, 1, -2.11758e-21, -1.42109e-14, 3.38813e-21, 1, 0, -0.168, 0)
+
+[node name="E1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/EF3"]
+transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_d8pdf")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/EF3/E1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="F1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/EF3"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/EF3/F1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="GH4" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D"]
+transform = Transform3D(1, -1.42109e-13, -1.42109e-14, 1.42109e-13, 1, -2.96462e-21, -1.42109e-14, 4.23516e-21, 1, 0, -0.252, 0)
+
+[node name="G1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/GH4"]
+transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_d8pdf")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/GH4/G1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="H1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/GH4"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/GH4/H1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="IJ5" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D"]
+transform = Transform3D(1, -1.84741e-13, -1.77636e-14, 1.84741e-13, 1, -3.38813e-21, -1.42109e-14, 5.50571e-21, 1, 0, -0.336, 0)
+
+[node name="I1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/IJ5"]
+transform = Transform3D(2.98023e-08, -1, -2.4869e-14, 1, 7.45057e-08, 2.24464e-20, 8.47033e-22, 3.55271e-14, 1, 0.0232143, 0.189993, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_d8pdf")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/IJ5/I1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.69407e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "SPARE"
+font_size = 12
+
+[node name="J1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/IJ5"]
+transform = Transform3D(2.98023e-08, -1, -1.77636e-14, 1, 7.45058e-08, 2.83756e-20, 0, 2.84217e-14, 1, 0.0232134, 0.151716, 0.422782)
+size = Vector3(0.038, 0.005, 0.111)
+material = SubResource("StandardMaterial3D_du5ym")
+
+[node name="Label" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/Annunciators/Annunciator Box SM-8/Node3D/IJ5/J1"]
+transform = Transform3D(-7.10542e-15, 1, 7.45062e-08, 1.19209e-07, 2.98023e-08, -1, -1, 1.27055e-21, -5.96046e-08, 0.00015378, -0.00305176, 0.00127125)
+sorting_offset = 10.0
+pixel_size = 0.001
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "DG2
+OUT OF SERVICE"
 font_size = 12
 
 [node name="SM-8 Section" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel"]
@@ -4469,12 +4613,12 @@ outline_size = 0
 transform = Transform3D(1, 0, 4.44089e-16, 0, 1, 0, 8.88178e-16, -3.55271e-15, 1, 0, 0, 0)
 
 [node name="cb_8_3_sync_sel" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches"]
-transform = Transform3D(-1, 7.7486e-07, -4.44089e-16, -4.47035e-08, -1, -2.4869e-14, 1.37668e-14, -1.7053e-13, 1, 0.0534225, 0.307982, -1.06709)
+transform = Transform3D(-1, 7.89762e-07, -4.44089e-16, -4.47035e-08, -1, -2.4869e-14, 1.42109e-14, -1.77636e-13, 1, 0.0534224, 0.307982, -1.06709)
 size = Vector3(0.036, 0.076, 0.076)
 material = ExtResource("35_r1uh5")
 
 [node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_3_sync_sel"]
-transform = Transform3D(0.8, 0, 0, 0, 0.565685, -0.565685, 0, 0.565685, 0.565685, 0.00299841, -1.90735e-06, 0)
+transform = Transform3D(0.8, 0, 4.44089e-16, 0, 0.8, 0, 8.88178e-16, -7.10543e-15, 0.799999, 0.00299841, -2.38419e-06, 0)
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical Panel/SM-8 Section/Switches/cb_8_3_sync_sel/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
@@ -7298,7 +7442,7 @@ transform = Transform3D(0.999999, 2.98023e-08, 0, 1.4885e-15, 1, 0, 0, 1.49012e-
 pixel_size = 0.0004
 shaded = true
 modulate = Color(0, 0, 0, 1)
-text = "CIA-A"
+text = "CIA-B"
 font_size = 64
 outline_size = 0
 
@@ -13723,7 +13867,7 @@ size = Vector3(0.0433738, 0.559628, 1.00886)
 material = SubResource("StandardMaterial3D_lqlp2")
 
 [node name="A1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.422917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, 0.211162, 0.422917)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_8wtbb")
 
@@ -13739,7 +13883,7 @@ TRIP"
 font_size = 12
 
 [node name="B1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.127162, 0.422917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_un1i1")
 
@@ -13755,7 +13899,7 @@ DIV I"
 font_size = 12
 
 [node name="C1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.0431621, 0.422917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_ndaa6")
 
@@ -13771,7 +13915,7 @@ DIV II"
 font_size = 12
 
 [node name="D1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, 0.422917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, -0.0408375, 0.422917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_gqgue")
 
@@ -13786,7 +13930,7 @@ BYPASSED"
 font_size = 12
 
 [node name="E1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.124838, 0.422917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_f7f0e")
 
@@ -13802,7 +13946,7 @@ NOT FULL OUT"
 font_size = 12
 
 [node name="F1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.208838, 0.422917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026989, -0.208838, 0.422916)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_i1d7q")
 
@@ -13818,7 +13962,7 @@ MALFUNCTION"
 font_size = 12
 
 [node name="A2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.302918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.211162, 0.302918)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_4vtk3")
 
@@ -13834,7 +13978,7 @@ TRIP"
 font_size = 12
 
 [node name="B2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.127162, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_hoknr")
 
@@ -13851,7 +13995,7 @@ PRESS"
 font_size = 12
 
 [node name="C2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.0431621, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_420v0")
 
@@ -13868,7 +14012,7 @@ PRESS"
 font_size = 12
 
 [node name="D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, 0.302918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.0408375, 0.302918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_og6s5")
 
@@ -13883,7 +14027,7 @@ BYPASSED"
 font_size = 12
 
 [node name="E2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.124838, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269861, -0.124838, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_buy7j")
 
@@ -13900,7 +14044,7 @@ BYPASS"
 font_size = 12
 
 [node name="F2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, -0.209, 0.303)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269995, -0.209, 0.303)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_gemlm")
 
@@ -13914,7 +14058,7 @@ text = "RWM ROD BLOCK"
 font_size = 12
 
 [node name="A3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.211162, 0.182917)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_5jsw5")
 
@@ -13930,7 +14074,7 @@ DIVISION I"
 font_size = 12
 
 [node name="B3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.127162, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_a0yu4")
 
@@ -13945,7 +14089,7 @@ HIGH FLOW \"A\""
 font_size = 12
 
 [node name="C3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.0431621, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_b2ys7")
 
@@ -13960,7 +14104,7 @@ HIGH TEMP \"A\""
 font_size = 12
 
 [node name="D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.0408375, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_8ocej")
 
@@ -13975,7 +14119,7 @@ LOW PRESS \"A\""
 font_size = 12
 
 [node name="E3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.124838, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_6dt6q")
 
@@ -13991,7 +14135,7 @@ LEVEL \"A\""
 font_size = 12
 
 [node name="F3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.209076, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.209076, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_bhjad")
 
@@ -14005,7 +14149,7 @@ text = "SPARE"
 font_size = 12
 
 [node name="A4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.211162, 0.0634904)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_vdce1")
 
@@ -14021,7 +14165,7 @@ DIVISION II"
 font_size = 12
 
 [node name="B4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.127162, 0.0634904)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_dng57")
 
@@ -14036,7 +14180,7 @@ HIGH FLOW \"B\""
 font_size = 12
 
 [node name="C4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, 0.0431621, 0.0634904)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_k3ult")
 
@@ -14051,7 +14195,7 @@ HIGH TEMP \"B\""
 font_size = 12
 
 [node name="D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.0408375, 0.0634904)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_8d22a")
 
@@ -14066,7 +14210,7 @@ LOW PRESS \"B\""
 font_size = 12
 
 [node name="E4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.124838, 0.0634913)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.124838, 0.0634904)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_hrodi")
 
@@ -14082,7 +14226,7 @@ LEVEL \"B\""
 font_size = 12
 
 [node name="F4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.209076, 0.0634913)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269871, -0.209076, 0.0634904)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_afwqm")
 
@@ -14096,7 +14240,7 @@ text = "SPARE"
 font_size = 12
 
 [node name="A5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.211, -0.0570002)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, 0.211, -0.0570011)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_lu6wx")
 
@@ -14111,7 +14255,7 @@ SEAL LEAK"
 font_size = 12
 
 [node name="B5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.127, -0.0570002)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, 0.127, -0.0570011)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_jfyuh")
 
@@ -14126,7 +14270,7 @@ OFF NORMAL"
 font_size = 12
 
 [node name="C5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.043, -0.0570006)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, 0.043, -0.0570011)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_udah8")
 
@@ -14140,7 +14284,7 @@ text = "ROD DRIFT"
 font_size = 12
 
 [node name="D5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.0570836)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, -0.0408375, -0.0570836)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_35uat")
 
@@ -14156,7 +14300,7 @@ HIGH PRESSURE"
 font_size = 12
 
 [node name="E5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, -0.0570836)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, -0.124838, -0.0570836)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_jim71")
 
@@ -14172,7 +14316,7 @@ HIGH"
 font_size = 12
 
 [node name="F5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, -0.0570836)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, -0.208838, -0.0570836)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_gsiow")
 
@@ -14188,7 +14332,7 @@ PRESSURE HIGH"
 font_size = 12
 
 [node name="A6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.211, -0.177)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269995, 0.211, -0.177)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_xtfyv")
 
@@ -14205,7 +14349,7 @@ NOT DRAINED"
 font_size = 12
 
 [node name="B6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, 0.127162, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_405ha")
 
@@ -14222,7 +14366,7 @@ TRIP BYPASS"
 font_size = 12
 
 [node name="C6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350008, 0.043, -0.177001)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270014, 0.043, -0.177001)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_2na2v")
 
@@ -14237,7 +14381,7 @@ FANS ON"
 font_size = 12
 
 [node name="D6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.0408375, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_bh47u")
 
@@ -14253,7 +14397,7 @@ HI/LO PRESS"
 font_size = 12
 
 [node name="E6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.124838, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_kjb5p")
 
@@ -14268,7 +14412,7 @@ HIGH TEMP"
 font_size = 12
 
 [node name="F6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.208838, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_y1qym")
 
@@ -14284,7 +14428,7 @@ HIGH LEVEL"
 font_size = 12
 
 [node name="A7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350008, 0.211, -0.297)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, 0.211, -0.297)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_ttxk1")
 
@@ -14300,7 +14444,7 @@ INOPERABLE"
 font_size = 12
 
 [node name="B7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350008, 0.127, -0.297)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, 0.127, -0.297)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_6vyhg")
 
@@ -14314,7 +14458,7 @@ text = "ROD OVERTRAVEL"
 font_size = 12
 
 [node name="C7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431621, -0.297083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, 0.0431621, -0.297084)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_enle5")
 
@@ -14330,7 +14474,7 @@ PRESS HIGH"
 font_size = 12
 
 [node name="D7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.297083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.0408375, -0.297084)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_2hxrq")
 
@@ -14345,7 +14489,7 @@ BREAKER TRIP"
 font_size = 12
 
 [node name="E7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, -0.297083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.124838, -0.297084)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_rsnvk")
 
@@ -14360,7 +14504,7 @@ OVERLOAD"
 font_size = 12
 
 [node name="F7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, -0.297083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.208838, -0.297084)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_oqkn3")
 
@@ -14376,7 +14520,7 @@ PRESSURE"
 font_size = 12
 
 [node name="A8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.211, -0.417)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269995, 0.211, -0.417)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_c7yyu")
 
@@ -14392,7 +14536,7 @@ CIRCUIT OPEN"
 font_size = 12
 
 [node name="B8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, 0.127, -0.417)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269995, 0.127, -0.417)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_ui0hq")
 
@@ -14408,7 +14552,7 @@ INOPERABLE"
 font_size = 12
 
 [node name="C8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431621, -0.417084)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, 0.0431621, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_1ih8l")
 
@@ -14424,7 +14568,7 @@ PRESS HIGH"
 font_size = 12
 
 [node name="D8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.417084)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.0408375, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_mkerc")
 
@@ -14439,7 +14583,7 @@ BREAKER TRIP"
 font_size = 12
 
 [node name="E8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, -0.417084)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.124838, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_dfwoc")
 
@@ -14454,7 +14598,7 @@ OVERLOAD"
 font_size = 12
 
 [node name="F8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, -0.417084)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.026988, -0.208838, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_keav1")
 
@@ -14475,7 +14619,7 @@ size = Vector3(0.0433738, 0.559628, 1.00886)
 material = SubResource("StandardMaterial3D_lqlp2")
 
 [node name="A1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.422917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, 0.422917)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_w4bww")
 
@@ -14492,7 +14636,7 @@ TRIP"
 font_size = 12
 
 [node name="B1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, 0.422918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_s0k0v")
 
@@ -14508,7 +14652,7 @@ SYSTEM \"A\" TRIP"
 font_size = 12
 
 [node name="C1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431623, 0.422918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_v772y")
 
@@ -14524,7 +14668,7 @@ SYSTEM \"A\" TRIP"
 font_size = 12
 
 [node name="D1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.0408375, 0.422917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.0408375, 0.422917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_dwr2e")
 
@@ -14540,7 +14684,7 @@ TRIP BYPASS"
 font_size = 12
 
 [node name="E1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349884, -0.124838, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, 0.422918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_1b47m")
 
@@ -14557,7 +14701,7 @@ PNL H21-P175"
 font_size = 12
 
 [node name="F1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, -0.208838, 0.422918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, 0.422918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_g1agd")
 
@@ -14574,7 +14718,7 @@ PNL H21-P177"
 font_size = 12
 
 [node name="A2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, 0.211162, 0.302918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, 0.302918)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_bsfao")
 
@@ -14589,7 +14733,7 @@ LOW LEVEL TRIP"
 font_size = 12
 
 [node name="B2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_7kia1")
 
@@ -14605,7 +14749,7 @@ SYSTEM \"B\" TRIP"
 font_size = 12
 
 [node name="C2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431623, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_fuwhu")
 
@@ -14621,7 +14765,7 @@ SYSTEM \"B\" TRIP"
 font_size = 12
 
 [node name="D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, 0.302918)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.0408375, 0.302918)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_nbl2y")
 
@@ -14638,7 +14782,7 @@ PNL C82-P002"
 font_size = 12
 
 [node name="E2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_0plvg")
 
@@ -14655,7 +14799,7 @@ PNL H21-P176"
 font_size = 12
 
 [node name="F2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, 0.302917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, 0.302917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_i4n4u")
 
@@ -14671,7 +14815,7 @@ LOCKED UP"
 font_size = 12
 
 [node name="A3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, 0.182917)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_buit1")
 
@@ -14687,7 +14831,7 @@ TRIP"
 font_size = 12
 
 [node name="B3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_p8g4q")
 
@@ -14704,7 +14848,7 @@ HI LEVEL TRIP"
 font_size = 12
 
 [node name="C3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431623, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_d0b5u")
 
@@ -14719,7 +14863,7 @@ TRIP"
 font_size = 12
 
 [node name="D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349903, -0.0408375, 0.183491)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.0408375, 0.183491)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_dugmt")
 
@@ -14735,7 +14879,7 @@ HIGH/LOW"
 font_size = 12
 
 [node name="E3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_buxs0")
 
@@ -14752,7 +14896,7 @@ PNL H21-P173"
 font_size = 12
 
 [node name="F3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, 0.182917)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, 0.182917)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_2xh81")
 
@@ -14768,7 +14912,7 @@ TO SQUIB VALVE"
 font_size = 12
 
 [node name="A4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, 0.0634916)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_3urhw")
 
@@ -14784,7 +14928,7 @@ HIGH PRESS TRIP"
 font_size = 12
 
 [node name="B4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, 0.0634916)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_pqewd")
 
@@ -14799,7 +14943,7 @@ TRIP BYPASS"
 font_size = 12
 
 [node name="C4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431623, 0.0634916)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_u72xi")
 
@@ -14815,7 +14959,7 @@ OF CONT PWR"
 font_size = 12
 
 [node name="D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349903, -0.040838, 0.0629158)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.040838, 0.0629158)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_1qolu")
 
@@ -14831,7 +14975,7 @@ HIGH OR LOW"
 font_size = 12
 
 [node name="E4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349894, -0.124838, 0.0634911)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, 0.0634911)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_vkkot")
 
@@ -14847,7 +14991,7 @@ HIGH/LOW"
 font_size = 12
 
 [node name="F4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.208838, 0.0634916)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, 0.0634916)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_g1er5")
 
@@ -14863,7 +15007,7 @@ TEMP LOW"
 font_size = 12
 
 [node name="A5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, -0.0570834)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_dgcrd")
 
@@ -14878,7 +15022,7 @@ HIGH PRESS TRIP"
 font_size = 12
 
 [node name="B5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.127162, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, -0.0570834)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_wfr8q")
 
@@ -14894,7 +15038,7 @@ SCRAM BYPASS"
 font_size = 12
 
 [node name="C5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431621, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431621, -0.0570834)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_oel81")
 
@@ -14909,7 +15053,7 @@ TRIP"
 font_size = 12
 
 [node name="D5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350018, -0.0408375, -0.057086)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.0408375, -0.057086)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_yqxad")
 
@@ -14923,7 +15067,7 @@ text = "SRM PERIOD"
 font_size = 12
 
 [node name="E5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349998, -0.124838, -0.0570858)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, -0.0570858)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_x8j8c")
 
@@ -14938,7 +15082,7 @@ OR INOPERATIVE"
 font_size = 12
 
 [node name="F5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349989, -0.208838, -0.0570858)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, -0.0570858)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_pgjjs")
 
@@ -14952,7 +15096,7 @@ text = "RBM DOWNSCALE"
 font_size = 12
 
 [node name="A6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, 0.211162, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, -0.177083)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_npe6k")
 
@@ -14968,7 +15112,7 @@ TRIP"
 font_size = 12
 
 [node name="B6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349903, 0.127162, -0.177085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, -0.177085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_p87rg")
 
@@ -14984,7 +15128,7 @@ CONTROL SYSTEM"
 font_size = 12
 
 [node name="C6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349865, 0.0431621, -0.177083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431621, -0.177083)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_0lukp")
 
@@ -15000,7 +15144,7 @@ OF CONT PWR"
 font_size = 12
 
 [node name="D6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350142, -0.040838, -0.177089)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.040838, -0.177089)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_bxfhh")
 
@@ -15016,7 +15160,7 @@ NOT PERMITTED"
 font_size = 12
 
 [node name="E6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350113, -0.124838, -0.177089)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, -0.177089)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_ot37s")
 
@@ -15031,7 +15175,7 @@ OR INOPERATIVE"
 font_size = 12
 
 [node name="F6" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0350122, -0.208838, -0.177089)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, -0.177089)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_btedn")
 
@@ -15045,7 +15189,7 @@ text = "SRM DOWNSCALE"
 font_size = 12
 
 [node name="A7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, -0.297083)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, -0.297083)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_kljaa")
 
@@ -15060,7 +15204,7 @@ CLOSURE TRIP"
 font_size = 12
 
 [node name="B7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349903, 0.127162, -0.297085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, -0.297085)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_b7kgj")
 
@@ -15076,7 +15220,7 @@ BUS \"A\""
 font_size = 12
 
 [node name="C7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.034997, 0.0431619, -0.297085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431619, -0.297085)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_wgcwo")
 
@@ -15092,7 +15236,7 @@ BUS \"A\""
 font_size = 12
 
 [node name="D7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.034997, -0.040838, -0.297085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.040838, -0.297085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_n7jpt")
 
@@ -15108,7 +15252,7 @@ BUS \"B\""
 font_size = 12
 
 [node name="E7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349941, -0.124838, -0.297085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, -0.297085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_n4fog")
 
@@ -15122,7 +15266,7 @@ text = "IRM UPSCALE"
 font_size = 12
 
 [node name="F7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349941, -0.208837, -0.297085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208837, -0.297085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_tvat3")
 
@@ -15136,7 +15280,7 @@ text = "IRM DOWNSCALE"
 font_size = 12
 
 [node name="A8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.211162, -0.417084)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.211162, -0.417084)
 size = Vector3(0.076809, 0.00468588, 0.111208)
 material = SubResource("StandardMaterial3D_eiq5a")
 
@@ -15152,7 +15296,7 @@ TRIP"
 font_size = 12
 
 [node name="B8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349941, 0.127162, -0.417086)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.127162, -0.417086)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_vjshw")
 
@@ -15168,7 +15312,7 @@ BUS \"B\""
 font_size = 12
 
 [node name="C8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349922, 0.0431621, -0.417085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, 0.0431621, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_550lq")
 
@@ -15183,7 +15327,7 @@ UPSCALE"
 font_size = 12
 
 [node name="D8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349922, -0.0408375, -0.417085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.0408375, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_h1krd")
 
@@ -15198,7 +15342,7 @@ DOWNSCALE"
 font_size = 12
 
 [node name="E8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349922, -0.124838, -0.417085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.124838, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_dfwoc")
 
@@ -15213,7 +15357,7 @@ UPSCALE"
 font_size = 12
 
 [node name="F8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 2"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349922, -0.208838, -0.417085)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.027, -0.208838, -0.417085)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_fuoun")
 

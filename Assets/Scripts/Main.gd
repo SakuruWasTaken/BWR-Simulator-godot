@@ -4,10 +4,9 @@ var power = 100.00
 
 var thread
 
-var starting_rwm_group = 1
+var starting_rwm_group = 71
 
 var selected_cr = "02-19"
-# TODO: 185 rods
 var control_rods = {}
 var moving_rods = []
 var cr_direction = cr_directions.NOT_MOVING
@@ -16,7 +15,7 @@ var cr_target_insertion = 0
 var cr_previous_insertion = 0
 var cr_drift_test = false
 var scram_timer = -1
-var all_rods_in = false
+var scram_all_rods_in = false
 var accum_trouble_ack = true
 
 
@@ -329,8 +328,7 @@ func _ready():
 			if "|" in rod_number:
 				rod_number = rod_number.split("|")[0]
 			control_rods[rod_number]["cr_insertion"] = float(group_info["max_position"])
-	$"Control Room Panels/Main Panel Center/Meters/RWM Box".current_group = starting_rwm_group
-	
+
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print(Engine.get_frames_per_second())
@@ -511,7 +509,7 @@ func scram(type):
 	accum_trouble_ack = false
 	for rod_number in control_rods:
 		control_rods[rod_number].cr_accum_trouble = true
-	all_rods_in = true
+	scram_all_rods_in = true
 
 func withdraw_selected_cr():
 	if rod_withdraw_block != [] or cr_direction != 0:
@@ -572,9 +570,9 @@ func withdraw_selected_cr():
 			insertion = cr_target_insertion
 		else:
 			insertion += 0.0064
-		if insertion == cr_target_insertion:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
+		#if insertion == cr_target_insertion:
+			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
+				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 		control_rods[rod].cr_insertion=insertion
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
@@ -632,8 +630,8 @@ func insert_selected_cr():
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
 		
-	if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-		$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
+	#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
+		#$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
 
 	if not scram_active:
 		control_rods[rod].cr_insertion=cr_target_insertion
@@ -684,9 +682,9 @@ func continuous_withdraw_selected_cr():
 		runs = 0
 		while runs < 14 and not self.scram_active: 
 			insertion += 0.1435
-			if insertion == cr_target_insertion:
-				if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-					$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
+			#if insertion == cr_target_insertion:
+				#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
+					#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			control_rods[rod].cr_insertion=insertion
 			await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 			runs += 1
@@ -694,8 +692,8 @@ func continuous_withdraw_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_withdraw_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.WITHDRAWING and cr_target_insertion != 48:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
+			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
+				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			cr_target_insertion += 2
 		else:
 			break
@@ -764,8 +762,8 @@ func continuous_insert_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_insert_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.INSERTING and cr_target_insertion != 0:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
+			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
+				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
 			cr_target_insertion -= 2
 		else:
 			break
@@ -833,7 +831,7 @@ func rod_motion_button_pressed(parent, pressed):
 			manual_scram_pb_materials["A2"].emission_enabled = false
 		if scram_active and self.scram_timer == 0 and pressed:
 			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
-			all_rods_in = false
+			scram_all_rods_in = false
 			scram_active = false
 			scram_timer = -1
 			scram_breakers = {}
@@ -855,5 +853,3 @@ func rod_motion_button_pressed(parent, pressed):
 				control_rods[rod_number]["cr_drift_alarm"] = false
 	elif parent.name == "AccumAck_pb":
 		accum_trouble_ack = true
-		
-		

@@ -143,7 +143,7 @@ var switches = {
 			1: 0,
 			2: -45,
 		},
-		"position": 0,
+		"position": 1,
 		"momentary": false,
 	},
 }

@@ -22,11 +22,11 @@ func initalise_rpis():
 		var time = Time.get_time_dict_from_system()
 		$"Time And Date/Time And Date EN".text = "%s/%s/%s %s:%s" % [node_3d.make_string_two_digit(str(date.month)), date.day, str(date.year).right(2), time.hour, time.minute]
 		$"Time And Date/Time And Date JP".text = "%s/%s/%s %s:%s" % [str(date.year).right(2), node_3d.make_string_two_digit(str(date.month)), date.day, time.hour, time.minute]
-		
+		# TODO: fix and re-enable
+		'''
 		$"RWM/Group".text = str(rwm.current_group) if rwm.rwm_initalized else ""
 		
 		if rwm.rwm_initalized:
-			# TODO: show next rod when the current rod is selected
 			var next_rod = ""
 			if rwm.current_group_rods != []:
 				next_rod = rwm.current_group_rods[0] 
@@ -53,7 +53,7 @@ func initalise_rpis():
 		for withdraw_error in rwm.withdraw_error:
 			$"RWM/Withdraw Error".text = withdraw_error
 			break
-
+		'''
 		
 		for rod_number in node_3d.control_rods:
 			var rod_info = node_3d.control_rods[rod_number]
