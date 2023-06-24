@@ -23,8 +23,8 @@ var current_group_rods = {}
 var select_error = false
 # TODO: add config so user can change options like this
 var current_sequence = "a"
-var withdraw_error = {}
-var insert_error = {}
+var insert_errors = {}
+var withdraw_errors = {}
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = ["rwm_inop"]
 var rwm_malfunction = false
@@ -57,64 +57,22 @@ func _ready():
 		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
 	while true:
 		if not rwm_inop:
-			if withdraw_error != {}:
-				for rod_number in withdraw_error:
-					var correct_insertion = withdraw_error[rod_number]
-					if correct_insertion != int(node_3d.control_rods[rod_number]["cr_insertion"]):
-						if not "Withdraw Error" in withdraw_blocks:
-							withdraw_blocks.append("Withdraw Error")
-							withdraw_error_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
-					else:
-						withdraw_error.erase(rod_number)
-						if "Withdraw Error" in withdraw_blocks:
-							withdraw_blocks.erase("Withdraw Error")
-							withdraw_error_text_object.text = "         "
-			else:
-				if "Withdraw Error" in withdraw_blocks:
-					withdraw_blocks.erase("Withdraw Error")
-				withdraw_error_text_object.text = "         "
-			# TODO: this method of detecting insert errors is not entirely realistic, fix this
-			if insert_error != {}:
-				var insert_errors = 1
-				for rod_number in insert_error:
-					var correct_insertion = insert_error[rod_number]
-					if correct_insertion != int(node_3d.control_rods[rod_number]["cr_insertion"]):
-						if not "Insert Error" in insert_blocks:
-							if len(insert_error) >= 3:
-								insert_blocks.append("Insert Error")
-							if insert_errors == 1:
-								insert_error_1_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
-							elif insert_errors == 2:
-								insert_error_2_text_object.text = format_string(node_3d.make_string_two_digit(str(rod_number)), true)
-							else:
-								pass
-					else:
-						if len(insert_error) <= 3:
-							insert_error.erase(rod_number)
-						if "Insert Error" in insert_blocks:
-							insert_blocks.erase("Insert Error")
-						if insert_errors == 1 or insert_errors == 2:
-							# will be reset on next cycle
-							insert_error_1_text_object.text = "         "
-							insert_error_2_text_object.text = "         "
-						else:
-							pass
-					insert_errors += 1
-			else:
-				if "Insert Error" in insert_blocks:
-					insert_blocks.erase("Insert Error")
-				insert_error_1_text_object.text = "         "
-				insert_error_2_text_object.text = "         "
-				
-			if len(insert_error) >= 3 and node_3d.selected_cr not in insert_error:
-				if "Insert error with selection error" not in withdraw_blocks:
-					withdraw_blocks.append("Insert error with selection error")
-			else:
-				if "Insert error with selection error" in withdraw_blocks:
-					withdraw_blocks.erase("Insert error with selection error")
-			
-			out_of_seq_material.emission_enabled = len(insert_error) > 2 or withdraw_error != {}
-			
+			calculate_data()
+			out_of_seq_material.emission_enabled = len(insert_errors) > 2 or withdraw_errors != {}
+			withdraw_error_text_object.text = "         "
+			for rod in withdraw_errors:
+				withdraw_error_text_object.text = format_string(rod, true)
+				break
+			insert_error_1_text_object.text = "         "
+			insert_error_2_text_object.text = "         "
+			var runs = 0
+			for rod in insert_errors:
+				if runs == 0:
+					insert_error_2_text_object.text = format_string(rod, true)
+				if runs == 1:
+					insert_error_1_text_object.text = format_string(rod, true)
+					break
+				runs += 1
 			group_text_object.text = format_string(node_3d.make_string_two_digit(str(current_group)))
 			select_error = true
 			var group_info = groups["sequence_a"][current_group]
@@ -126,7 +84,7 @@ func _ready():
 					break
 			
 			select_error_material.emission_enabled = select_error
-			calculate_current_group()
+			
 			pass
 		else:
 			if not "rwm_inop" in withdraw_blocks:
@@ -210,38 +168,102 @@ func set_rwm_inop(state):
 		select_error_material.emission_enabled = false
 		out_of_seq_material.emission_enabled = false
 		
-	
-	
-func calculate_current_group():
-	# TODO: optimisations, realism improvements
+
+func calculate_data():
+	# calculate the group
+	var latched_group = 1
 	for group_number in groups["sequence_a"]:
+		# check that all groups 1 through latched_group-1 have <3 insert errors
+		var insert_error_count = 0
+		for group_number_2 in groups["sequence_a"]:
+			if group_number_2 >= latched_group: break
+			var group_info = groups["sequence_a"][group_number_2]
+			var withdraw_limit = group_info["max_position"]
+			var alternate_withdraw_limit = withdraw_limit - 2
+			for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
+				if "|" in rod_number:
+					rod_number = rod_number.split("|")[0]
+				if int(node_3d.control_rods[rod_number]["cr_insertion"]) < withdraw_limit and int(node_3d.control_rods[rod_number]["cr_insertion"]) < alternate_withdraw_limit:
+					insert_error_count += 1
+		
+		var one_rod_past_insert_limit = false
 		var group_info = groups["sequence_a"][group_number]
+		var insert_limit = group_info["min_position"]
 		for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
-			if group_number < current_group:
-				break
 			if "|" in rod_number:
 				rod_number = rod_number.split("|")[0]
-
-			if int(node_3d.control_rods[rod_number]["cr_insertion"]) == group_info["max_position"] and not rod_number in node_3d.moving_rods:
-				if rod_number in current_group_rods:
-					current_group_rods.erase(rod_number)
-
-				if len(current_group_rods) == 0:
-					var current_group_info = groups["sequence_a"][current_group + 1]
-					var next_group_rods_formatted = []
-					var next_group_rods = group_rods["sequence_a"][current_group_info["rod_group"]]
-					for rod in next_group_rods:
-						if "|" in rod:
-							rod = rod_number.split("|")[0]
-						next_group_rods_formatted.append(rod)
-					current_group_rods = next_group_rods_formatted
-					current_group += 1
-					return
-			else:
+			if int(node_3d.control_rods[rod_number]["cr_insertion"]) > insert_limit:
+				one_rod_past_insert_limit = true
 				break
+		
+		if insert_error_count > 3 or !one_rod_past_insert_limit:
+			if latched_group != 1:
+				latched_group -= 1
+			break
+		elif latched_group < 72:
+			latched_group += 1
+	current_group = latched_group
+	
+	# calculate errors
+	# TODO: fix
+	insert_errors = {}
+	withdraw_errors = {}
+	for group_number in groups["sequence_a"]:
+		var group_info = groups["sequence_a"][group_number]
+		var withdraw_limit = group_info["max_position"]
+		var alternate_withdraw_limit = withdraw_limit - 2
+		var insert_limit = group_info["min_position"]
+		var alternate_insert_limit = insert_limit - 2 if insert_limit != 0 else 2
+		for rod_number in group_rods["sequence_a"][group_info["rod_group"]]:
+			if "|" in rod_number:
+				rod_number = rod_number.split("|")[0]
+				
+			
+			var insert_error = false
+			var withdraw_error = false
+			if group_number == current_group:
+				insert_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) < insert_limit and int(node_3d.control_rods[rod_number]["cr_insertion"]) < alternate_insert_limit
+				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > withdraw_limit
+			elif group_number < current_group:
+				insert_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) < withdraw_limit and int(node_3d.control_rods[rod_number]["cr_insertion"]) < alternate_withdraw_limit
+				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > withdraw_limit
+			elif group_number > current_group:
+				insert_error = false
+				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > insert_limit
+			
+			if rod_number in withdraw_errors and not withdraw_error:
+				withdraw_errors.erase(rod_number)
+				
+			if insert_error and rod_number not in insert_errors:
+				insert_errors[rod_number] = {
+					# these extra information are unused for now, but i'm leaving them here just in case
+					"group_number": group_number,
+					"rod_group": group_info["rod_group"]
+				}
+				
+			if withdraw_error and rod_number not in withdraw_errors:
+				withdraw_errors[rod_number] = {
+					"group_number": group_number,
+					"rod_group": group_info["rod_group"]
+				}
+				
+	if withdraw_errors != {} and not "Withdraw Error" in withdraw_blocks:
+		withdraw_blocks.append("Withdraw Error")
+	elif "Withdraw Error" in withdraw_blocks and withdraw_errors == {}:
+		withdraw_blocks.erase("Withdraw Error")
+					
+	if len(insert_errors) > 2 and not "Insert Error" in insert_blocks:
+		insert_blocks.append("Insert Error")
+	elif "Insert Error" in insert_blocks and len(insert_errors) < 3:
+		insert_blocks.erase("Insert Error")
+				
+	if (len(insert_errors) >= 3 and node_3d.selected_cr not in insert_errors) and ("Insert error with selection error" not in withdraw_blocks):
+		withdraw_blocks.append("Insert error with selection error")
+	elif "Insert error with selection error" in withdraw_blocks and not (len(insert_errors) >= 3 and node_3d.selected_cr not in insert_errors):
+		withdraw_blocks.erase("Insert error with selection error")
+				
 # rod group data begins here
 # TODO: add sequence B (found in NRC document ML20136H955)
-# TODO: extend sequence A to permit full withdrawal of all rods (if realistic)
 var groups = {
 	"sequence_a": {
 		1: {
