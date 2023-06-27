@@ -1,4 +1,4 @@
-[gd_scene load_steps=467 format=3 uid="uid://cw4d4i2ykxkkg"]
+[gd_scene load_steps=470 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -55,6 +55,9 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Synchroscope.gd" id="46_svjcp"]
 [ext_resource type="PackedScene" uid="uid://dolcer3aevlui" path="res://Assets/Scenes/digital_rod_display.tscn" id="48_blkpi"]
 [ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Digital.gd" id="50_nnqwm"]
+[ext_resource type="Material" uid="uid://c7gnnnjikio6v" path="res://Assets/Materials/red plastic.tres" id="54_42qy7"]
+[ext_resource type="Script" path="res://Assets/Scripts/RWM Bypass Key Switch.gd" id="55_34t47"]
+[ext_resource type="Texture2D" uid="uid://btogq2empq5x2" path="res://tempsnip.png" id="56_a01oy"]
 [ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
 [ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
 [ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
@@ -2754,7 +2757,8 @@ emission = Color(1, 0, 0, 1)
 backlight = Color(1, 0, 0, 1)
 refraction_enabled = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npe0v"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_prwpi"]
+size = Vector3(0.102748, 0.0634436, 0.0311551)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ytu1"]
 vertex_color_use_as_albedo = true
@@ -13099,7 +13103,7 @@ max_distance = 10.0
 attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43051e-06, 0, 0.0256262)
 script = ExtResource("26_5ngi1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/StaticBody3D"]
@@ -15380,7 +15384,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.915, 0.708, -2.4)
 
 [node name="RWM Box" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0147505, 0.198231, 2.04815)
-size = Vector3(0.0433738, 0.256384, 0.355298)
+size = Vector3(0.043, 0.254, 0.323881)
 material = ExtResource("6_o677x")
 script = ExtResource("33_f1vki")
 
@@ -15388,7 +15392,7 @@ script = ExtResource("33_f1vki")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.0134407, -0.0651555)
 
 [node name="INSERT_WITHDRAW_BLOCK" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229273, 0.028432, -0.0292063)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229282, 0.0124098, -0.0199127)
 
 [node name="INSERT BLOCK" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/INSERT_WITHDRAW_BLOCK"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15416,7 +15420,7 @@ font_size = 18
 line_spacing = -4.0
 
 [node name="MANUAL_AUTO_BYPASS" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229287, 0.028432, -0.0792079)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229297, 0.0124098, -0.0522895)
 
 [node name="MANUAL" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/MANUAL_AUTO_BYPASS"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15443,7 +15447,7 @@ font_size = 18
 line_spacing = -4.0
 
 [node name="SELECT_ERROR" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229287, 0.0207282, 0.020906)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229301, 0.0075413, 0.0124283)
 
 [node name="SELECT_ERROR" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SELECT_ERROR"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -15462,7 +15466,7 @@ ERROR"
 font_size = 18
 
 [node name="OUT_OF_SEQ_SYS_INIT" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229297, -0.11016, 0.189521)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229301, -0.108296, 0.148352)
 
 [node name="OUT OF SEQ" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15497,7 +15501,7 @@ transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.0026
 shape = SubResource("BoxShape3D_m85xf")
 
 [node name="BELOW_LPSP" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229297, -0.11016, 0.139571)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229311, -0.108296, 0.115735)
 
 [node name="BELOW_LPSP" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/BELOW_LPSP"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15526,7 +15530,7 @@ font_size = 18
 line_spacing = -4.0
 
 [node name="BELOW_LPAP" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229297, -0.11016, 0.0895705)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229297, -0.108296, 0.0830617)
 
 [node name="BELOW_LPAP" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/BELOW_LPAP"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15555,7 +15559,7 @@ font_size = 18
 line_spacing = -4.0
 
 [node name="ROD_TEST_SELECT" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229301, -0.11016, 0.0396519)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229311, -0.108296, 0.0506535)
 
 [node name="ROD_TEST" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT"]
 transform = Transform3D(1, -2.98024e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.00169861, 0, 0)
@@ -15591,7 +15595,7 @@ transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.0026
 shape = SubResource("BoxShape3D_m85xf")
 
 [node name="SYSTEM_DIAGNOSTIC" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229306, -0.11016, -0.0103478)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229311, -0.108296, 0.0180273)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC"]
 transform = Transform3D(1, 0, 0, -1.77636e-14, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -15618,7 +15622,7 @@ DIAGNOSTIC"
 font_size = 18
 
 [node name="RWM_COMP_PROGRAM" type="CSGCombiner3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0229297, -0.11016, -0.0599313)
+transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.65, 0.0229306, -0.108296, -0.0143189)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM"]
 transform = Transform3D(1, 0, 0, -1.42109e-14, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -15664,60 +15668,84 @@ line_spacing = -8.0
 [node name="Parts" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.0134407, -0.0246749)
 
-[node name="Insert Error 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00655413, 0.0799339, 0.101724)
-size = Vector3(0.043, 0.055, 0.172)
-material = ExtResource("35_r1uh5")
+[node name="Bypass" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.0189362, -0.0540258, -0.0617323)
 
-[node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1"]
-size = Vector3(0.0433738, 0.0442212, 0.138161)
-material = ExtResource("33_11pre")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+stream = ExtResource("24_mqur0")
+volume_db = -18.0
+max_db = 6.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
 
-[node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
-sorting_offset = 20.0
-pixel_size = 0.0006
-modulate = Color(1, 0.772549, 0.560784, 1)
-text = "0 2   1 9"
-font_size = 52
+[node name="Base" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.00824785, -0.00104225, -1.43051e-06)
+radius = 0.0247962
+height = 0.0121698
+sides = 16
+material = ExtResource("54_42qy7")
 
-[node name="dash" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
-sorting_offset = 20.0
-pixel_size = 0.0006
-shaded = true
-modulate = Color(1, 0.772549, 0.560784, 1)
-text = "    -    "
-font_size = 52
+[node name="Cylinder" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0297685, -0.00104225, -4.76837e-07)
+radius = 0.020545
+height = 0.032455
+sides = 16
+material = ExtResource("13_jukva")
 
-[node name="Insert Error 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00655413, 0.0159339, 0.101724)
-size = Vector3(0.043, 0.055, 0.172)
-material = ExtResource("35_r1uh5")
+[node name="Key" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+transform = Transform3D(-1.78814e-07, 1, 0, -0.707107, -1.15202e-07, -0.707107, -0.707107, -1.19209e-07, 0.707107, 0.0310001, 0, 0)
 
-[node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2"]
-size = Vector3(0.043, 0.044, 0.138)
-material = ExtResource("33_11pre")
+[node name="Cylinder" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key"]
+transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+radius = 0.0184702
+height = 0.032455
+sides = 16
+material = ExtResource("13_jukva")
 
-[node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
-sorting_offset = 20.0
-pixel_size = 0.0006
-modulate = Color(1, 0.772549, 0.560784, 1)
-text = "0 2   1 9"
-font_size = 52
+[node name="Cylinder" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key/Cylinder"]
+transform = Transform3D(1, 3.8743e-07, -1.19209e-07, 0, 1, -1.49012e-07, -8.34465e-07, 4.47035e-07, 1, 9.53674e-07, 0.00282478, -3.09944e-06)
+radius = 0.0184702
+height = 0.032455
+sides = 16
+material = ExtResource("13_jukva")
 
-[node name="dash" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0219998, 0, 4.76837e-07)
-sorting_offset = 20.0
-pixel_size = 0.0006
-shaded = true
-modulate = Color(1, 0.772549, 0.560784, 1)
-text = "    -    "
-font_size = 52
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key/Cylinder"]
+transform = Transform3D(1, 7.45058e-07, -3.27826e-07, 2.98023e-08, 1, -3.27826e-07, -1.60933e-06, 9.23872e-07, 0.999999, -1.43051e-06, 0.00998116, -5.96046e-06)
+
+[node name="Key" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key/Cylinder/Node3D"]
+transform = Transform3D(-1.3, 2.98023e-08, 1.78814e-07, -2.98023e-08, 1.3, -2.98023e-08, -2.08616e-07, -2.98023e-08, -1.3, 4.91142e-05, 0.0289149, -0.00658131)
+polygon = PackedVector2Array(0.0100217, -0.00873613, 0.0119305, -0.00771856, 0.0128317, -0.00531721, 0.0128794, 0.00615644, 0.0123329, 0.00824594, 0.0104427, 0.0101824, 0.00218105, 0.0151782, 0, 0.016, 0, -0.009)
+depth = 0.01
+material = ExtResource("22_3oqyh")
+
+[node name="Key 2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key/Cylinder/Node3D/Key"]
+transform = Transform3D(-1, 1.01328e-06, -3.27826e-07, 2.98023e-08, 1, -8.9407e-08, -2.98023e-08, 2.98023e-08, -1, -0.00019455, 4.76837e-07, -0.0100384)
+polygon = PackedVector2Array(0.0100217, -0.00873613, 0.0119305, -0.00771856, 0.0128317, -0.00531721, 0.0128794, 0.00615644, 0.0123329, 0.00824594, 0.0104427, 0.0101824, 0.00218105, 0.0151782, 0, 0.016, 0, -0.009)
+depth = 0.01
+material = ExtResource("22_3oqyh")
+
+[node name="Key2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/Key/Cylinder/Node3D"]
+transform = Transform3D(1, -8.9407e-08, 7.45058e-08, 8.9407e-08, 1, -2.98023e-08, -2.98023e-08, 2.98023e-08, 1, 9.53674e-07, -0.000833035, 0)
+size = Vector3(0.0223884, 0.0381755, 0.0100176)
+material = ExtResource("22_3oqyh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+script = ExtResource("55_34t47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205894, -0.00141048, -0.0218034)
+shape = SubResource("BoxShape3D_prwpi")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0402584)
+script = ExtResource("55_34t47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205894, -0.00141048, -0.0218034)
+shape = SubResource("BoxShape3D_prwpi")
 
 [node name="Withdraw Error" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00655413, -0.0480661, 0.101724)
+transform = Transform3D(0.957, 0, 0, 0, 0.957, 0, 0, 0, 0.957, 0.00655508, -0.0536073, 0.0877461)
 size = Vector3(0.043, 0.055, 0.172)
 material = ExtResource("35_r1uh5")
 
@@ -15742,9 +15770,61 @@ modulate = Color(1, 0.772549, 0.560784, 1)
 text = "    -    "
 font_size = 52
 
+[node name="Insert Error 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(0.957, 0, 0, 0, 0.957, 0, 0, 0, 0.957, 0.00655508, 0.00764072, 0.0877461)
+size = Vector3(0.043, 0.055, 0.172)
+material = ExtResource("35_r1uh5")
+
+[node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2"]
+size = Vector3(0.043, 0.044, 0.138)
+material = ExtResource("33_11pre")
+
+[node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
+sorting_offset = 20.0
+pixel_size = 0.0006
+modulate = Color(1, 0.772549, 0.560784, 1)
+text = "0 2   1 9"
+font_size = 52
+
+[node name="dash" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 2/Display"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
+sorting_offset = 20.0
+pixel_size = 0.0006
+shaded = true
+modulate = Color(1, 0.772549, 0.560784, 1)
+text = "    -    "
+font_size = 52
+
+[node name="Insert Error 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(0.957, 0, 0, 0, 0.957, 0, 0, 0, 0.957, 0.00655508, 0.0688888, 0.0877461)
+size = Vector3(0.043, 0.055, 0.172)
+material = ExtResource("35_r1uh5")
+
+[node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1"]
+size = Vector3(0.043, 0.044, 0.138)
+material = ExtResource("33_11pre")
+
+[node name="Text" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
+sorting_offset = 20.0
+pixel_size = 0.0006
+modulate = Color(1, 0.772549, 0.560784, 1)
+text = "0 2   1 9"
+font_size = 52
+
+[node name="dash" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.022, 0, 0)
+sorting_offset = 20.0
+pixel_size = 0.0006
+shaded = true
+modulate = Color(1, 0.772549, 0.560784, 1)
+text = "    -    "
+font_size = 52
+
 [node name="Group" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0065527, 0.0800939, -0.0702381)
-size = Vector3(0.043, 0.055, 0.0945594)
+transform = Transform3D(0.957, 0, 0, 0, 0.957, 0, 0, 0, 0.957, 0.0065527, 0.0689284, -0.0612421)
+size = Vector3(0.043, 0.055, 0.0984483)
 material = ExtResource("35_r1uh5")
 
 [node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group"]
@@ -15759,79 +15839,99 @@ modulate = Color(1, 0.772549, 0.560784, 1)
 text = "7 2"
 font_size = 52
 
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, 0.0482969, 0.101176)
-sorting_offset = 5.0
-pixel_size = 0.0003
-shaded = true
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "INSERT ERROR"
-font_size = 26
-line_spacing = -4.0
-
 [node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218248, 0.0483598, -0.0692263)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218248, 0.0380895, -0.0625935)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "ROD GROUP"
-font_size = 26
+font_size = 24
 line_spacing = -4.0
 
 [node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.00387323, -0.0460734)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218258, -0.0130014, -0.0455513)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "INTERLOCKS"
-font_size = 26
+font_size = 24
+line_spacing = -4.0
+
+[node name="Label3D7" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.0273775, -0.0619483)
+sorting_offset = 5.0
+pixel_size = 0.0003
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "NORMAL  BYPASS"
+font_size = 24
 line_spacing = -4.0
 
 [node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.00387323, -0.122576)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218267, -0.0129774, -0.0945244)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "BYPASS"
-font_size = 26
-line_spacing = -4.0
-
-[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.0158256, 0.101315)
-sorting_offset = 5.0
-pixel_size = 0.0003
-shaded = true
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "INSERT ERROR"
-font_size = 26
+font_size = 24
 line_spacing = -4.0
 
 [node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218248, -0.0798161, 0.101548)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.085045, 0.0861859)
 sorting_offset = 5.0
 pixel_size = 0.0003
 shaded = true
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "WITHDRAW ERROR"
-font_size = 26
+font_size = 24
 line_spacing = -4.0
 
-[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.023, 0, 0)
-visible = false
-sorting_offset = 10.0
-pixel_size = 0.0006
+[node name="Label3D8" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, -0.0217482, 0.0861859)
+sorting_offset = 5.0
+pixel_size = 0.0003
 shaded = true
-texture = SubResource("CompressedTexture2D_npe0v")
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "INSERT ERROR"
+font_size = 24
+line_spacing = -4.0
+
+[node name="Label3D9" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218253, 0.0396807, 0.0861859)
+sorting_offset = 5.0
+pixel_size = 0.0003
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "INSERT ERROR"
+font_size = 24
+line_spacing = -4.0
+
+[node name="Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0196342, 0.00307655, -0.00262356)
+size = Vector3(0.0050197, 0.19237, 0.002)
+material = ExtResource("33_11pre")
+
+[node name="Display2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0196347, -0.093958, 0.0247188)
+size = Vector3(0.0050197, 0.00220673, 0.285795)
+material = ExtResource("33_11pre")
+
+[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0220571, 0, 4.76837e-07)
+visible = false
+pixel_size = 0.0016
+shaded = true
+texture = ExtResource("56_a01oy")
 
 [node name="Button Click" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
 stream = ExtResource("9_irtiu")
@@ -17217,6 +17317,8 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D" method="switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D2" to="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D" method="switch_position_down"]
 [connection signal="timeout" from="Main Loop Timer" to="." method="main_loop_timer_expire"]
 [connection signal="timeout" from="System Physics Loop Timer" to="." method="system_physics_timer_expire"]
 [connection signal="timeout" from="Main Loop Timer Fast" to="." method="main_loop_timer_fast_expire"]

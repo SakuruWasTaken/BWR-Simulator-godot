@@ -1,4 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dfbljd3ypxq4g"]
 
 [resource]
-metallic = 1.0
+metallic = 0.6
+metallic_specular = 0.39
+roughness = 0.65
+clearcoat = 0.0
