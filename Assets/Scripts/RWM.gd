@@ -28,6 +28,7 @@ var insert_error = {}
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = ["rwm_inop"]
 var rwm_malfunction = false
+var rwm_bypassed = false
 
 func format_string(string, remove_dashes = false):
 	var final_string = ""
