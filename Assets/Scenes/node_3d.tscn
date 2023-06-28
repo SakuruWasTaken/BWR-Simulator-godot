@@ -1,4 +1,4 @@
-[gd_scene load_steps=470 format=3 uid="uid://cw4d4i2ykxkkg"]
+[gd_scene load_steps=469 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -53,7 +53,6 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Digital.gd" id="50_nnqwm"]
 [ext_resource type="Material" uid="uid://c7gnnnjikio6v" path="res://Assets/Materials/red plastic.tres" id="54_42qy7"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Bypass Key Switch.gd" id="55_34t47"]
-[ext_resource type="Texture2D" uid="uid://btogq2empq5x2" path="res://tempsnip.png" id="56_a01oy"]
 [ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
 [ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
 [ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
@@ -8964,7 +8963,7 @@ depth = 0.01
 material = ExtResource("33_11pre")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
-transform = Transform3D(-2.98023e-08, 0, 1, 0.756448, 0.654055, 0, -0.654055, 0.756448, -8.9407e-08, 0.0101671, 0.0313169, 0.026926)
+transform = Transform3D(-5.96046e-08, 0, 1, 0.756448, 0.654055, 0, -0.654055, 0.756448, -8.9407e-08, 0.0101671, 0.0313169, 0.026926)
 sorting_offset = 10.0
 pixel_size = 0.0003
 text = "S/D"
@@ -9799,7 +9798,7 @@ text = "SRM DOWNSCALE"
 font_size = 12
 
 [node name="C5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, 0.0431623, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0270004, -0.0409999, -0.0570011)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_bxfhh")
 
@@ -9815,7 +9814,7 @@ NOT PERMITTED"
 font_size = 12
 
 [node name="D5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.0408375, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, -0.124837, -0.0570836)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_yqxad")
 
@@ -9829,7 +9828,7 @@ text = "SRM PERIOD"
 font_size = 12
 
 [node name="E5" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Annunciators/Annunciator Box 1"]
-transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0349855, -0.124838, -0.0570834)
+transform = Transform3D(2.98023e-08, -1, 0, 1, 7.45058e-08, 0, 0, 0, 1, 0.0269852, 0.0431621, -0.0570836)
 size = Vector3(0.077, 0.005, 0.111)
 material = SubResource("StandardMaterial3D_jim71")
 
@@ -11395,6 +11394,17 @@ text = "NORMAL  BYPASS"
 font_size = 24
 line_spacing = -4.0
 
+[node name="Label3D10" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218248, -0.127479, -0.0548325)
+sorting_offset = 5.0
+pixel_size = 0.0003
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "INOP/RESET"
+font_size = 12
+line_spacing = -4.0
+
 [node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts"]
 transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0218267, -0.0129774, -0.0945244)
 sorting_offset = 5.0
@@ -11448,13 +11458,6 @@ material = ExtResource("33_11pre")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0196347, -0.093958, 0.0247188)
 size = Vector3(0.0050197, 0.00220673, 0.285795)
 material = ExtResource("33_11pre")
-
-[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0220571, 0, 4.76837e-07)
-visible = false
-pixel_size = 0.0016
-shaded = true
-texture = ExtResource("56_a01oy")
 
 [node name="Button Click" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
 stream = ExtResource("9_irtiu")
