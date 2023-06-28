@@ -1,9 +1,5 @@
 extends Node3D
 
-var power = 100.00
-
-var thread
-
 var starting_rwm_group = 1
 
 var selected_cr = "02-19"

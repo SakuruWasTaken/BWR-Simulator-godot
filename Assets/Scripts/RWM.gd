@@ -10,6 +10,10 @@ extends CSGBox3D
 @onready var select_error_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SELECT_ERROR/SELECT_ERROR".get_material()
 @onready var out_of_seq_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/OUT OF SEQ".get_material()
 @onready var system_init_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/SYSTEM INITIALIZE".get_material()
+@onready var manual_bypass_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/MANUAL_AUTO_BYPASS/MANUAL".get_material()
+@onready var auto_bypass_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/MANUAL_AUTO_BYPASS/AUTO".get_material()
+@onready var below_lpap_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/BELOW_LPAP/BELOW_LPAP".get_material()
+@onready var below_lpsp_material = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/BELOW_LPSP/BELOW_LPSP".get_material()
 @onready var group_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Group/Display/Text"
 @onready var withdraw_error_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Withdraw Error/Display/Text"
 @onready var insert_error_1_text_object = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Insert Error 1/Display/Text"
@@ -19,17 +23,22 @@ extends CSGBox3D
 var rwm_initalized = false
 var rwm_inop = true
 var current_group = 1
-var current_group_rods = []
 var select_error = false
-# TODO: add config so user can change options like this
 var current_sequence = "a"
+
 var insert_errors = {}
 var withdraw_errors = {}
 var withdraw_blocks = ["rwm_inop"]
 var insert_blocks = ["rwm_inop"]
-var rwm_malfunction = false
-var rwm_bypassed = false
 
+# bypasses
+var rwm_malfunction = false
+var rwm_manual_bypass = false
+var rwm_above_lpsp = false
+var rwm_above_lpap = false
+var alarm_displays_blank = false
+
+# this function is for formatting strings (primarily rod numbers) to be displayed on the RWM panel displays
 func format_string(string, remove_dashes = false):
 	var final_string = ""
 	var first_number = true
@@ -56,9 +65,34 @@ func _ready():
 		rwm_inop = true
 		node_3d.set_object_emission("Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/RWM_COMP/RWM", true)
 	while true:
-		if not rwm_inop:
+		manual_bypass_material.emission_enabled = rwm_manual_bypass
+		# TODO: automatic bypass
+		alarm_displays_blank = rwm_manual_bypass
+		if alarm_displays_blank:
+			withdraw_error_text_object.text = "         "
+			insert_error_1_text_object.text = "         "
+			insert_error_2_text_object.text = "         "
+			group_text_object.text = ""
+			out_of_seq_material.emission_enabled = false
+			below_lpap_material.emission_enabled = false
+			below_lpsp_material.emission_enabled = false
+			select_error_material.emission_enabled = false
+			node_3d.remove_withdraw_block("RWM")
+			node_3d.remove_insert_block("RWM")
+			withdraw_blocks = []
+			insert_blocks = []
+			insert_block_material.emission_enabled = false
+			withdraw_block_material.emission_enabled = false
+			
+			
+		if not rwm_inop and not alarm_displays_blank:
 			calculate_data()
-			out_of_seq_material.emission_enabled = len(insert_errors) > 2 or withdraw_errors != {}
+			
+			# TODO: RWM LPAP/LPSP steam flow bypasses
+			below_lpap_material.emission_enabled = true
+			below_lpsp_material.emission_enabled = true
+			
+			out_of_seq_material.emission_enabled = (len(insert_errors) > 2 or withdraw_errors != {}) and not alarm_displays_blank
 			withdraw_error_text_object.text = "         "
 			for rod in withdraw_errors:
 				withdraw_error_text_object.text = format_string(rod, true)
@@ -86,7 +120,7 @@ func _ready():
 			select_error_material.emission_enabled = select_error
 			
 			pass
-		else:
+		elif not alarm_displays_blank:
 			if not "rwm_inop" in withdraw_blocks:
 				withdraw_blocks.append("rwm_inop")
 		
@@ -131,13 +165,6 @@ func button_pressed(parent, pressed):
 		system_init_material.emission_enabled = pressed
 		if rwm_initalized == false and pressed and not rwm_malfunction:
 			# initialise RWM
-			#current_group = 1
-			current_group_rods = []
-			# i do this because for some reason if i just directly assign current_group_rods to the data from that group,
-			# editing current_group_rods would then edit the original variable, i guess this is some feature of godot,
-			# but i do not want this, so i will do this instead to avoid that.
-			for rod in group_rods["sequence_a"][groups["sequence_a"][current_group]["rod_group"]]:
-				current_group_rods.append(rod)
 			withdraw_blocks.erase("rwm_inop")
 			withdraw_block_material.emission_enabled = false
 			insert_blocks.erase("rwm_inop")
