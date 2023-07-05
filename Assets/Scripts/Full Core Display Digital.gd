@@ -68,7 +68,7 @@ func initalise_rpis():
 				insertion = node_3d.make_string_two_digit(str(insertion))
 				
 			var label = get_node("Rods/%s" % rod_number)
-			label.label_settings.font_color = Color(1, 1, 1) if rod_number == node_3d.selected_cr else Color(1, 0, 1) if rwm.current_group_rods != [] and rod_number == rwm.current_group_rods[0] else Color(0, 1, 1) if rod_number in rwm.current_group_rods else Color(1, 0, 0) if insertion == "**" else Color(0, 1, 0) if insertion == "00" else Color(1, 1, 0)
+			label.label_settings.font_color = Color(1, 1, 1) if rod_number == node_3d.selected_cr else Color(1, 0, 0) if insertion == "**" else Color(0, 1, 0) if insertion == "00" else Color(1, 1, 0)
 			label.text = insertion
 		await get_tree().create_timer(0.1).timeout
 	$"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display/Digital/SubViewport/digital_rod_display".visible = false

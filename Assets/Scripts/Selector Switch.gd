@@ -174,6 +174,9 @@ func breaker_switch_position_up(camera, event, position, normal, shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name
+		if name not in switches:
+			print("WARNING: a switch with the name '%s' was turned in-game, but this switch was found in the code, the switch will do nothing." % [name])
+			return
 		if mouse_click.pressed:
 			if not switches[name]["position"] == 2:
 				switches[name]["position"] += 1
@@ -192,6 +195,9 @@ func breaker_switch_position_down(camera, event, position, normal, shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name
+		if name not in switches:
+			print("WARNING: a switch with the name '%s' was turned in-game, but this switch was found in the code, the switch will do nothing." % [name])
+			return
 		if mouse_click.pressed:
 			if not switches[name]["position"] == 0:
 				switches[name]["position"] -= 1

@@ -126,6 +126,24 @@ var intermidiate_range_monitors = {
 	"B2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 }	
 
+@onready var rps_scram_group_lt_materials = {
+	"A1": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group A1".get_material(),
+	"A2": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group A2".get_material(),
+	"A3": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group A3".get_material(),
+	"A4": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group A4".get_material(),
+	"B1": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group B1".get_material(),
+	"B2": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group B2".get_material(),
+	"B3": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group B3".get_material(),
+	"B4": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/RPS Scram Group B4".get_material(),
+}
+
+@onready var rps_backup_scram_lt_materials = {
+	"A1": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/Backup Scram A1".get_material(),
+	"A2": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/Backup Scram A2".get_material(),
+	"B1": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/Backup Scram B1".get_material(),
+	"B2": $"Control Room Panels/Main Panel Center/Meters/Scram indicators/Backup Scram B2".get_material(),
+}
+
 @onready var pumps = {
 	"crd_pump_a": {
 		"status": pump_status.RUNNING,
@@ -375,6 +393,24 @@ func main_loop_timer_expire():
 			control_rods[rod_number]["cr_drift_alarm"] = true
 
 func main_loop_timer_fast_expire():
+	# TODO: this code is bad, this should be redone at some point
+	for breaker_name in rps_backup_scram_lt_materials:
+		rps_backup_scram_lt_materials[breaker_name].emission_enabled = (breaker_name in scram_breakers)
+			
+	var rps_a_trip = "A1" in scram_breakers and "A2" in scram_breakers
+		
+	rps_scram_group_lt_materials["A1"].emission_enabled = !rps_a_trip
+	rps_scram_group_lt_materials["A2"].emission_enabled = !rps_a_trip
+	rps_scram_group_lt_materials["A3"].emission_enabled = !rps_a_trip
+	rps_scram_group_lt_materials["A4"].emission_enabled = !rps_a_trip
+		
+	var rps_b_trip = "B1" in scram_breakers and "B2" in scram_breakers
+		
+	rps_scram_group_lt_materials["B1"].emission_enabled = !rps_b_trip
+	rps_scram_group_lt_materials["B2"].emission_enabled = !rps_b_trip
+	rps_scram_group_lt_materials["B3"].emission_enabled = !rps_b_trip
+	rps_scram_group_lt_materials["B4"].emission_enabled = !rps_b_trip
+	
 	if scram_breakers != {}:
 		var scram_breakers_open = 0
 		if "A1" in scram_breakers or "A2" in scram_breakers:
