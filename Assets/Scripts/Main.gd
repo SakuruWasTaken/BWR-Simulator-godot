@@ -119,6 +119,19 @@ var intermidiate_range_monitors = {
 	},
 }
 
+@onready var breaker_switches = {
+	"cb_N1_1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Sync Permit".get_material(),
+	},
+}
+
+
 @onready var manual_scram_pb_materials = {
 	"A1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 	"B1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
@@ -157,7 +170,7 @@ var intermidiate_range_monitors = {
 		"starting_required_flow": 20,
 		"current_flow": 47.00, # gpm
 		"max_flow": 200, # gpm
-		"electrical_bus": "SM-7",
+		"electrical_bus": "7",
 	},
 	"crd_pump_b": { 
 		"status": pump_status.STANDBY,
@@ -171,9 +184,10 @@ var intermidiate_range_monitors = {
 		"starting_required_flow": 20,
 		"current_flow": 0.00, # gpm
 		"max_flow": 200, # gpm
-		"electrical_bus": "SM-8",
+		"electrical_bus": "8",
 	},
 }
+
 
 func system_physics_timer_expire():
 	# TODO: finish this and add actual pump physics
@@ -395,7 +409,7 @@ func main_loop_timer_expire():
 func main_loop_timer_fast_expire():
 	# TODO: this code is bad, this should be redone at some point
 	for breaker_name in rps_backup_scram_lt_materials:
-		rps_backup_scram_lt_materials[breaker_name].emission_enabled = (breaker_name in scram_breakers)
+		rps_backup_scram_lt_materials[breaker_name].emission_enabled = scram_active
 			
 	var rps_a_trip = "A1" in scram_breakers and "A2" in scram_breakers
 		
