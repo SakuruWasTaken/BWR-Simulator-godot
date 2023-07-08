@@ -177,6 +177,7 @@ var intermidiate_range_monitors = {
 }
 
 
+
 @onready var manual_scram_pb_materials = {
 	"A1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/A1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 	"B1": $"Control Room Panels/Main Panel Center/Controls/SCRAM 1/switches/B1/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
