@@ -77,8 +77,8 @@ func _ready():
 			below_lpap_material.emission_enabled = false
 			below_lpsp_material.emission_enabled = false
 			select_error_material.emission_enabled = false
-			node_3d.remove_withdraw_block("RWM")
-			node_3d.remove_insert_block("RWM")
+			node_3d.add_new_block("RWM","r_withdraw_block")
+			node_3d.add_new_block("RWM","r_insert_block")
 			withdraw_blocks = []
 			insert_blocks = []
 			insert_block_material.emission_enabled = false
@@ -126,16 +126,16 @@ func _ready():
 		
 		if withdraw_blocks != []:
 			withdraw_block_material.emission_enabled = true
-			node_3d.add_withdraw_block("RWM")
+			node_3d.add_new_block("RWM","withdraw_block")
 		else:
 			withdraw_block_material.emission_enabled = false
-			node_3d.remove_withdraw_block("RWM")
+			node_3d.add_new_block("RWM","r_withdraw_block")
 		if insert_blocks != []:
 			insert_block_material.emission_enabled = true
-			node_3d.add_insert_block("RWM")
+			node_3d.add_new_block("RWM","insert_block")
 		else:
 			insert_block_material.emission_enabled = false
-			node_3d.remove_insert_block("RWM")
+			node_3d.add_new_block("RWM","r_insert_block")
 			
 		await get_tree().create_timer(1).timeout
 		
