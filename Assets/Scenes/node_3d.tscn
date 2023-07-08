@@ -365,7 +365,7 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vujpo"]
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2tws"]
 albedo_color = Color(0.588235, 0, 0, 1)
