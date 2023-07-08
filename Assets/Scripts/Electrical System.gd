@@ -6,12 +6,28 @@ var sources = {
 	"N1":
 		{
 			"type": "AC",
+			"voltage": 0,
+			"frequency": 0.00,
+			"amperage": 0.00,
+			"loads": {},
+		},
+	"N2":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"frequency": 0.00,
+			"amperage": 0.00,
+			"loads": {},
+		},
+	"S_4160V":
+		{
+			"type": "AC",
 			"voltage": 4160,
 			"frequency": 60.00,
 			"amperage": 0.00,
 			"loads": {},
 		},
-	"N2":
+	"S_6900V":
 		{
 			"type": "AC",
 			"voltage": 6900,
@@ -50,6 +66,13 @@ var sources = {
 			"amperage": 0.00,
 			"loads": [],
 			"feeders": [],
+			"indicators": {
+				"voltage": {
+					"type": "scale",
+					"pointer": $"/root/Node3d/Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage/Pointer",
+					"scale_max": 5000,
+				}
+			},
 		},
 	"3":
 		{
@@ -61,6 +84,13 @@ var sources = {
 			"amperage": 0.00,
 			"loads": [],
 			"feeders": [],
+			"indicators": {
+				"voltage": {
+					"type": "scale",
+					"pointer": $"/root/Node3d/Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage/Pointer",
+					"scale_max": 5000,
+				}
+			},
 		},
 	"4":
 		{
@@ -257,6 +287,46 @@ var breakers = {
 			"input": "N1",
 			"output": "1",
 			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_S1":
+		{
+			"input": "S_4160V",
+			"output": "1",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_N1_2":
+		{
+			"input": "N1",
+			"output": "2",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_S2":
+		{
+			"input": "S_4160V",
+			"output": "2",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_N1_3":
+		{
+			"input": "N1",
+			"output": "3",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_S3":
+		{
+			"input": "S_4160V",
+			"output": "3",
+			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},

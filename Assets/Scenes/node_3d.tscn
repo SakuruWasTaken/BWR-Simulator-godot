@@ -182,7 +182,7 @@ emission_operator = 1
 size = Vector3(0.0706772, 0.0301604, 0.0111308)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k7n0"]
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxnra"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -202,7 +202,7 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pcm0"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t3v5"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -222,7 +222,7 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdony"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjlie"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -233,7 +233,7 @@ albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1ias"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri0yk"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -244,7 +244,7 @@ albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukvfr"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsc8n"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -259,7 +259,7 @@ albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1tlc"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nie3t"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -267,12 +267,10 @@ emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5r8r"]
 albedo_color = Color(0, 0.588235, 0, 1)
-emission_enabled = true
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sggh3"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2whu"]
@@ -281,11 +279,10 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bcxm"]
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_viwo7"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6eohq"]
@@ -294,7 +291,6 @@ emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcjds"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5cxl"]
@@ -303,11 +299,10 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugdlv"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lr478"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyx0r"]
@@ -316,7 +311,6 @@ emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyht0"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06vh5"]
@@ -325,11 +319,10 @@ emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n43n0"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0xe2"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnyyp"]
@@ -337,11 +330,10 @@ albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47ynm"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpmxl"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t41fn"]
@@ -350,11 +342,10 @@ emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_op3oo"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqbky"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgnj0"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -362,12 +353,10 @@ emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ymkw"]
 albedo_color = Color(0, 0.588235, 0, 1)
-emission_enabled = true
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgt2i"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmv88"]
@@ -380,7 +369,6 @@ albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2tws"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haeop"]
@@ -389,7 +377,6 @@ emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7mg3"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j20ux"]
@@ -399,7 +386,6 @@ emission_operator = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cens4"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yit23"]
@@ -407,11 +393,10 @@ albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7urua"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dx6s"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4skr"]
@@ -419,11 +404,10 @@ albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7q270"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex15l"]
 albedo_color = Color(0.588235, 0, 0, 1)
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ql0ed"]
@@ -432,11 +416,10 @@ emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0s4u"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u7w8"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js4lk"]
 albedo_color = Color(0.368627, 0.196078, 0, 1)
@@ -447,7 +430,6 @@ emission = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r08t2"]
 albedo_color = Color(0, 0.588235, 0, 1)
-emission_enabled = true
 emission = Color(0, 0.839216, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87fiw"]
@@ -7032,6 +7014,61 @@ font_size = 28
 [node name="SM-2 Section" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System"]
 transform = Transform3D(1, -7.45058e-08, -1.77636e-15, 7.45058e-08, 1, -4.26326e-14, -1.73195e-14, 1.88294e-13, 1, 1.49012e-06, 0.00780201, 1.81983)
 
+[node name="Indicators" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section"]
+transform = Transform3D(1, -1.49012e-08, -3.10862e-15, 1.49012e-08, 1, -7.10543e-15, -1.11022e-14, 1.3145e-13, 1, -0.405628, -0.0205679, -0.679855)
+
+[node name="Voltage" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators"]
+transform = Transform3D(-0.142629, -0.989775, -9.76996e-15, 0.989775, -0.142629, -1.1724e-13, 7.4607e-14, -4.91175e-15, 1, -0.0238289, -0.347743, 0.382736)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("15_mw4ai")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, -1.69407e-21, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, 0.056715)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0           1"
+font_size = 28
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, -0.00018692)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "2           3"
+font_size = 28
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, -0.057086)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "4           5"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "KILOVOLTS AC"
+font_size = 28
+
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section"]
 
 [node name="Placard2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Labels"]
@@ -7307,6 +7344,20 @@ material = ExtResource("12_nfrwy")
 transform = Transform3D(1.19209e-07, 6.10948e-07, -1, 2.98024e-08, -1, -1.19209e-07, -1, -1.91847e-13, -8.9407e-08, 0.00542778, -0.00226235, -0.000556946)
 size = Vector3(0.00820124, 0.0600318, 0.00675643)
 material = ExtResource("10_6mjji")
+
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Labels"]
+transform = Transform3D(1.30284e-07, -0.990271, -0.139173, 1.2167e-08, -0.139173, 0.990267, -1, -1.30709e-07, -6.08336e-09, -0.377882, -0.369956, -0.297912)
+size = Vector3(0.0916769, 0.0267019, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Labels/Placard"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, -1.06581e-14, 1, -1.49012e-08, -2.98023e-08, 2.98023e-08, 0.999999, 0, 9.53674e-07, 0.00378245)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "BUS 2 VOLTAGE"
+font_size = 18
+outline_size = 0
 
 [node name="Switches" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section"]
 
@@ -7662,7 +7713,7 @@ rings = 5
 material = SubResource("StandardMaterial3D_6eohq")
 
 [node name="Lockout Avail" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_N1_2/Lights"]
-transform = Transform3D(1, -2.98023e-08, 1.24345e-14, 1.93715e-07, 1, 5.68434e-14, 9.76996e-15, -1.03029e-13, 1, 0.009, 0.129, 0.0340004)
+transform = Transform3D(1, -2.98023e-08, 1.24345e-14, 1.93715e-07, 1, 5.68434e-14, 1.02141e-14, -1.03029e-13, 1, 0.00900006, 0.129, 0.0340004)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_tcjds")
 
@@ -8941,6 +8992,20 @@ material = ExtResource("12_nfrwy")
 transform = Transform3D(1.19209e-07, 6.10948e-07, -1, 2.98024e-08, -1, -1.19209e-07, -1, -1.91847e-13, -8.9407e-08, 0.00542778, -0.00226235, -0.000556946)
 size = Vector3(0.00820124, 0.0600318, 0.00675643)
 material = ExtResource("10_6mjji")
+
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Labels"]
+transform = Transform3D(1.30284e-07, -0.990272, -0.139173, 1.21671e-08, -0.139173, 0.990267, -1, -1.30709e-07, -6.08334e-09, -0.377883, -0.369956, 0.121105)
+size = Vector3(0.0916769, 0.0267019, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Labels/Placard"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, -1.06581e-14, 1, -1.49012e-08, -2.98023e-08, 2.98023e-08, 0.999999, 0, 9.53674e-07, 0.00378245)
+pixel_size = 0.0004
+shaded = true
+modulate = Color(0, 0, 0, 1)
+text = "BUS 2 VOLTAGE"
+font_size = 18
+outline_size = 0
 
 [node name="Switches" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section"]
 
@@ -10384,6 +10449,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8_sync_sel/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="Indicators" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section"]
+transform = Transform3D(1, -1.49012e-08, -5.32907e-15, 1.49012e-08, 1, -1.77636e-14, -1.15463e-14, 1.49214e-13, 1, -0.405628, -0.0205703, -0.2611)
+
+[node name="Voltage" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators"]
+transform = Transform3D(-0.142629, -0.989775, -9.76996e-15, 0.989775, -0.142629, -1.1724e-13, 7.4607e-14, -4.91175e-15, 1, -0.0238289, -0.347743, 0.382736)
+size = Vector3(0.0243752, 0.0582492, 0.187504)
+material = ExtResource("35_r1uh5")
+
+[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("15_mw4ai")
+
+[node name="Pointer" type="Sprite3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, -1.69407e-21, -8.9407e-08, 0.012599, -0.00589919, 0.0708952)
+sorting_offset = 10.0
+pixel_size = 0.0004
+shaded = true
+texture = ExtResource("37_l1t2u")
+region_enabled = true
+region_rect = Rect2(0.148903, 0.500175, 22.9722, 20.9452)
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, 0.056715)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "0           1"
+font_size = 28
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, -0.00018692)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "2           3"
+font_size = 28
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, -2.11758e-21, 1, 0, -1, 2.11758e-22, -8.9407e-08, 0.0123467, 0.0128028, -0.057086)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "4           5"
+font_size = 28
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Indicators/Voltage"]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0123467, -0.0187275, -0.000539303)
+sorting_offset = 20.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "KILOVOLTS AC"
+font_size = 28
 
 [node name="SL-11, 21, 31" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System"]
 transform = Transform3D(1, -5.96046e-08, -1.77636e-15, 5.96046e-08, 1, -4.26326e-14, -1.19904e-14, 9.59233e-14, 1, 4.76837e-07, 0.378784, 1.75514)
