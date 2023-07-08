@@ -169,7 +169,7 @@ func button_pressed(parent, pressed):
 			withdraw_block_material.emission_enabled = false
 			insert_blocks.erase("rwm_inop")
 			insert_block_material.emission_enabled = false
-			node_3d.remove_withdraw_block("RWM")
+			node_3d.add_new_block("RWM","r_withdraw_block")
 			rwm_initalized = true
 			rwm_inop = false
 			
@@ -181,11 +181,11 @@ func set_rwm_inop(state):
 		rwm_initalized = false
 		current_group = 0
 		withdraw_block_material.emission_enabled = true
-		node_3d.add_withdraw_block("RWM")
+		node_3d.add_new_block("RWM","withdraw_block")
 		withdraw_blocks.append("rwm_inop")
 		insert_block_material.emission_enabled = true
 		insert_blocks.append("rwm_inop")
-		node_3d.add_insert_block("RWM")
+		node_3d.add_new_block("RWM","insert_block")
 		group_text_object.text = "   "
 		withdraw_error_text_object.text = "         "
 		insert_error_1_text_object.text = "         "

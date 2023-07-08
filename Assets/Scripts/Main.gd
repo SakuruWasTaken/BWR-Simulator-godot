@@ -445,9 +445,6 @@ func main_loop_timer_fast_expire():
 							set_scram_reset_light_on = true
 						await get_tree().create_timer(0.1).timeout
 
-# TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
-# NEW: fix yes
-
 func add_new_block(type,act):
 	if act == "withdraw_block":
 		if type not in rod_withdraw_block:
