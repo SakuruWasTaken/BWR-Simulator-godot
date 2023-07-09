@@ -214,13 +214,13 @@ var intermidiate_range_monitors = {
 	},
 	"DG1": {
 		"func": "generator_switch1",
-		"position": 1, #Indicator should NOT be here, it will be handeled by generator script. Currently is tied to a random thing to get it to work.
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Off".get_material()
+		"position": 1, 
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Indicator".get_material()
 	},
 	"DG2": {
 		"func": "generator_switch2",
 		"position": 1,
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Off".get_material()
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Indicator".get_material()
 	},
 	"cb_S1": {
 		"func": "electrical_breaker_switch",

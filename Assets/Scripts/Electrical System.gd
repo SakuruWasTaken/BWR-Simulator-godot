@@ -500,16 +500,21 @@ func _ready():
 			if len(bus_info["feeders"]) > 0:
 				for feeder in bus_info["feeders"]: #in case of two breakers being linked, che
 					var source_info = null
-					if feeder in breakers:
-						if breakers[feeder]["input"] in sources:
+					if feeder in breakers: #this is a mess of code, but it gets the job done.
+						if breakers[feeder]["input"] in sources: #here we check if the input for the breaker is a source
 							source_info = sources[breakers[feeder]["input"]]
-						else:
-							if breakers[breakers[feeder]["input"]]["closed"] == true:
-								source_info = busses[breakers[breakers[feeder]["input"]]["input"]]
+						elif breakers[feeder]["input"] in busses:#here we check if the input for the breaker is a bus
+							source_info = busses[breakers[feeder]["input"]]
+						else:#otherwise the input for that breaker is another breaker
+							if breakers[breakers[feeder]["input"]]["closed"] == true: #if that breaker is closed
+								if breakers[breakers[feeder]["input"]]["input"] in sources:#if that second breakers input is in sources
+									source_info = sources[breakers[breakers[feeder]["input"]]["input"]]
+								elif breakers[breakers[feeder]["input"]]["input"] in busses:#if that second breakers input is in bus
+									source_info = busses[breakers[breakers[feeder]["input"]]["input"]]
 
-							else:
+							else:#if breaker is not closed set bus voltage to ground (plot armor for 0v 0hz)
 								source_info = sources["GROUND"]
-					else:
+					else:#else its just a normal source
 						source_info = sources[breakers[feeder]["input"]]
 
 					

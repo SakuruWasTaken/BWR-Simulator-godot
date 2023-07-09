@@ -77,6 +77,7 @@ func _ready():
 				if gen_name=="dg_1":
 					elecsys.sources["DG1"]["voltage"] = 4160
 					elecsys.sources["DG1"]["frequency"] = 60
+					print("set")
 				elif gen_name=="dg_2":
 					elecsys.sources["DG2"]["voltage"] = 4160
 					elecsys.sources["DG2"]["frequency"] = 60
@@ -86,6 +87,7 @@ func _ready():
 				if gen_name=="dg_1":
 					elecsys.sources["DG1"]["voltage"] = 0
 					elecsys.sources["DG1"]["frequency"] = 0
+					print("offtrip")
 				elif gen_name=="dg_2":
 					elecsys.sources["DG2"]["voltage"] = 0
 					elecsys.sources["DG2"]["frequency"] = 0
@@ -94,9 +96,17 @@ func _ready():
 				gen["state"] = gen_state.out_of_service
 			if gen["state"] == gen_state.stopping and gen["stop_time"]<60:
 				gen["stop_time"] += 1
+				if gen_name=="dg_1":
+					elecsys.sources["DG1"]["voltage"] = 0
+					elecsys.sources["DG1"]["frequency"] = 0
+					print("off")
+				elif gen_name=="dg_2":
+					elecsys.sources["DG2"]["voltage"] = 0
+					elecsys.sources["DG2"]["frequency"] = 0
 			elif gen["state"] == gen_state.stopping and gen["stop_time"]>=60:
 				gen["stop_time"] = 0
 				gen["state"] = gen_state.standby
+				
 				
 		await get_tree().create_timer(0.1).timeout
 		
