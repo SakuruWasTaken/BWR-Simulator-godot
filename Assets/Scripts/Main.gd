@@ -129,6 +129,16 @@ var intermidiate_range_monitors = {
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Sync Permit".get_material(),
 	},
+	"DG1": {
+		"func": "generator_switch1",
+		"position": 1, #Indicator should NOT be here, it will be handeled by generator script. Currently is tied to a random thing to get it to work.
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Off".get_material()
+	},
+	"DG2": {
+		"func": "generator_switch2",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Off".get_material()
+	},
 	"cb_S1": {
 		"func": "electrical_breaker_switch",
 		"position": 1,

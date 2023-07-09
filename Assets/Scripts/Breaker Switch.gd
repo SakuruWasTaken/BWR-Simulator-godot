@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 @onready var node_3d = $"/root/Node3d"
 @onready var electrical_system = $"/root/Node3d/Control Room Panels/Main Panel Right Side/Electrical System"
+@onready var generator = $"/root/Node3d/Generators"
 
 func electrical_breaker_switch(position, switch):
 	if position == 1:
@@ -25,6 +26,21 @@ func electrical_breaker_switch(position, switch):
 	elif position == -1:
 		electrical_system.breakers[switch]["closed"] = false
 		electrical_system.breakers[switch]["auto_close_inhibit"] = true
+		
+func generator_switch1(position, switch):
+	if position == 0:
+		generator.signal_dg("Manual",1,"stop")
+	elif position == 2:
+		generator.signal_dg("Manual",1,"start")
+	elif position == -1:
+		generator.signal_dg("Manual",1,"trip")
+func generator_switch2(position, switch):
+	if position == 0:
+		generator.signal_dg("Manual",2,"stop")
+	elif position == 2:
+		generator.signal_dg("Manual",2,"start")
+	elif position == -1:
+		generator.signal_dg("Manual",2,"trip")
 
 var positions = {
 	-1: 90,

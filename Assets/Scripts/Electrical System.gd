@@ -34,7 +34,24 @@ var sources = {
 			"frequency": 60.00,
 			"amperage": 0.00,
 			"loads": {},
+		},
+	"DG1":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"frequency": 0,
+			"amperage": 0.00,
+			"loads": {},
+		},
+	"DG2":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"frequency": 0,
+			"amperage": 0.00,
+			"loads": {},
 		}
+	
 }
 
 @onready var busses = {
