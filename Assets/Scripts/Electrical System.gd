@@ -3,6 +3,22 @@ extends Node3D
 @onready var node_3d = $"/root/Node3d"
 
 var sources = {
+	"GROUND":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"frequency": 0,
+			"amperage": 0.00,
+			"loads": {},
+		},
+	"CBTRB":
+		{
+			"type": "AC",
+			"voltage": 4160,
+			"frequency": 60,
+			"amperage": 0.00,
+			"loads": {},
+		},
 	"N1":
 		{
 			"type": "AC",
@@ -152,6 +168,13 @@ var sources = {
 			"amperage": 0.00,
 			"loads": [],
 			"feeders": [],
+			"indicators": {
+				"voltage": {
+					"type": "scale",
+					"pointer": $/root/Node3d/"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Indicators/Voltage/Pointer",
+					"scale_max": 5000,
+				}
+			},
 		},
 	"8":
 		{
@@ -299,6 +322,83 @@ var sources = {
 }
 
 var breakers = {
+	#"cb_75_72": 
+		#{
+			#"input": "75",
+			#"output": "72",
+			#"closed": false,
+			#"lockout": false,
+			#"auto_close_inhibit": false,
+		#},
+	"cb_7DG1": 
+		{
+			"input": "DG1",
+			"output": "cb_DG1_7",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_DG1_7":
+		{
+			"input": "cb_7DG1",
+			"output": "7",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_B7": 
+		{
+			"input": "CBTRB",
+			"output": "7",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_7_75_1": 
+		{
+			"input": "7",
+			"output": "75",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	#"cb_7_73":  - 480v, requires transformer implementation!
+		#{
+			#"input": "7",
+			#"output": "73",
+			#"closed": false,
+			#"lockout": false,
+			#"auto_close_inhibit": false,
+		#},
+	#"cb_7_71": - 480v, requires transformer implementation!
+		#{
+			#"input": "7",
+			#"output": "71",
+			#"closed": false,
+			#"lockout": false,
+		#	"auto_close_inhibit": false,
+		#},
+	"cb_7_1": 
+		{
+			"input": "cb_1_7",
+			"output": "7",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	#all breakers DIRECTLY connected to bus SM-7^^^
+	
+	#SM-1
+	"cb_1_7": 
+		{
+			"input": "1",
+			"output": "cb_7_1",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	
+	
 	"cb_N1_1":
 		{
 			"input": "N1",
@@ -358,22 +458,37 @@ func _ready():
 		for breaker in breakers:
 			var breaker_info = breakers[breaker]
 			var input_info = null
-			if breaker_info["input"] in sources:
+			var output_info = null
+			var input_type = "breaker"
+			var output_type = "breaker"
+			if breaker_info["input"] in sources: #editing by watchful, attempting to add breaker to breaker connection
 				input_info = sources[breaker_info["input"]]
-			else:
+				input_type = "source"
+			elif breaker_info["input"] in busses:
 				input_info = busses[breaker_info["input"]]
-			var output_info = busses[breaker_info["output"]]
+				input_type = "bus"
+			else:
+				input_info = breakers[breaker_info["input"]]
+			if breaker_info["output"] in busses:
+				output_info = busses[breaker_info["output"]]
+				output_type = "bus"
+			else:
+				output_info = breakers[breaker_info["output"]]
 			
-			if breaker_info.lockout or input_info["voltage"] == 0:
+			if  input_type =="source" and input_info["voltage"] == 0:
 				breaker_info.closed = false
-				
+			elif input_type == "breaker" and input_info["lockout"]:
+				breaker_info.closed = false
+			elif breaker_info.lockout:
+				breaker_info.closed = false
 			# set the lights on the corresponding switch for the breaker to reflect the status of the breaker
 			if breaker in node_3d.breaker_switches:
 				node_3d.breaker_switches[breaker]["light_on"].emission_enabled = breaker_info.closed
 				node_3d.breaker_switches[breaker]["light_off"].emission_enabled = !breaker_info.closed
-				node_3d.breaker_switches[breaker]["light_lockout"].emission_enabled = !breaker_info.lockout	
+				if node_3d.breaker_switches[breaker]["light_lockout"] != null:
+					node_3d.breaker_switches[breaker]["light_lockout"].emission_enabled = !breaker_info.lockout	
 			
-			if breaker_info.closed:
+			if breaker_info.closed and output_type == "bus": 
 				output_info["feeders"].append(breaker)
 		
 		for source in sources:
@@ -383,8 +498,20 @@ func _ready():
 		for bus in busses:
 			var bus_info = busses[bus]
 			if len(bus_info["feeders"]) > 0:
-				for feeder in bus_info["feeders"]:
-					var source_info = sources[breakers[feeder]["input"]]
+				for feeder in bus_info["feeders"]: #in case of two breakers being linked, che
+					var source_info = null
+					if feeder in breakers:
+						if breakers[feeder]["input"] in sources:
+							source_info = sources[breakers[feeder]["input"]]
+						else:
+							if breakers[breakers[feeder]["input"]]["closed"] == true:
+								source_info = busses[breakers[breakers[feeder]["input"]]["input"]]
+
+							else:
+								source_info = sources["GROUND"]
+					else:
+						source_info = sources[breakers[feeder]["input"]]
+
 					
 					# TODO: calculate load
 					
@@ -393,7 +520,7 @@ func _ready():
 					
 					bus_info["voltage"] = source_info["voltage"]
 					bus_info["frequency"] = source_info["frequency"]
-					source_info["loads"][feeder] = 0.00
+					#source_info["loads"][feeder] = 0.00 useless for now
 			else:
 				bus_info["voltage"] = 0
 				bus_info["frequency"] = 0.00

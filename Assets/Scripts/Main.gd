@@ -120,6 +120,89 @@ var intermidiate_range_monitors = {
 }
 
 @onready var breaker_switches = {
+	#all breakers DIRECTLY connected to bus SM-7
+	"cb_75_72": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_75_72/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_75_72/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_75_72/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_75_72/Lights/Lockout Avail".get_material(),
+	},
+	"cb_7DG1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7DG1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7DG1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7DG1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7DG1/Lights/Lockout Avail".get_material(),
+	},
+	"cb_DG1_7": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/Lights/Off/CSGSphere3D".get_material(),
+		"light_close_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/Lights/Close Permit".get_material(),
+		"light_lockout": null,
+	},
+	"cb_B7": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Lights/Lockout Avail".get_material(),
+		"light_ready_to_transfer": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Lights/Ready To Xfer".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/Lights/Sync Permit".get_material(),
+	},
+	"cb_7_75_1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_75_1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_75_1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_75_1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_75_1/Lights/Lockout Avail".get_material(),
+	},
+	"cb_7_73": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_73/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_73/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_73/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+	},
+	"cb_7_71": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_71/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_71/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_71/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+	},
+	"cb_7_1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/Sync Permit".get_material(),
+	},
+	#all breakers DIRECTLY connected to bus SM-7^^^
+	
+	#SM-1
+	"cb_1_7": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/Sync Permit".get_material(),
+	},
+	
+	
 	"cb_N1_1": {
 		"func": "electrical_breaker_switch",
 		"position": 1,
