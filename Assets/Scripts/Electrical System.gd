@@ -52,7 +52,7 @@ var sources = {
 			"amperage": 0.00,
 			"loads": {},
 		},
-	"DG1":
+	"dg_1":
 		{
 			"type": "AC",
 			"voltage": 0,
@@ -60,7 +60,7 @@ var sources = {
 			"amperage": 0.00,
 			"loads": {},
 		},
-	"DG2":
+	"dg_2":
 		{
 			"type": "AC",
 			"voltage": 0,
@@ -383,7 +383,7 @@ var breakers = {
 		},
 	"cb_DG1_7":
 		{
-			"input": "DG1",
+			"input": "dg_1",
 			"output": "cb_7DG1",
 			"closed": false,
 			"lockout": false,
@@ -589,7 +589,7 @@ var breakers = {
 		},
 	"cb_DG2_8":
 		{
-			"input": "DG2",
+			"input": "dg_2",
 			"output": "cb_8DG2",
 			"closed": false,
 			"lockout": false,
