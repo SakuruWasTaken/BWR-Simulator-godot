@@ -120,7 +120,12 @@ var intermidiate_range_monitors = {
 }
 
 @onready var breaker_switches = {
-	#all breakers DIRECTLY connected to bus SM-7
+	#SM-7
+	"DG1": {
+		"func": "generator_switch1",
+		"position": 1, 
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Indicator".get_material()
+	},
 	"cb_75_72": {
 		"func": "electrical_breaker_switch",
 		"position": 1,
@@ -189,7 +194,7 @@ var intermidiate_range_monitors = {
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_7_1/Lights/Sync Permit".get_material(),
 	},
-	#all breakers DIRECTLY connected to bus SM-7^^^
+	#SM-7 ^^^
 	
 	#SM-1
 	"cb_1_7": {
@@ -201,8 +206,22 @@ var intermidiate_range_monitors = {
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_7/Lights/Sync Permit".get_material(),
 	},
-	
-	
+	"cb_1_11": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_11/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_11/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_11/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_1_11/Lights/Lockout Avail".get_material(),
+	},
+	"cb_11_1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_11_1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_11_1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_11_1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+	},
 	"cb_N1_1": {
 		"func": "electrical_breaker_switch",
 		"position": 1,
@@ -211,16 +230,6 @@ var intermidiate_range_monitors = {
 		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Off/CSGSphere3D".get_material(),
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_N1_1/Lights/Sync Permit".get_material(),
-	},
-	"DG1": {
-		"func": "generator_switch1",
-		"position": 1, 
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Indicator".get_material()
-	},
-	"DG2": {
-		"func": "generator_switch2",
-		"position": 1,
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Indicator".get_material()
 	},
 	"cb_S1": {
 		"func": "electrical_breaker_switch",
@@ -231,6 +240,8 @@ var intermidiate_range_monitors = {
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_S1/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches/cb_S1/Lights/Sync Permit".get_material(),
 	},
+	#SM-1 ^^^
+	#SM-2
 	"cb_S2": {
 		"func": "electrical_breaker_switch",
 		"position": 1,
@@ -249,6 +260,33 @@ var intermidiate_range_monitors = {
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_N1_2/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_N1_2/Lights/Sync Permit".get_material(),
 	},
+	"cb_21_2": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_21_2/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_21_2/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_21_2/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+	},
+	"cb_2_21": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_21/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_21/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_21/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_21/Lights/Lockout Avail".get_material(),
+	},
+	"cb_2_4": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_4/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_4/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_4/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_4/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-2 Section/Switches/cb_2_4/Lights/Sync Permit".get_material(),
+	},
+	#SM-2 ^^^
+	#SM-3
 	"cb_S3": {
 		"func": "electrical_breaker_switch",
 		"position": 1,
@@ -266,6 +304,95 @@ var intermidiate_range_monitors = {
 		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_N1_3/Lights/Off/CSGSphere3D".get_material(),
 		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_N1_3/Lights/Lockout Avail".get_material(),
 		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_N1_3/Lights/Sync Permit".get_material(),
+	},
+	"cb_3_8": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_8/Lights/Sync Permit".get_material(),
+	},
+	"cb_31_3": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_31_3/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_31_3/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_31_3/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+		
+	},
+	"cb_3_31": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_31/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_31/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_31/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_3_31/Lights/Lockout Avail".get_material(),
+	},
+	#SM-3 ^^^
+	
+	#SM-4
+	"cb_4_2": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Left Side/HPCS Panel/Switches/cb_4_2/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Left Side/HPCS Panel/Switches/cb_4_2/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Left Side/HPCS Panel/Switches/cb_4_2/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+	},
+	#SM-4 ^^^
+	
+	#SM-8
+	"DG2": {
+		"func": "generator_switch2",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Indicator".get_material()
+	},
+	"cb_B8": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Lights/Lockout Avail".get_material(),
+		"light_ready_to_transfer": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Lights/Ready To Xfer".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/Lights/Sync Permit".get_material(),
+	},
+	"cb_8_3": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_3/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_3/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_3/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_3/Lights/Lockout Avail".get_material(),
+		"light_sync_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_3/Lights/Sync Permit".get_material(),
+	},
+	"cb_8_85_1": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_85_1/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_85_1/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_85_1/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8_85_1/Lights/Lockout Avail".get_material(),
+	},
+	"cb_DG2_8": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": null,
+		"light_close_permit": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/Lights/Close Permit".get_material(),
+	},
+	"cb_8DG2": {
+		"func": "electrical_breaker_switch",
+		"position": 1,
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8DG2/Indicator".get_material(),
+		"light_on":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8DG2/Lights/On/CSGSphere3D".get_material(),
+		"light_off":  $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8DG2/Lights/Off/CSGSphere3D".get_material(),
+		"light_lockout": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_8DG2/Lights/Lockout Avail".get_material(),
 	},
 }
 

@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+@onready var electrical = $"/root/Node3d/Control Room Panels/Main Panel Right Side/Electrical System"
+
 func control_room_emergency_lighting_switch(position):
 	var lights_on = position in [1, 2]
 	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
@@ -42,6 +44,13 @@ func DG2_voltage_reg_switch(position): print(position) # TODO
 func cb_DG2_mode_sel_switch(position): print(position) # TODO
 func cb_DG2_8_sync_sel_switch(position): print(position) # TODO
 func DG2_governor_control_switch(position): print(position) # TODO
+func offsite_simulation_switch(position):
+	if position == 1:
+		electrical.sources["S_4160V"]["voltage"] = 0
+		electrical.sources["S_4160V"]["frequency"] = 0
+	else:
+		electrical.sources["S_4160V"]["voltage"] = 4160
+		electrical.sources["S_4160V"]["frequency"] = 60
 func cb_B_8_sync_sel_switch(position): print(position) # TODO
 func cb_8_3_sync_sel_switch(position): print(position) # TODO
 
@@ -58,6 +67,16 @@ var switches = {
 	},
 	"control_room_normal_lighting": {
 		"func": "control_room_normal_lighting_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"offsite_simulation": {
+		"func": "offsite_simulation_switch",
 		"positions": {
 			0: 45,
 			1: 0,

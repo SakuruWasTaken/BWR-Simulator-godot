@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var node_3d = $"/root/Node3d"
+@onready var generator = $"/root/Node3d/Generators"
 
 var sources = {
 	"GROUND":
@@ -76,6 +77,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -94,6 +96,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -112,6 +115,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -130,6 +134,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -141,6 +146,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 6100,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -152,6 +158,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 6100,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -163,6 +170,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -181,6 +189,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -192,6 +201,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -203,6 +213,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -214,6 +225,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -225,6 +237,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -236,6 +249,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -247,6 +261,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -258,6 +273,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -269,6 +285,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -280,6 +297,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -291,6 +309,19 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
+			"undervolt_limit": 2000,
+			"frequency": 0.00,
+			"phase_angle": 0,
+			"amperage": 0.00,
+			"loads": [],
+			"feeders": [],
+		},
+	"71":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"normal_voltage": 480,
+			"undervolt_limit": 200,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -302,6 +333,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -313,6 +345,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 4160,
+			"undervolt_limit": 2000,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -321,7 +354,17 @@ var sources = {
 		},
 }
 
+var transformers = {
+	"tr_7_71":
+		{
+			"stepdown": true, #stepdown is true, voltage is divided from input. Otherwise, multiplied.
+			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
+			"input": "cb_7_71",
+			"output": "71",
+		},
+}
 var breakers = {
+	#SM-7
 	#"cb_75_72": 
 		#{
 			#"input": "75",
@@ -332,16 +375,16 @@ var breakers = {
 		#},
 	"cb_7DG1": 
 		{
-			"input": "DG1",
-			"output": "cb_DG1_7",
+			"input": "cb_DG1_7",
+			"output": "7",
 			"closed": false,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
 	"cb_DG1_7":
 		{
-			"input": "cb_7DG1",
-			"output": "7",
+			"input": "DG1",
+			"output": "cb_7DG1",
 			"closed": false,
 			"lockout": false,
 			"auto_close_inhibit": false,
@@ -350,6 +393,14 @@ var breakers = {
 		{
 			"input": "CBTRB",
 			"output": "7",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_7_71": 
+		{
+			"input": "7",
+			"output": "tr_7_71",
 			"closed": false,
 			"lockout": false,
 			"auto_close_inhibit": false,
@@ -386,19 +437,33 @@ var breakers = {
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
-	#all breakers DIRECTLY connected to bus SM-7^^^
+	#SM-7 ^^^
 	
 	#SM-1
 	"cb_1_7": 
 		{
 			"input": "1",
 			"output": "cb_7_1",
-			"closed": false,
+			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
-	
-	
+	"cb_11_1":
+		{
+			"input": "cb_1_11",
+			"output": "11",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_1_11":
+		{
+			"input": "1",
+			"output": "cb_11_1",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
 	"cb_N1_1":
 		{
 			"input": "N1",
@@ -415,6 +480,9 @@ var breakers = {
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
+	#SM-1 ^^^
+	
+	#SM-2
 	"cb_N1_2":
 		{
 			"input": "N1",
@@ -431,6 +499,33 @@ var breakers = {
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
+	"cb_2_4":
+		{
+			"input": "2",
+			"output": "cb_4_2",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_2_21":
+		{
+			"input": "2",
+			"output": "cb_21_2",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_21_2":
+		{
+			"input": "cb_2_21",
+			"output": "21",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	#SM-2 ^^^
+	
+	#SM-3
 	"cb_N1_3":
 		{
 			"input": "N1",
@@ -443,6 +538,83 @@ var breakers = {
 		{
 			"input": "S_4160V",
 			"output": "3",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_3_8":
+		{
+			"input": "3",
+			"output": "cb_8_3",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_31_3":
+		{
+			"input": "cb_3_31",
+			"output": "31",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_3_31":
+		{
+			"input": "3",
+			"output": "cb_31_3",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	#SM-3 ^^^
+	
+	#SM-4 HPCS
+	"cb_4_2":
+		{
+			"input": "cb_2_4",
+			"output": "4",
+			"closed": true,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	#SM-4 HPCS ^^^
+	#SM-8
+	"cb_8DG2":
+		{
+			"input": "cb_DG2_8",
+			"output": "8",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_DG2_8":
+		{
+			"input": "DG2",
+			"output": "cb_8DG2",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_B8":
+		{
+			"input": "CBTRB",
+			"output": "8",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_8_85_1":
+		{
+			"input": "8",
+			"output": "85",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
+	"cb_8_3":
+		{
+			"input": "cb_3_8",
+			"output": "8",
 			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
@@ -472,7 +644,7 @@ func _ready():
 			if breaker_info["output"] in busses:
 				output_info = busses[breaker_info["output"]]
 				output_type = "bus"
-			else:
+			elif breaker_info["output"] not in transformers:
 				output_info = breakers[breaker_info["output"]]
 			
 			if  input_type =="source" and input_info["voltage"] == 0:
@@ -495,11 +667,16 @@ func _ready():
 			sources[source]["loads"] = {}
 			sources[source]["amperage"] = 0.00
 		
+		for transformer in transformers:
+			if breakers[transformers[transformer]["input"]]["closed"] == true:
+				busses[transformers[transformer]["output"]]["feeders"].append(transformer)
+		
 		for bus in busses:
 			var bus_info = busses[bus]
 			if len(bus_info["feeders"]) > 0:
-				for feeder in bus_info["feeders"]: #in case of two breakers being linked, che
+				for feeder in bus_info["feeders"]:
 					var source_info = null
+					var transformer_volt = null
 					if feeder in breakers: #this is a mess of code, but it gets the job done.
 						if breakers[feeder]["input"] in sources: #here we check if the input for the breaker is a source
 							source_info = sources[breakers[feeder]["input"]]
@@ -514,17 +691,39 @@ func _ready():
 
 							else:#if breaker is not closed set bus voltage to ground (plot armor for 0v 0hz)
 								source_info = sources["GROUND"]
-					else:#else its just a normal source
+					elif feeder in transformers: #finding voltage on secondry side of transfo
+						if transformers[feeder]["input"] in breakers and breakers[transformers[feeder]["input"]]["closed"] == true:
+							source_info = busses[breakers[transformers[feeder]["input"]]["input"]]
+							if transformers[feeder]["stepdown"] == true:
+								transformer_volt = source_info["voltage"] / transformers[feeder]["step_factor"]
+							else:
+								transformer_volt = source_info["voltage"] * transformers[feeder]["step_factor"]
+						else:
+							source_info = sources["GROUND"]
+					else:
 						source_info = sources[breakers[feeder]["input"]]
 
+					
+					
 					
 					# TODO: calculate load
 					
 					# TODO: calculate load between multiple feeders on a single bus
 					# (if a single bus has multiple connected feeders)
+					if feeder in transformers:
+						bus_info["voltage"] = transformer_volt
+						bus_info["frequency"] = source_info["frequency"]
+					else:
+						bus_info["voltage"] = source_info["voltage"]
+						bus_info["frequency"] = source_info["frequency"]
 					
-					bus_info["voltage"] = source_info["voltage"]
-					bus_info["frequency"] = source_info["frequency"]
+					if bus_info["voltage"] < bus_info["undervolt_limit"]: #undervoltage protection
+						if feeder not in transformers: # check if were not fucking with a transfo
+							breakers[feeder]["closed"] = false
+						if bus == "7": #bus autodg start
+							generator.signal_dg("VoltLoss",1,"start")
+						elif bus == "8": #bus autodg start
+							generator.signal_dg("VoltLoss",2,"start")
 					#source_info["loads"][feeder] = 0.00 useless for now
 			else:
 				bus_info["voltage"] = 0
