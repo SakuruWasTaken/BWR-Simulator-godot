@@ -14,6 +14,20 @@ func control_room_emergency_lighting_switch(position):
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
 
+func control_room_normal_lighting_switch(position):
+	var lights_on = position in [1, 2]
+	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
+	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
+	for node in $"/root/Node3d/Control Room Lights/normal".get_children():
+		node.light_energy = 0.712 if lights_on else 0
+		for child_node in node.get_children():
+			if child_node is CSGBox3D:
+				child_node.get_material().emission_enabled = lights_on
+			elif child_node is SpotLight3D:
+				child_node.light_energy = 2.368 if lights_on else 0
+	on_light_material.emission_enabled = lights_on
+	off_light_material.emission_enabled = !lights_on
+
 func crd_pump_a_switch(position):
 	if position == 1:
 		node_3d.pumps["crd_pump_a"]["auto_on"] = true

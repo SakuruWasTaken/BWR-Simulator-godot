@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://dvub7bi330a4b" path="res://Assets/Materials/wall.tres" id="3_e4fug"]
 [ext_resource type="Material" uid="uid://dptsjp7wy2ev1" path="res://Assets/Materials/panel material.tres" id="5_0qdm2"]
 [ext_resource type="AudioStream" uid="uid://cxu7ooirfysmk" path="res://Assets/Audio/ambient_sound.mp3" id="5_7cq8b"]
-[ext_resource type="Script" path="res://Assets/Scripts/Control Room Lights.gd" id="5_myjqk"]
 [ext_resource type="Material" uid="uid://d1scsatacyhl5" path="res://Assets/Materials/panel material 2.tres" id="6_o677x"]
 [ext_resource type="Script" path="res://Assets/Scripts/Electrical System.gd" id="6_q8ad4"]
 [ext_resource type="PackedScene" uid="uid://b5asdvpyn3ryv" path="res://Assets/Scenes/full_core_display_lights.tscn" id="7_5ybks"]
@@ -64,7 +63,7 @@
 [ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
 [ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
 [ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
-[ext_resource type="Script" path="res://Assets/Scripts/Diesel Generators.gd" id="65_0bfxe"]
+[ext_resource type="Script" path="res://Assets/Scripts/generators.gd" id="64_jfd7j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nhpy"]
 albedo_color = Color(0, 0, 0, 1)
@@ -79,6 +78,21 @@ sdfgi_min_cell_size = 0.003125
 sdfgi_cascade0_distance = 0.2
 sdfgi_max_distance = 3.2
 glow_normalized = true
+
+[sub_resource type="GDScript" id="GDScript_xudhy"]
+script/source = "extends Node
+
+var main_lights_on = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2igvy"]
 disable_ambient_light = true
@@ -3635,7 +3649,7 @@ size = Vector3(23.3561, 3.31346, 17.0579)
 material = ExtResource("3_e4fug")
 
 [node name="Control Room Lights" type="Node" parent="."]
-script = ExtResource("5_myjqk")
+script = SubResource("GDScript_xudhy")
 
 [node name="normal" type="Node3D" parent="Control Room Lights"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.97985, 0.305383, -2.80668)
@@ -30216,7 +30230,7 @@ pixel_size = 0.0008
 texture = SubResource("CompressedTexture2D_e22q4")
 
 [node name="Generators" type="Node3D" parent="."]
-script = ExtResource("65_0bfxe")
+script = ExtResource("64_jfd7j")
 
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_down"]
