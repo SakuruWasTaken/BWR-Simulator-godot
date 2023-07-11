@@ -64,7 +64,7 @@
 [ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
 [ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
 [ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
-[ext_resource type="Script" path="res://Assets/Scripts/Diesel Generators.gd" id="64_81j0p"]
+[ext_resource type="Script" path="res://Assets/Scripts/Diesel Generators.gd" id="65_0bfxe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nhpy"]
 albedo_color = Color(0, 0, 0, 1)
@@ -30216,7 +30216,7 @@ pixel_size = 0.0008
 texture = SubResource("CompressedTexture2D_e22q4")
 
 [node name="Generators" type="Node3D" parent="."]
-script = ExtResource("64_81j0p")
+script = ExtResource("65_0bfxe")
 
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/control_room_normal_lighting/StaticBody3D" method="breaker_switch_position_down"]
