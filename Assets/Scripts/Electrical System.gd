@@ -722,8 +722,12 @@ func _ready():
 							breakers[feeder]["closed"] = false
 						if bus == "7": #bus autodg start
 							generator.signal_dg("VoltLoss",1,"start")
+							if breakers["cb_B7"]["auto_close_inhibit"] == false:
+								breakers["cb_B7"]["closed"] = true
 						elif bus == "8": #bus autodg start
 							generator.signal_dg("VoltLoss",2,"start")
+							if breakers["cb_B8"]["auto_close_inhibit"] == false:
+								breakers["cb_B8"]["closed"] = true
 					#source_info["loads"][feeder] = 0.00 useless for now
 			else:
 				bus_info["voltage"] = 0
