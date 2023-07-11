@@ -45,21 +45,21 @@ func signal_dg(type,dg,state):
 	if state == "start":
 		if dgs[dg_name]["state"] == gen_state.standby:
 			dgs[dg_name]["state"] = gen_state.starting
+			get_node("/root/Node3d/Generators/%s" % dg_name).dg_start()
 			print("%s starting" % dg_name)
 	elif state == "stop" and dg_running:
 		dgs[dg_name]["state"] = gen_state.stopping
+		get_node("/root/Node3d/Generators/%s" % dg_name).dg_stop()
 		print("%s stopping" % dg_name)
 	elif state == "trip":
 		if dg_running:
 			dgs[dg_name]["state"] = gen_state.tripped
+			get_node("/root/Node3d/Generators/%s" % dg_name).dg_stop()
 			print("%s tripped" % dg_name)
 		# TODO: is this realistic?
 		#elif dgs[dg_name]["state"] == gen_state.standby:
 			#dgs[dg_name]["state"] = gen_state.out_of_service
 
-
-	
-		
 # THIS IS NOT READY YET!  and make it come up slowly instead of snapping to 60hz and volt
 func _ready():
 	while true:

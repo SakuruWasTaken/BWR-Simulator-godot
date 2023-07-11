@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp1wvdu0k26x4"
+path="res://.godot/imported/DG stop.mp3-df01c6b6f24a670fe80b9892f58160e7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Diesel Generators/DG stop.mp3"
+dest_files=["res://.godot/imported/DG stop.mp3-df01c6b6f24a670fe80b9892f58160e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
