@@ -401,7 +401,7 @@ var breakers = {
 		{
 			"input": "7",
 			"output": "tr_7_71",
-			"closed": false,
+			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
