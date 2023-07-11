@@ -12,7 +12,7 @@ var sources = {
 			"amperage": 0.00,
 			"loads": {},
 		},
-	"CBTRB":
+	"TRB":
 		{
 			"type": "AC",
 			"voltage": 4160,
@@ -391,7 +391,7 @@ var breakers = {
 		},
 	"cb_B7": 
 		{
-			"input": "CBTRB",
+			"input": "TRB",
 			"output": "7",
 			"closed": false,
 			"lockout": false,
@@ -597,7 +597,7 @@ var breakers = {
 		},
 	"cb_B8":
 		{
-			"input": "CBTRB",
+			"input": "TRB",
 			"output": "8",
 			"closed": false,
 			"lockout": false,

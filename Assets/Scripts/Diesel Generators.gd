@@ -20,7 +20,8 @@ enum gen_state {
 		"misc_time": 0,
 		"stop_time": 0,
 		"close_output_auto": false,
-		"output_breaker": "cb_DG1_7"
+		"output_breaker": "cb_DG1_7",
+		"bus": "7",
 	},
 	"dg_2": {
 		"state": gen_state.standby,
@@ -29,7 +30,8 @@ enum gen_state {
 		"misc_time": 0,
 		"stop_time": 0,
 		"close_output_auto": false,
-		"output_breaker": "cb_DG2_8"
+		"output_breaker": "cb_DG2_8",
+		"bus": "8",
 	}
 }
 #Stop state currently does not function.
@@ -74,7 +76,7 @@ func _ready():
 				gen["start_time"] = 0
 				elecsys.sources[gen_name]["voltage"] = 4160
 				elecsys.sources[gen_name]["frequency"] = 60
-				if dgs[gen_name]["close_output_auto"] == true:
+				if elecsys.busses[gen["bus"]]["voltage"] == 0:
 					elecsys.breakers[gen["output_breaker"]]["closed"] = true
 					
 			if gen["state"] == gen_state.tripped and gen["misc_time"]<60:
