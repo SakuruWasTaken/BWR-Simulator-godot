@@ -14,6 +14,18 @@ func control_room_emergency_lighting_switch(position):
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
 
+
+func sync_selector(position):
+	#man
+	if position == 0:
+		print("manual")
+	#man check
+	elif position == 2:
+		print("manual check")
+	#off
+	else:
+		print("off")
+
 func crd_pump_a_switch(position):
 	if position == 1:
 		node_3d.pumps["crd_pump_a"]["auto_on"] = true

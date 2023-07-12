@@ -328,6 +328,18 @@ var sources = {
 			"loads": [],
 			"feeders": [],
 		},
+	"73":
+		{
+			"type": "AC",
+			"voltage": 0,
+			"normal_voltage": 480,
+			"undervolt_limit": 200,
+			"frequency": 0.00,
+			"phase_angle": 0,
+			"amperage": 0.00,
+			"loads": [],
+			"feeders": [],
+		},
 	"75":
 		{
 			"type": "AC",
@@ -361,6 +373,13 @@ var transformers = {
 			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
 			"input": "cb_7_71",
 			"output": "71",
+		},
+	"tr_7_73":
+		{
+			"stepdown": true, #stepdown is true, voltage is divided from input. Otherwise, multiplied.
+			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
+			"input": "cb_7_73",
+			"output": "73",
 		},
 }
 var breakers = {
@@ -413,22 +432,14 @@ var breakers = {
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
-	#"cb_7_73":  - 480v, requires transformer implementation!
-		#{
-			#"input": "7",
-			#"output": "73",
-			#"closed": false,
-			#"lockout": false,
-			#"auto_close_inhibit": false,
-		#},
-	#"cb_7_71": - 480v, requires transformer implementation!
-		#{
-			#"input": "7",
-			#"output": "71",
-			#"closed": false,
-			#"lockout": false,
-		#	"auto_close_inhibit": false,
-		#},
+	"cb_7_73":
+		{
+			"input": "7",
+			"output": "tr_7_73",
+			"closed": false,
+			"lockout": false,
+			"auto_close_inhibit": false,
+		},
 	"cb_7_1": 
 		{
 			"input": "cb_1_7",
