@@ -201,7 +201,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
-			"undervolt_limit": 2000,
+			"undervolt_limit": 200,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -213,7 +213,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
-			"undervolt_limit": 2000,
+			"undervolt_limit": 200,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -225,7 +225,7 @@ var sources = {
 			"type": "AC",
 			"voltage": 0,
 			"normal_voltage": 480,
-			"undervolt_limit": 2000,
+			"undervolt_limit": 200,
 			"frequency": 0.00,
 			"phase_angle": 0,
 			"amperage": 0.00,
@@ -381,6 +381,27 @@ var transformers = {
 			"input": "cb_7_73",
 			"output": "73",
 		},
+	"tr_1_11":
+		{
+			"stepdown": true, #stepdown is true, voltage is divided from input. Otherwise, multiplied.
+			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
+			"input": "cb_1_11",
+			"output": "cb_11_1",
+		},
+	"tr_2_21":
+		{
+			"stepdown": true, #stepdown is true, voltage is divided from input. Otherwise, multiplied.
+			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
+			"input": "cb_2_21",
+			"output": "cb_21_2",
+		},
+	"tr_3_31":
+		{
+			"stepdown": true, #stepdown is true, voltage is divided from input. Otherwise, multiplied.
+			"step_factor": 8.66666666667, #to find this divide the input normal voltage by the output's normal voltage
+			"input": "cb_3_31",
+			"output": "cb_31_3",
+		},
 }
 var breakers = {
 	#SM-7
@@ -461,7 +482,7 @@ var breakers = {
 		},
 	"cb_11_1":
 		{
-			"input": "cb_1_11",
+			"input": "tr_1_11",
 			"output": "11",
 			"closed": true,
 			"lockout": false,
@@ -470,7 +491,7 @@ var breakers = {
 	"cb_1_11":
 		{
 			"input": "1",
-			"output": "cb_11_1",
+			"output": "tr_1_11",
 			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
@@ -521,14 +542,14 @@ var breakers = {
 	"cb_2_21":
 		{
 			"input": "2",
-			"output": "cb_21_2",
+			"output": "tr_2_21",
 			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
 	"cb_21_2":
 		{
-			"input": "cb_2_21",
+			"input": "tr_2_21",
 			"output": "21",
 			"closed": true,
 			"lockout": false,
@@ -563,7 +584,7 @@ var breakers = {
 		},
 	"cb_31_3":
 		{
-			"input": "cb_3_31",
+			"input": "tr_3_31",
 			"output": "31",
 			"closed": false,
 			"lockout": false,
@@ -572,7 +593,7 @@ var breakers = {
 	"cb_3_31":
 		{
 			"input": "3",
-			"output": "cb_31_3",
+			"output": "tr_3_31",
 			"closed": false,
 			"lockout": false,
 			"auto_close_inhibit": false,
@@ -650,13 +671,20 @@ func _ready():
 			elif breaker_info["input"] in busses:
 				input_info = busses[breaker_info["input"]]
 				input_type = "bus"
+			elif breaker_info["input"] in transformers:
+				input_info = transformers[breaker_info["input"]]
+				input_type = "transformer"
 			else:
 				input_info = breakers[breaker_info["input"]]
 			if breaker_info["output"] in busses:
 				output_info = busses[breaker_info["output"]]
 				output_type = "bus"
-			elif breaker_info["output"] not in transformers:
+			elif breaker_info["output"] in breakers:
 				output_info = breakers[breaker_info["output"]]
+				output_type = "breaker"
+			elif breaker_info["output"] in transformers:
+				output_info = transformers[breaker_info["output"]]
+				output_type = "transformer"
 			
 			if  input_type =="source" and input_info["voltage"] == 0:
 				breaker_info.closed = false
@@ -680,7 +708,11 @@ func _ready():
 		
 		for transformer in transformers:
 			if breakers[transformers[transformer]["input"]]["closed"] == true:
-				busses[transformers[transformer]["output"]]["feeders"].append(transformer)
+				if transformers[transformer]["output"] in breakers:
+					if breakers[transformers[transformer]["output"]]["closed"]:
+						busses[breakers[transformers[transformer]["output"]]["output"]]["feeders"].append(transformer)
+				else:
+					busses[transformers[transformer]["output"]]["feeders"].append(transformer)
 		
 		for bus in busses:
 			var bus_info = busses[bus]
@@ -688,7 +720,7 @@ func _ready():
 				for feeder in bus_info["feeders"]:
 					var source_info = null
 					var transformer_volt = null
-					if feeder in breakers: #this is a mess of code, but it gets the job done.
+					if feeder in breakers and breakers[feeder]["input"] not in transformers: #this is a mess of code, but it gets the job done.
 						if breakers[feeder]["input"] in sources: #here we check if the input for the breaker is a source
 							source_info = sources[breakers[feeder]["input"]]
 						elif breakers[feeder]["input"] in busses:#here we check if the input for the breaker is a bus
@@ -702,17 +734,50 @@ func _ready():
 
 							else:#if breaker is not closed set bus voltage to ground (plot armor for 0v 0hz)
 								source_info = sources["GROUND"]
-					elif feeder in transformers: #finding voltage on secondry side of transfo
-						if transformers[feeder]["input"] in breakers and breakers[transformers[feeder]["input"]]["closed"] == true:
+					
+					elif feeder in sources:
+						source_info = sources[breakers[feeder]["input"]]
+					elif feeder in breakers: #anything from this point on I have no idea how the fuck it works, it just does. dont question it please we'll fix it later
+						if breakers[feeder]["input"] in transformers: #finding voltage on secondry side of transfo
+							var in_is_connected = true 
+							var out_is_connected = true
+							if breakers[feeder]["input"] in transformers:
+								var transfo = transformers[breakers[feeder]["input"]]
+								if transfo["input"] in breakers:
+									in_is_connected = true if breakers[transfo["input"]]["closed"] else false
+									source_info = busses[breakers[transfo["input"]]["input"]]
+								else:
+									source_info = busses[transfo["input"]]
+								if transfo["output"] in breakers:
+									out_is_connected = true if breakers[transfo["output"]]["closed"] else false
+								if in_is_connected and out_is_connected:
+									if transfo["stepdown"] == true:
+										transformer_volt = source_info["voltage"] / transfo["step_factor"]
+									else:
+										transformer_volt = source_info["voltage"] * transfo["step_factor"]
+								else:
+									source_info = sources["GROUND"]
+									transformer_volt = 0
+					elif feeder in transformers:
+						var in_is_connected = true
+						var out_is_connected = true
+						if transformers[feeder]["input"] in breakers:
+							in_is_connected = true if breakers[transformers[feeder]["input"]]["closed"] else false
 							source_info = busses[breakers[transformers[feeder]["input"]]["input"]]
+						else:
+							source_info = busses[transformers[feeder]["input"]]
+						if transformers[feeder]["output"] in breakers:
+							out_is_connected = true if breakers[transformers[feeder]["output"]]["closed"] else false
+						if in_is_connected and out_is_connected:
 							if transformers[feeder]["stepdown"] == true:
 								transformer_volt = source_info["voltage"] / transformers[feeder]["step_factor"]
 							else:
 								transformer_volt = source_info["voltage"] * transformers[feeder]["step_factor"]
 						else:
 							source_info = sources["GROUND"]
+							transformer_volt = 0
 					else:
-						source_info = sources[breakers[feeder]["input"]]
+						break
 
 					
 					
@@ -727,6 +792,7 @@ func _ready():
 					else:
 						bus_info["voltage"] = source_info["voltage"]
 						bus_info["frequency"] = source_info["frequency"]
+					
 					
 					if bus_info["voltage"] < bus_info["undervolt_limit"]: #undervoltage protection
 						if feeder not in transformers: # check if were not fucking with a transfo
