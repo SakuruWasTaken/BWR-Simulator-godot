@@ -1,4 +1,4 @@
-[gd_scene load_steps=641 format=3 uid="uid://cw4d4i2ykxkkg"]
+[gd_scene load_steps=645 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -212,7 +212,7 @@ albedo_color = Color(0, 0, 1, 1)
 emission = Color(0, 1, 1, 1)
 emission_operator = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdony"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ueryd"]
 albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjlie"]
@@ -358,11 +358,11 @@ emission_operator = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vujpo"]
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2tws"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp7an"]
 albedo_color = Color(0.588235, 0, 0, 1)
 emission = Color(1, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haeop"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juh8j"]
 albedo_color = Color(0, 0.588235, 0, 1)
 emission = Color(0, 0.839216, 0, 1)
 
@@ -374,6 +374,20 @@ emission = Color(1, 1, 1, 1)
 albedo_color = Color(0, 0, 1, 1)
 emission = Color(0, 1, 1, 1)
 emission_operator = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc66v"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2tws"]
+albedo_color = Color(0.588235, 0, 0, 1)
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haeop"]
+albedo_color = Color(0, 0.588235, 0, 1)
+emission = Color(0, 0.839216, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdony"]
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cens4"]
 albedo_color = Color(0.588235, 0, 0, 1)
@@ -6484,7 +6498,7 @@ material = SubResource("StandardMaterial3D_67pb6")
 transform = Transform3D(-3.93403e-08, -1.78814e-07, 0.9, -1.06581e-13, 0.9, -1.49012e-08, -0.9, -1.13687e-13, -3.93403e-08, 0.0180883, 0.0557857, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
-material = SubResource("StandardMaterial3D_sdony")
+material = SubResource("StandardMaterial3D_ueryd")
 
 [node name="cb_1_500S" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-1 Section/Switches"]
 transform = Transform3D(-0.999999, 8.9407e-07, -7.10543e-15, -2.23517e-07, -0.999999, -5.32907e-14, 2.88658e-14, -1.10134e-13, 1, 0.0530005, 0.0858233, -0.422873)
@@ -9492,7 +9506,7 @@ material = SubResource("StandardMaterial3D_tt48e")
 transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, -3.55271e-15, 0, 1, -2.14577e-06, -0.00902432, 0)
 radius = 0.014
 rings = 5
-material = SubResource("StandardMaterial3D_u2tws")
+material = SubResource("StandardMaterial3D_vp7an")
 
 [node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_N1_3/Lights"]
 transform = Transform3D(-4.47035e-08, -1, 1.33227e-15, 1, -1.49012e-08, 0, -7.10543e-15, -4.44089e-16, 1, -5.96046e-08, 0.0910003, 0.0340004)
@@ -9505,7 +9519,7 @@ material = SubResource("StandardMaterial3D_tppdu")
 transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
 radius = 0.014
 rings = 5
-material = SubResource("StandardMaterial3D_haeop")
+material = SubResource("StandardMaterial3D_juh8j")
 
 [node name="Lockout Avail" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches/cb_N1_3/Lights"]
 transform = Transform3D(1, -2.98023e-08, 1.24345e-14, 1.93715e-07, 1, 5.68434e-14, 9.76996e-15, -1.03029e-13, 1, 0.009, 0.129, 0.0340004)
@@ -9661,7 +9675,7 @@ material = SubResource("StandardMaterial3D_67pb6")
 transform = Transform3D(-3.93403e-08, -1.78814e-07, 0.9, -1.06581e-13, 0.9, -1.49012e-08, -0.9, -1.13687e-13, -3.93403e-08, 0.0180883, 0.0557857, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
-material = SubResource("StandardMaterial3D_sdony")
+material = SubResource("StandardMaterial3D_dc66v")
 
 [node name="cb_3_8" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-3 Section/Switches"]
 transform = Transform3D(-0.999999, 8.19564e-07, -4.44089e-15, -1.04308e-07, -0.999999, -3.19744e-14, 1.68754e-14, -1.27898e-13, 1, 0.0530011, 0.0858815, -0.421708)
