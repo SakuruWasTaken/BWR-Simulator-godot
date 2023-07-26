@@ -3901,12 +3901,12 @@ material = ExtResource("2_uwjod")
 environment = SubResource("Environment_l5pxq")
 
 [node name="Player" parent="." instance=ExtResource("1_eisjc")]
-transform = Transform3D(-0.588802, 0, -0.808278, 0, 1, 0, 0.808278, 0, -0.588802, 4.11157, 1.37753, 0.0790619)
+transform = Transform3D(-0.698603, 0, -0.71551, 0, 1, 0, 0.71551, 0, -0.698603, 5.39037, 1.37753, 0.624879)
 
 [node name="wall" type="CSGBox3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.87195, 1.64062, 4.4364)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.76165, 1.64062, 4.5467)
 use_collision = true
-size = Vector3(7.425, 3.42, 0.42)
+size = Vector3(6.07558, 3.42, 0.42)
 material = ExtResource("3_e4fug")
 
 [node name="wall 3" type="CSGBox3D" parent="."]
@@ -20973,9 +20973,7 @@ font_size = 28
 [node name="Electrical Alarm Loop" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System"]
 transform = Transform3D(-0.990268, 0.139173, -7.14984e-14, 0.139173, 0.990268, 2.84217e-14, 7.63833e-14, 2.13163e-14, -1, -1.79823, -0.615128, 1.73633)
 stream = ExtResource("26_n3vdo")
-volume_db = -6.0
-max_db = 0.0
-max_distance = 22.0
+max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side"]
@@ -27098,7 +27096,7 @@ depth = 0.01
 material = ExtResource("33_11pre")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/Reactor Mode Switch/Labels"]
-transform = Transform3D(-5.96046e-08, 0, 1, 0.756448, 0.654055, 0, -0.654055, 0.756448, -8.9407e-08, 0.0101681, 0.0310202, 0.0265827)
+transform = Transform3D(-5.96046e-08, 0, 1, 0.756448, 0.654055, 0, -0.654055, 0.756448, -8.9407e-08, 0.010169, 0.0310202, 0.026583)
 sorting_offset = 10.0
 pixel_size = 0.0003
 shaded = true
