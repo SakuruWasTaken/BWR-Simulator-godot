@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var node_3d = $"/root/Node3d"
 @onready var generator = $"/root/Node3d/Generators"
-
+@onready var annunciators = $"/root/Node3d/Control Room Panels/Main Panel Right Side/Electrical System/Annunciators"
 var sources = {
 	"GROUND":
 		{
@@ -457,7 +457,7 @@ var breakers = {
 		{
 			"input": "7",
 			"output": "tr_7_73",
-			"closed": false,
+			"closed": true,
 			"lockout": false,
 			"auto_close_inhibit": false,
 		},
@@ -799,6 +799,7 @@ func _ready():
 							breakers[feeder]["closed"] = false
 						if bus == "7": #bus autodg start
 							generator.signal_dg("VoltLoss",1,"start")
+							annunciators.set_annunciator_active("dg1_autostart")
 							if breakers["cb_B7"]["auto_close_inhibit"] == false:
 								breakers["cb_B7"]["closed"] = true
 						elif bus == "8": #bus autodg start

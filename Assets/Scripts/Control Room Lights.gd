@@ -17,13 +17,14 @@ func update_lighting(power):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	while true:
+		await get_tree().create_timer(0.1).timeout
+		new_state = true if electrical.busses["73"]["voltage"] >= 460 else false
+		if current_state != new_state:
+			current_state = new_state
+			update_lighting(current_state)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	new_state = true if electrical.busses["71"]["voltage"] >= 470 else false
-	if current_state != new_state:
-		current_state = new_state
-		update_lighting(current_state)
-	await get_tree().create_timer(0.1).timeout
+	pass
 
