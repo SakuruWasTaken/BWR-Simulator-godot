@@ -797,20 +797,23 @@ func _ready():
 					if bus_info["voltage"] < bus_info["undervolt_limit"]: #undervoltage protection
 						if feeder not in transformers: # check if were not fucking with a transfo
 							breakers[feeder]["closed"] = false
-						if bus == "7": #bus autodg start
-							generator.signal_dg("VoltLoss",1,"start")
-							annunciators.set_annunciator_active("dg1_autostart")
-							if breakers["cb_B7"]["auto_close_inhibit"] == false:
-								breakers["cb_B7"]["closed"] = true
-						elif bus == "8": #bus autodg start
-							generator.signal_dg("VoltLoss",2,"start")
-							if breakers["cb_B8"]["auto_close_inhibit"] == false:
-								breakers["cb_B8"]["closed"] = true
 					#source_info["loads"][feeder] = 0.00 useless for now
 			else:
 				bus_info["voltage"] = 0
 				bus_info["frequency"] = 0.00
 				
+			# DG autostart logic
+			if bus == "7" and bus_info["voltage"] <= 0:
+				generator.signal_dg("VoltLoss","dg_1","start")
+				annunciators.set_annunciator_active("dg1_autostart")
+				if not breakers["cb_B7"]["auto_close_inhibit"] and not breakers["cb_B7"]["lockout"] and sources["TRB"]["voltage"] > bus_info["undervolt_limit"]:
+					breakers["cb_B7"]["closed"] = true
+					
+			elif bus == "8" and bus_info["voltage"] <= 0:
+				generator.signal_dg("VoltLoss","dg_2","start")
+				if not breakers["cb_B8"]["auto_close_inhibit"] and not breakers["cb_B7"]["lockout"] and sources["TRB"]["voltage"] > bus_info["undervolt_limit"]:
+					breakers["cb_B8"]["closed"] = true
+					
 		for bus in busses:
 			var bus_info = busses[bus]
 			if "indicators" in bus_info:

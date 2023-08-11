@@ -27,20 +27,15 @@ func electrical_breaker_switch(position, switch):
 		electrical_system.breakers[switch]["closed"] = false
 		electrical_system.breakers[switch]["auto_close_inhibit"] = true
 		
-func generator_switch1(position, switch):
+func generator_switch(position, switch):
+	generator.dgs[switch]["autostart_inhibit"] = false
 	if position == 0:
-		generator.signal_dg("Manual",1,"stop")
+		generator.signal_dg("Manual",switch,"stop")
 	elif position == 2:
-		generator.signal_dg("Manual",1,"start")
+		generator.signal_dg("Manual",switch,"start")
 	elif position == -1:
-		generator.signal_dg("Manual",1,"trip")
-func generator_switch2(position, switch):
-	if position == 0:
-		generator.signal_dg("Manual",2,"stop")
-	elif position == 2:
-		generator.signal_dg("Manual",2,"start")
-	elif position == -1:
-		generator.signal_dg("Manual",2,"trip")
+		generator.dgs[switch]["autostart_inhibit"] = true
+
 
 var positions = {
 	-1: 90,

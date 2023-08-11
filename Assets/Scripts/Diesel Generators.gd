@@ -12,7 +12,7 @@ enum gen_state {
 }
 
 
-@onready var dgs = {
+var dgs = {
 	"dg_1": {
 		"state": gen_state.standby,
 		"phase": 0,
@@ -22,6 +22,7 @@ enum gen_state {
 		"close_output_auto": false,
 		"output_breaker": "cb_DG1_7",
 		"bus": "7",
+		"autostart_inhibit": false,
 	},
 	"dg_2": {
 		"state": gen_state.standby,
@@ -32,18 +33,17 @@ enum gen_state {
 		"close_output_auto": false,
 		"output_breaker": "cb_DG2_8",
 		"bus": "8",
+		"autostart_inhibit": false,
 	}
 }
-#Stop state currently does not function.
-func signal_dg(type,dg,state):
-	var dg_name = "dg_1" if dg == 1 else "dg_2"
-	
+
+func signal_dg(type,dg_name,state):
 	dgs[dg_name]["close_output_auto"] = true if type == "VoltLoss" else false
 	
 	var dg_running = dgs[dg_name]["state"] in [gen_state.started, gen_state.starting]
 	
 	if state == "start":
-		if dgs[dg_name]["state"] == gen_state.standby:
+		if dgs[dg_name]["state"] == gen_state.standby and not (dgs[dg_name]["autostart_inhibit"] and type != "LOCA"):
 			dgs[dg_name]["state"] = gen_state.starting
 			get_node("/root/Node3d/Generators/%s" % dg_name).dg_start()
 			print("%s starting" % dg_name)

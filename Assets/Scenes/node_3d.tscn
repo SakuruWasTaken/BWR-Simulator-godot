@@ -1,4 +1,4 @@
-[gd_scene load_steps=714 format=3 uid="uid://cw4d4i2ykxkkg"]
+[gd_scene load_steps=712 format=3 uid="uid://cw4d4i2ykxkkg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -62,9 +62,8 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Full Core Display Digital.gd" id="50_nnqwm"]
 [ext_resource type="Material" uid="uid://c7gnnnjikio6v" path="res://Assets/Materials/red plastic.tres" id="54_42qy7"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Bypass Key Switch.gd" id="55_34t47"]
-[ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="56_d4jl8"]
 [ext_resource type="Script" path="res://Assets/Scripts/SRM Period Meter.gd" id="57_3ty5v"]
-[ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="57_ca2au"]
+[ext_resource type="PackedScene" uid="uid://dr1acw3vw7urm" path="res://Assets/Scenes/chart recorder.tscn" id="62_yttj1"]
 [ext_resource type="Script" path="res://Assets/Scripts/Diesel Generators.gd" id="65_0bfxe"]
 [ext_resource type="Script" path="res://Assets/Scripts/Diesel Generator Audio.gd" id="66_vqhdr"]
 [ext_resource type="AudioStream" uid="uid://ccli37vmn211t" path="res://Assets/Audio/Diesel Generators/DG running.mp3" id="67_yw6r2"]
@@ -3807,9 +3806,6 @@ refraction_enabled = true
 transparency = 1
 blend_mode = 3
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cm06n"]
-viewport_path = NodePath("Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D/SubViewport")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6i2o"]
 albedo_color = Color(0.831373, 0.831373, 0.831373, 1)
 emission_enabled = true
@@ -4761,7 +4757,7 @@ transform = Transform3D(-0.142629, 0.989776, 0, -0.989776, -0.142629, 0, 0, 0, 1
 script = ExtResource("6_q8ad4")
 
 [node name="Annunciator Control Panel" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System"]
-transform = Transform3D(1.60188e-07, 8.19564e-08, -0.600002, 8.9407e-08, -0.600002, -5.21541e-08, -0.6, -8.94071e-08, -1.71363e-07, 0.0502587, 0.363832, 0.627875)
+transform = Transform3D(1.60188e-07, 2.45869e-07, -0.600003, 8.9407e-08, -0.600003, -2.01166e-07, -0.6, -8.94072e-08, -1.71363e-07, 0.050258, 0.344771, 1.02236)
 size = Vector3(0.2, 0.109099, 0.04)
 material = ExtResource("6_o677x")
 
@@ -12349,7 +12345,7 @@ size = Vector3(0.00820124, 0.0600318, 0.00675643)
 material = ExtResource("10_6mjji")
 
 [node name="Placard3" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SH-5 Section/Labels"]
-transform = Transform3D(1.19209e-07, 8.04663e-07, -1, 2.98025e-08, -1, -7.45058e-07, -1, -1.91847e-13, -8.94071e-08, 0.0379962, 0.329487, 0.0745525)
+transform = Transform3D(1.19209e-07, 8.04663e-07, -1, 2.98026e-08, -1, -8.04663e-07, -1, -2.34479e-13, -8.94071e-08, 0.0379968, 0.31242, 0.468995)
 size = Vector3(0.096, 0.0669791, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -16515,56 +16511,56 @@ polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.01
 depth = 0.01
 material = SubResource("StandardMaterial3D_6d378")
 
-[node name="DG2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches"]
+[node name="dg_2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches"]
 transform = Transform3D(-1, 8.34465e-07, 0, -2.08616e-07, -1, -1.06581e-14, 2.93099e-14, -4.36984e-13, 1, 0.0529969, -0.179476, -0.891091)
 size = Vector3(0.036, 0.076, 0.076)
 material = ExtResource("35_r1uh5")
 
-[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(1, 0, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0.011, 0, 0)
 
-[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights"]
+[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights"]
 transform = Transform3D(-4.47035e-08, -1, 8.88178e-16, 1, -1.49012e-08, 0, -7.10543e-15, -4.44089e-16, 1, 1.13249e-06, 0.0911889, -0.044342)
 radius = 0.017
 height = 0.01
 sides = 10
 material = SubResource("StandardMaterial3D_tt48e")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights/On"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights/On"]
 transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
 radius = 0.014
 rings = 5
 material = SubResource("StandardMaterial3D_0ob0c")
 
-[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights"]
+[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights"]
 transform = Transform3D(-4.47035e-08, -1, 8.88178e-16, 1, -1.49012e-08, 0, -7.10543e-15, -4.44089e-16, 1, -5.96046e-08, 0.0910006, 0.0439997)
 radius = 0.017
 height = 0.01
 sides = 10
 material = SubResource("StandardMaterial3D_tppdu")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights/Off"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights/Off"]
 transform = Transform3D(1, -4.47035e-08, 7.10543e-15, 0, 1, -1.33227e-15, -1.42109e-14, -1.33227e-15, 1, -1.90735e-06, -0.00902426, 0)
 radius = 0.014
 rings = 5
 material = SubResource("StandardMaterial3D_qkvlj")
 
-[node name="Red light 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights"]
+[node name="Red light 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights"]
 transform = Transform3D(1, -2.98023e-08, 4.88498e-15, 8.9407e-08, 1, 0, -4.44089e-16, -3.55271e-14, 1, 0.00905007, 0.0907054, 0)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_jcqmg")
 
-[node name="Red light 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights"]
+[node name="Red light 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights"]
 transform = Transform3D(1, -4.47035e-08, 4.88498e-15, 1.49012e-07, 1, 0, 4.44089e-16, -5.68434e-14, 1, 0.00900024, 0.126997, -0.0249996)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_enrj1")
 
-[node name="Cranking" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights"]
+[node name="Cranking" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights"]
 transform = Transform3D(1, -1.49012e-07, 2.13163e-14, 1.19209e-07, 1, 1.42109e-14, 3.4639e-14, -2.98428e-13, 1, 0.00899857, 0.127156, 0.025115)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_y47a0")
 
-[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Lights/Cranking"]
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Lights/Cranking"]
 transform = Transform3D(-4.47035e-08, 5.96046e-08, 1, 0, 1, -5.96046e-08, -1, 1.42109e-14, -3.72529e-08, 0.0129999, 4.76837e-07, 0)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -16575,10 +16571,10 @@ RPM"
 font_size = 18
 outline_size = 0
 
-[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(0.8, 1.49012e-08, 0, -2.23517e-08, 0.8, 0, 0, 0, 0.8, 0.00299837, -1.43051e-06, 0)
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Handle"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
 flip_faces = true
 radius = 0.00824928
@@ -16586,14 +16582,14 @@ height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Handle"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0588125, 1.43051e-06, -4.76837e-07)
 radius = 0.014
 height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Handle/CSGCylinder3D"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Handle/CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000374436, 9.53674e-07)
 flip_faces = true
 radius = 0.00781379
@@ -16601,23 +16597,23 @@ height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Handle"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0218214, 1.43051e-06, -7.15256e-07)
 radius = 0.00888454
 height = 0.00273183
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Handle"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Handle"]
 transform = Transform3D(1, -1.49012e-08, 0, 2.98023e-08, 1, 3.55271e-15, 0, 0, 1, -1.46627e-05, 0.00403357, 0.0100594)
 polygon = PackedVector2Array(0.100728, -0.013248, 0.101953, -0.0752368, 0.0894667, -0.0741262, 0.0809256, -0.0633183, 0.0809014, -0.051302, 0.0866342, -0.0240092, 0.0870524, -0.012404)
 depth = 0.02
 material = ExtResource("33_11pre")
 
-[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15256e-07)
 
-[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Labels"]
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Labels"]
 transform = Transform3D(4.17349e-08, -1.04308e-07, 1, -0.707107, 0.707107, 2.23517e-08, -0.707107, -0.707107, -4.47035e-08, 0.0101658, 0.0277276, -0.0214577)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -16625,7 +16621,7 @@ shaded = true
 text = "CLOSE"
 font_size = 20
 
-[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Labels"]
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Labels"]
 transform = Transform3D(-4.20845e-08, 1.97328e-08, 1, 0.707107, 0.707107, 1.58051e-08, -0.707107, 0.707107, -4.37114e-08, 0.0101658, 0.0277281, 0.0213957)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -16633,7 +16629,7 @@ shaded = true
 text = "TRIP"
 font_size = 20
 
-[node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Labels"]
+[node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Labels"]
 transform = Transform3D(0, 4.37114e-08, 1, 1, -4.37114e-08, 4.47035e-08, 4.37114e-08, 1, -4.37114e-08, 0.0102255, 0.00277162, 0.0282335)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -16642,12 +16638,12 @@ text = "PULL TO
 LOCK"
 font_size = 16
 
-[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(-1.19209e-07, 0, 0.999999, -2.98023e-08, 1, 3.72529e-08, -1, 0, -8.9407e-08, 0.014, 0.057, 0)
 size = Vector3(0.0916769, 0.0334538, 0.00717134)
 material = ExtResource("12_nfrwy")
 
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Placard"]
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Placard"]
 transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, 0, 0, 0.00378257)
 pixel_size = 0.0004
 shaded = true
@@ -16656,42 +16652,42 @@ text = "DIESEL GEN 2"
 font_size = 18
 outline_size = 0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 stream = ExtResource("24_mqur0")
 volume_db = -18.0
 max_db = 6.0
 max_distance = 10.0
 attenuation_filter_cutoff_hz = 15000.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
 script = ExtResource("12_qhcpc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(1, -2.98023e-08, 0, 4.47035e-08, 1, 0, 4.44089e-16, -1.06581e-14, 1, 0, 0, -0.0589418)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D3"]
 transform = Transform3D(0.999999, 4.47035e-08, -3.9968e-15, 2.98023e-08, 0.999997, 8.88178e-14, 1.11022e-14, -2.4869e-14, 1, 0.0133965, 2.38419e-07, 0.00587654)
 shape = SubResource("BoxShape3D_d54wy")
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(-4.47035e-08, 1.49012e-08, 1.07, -7.81597e-14, 1.07, -2.98023e-08, -1.07, -8.88178e-14, -4.47035e-08, 0.0186772, 0.062, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
 material = SubResource("StandardMaterial3D_67pb6")
 
-[node name="Indicator" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2"]
+[node name="Indicator" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2"]
 transform = Transform3D(-3.93403e-08, -1.78814e-07, 0.9, -1.06581e-13, 0.9, -1.49012e-08, -0.9, -1.13687e-13, -3.93403e-08, 0.0180883, 0.0557857, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
@@ -19557,56 +19553,56 @@ polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.01
 depth = 0.01
 material = SubResource("StandardMaterial3D_j0uml")
 
-[node name="DG1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches"]
+[node name="dg_1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches"]
 transform = Transform3D(-1, 8.34465e-07, 0, -2.08616e-07, -1, -1.06581e-14, 2.93099e-14, -4.36984e-13, 1, 0.0529969, -0.179476, -0.891091)
 size = Vector3(0.036, 0.076, 0.076)
 material = ExtResource("35_r1uh5")
 
-[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="Lights" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(1, 0, 0, -1.49012e-08, 1, 0, 0, 0, 1, 0.011, 0, 0)
 
-[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights"]
+[node name="On" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights"]
 transform = Transform3D(-4.47035e-08, -1, 8.88178e-16, 1, -1.49012e-08, 0, -7.10543e-15, -4.44089e-16, 1, 1.13249e-06, 0.0911889, -0.044342)
 radius = 0.017
 height = 0.01
 sides = 10
 material = SubResource("StandardMaterial3D_tt48e")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/On"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights/On"]
 transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -0.00902429, 0)
 radius = 0.014
 rings = 5
 material = SubResource("StandardMaterial3D_vhc54")
 
-[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights"]
+[node name="Off" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights"]
 transform = Transform3D(-4.47035e-08, -1, 8.88178e-16, 1, -1.49012e-08, 0, -7.10543e-15, -4.44089e-16, 1, -5.96046e-08, 0.0910006, 0.0439997)
 radius = 0.017
 height = 0.01
 sides = 10
 material = SubResource("StandardMaterial3D_tppdu")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Off"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights/Off"]
 transform = Transform3D(1, -4.47035e-08, 7.10543e-15, 0, 1, -1.33227e-15, -1.42109e-14, -1.33227e-15, 1, -1.90735e-06, -0.00902426, 0)
 radius = 0.014
 rings = 5
 material = SubResource("StandardMaterial3D_s61ne")
 
-[node name="Red light 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights"]
+[node name="Red light 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights"]
 transform = Transform3D(1, -2.98023e-08, 4.88498e-15, 8.9407e-08, 1, 0, -4.44089e-16, -3.55271e-14, 1, 0.00905007, 0.0907054, 0)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_435ob")
 
-[node name="Red light 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights"]
+[node name="Red light 2" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights"]
 transform = Transform3D(1, -4.47035e-08, 4.88498e-15, 1.49012e-07, 1, 0, 4.44089e-16, -5.68434e-14, 1, 0.00900024, 0.126997, -0.0249996)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_5jegn")
 
-[node name="Cranking" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights"]
+[node name="Cranking" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights"]
 transform = Transform3D(1, -1.49012e-07, 2.13163e-14, 1.19209e-07, 1, 1.42109e-14, 3.4639e-14, -2.98428e-13, 1, 0.00899857, 0.127156, 0.025115)
 size = Vector3(0.0249769, 0.0327558, 0.0353883)
 material = SubResource("StandardMaterial3D_h73as")
 
-[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Lights/Cranking"]
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Lights/Cranking"]
 transform = Transform3D(-4.47035e-08, 5.96046e-08, 1, 0, 1, -5.96046e-08, -1, 1.42109e-14, -3.72529e-08, 0.0129999, 4.76837e-07, 0)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -19617,10 +19613,10 @@ RPM"
 font_size = 18
 outline_size = 0
 
-[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="Handle" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(0.8, 1.49012e-08, 0, -2.23517e-08, 0.8, 0, 0, 0, 0.8, 0.00299837, -1.43051e-06, 0)
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Handle"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
 flip_faces = true
 radius = 0.00824928
@@ -19628,14 +19624,14 @@ height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Handle"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0588125, 1.43051e-06, -4.76837e-07)
 radius = 0.014
 height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Handle/CSGCylinder3D"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Handle/CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000374436, 9.53674e-07)
 flip_faces = true
 radius = 0.00781379
@@ -19643,23 +19639,23 @@ height = 0.084
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Handle"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Handle"]
 transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0218214, 1.43051e-06, -7.15256e-07)
 radius = 0.00888454
 height = 0.00273183
 sides = 12
 material = ExtResource("33_11pre")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Handle"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Handle"]
 transform = Transform3D(1, -1.49012e-08, 0, 2.98023e-08, 1, 3.55271e-15, 0, 0, 1, -1.46627e-05, 0.00403357, 0.0100594)
 polygon = PackedVector2Array(0.100728, -0.013248, 0.101953, -0.0752368, 0.0894667, -0.0741262, 0.0809256, -0.0633183, 0.0809014, -0.051302, 0.0866342, -0.0240092, 0.0870524, -0.012404)
 depth = 0.02
 material = ExtResource("33_11pre")
 
-[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15256e-07)
 
-[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Labels"]
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Labels"]
 transform = Transform3D(4.17349e-08, -1.04308e-07, 1, -0.707107, 0.707107, 2.23517e-08, -0.707107, -0.707107, -4.47035e-08, 0.0101658, 0.0277276, -0.0214577)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -19667,7 +19663,7 @@ shaded = true
 text = "CLOSE"
 font_size = 20
 
-[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Labels"]
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Labels"]
 transform = Transform3D(-4.20845e-08, 1.97328e-08, 1, 0.707107, 0.707107, 1.58051e-08, -0.707107, 0.707107, -4.37114e-08, 0.0101658, 0.0277281, 0.0213957)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -19675,7 +19671,7 @@ shaded = true
 text = "TRIP"
 font_size = 20
 
-[node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Labels"]
+[node name="Label3D6" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Labels"]
 transform = Transform3D(0, 4.37114e-08, 1, 1, -4.37114e-08, 4.47035e-08, 4.37114e-08, 1, -4.37114e-08, 0.0102255, 0.00277162, 0.0282335)
 sorting_offset = 10.0
 pixel_size = 0.0003
@@ -19684,12 +19680,12 @@ text = "PULL TO
 LOCK"
 font_size = 16
 
-[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="Placard" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(-1.19209e-07, 0, 0.999999, -2.98023e-08, 1, 3.72529e-08, -1, 0, -8.9407e-08, 0.014, 0.057, 0)
 size = Vector3(0.0916769, 0.0334538, 0.00717134)
 material = ExtResource("12_nfrwy")
 
-[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Placard"]
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Placard"]
 transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, 0, 0, 0.00378257)
 pixel_size = 0.0004
 shaded = true
@@ -19698,42 +19694,42 @@ text = "DIESEL GEN 1"
 font_size = 18
 outline_size = 0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 stream = ExtResource("24_mqur0")
 volume_db = -18.0
 max_db = 6.0
 max_distance = 10.0
 attenuation_filter_cutoff_hz = 15000.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
 script = ExtResource("12_qhcpc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(1, -2.98023e-08, 0, 4.47035e-08, 1, 0, 4.44089e-16, -1.06581e-14, 1, 0, 0, -0.0589418)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D3"]
 transform = Transform3D(0.999999, 4.47035e-08, -3.9968e-15, 2.98023e-08, 0.999997, 8.88178e-14, 1.11022e-14, -2.4869e-14, 1, 0.0133965, 2.38419e-07, 0.00587654)
 shape = SubResource("BoxShape3D_d54wy")
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(-4.47035e-08, 1.49012e-08, 1.07, -7.81597e-14, 1.07, -2.98023e-08, -1.07, -8.88178e-14, -4.47035e-08, 0.0186772, 0.062, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
 material = SubResource("StandardMaterial3D_67pb6")
 
-[node name="Indicator" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1"]
+[node name="Indicator" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1"]
 transform = Transform3D(-3.93403e-08, -1.78814e-07, 0.9, -1.06581e-13, 0.9, -1.49012e-08, -0.9, -1.13687e-13, -3.93403e-08, 0.0180883, 0.0557857, 0)
 polygon = PackedVector2Array(0.005, -0.045, -0.005, -0.045, -0.012, -0.028, 0.012, -0.028)
 depth = 0.01
@@ -20971,7 +20967,7 @@ text = "KILOVOLTS AC"
 font_size = 28
 
 [node name="Electrical Alarm Loop" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Right Side/Electrical System"]
-transform = Transform3D(-0.990268, 0.139173, -7.14984e-14, 0.139173, 0.990268, 2.84217e-14, 7.63833e-14, 2.13163e-14, -1, -1.79823, -0.615128, 1.73633)
+transform = Transform3D(-0.990268, 0.139173, -7.54952e-14, 0.139173, 0.990268, 3.19744e-14, 8.17124e-14, 2.4869e-14, -1, -1.79823, -0.615129, 1.19316)
 stream = ExtResource("26_n3vdo")
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
@@ -21008,7 +21004,7 @@ font_size = 64
 outline_size = 0
 
 [node name="P800" type="CSGBox3D" parent="Control Room Panels/Main Panel Right Side/Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0289, 0.842421, -0.484237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5806, 0.842421, -0.484237)
 size = Vector3(0.176743, 0.0407552, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -27482,9 +27478,7 @@ shape = SubResource("BoxShape3D_w8lsb")
 [node name="Reactor Alarm Loop" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.883389, 2.12037, -3.48912)
 stream = ExtResource("39_d4851")
-volume_db = 80.0
-max_db = 6.0
-max_distance = 22.0
+max_distance = 50.0
 
 [node name="Panel Top Meters" type="Node3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.658, 2.23, -2.4)
@@ -30982,59 +30976,8 @@ transform = Transform3D(-2.38419e-07, 0, 0.978, 0, 0.797, 0, -0.793, 0, -2.68221
 pixel_size = 0.0002
 texture = ExtResource("46_5t2ox")
 
-[node name="Chart Recorder (TODO)" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.0208941, 0.0245609, -0.720695)
-size = Vector3(0.0198817, 0.144, 0.144)
-material = ExtResource("56_d4jl8")
-
-[node name="Display" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)"]
-
-[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display"]
-transform = Transform3D(0, 0, 0.885, 0, 0.885, 0, -0.885, 0, 0, 0.0101166, 0.00991881, -0.000127792)
-pixel_size = 0.0004
-texture = SubResource("ViewportTexture_cm06n")
-
-[node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D"]
-size = Vector2i(320, 240)
-render_target_update_mode = 3
-
-[node name="Node2D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Display/Sprite3D/SubViewport" instance=ExtResource("57_ca2au")]
-
-[node name="Faceplate" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011549, 0.0641558, 1.0252e-05)
-size = Vector3(0.00672694, 0.0156348, 0.143817)
-material = ExtResource("56_d4jl8")
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00252914, -0.0129162, 0.0697005)
-polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.006, 0.005, 0, 0.005)
-depth = 0.14
-material = ExtResource("56_d4jl8")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120001, -0.0542381, 0)
-size = Vector3(0.00672694, 0.0351758, 0.143817)
-material = ExtResource("56_d4jl8")
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290108, 0.0172113, 0.0699997)
-polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.00555706, 0.000411272, 0, 0.005)
-depth = 0.14
-material = ExtResource("56_d4jl8")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00900269, 0.0574737, -0.066817)
-polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
-depth = 0.1
-material = ExtResource("56_d4jl8")
-
-[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/Chart Recorder (TODO)/Faceplate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00909138, -0.0375184, 0.0667422)
-polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
-depth = 0.1
-material = ExtResource("56_d4jl8")
+[node name="Chart Recorder (TODO)" parent="Control Room Panels/Main Panel Center/Meters" instance=ExtResource("62_yttj1")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.0185432, 0, -0.810274)
 
 [node name="SRM Period B" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00340652, 0.41563, -0.69759)
@@ -31528,9 +31471,9 @@ max_distance = 82.0
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_DG2_8/StaticBody3D" method="breaker_switch_position_lock"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D" method="breaker_switch_position_down"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D" method="breaker_switch_position_up"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/StaticBody3D" method="breaker_switch_position_lock"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D" method="breaker_switch_position_down"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/StaticBody3D" method="breaker_switch_position_lock"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/cb_B8/StaticBody3D" method="breaker_switch_position_lock"]
@@ -31567,9 +31510,9 @@ max_distance = 82.0
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_DG1_7/StaticBody3D" method="breaker_switch_position_lock"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D" method="breaker_switch_position_down"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D" method="breaker_switch_position_up"]
-[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/StaticBody3D" method="breaker_switch_position_lock"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D" method="breaker_switch_position_down"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/StaticBody3D" method="breaker_switch_position_lock"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D2" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D" method="breaker_switch_position_up"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D3" to="Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/cb_B7/StaticBody3D" method="breaker_switch_position_lock"]

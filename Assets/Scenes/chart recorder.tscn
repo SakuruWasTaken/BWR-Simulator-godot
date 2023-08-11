@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr1acw3vw7urm"]
+
+[ext_resource type="Material" uid="uid://cvjx8qv8rgnms" path="res://Assets/Materials/gray plastic.tres" id="1_0ifk6"]
+[ext_resource type="PackedScene" uid="uid://dcik0vwasku31" path="res://Assets/Scenes/digital_chart_recorder.tscn" id="2_dqlxy"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cm06n"]
+viewport_path = NodePath("Display/Sprite3D/SubViewport")
+
+[node name="Chart Recorder (TODO)" type="CSGBox3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+size = Vector3(0.0198817, 0.144, 0.144)
+material = ExtResource("1_0ifk6")
+
+[node name="Display" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Display"]
+transform = Transform3D(0, 0, 0.885, 0, 0.885, 0, -0.885, 0, 0, 0.0101166, 0.00991881, -0.000127792)
+pixel_size = 0.0004
+texture = SubResource("ViewportTexture_cm06n")
+
+[node name="SubViewport" type="SubViewport" parent="Display/Sprite3D"]
+size = Vector2i(320, 240)
+render_target_update_mode = 3
+
+[node name="Node2D" parent="Display/Sprite3D/SubViewport" instance=ExtResource("2_dqlxy")]
+
+[node name="Faceplate" type="Node3D" parent="."]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Faceplate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011549, 0.0641558, 1.0252e-05)
+size = Vector3(0.00672694, 0.0156348, 0.143817)
+material = ExtResource("1_0ifk6")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Faceplate/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00252914, -0.0129162, 0.0697005)
+polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.006, 0.005, 0, 0.005)
+depth = 0.14
+material = ExtResource("1_0ifk6")
+
+[node name="Label3D" type="Label3D" parent="Faceplate/CSGBox3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0034516, -0.000218503, 0.0382137)
+sorting_offset = 10.0
+pixel_size = 0.0002
+shaded = true
+text = "YOKOGAWA"
+font_size = 36
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Faceplate/CSGBox3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00345159, -0.000218503, -0.0019662)
+sorting_offset = 10.0
+pixel_size = 0.0002
+shaded = true
+text = "DX1000"
+font_size = 26
+outline_size = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Faceplate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120001, -0.0542381, 0)
+size = Vector3(0.00672694, 0.0351758, 0.143817)
+material = ExtResource("1_0ifk6")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Faceplate/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290108, 0.0172113, 0.0699997)
+polygon = PackedVector2Array(8.10623e-05, 0.000228643, 0.00555706, 0.000411272, 0, 0.005)
+depth = 0.14
+material = ExtResource("1_0ifk6")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Faceplate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00900269, 0.0574737, -0.066817)
+polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
+depth = 0.1
+material = ExtResource("1_0ifk6")
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="Faceplate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00909138, -0.0375184, 0.0667422)
+polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
+depth = 0.1
+material = ExtResource("1_0ifk6")

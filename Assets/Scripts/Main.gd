@@ -121,10 +121,10 @@ var intermidiate_range_monitors = {
 
 @onready var breaker_switches = {
 	#SM-7
-	"DG1": {
-		"func": "generator_switch1",
+	"dg_1": {
+		"func": "generator_switch",
 		"position": 1, 
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/DG1/Indicator".get_material()
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-7 Section/Switches/dg_1/Indicator".get_material()
 	},
 	"cb_75_72": {
 		"func": "electrical_breaker_switch",
@@ -345,10 +345,10 @@ var intermidiate_range_monitors = {
 	#SM-4 ^^^
 	
 	#SM-8
-	"DG2": {
-		"func": "generator_switch2",
+	"dg_2": {
+		"func": "generator_switch",
 		"position": 1,
-		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/DG2/Indicator".get_material()
+		"indicator": $"Control Room Panels/Main Panel Right Side/Electrical System/SM-8 Section/Switches/dg_2/Indicator".get_material()
 	},
 	"cb_B8": {
 		"func": "electrical_breaker_switch",
