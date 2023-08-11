@@ -2,8 +2,7 @@ extends Node3D
 @onready var node_3d = $"/root/Node3d"
 
 var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annunciators/Annunciator Box %s/%s"
-@onready var alarm_audio_fast = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Fast"
-@onready var alarm_audio_slow = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop Slow"
+@onready var alarm_audio = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop"
 @onready var rwm = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box"
 @onready var full_core_display = $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display"
 
@@ -11,7 +10,7 @@ enum annunciator_state {
 	CLEAR, # Annuncuator not lit
 	ACTIVE, # Annunciator not acknowledged, flashing quickly
 	ACKNOWLEDGED, # Annunciator acknowledged, lit solid
-	ACTIVE_CLEAR, # Annunciator condition cleared, but not acknowledged, flashing slowly
+	ACTIVE_CLEAR, # Annunciator condition cleared, but not yet reset by the operator, flashing slowly
 }
 
 var cycle = 0
@@ -160,25 +159,27 @@ func _ready():
 		
 		
 func control_button_pressed(parent):
-	if parent.name == "acknowledge":
-		$"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Annunciator Control Panel/switches/acknowledge/AnimationPlayer".current_animation = "acknowledge_sw_animation"
+	# TODO: implement test button
+	if parent.name == "Ack_pb":
 		for annunciator_name in annunciators:
 			var condition = call(annunciators[annunciator_name]["func"])
 			if condition == false:
 				if annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED or annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
 					annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE_CLEAR
-				elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
-					annunciators[annunciator_name]["state"] = annunciator_state.CLEAR
 			else:	
 				if annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
 					annunciators[annunciator_name]["state"] = annunciator_state.ACKNOWLEDGED
-	
+	elif parent.name == "Reset_pb":
+		for annunciator_name in annunciators:
+			var condition = call(annunciators[annunciator_name]["func"])
+			if condition == false:
+				annunciators[annunciator_name]["state"] = annunciator_state.CLEAR
 
 
 func _on_timer_timeout():
 	active_annunciators_lit = cycle % 2 == 1 
 	active_clear_annunciators_lit = cycle/4 % 2 == 1 
-	var alarm_type = "None"
+	var alarm = false
 	for annunciator_name in annunciators:
 		var condition = call(annunciators[annunciator_name]["func"])
 		if condition == false:
@@ -192,31 +193,22 @@ func _on_timer_timeout():
 		if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
 			annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
 			annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-			alarm_type = "Fast"
+			alarm = true
 		elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE:
 			annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-			alarm_type = "Fast"
+			alarm = true
 		elif annunciators[annunciator_name]["state"] == annunciator_state.ACTIVE_CLEAR:
 			if condition:
 				annunciators[annunciator_name]["state"] = annunciator_state.ACTIVE
 				annunciators[annunciator_name]["material"].emission_enabled = active_annunciators_lit
-				alarm_type = "Fast"
+				alarm = true
 			else:
-				if alarm_type != "Fast":
-					alarm_type = "Slow"
 				annunciators[annunciator_name]["material"].emission_enabled = active_clear_annunciators_lit
 		elif annunciators[annunciator_name]["state"] == annunciator_state.ACKNOWLEDGED:
 			annunciators[annunciator_name]["material"].emission_enabled = true
-		
-	if alarm_type == "None":
-		alarm_audio_fast.playing = false
-		alarm_audio_slow.playing = false
-	elif alarm_type == "Slow" and alarm_audio_slow.playing == false:
-		alarm_audio_fast.playing = false
-		alarm_audio_slow.playing = true
-	elif alarm_type == "Fast" and alarm_audio_fast.playing == false:
-		alarm_audio_fast.playing = true
-		alarm_audio_slow.playing = false
+			
+	if alarm_audio.playing != alarm:
+		alarm_audio.playing = alarm
 		
 	if cycle <= 6:
 		cycle += 1
