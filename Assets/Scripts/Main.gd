@@ -300,38 +300,42 @@ func main_loop_timer_expire():
 
 func main_loop_timer_fast_expire():
 	if scram_breakers != {}:
-		var scram_breakers_open = 0
-		if "A1" in scram_breakers or "A2" in scram_breakers:
-			scram_breakers_open += 1
+		var rps_a_scram = "A1" in scram_breakers or "A2" in scram_breakers
+		var rps_b_scram = "B1" in scram_breakers or "B2" in scram_breakers
+		var full_scram = rps_a_scram and rps_b_scram
+		
+		if rps_a_scram:
 			if not "A1" in scram_breakers:
 				scram_breakers["A1"] = scram_breakers["A2"]
-			else:
+			elif not "A2" in scram_breakers:
 				scram_breakers["A2"] = scram_breakers["A1"]
-			if scram_breakers["A1"] == scram_types.MANUAL:
-				manual_scram_pb_materials["A1"].emission_enabled = true
-				manual_scram_pb_materials["A2"].emission_enabled = true
-				
-		if "B1" in scram_breakers or "B2" in scram_breakers:
-			scram_breakers_open += 1
+		
+		if rps_b_scram:
 			if not "B1" in scram_breakers:
 				scram_breakers["B1"] = scram_breakers["B2"]
-			else:
+			elif not "B2" in scram_breakers:
 				scram_breakers["B2"] = scram_breakers["B1"]
-			if scram_breakers["B1"] == scram_types.MANUAL:
-				manual_scram_pb_materials["B1"].emission_enabled = true
-				manual_scram_pb_materials["B2"].emission_enabled = true
-			if scram_breakers_open == 2:
-				if not scram_active:
-					var set_scram_reset_light_on = false
-					scram(scram_types.MANUAL)
-					while scram_active == true:
-						if scram_timer >= 1:
-							scram_timer -= 1
-						elif set_scram_reset_light_on == false:
-							set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
-							# small optimisation so we're not constantly getting the material and causing a bunch of lag
-							set_scram_reset_light_on = true
-						await get_tree().create_timer(0.1).timeout
+				
+		manual_scram_pb_materials["A1"].emission_enabled = false
+		manual_scram_pb_materials["A2"].emission_enabled = false
+		manual_scram_pb_materials["B1"].emission_enabled = false
+		manual_scram_pb_materials["B2"].emission_enabled = false
+		
+		for breaker in scram_breakers:
+			manual_scram_pb_materials[breaker].emission_enabled = true
+		
+		if full_scram:
+			if not scram_active:
+				var set_scram_reset_light_on = false
+				scram(scram_types.MANUAL)
+				while scram_active == true:
+					if scram_timer >= 1:
+						scram_timer -= 1
+					elif set_scram_reset_light_on == false:
+						set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
+						# small optimisation so we're not constantly getting the material and causing a bunch of lag
+						set_scram_reset_light_on = true
+					await get_tree().create_timer(0.1).timeout
 
 # TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
 func add_withdraw_block(type):

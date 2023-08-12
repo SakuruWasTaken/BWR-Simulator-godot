@@ -1,7 +1,7 @@
 extends Node3D
 @onready var node_3d = $"/root/Node3d"
 
-var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annunciators/Annunciator Box %s/%s"
+var annunciator_path = "/root/Node3d/Control Room Panels/Main Panel Center/Annunciators/Annunciator Box %s/Node3D/%s"
 @onready var alarm_audio = $"/root/Node3d/Control Room Panels/Main Panel Center/Reactor Alarm Loop"
 @onready var rwm = $"/root/Node3d/Control Room Panels/Main Panel Center/Meters/RWM Box"
 @onready var full_core_display = $"/root/Node3d/Control Room Panels/Main Panel Center/Full Core Display/full core display lights"
@@ -65,92 +65,93 @@ func check_reactor_mode_shutdown_bypass():
 
 var annunciators = {
 	"irm_downscale": {
-		"box": 1,
-		"lamp": "D6",
+		"box": 2,
+		"lamp": "A3",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_irm_downscale"
 	},
 	"aprm_downscale": {
-		"box": 1,
-		"lamp": "D8",
+		"box": 2,
+		"lamp": "B3",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_aprm_downscale"
 	},
 	"rwm_rod_block": {
-		"box": 1,
-		"lamp": "E6",
+		"box": 3,
+		"lamp": "A2",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_rwm_rod_block"
 	},
 	"rod_out_block": {
-		"box": 1,
-		"lamp": "E7",
+		"box": 4,
+		"lamp": "B6",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_rod_out_block"
 	},
 	"rod_drift": {
-		"box": 1,
-		"lamp": "F7",
+		"box": 4,
+		"lamp": "C6",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_rod_drift"
 	},
 	"rpis_inop": {
-		"box": 1,
-		"lamp": "F4",
+		"box": 3,
+		"lamp": "D1",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_rpis_inop"
 	},
 	"lprm_downscale": {
-		"box": 1,
-		"lamp": "F8",
+		"box": 2,
+		"lamp": "E2",
 		"material": null,
 		"state": annunciator_state.ACKNOWLEDGED,
 		"func": "check_lprm_downscale"
 	},
 	"auto_scram_a_trip": {
-		"box": 2,
-		"lamp": "B1",
+		"box": 1,
+		"lamp": "B2",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_auto_scram_a_trip"
 	},
 	"auto_scram_b_trip": {
-		"box": 2,
+		"box": 4,
 		"lamp": "B2",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_auto_scram_b_trip"
 	},
 	"manual_scram_a_trip": {
-		"box": 2,
-		"lamp": "C1",
+		"box": 1,
+		"lamp": "C2",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_manual_scram_a_trip"
 	},
-	"reactor_mode_shutdown_bypass": {
-		"box": 2,
-		"lamp": "D1",
-		"material": null,
-		"state": annunciator_state.ACKNOWLEDGED,
-		"func": "check_reactor_mode_shutdown_bypass"
-	},
+	# TODO: multiple RPS systems for this trip
+	#"reactor_mode_shutdown_bypass": {
+	#	"box": 2,
+	#	"lamp": "D1",
+	#	"material": null,
+	#	"state": annunciator_state.ACKNOWLEDGED,
+	#	"func": "check_reactor_mode_shutdown_bypass"
+	#},
 	"manual_scram_b_trip": {
-		"box": 2,
+		"box": 4,
 		"lamp": "C2",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_manual_scram_b_trip"
 	},
 	"cr_accum_trouble": {
-		"box": 2,
-		"lamp": "F6",
+		"box": 4,
+		"lamp": "A6",
 		"material": null,
 		"state": annunciator_state.CLEAR,
 		"func": "check_cr_accum_trouble"
