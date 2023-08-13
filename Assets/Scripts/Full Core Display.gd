@@ -20,7 +20,7 @@ func _ready():
 			node_3d.set_rod_light_emission(rod_number, "drift", rod_info["cr_drift_alarm"] and not rpis_inop)
 			
 			# 18-59 has a slight offset to avoid it appearing desynced from the rest of the lights
-			if node_3d.accum_trouble_ack == false:
+			if rod_info["cr_accum_trouble_acknowledged"] == false:
 				if rod_info["cr_accum_trouble"] and (rod_number == "18-59" or cycles >= 0):
 					node_3d.set_rod_light_emission(rod_number, "accum", true if cycles <= 1 and not rpis_inop else false)
 				else:

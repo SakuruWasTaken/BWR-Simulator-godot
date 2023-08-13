@@ -12,7 +12,6 @@ var cr_previous_insertion = 0
 var cr_drift_test = false
 var scram_timer = -1
 var scram_all_rods_in = false
-var accum_trouble_ack = true
 
 
 # TODO: add enums for the block reason
@@ -168,6 +167,7 @@ func generate_control_rods():
 						"cr_insertion": 0.00,
 						"cr_scram": false,
 						"cr_accum_trouble": false,
+						"cr_accum_trouble_acknowledged": true,
 						"cr_drift_alarm": false,
 						# simulates the effect of some rods being slightly faster or slower than others
 						"cr_scram_insertion_speed": randf_range(2.15, 2.31),
@@ -295,8 +295,9 @@ func main_loop_timer_expire():
 	for rod_number in control_rods:
 		var rod_info = control_rods[rod_number]
 		# detect rods in odd numbered positions (drifting)
-		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
+		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or (cr_drift_test or scram_active)):
 			control_rods[rod_number]["cr_drift_alarm"] = true
+			control_rods[rod_number]["cr_drift_alarm_acknowledged"] = false
 
 func main_loop_timer_fast_expire():
 	if scram_breakers != {}:
@@ -400,20 +401,18 @@ func scram(type):
 			var rod_info = control_rods[rod_number]
 			var cr_insertion = rod_info["cr_insertion"]
 			var cr_accum_trouble = rod_info["cr_accum_trouble"]
-			var cr_drift_alarm = rod_info["cr_drift_alarm"]
+			var cr_accum_trouble_acknowledged = rod_info["cr_accum_trouble_acknowledged"]
 
 			if scram_timer == -1:
 				scram_timer = 120
-			elif scram_timer == 110 and randi_range(1, 20) == 15 and cr_insertion != 0:
-				cr_drift_alarm = true
 			elif scram_timer < 106:
 				cr_accum_trouble = true
-				accum_trouble_ack = false
+				cr_accum_trouble_acknowledged = false
 			if cr_insertion != 0:
-				if cr_insertion != 0 and scram_timer < 114:
+				if scram_timer < 114:
 					if not rod_number in moving_rods:
 						moving_rods.append(rod_number)
-					# TODO: insertion time changes with RPV pressure
+					# TODO: insertion time changes with RPV pressure and CRD system/accumulator pressure
 					# the time from full out to full in is around ~2.6 seconds
 					cr_insertion -= rod_info["cr_scram_insertion_speed"]
 					if cr_insertion <= 0:
@@ -427,11 +426,9 @@ func scram(type):
 			control_rods[rod_number].cr_insertion=cr_insertion
 			control_rods[rod_number].cr_scram=true
 			control_rods[rod_number].cr_accum_trouble=cr_accum_trouble
-			control_rods[rod_number].cr_drift_alarm=cr_drift_alarm
+			control_rods[rod_number].cr_accum_trouble_acknowledged=cr_accum_trouble_acknowledged
 		await get_tree().create_timer(0.1).timeout
-	accum_trouble_ack = false
-	for rod_number in control_rods:
-		control_rods[rod_number].cr_accum_trouble = true
+
 	scram_all_rods_in = true
 
 func withdraw_selected_cr():
@@ -765,7 +762,6 @@ func rod_motion_button_pressed(parent, pressed):
 			for rod_number in control_rods:
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
-				accum_trouble_ack = true
 			remove_withdraw_block("SCRAM")
 		
 	elif parent.name == "DriftTest_pb":
@@ -775,4 +771,5 @@ func rod_motion_button_pressed(parent, pressed):
 			for rod_number in control_rods:
 				control_rods[rod_number]["cr_drift_alarm"] = false
 	elif parent.name == "AccumAck_pb":
-		accum_trouble_ack = true
+		for rod_number in control_rods:
+			control_rods[rod_number].cr_accum_trouble_acknowledged = true
