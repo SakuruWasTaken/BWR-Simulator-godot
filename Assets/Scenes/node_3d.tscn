@@ -44,7 +44,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RWM.gd" id="33_f1vki"]
 [ext_resource type="Script" path="res://Assets/Scripts/RWM Button.gd" id="34_cyh57"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
-[ext_resource type="Texture2D" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
+[ext_resource type="Texture2D" uid="uid://cq75n3t4d1mx4" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
 [ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
 [ext_resource type="AudioStream" uid="uid://o256lmfhvx62" path="res://Assets/Audio/reactor_alarm_loop.mp3" id="39_d4851"]
 [ext_resource type="Script" path="res://Assets/Scripts/LPRM Meters.gd" id="45_nuv7p"]
@@ -202,7 +202,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hu2xv"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -215,7 +215,7 @@ size = Vector3(0.00619484, 0.00934908, 0.00961989)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn4gv"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -224,7 +224,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdgmd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -233,7 +233,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cs80"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -242,7 +242,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8kxn"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -251,7 +251,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwx5v"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -260,7 +260,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4vd7"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -269,7 +269,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7dr4"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -278,7 +278,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ta7h"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -287,7 +287,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fl30"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -296,7 +296,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsswn"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -305,7 +305,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katip"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -314,7 +314,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1dkd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -323,7 +323,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jklhj"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -332,7 +332,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrlcx"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -341,7 +341,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qu2q3"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -350,7 +350,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo4q7"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -359,7 +359,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3hv8"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -368,7 +368,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecopq"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -377,7 +377,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2osxb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -386,7 +386,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kllr"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -395,7 +395,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq28i"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -404,7 +404,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ipc"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -413,7 +413,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svrd5"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -422,7 +422,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l24fd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -431,7 +431,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltkbi"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -440,7 +440,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0brc"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -449,7 +449,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qn36"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -458,7 +458,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caaak"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -467,7 +467,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl3ex"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -476,7 +476,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5rwm"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -485,7 +485,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oe6n5"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -494,7 +494,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74uvb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -503,7 +503,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4klw"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -512,7 +512,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vscih"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -521,7 +521,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_147r6"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -530,7 +530,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phjfg"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -539,7 +539,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i7lk"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -548,7 +548,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p57jl"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -557,7 +557,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ki2n"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -566,7 +566,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qerv"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -575,7 +575,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpoft"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -584,7 +584,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucbgc"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -593,7 +593,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5i0h"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -602,7 +602,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nopgd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -611,7 +611,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vhaa"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -620,7 +620,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hd0wb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -629,7 +629,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqci0"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -638,7 +638,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frvqu"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -647,7 +647,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0egm"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -656,7 +656,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an1hg"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -665,7 +665,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7338"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -674,7 +674,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6rr0"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -683,7 +683,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbj40"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -692,7 +692,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gseke"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -701,7 +701,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlgbu"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -710,7 +710,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifxdo"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -719,7 +719,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_820l7"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -728,7 +728,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mgdw"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -737,7 +737,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqhgn"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -746,7 +746,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r62jw"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -755,7 +755,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ty3"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -764,7 +764,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esdne"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -773,7 +773,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3axib"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -782,7 +782,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elank"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -791,7 +791,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_um6oj"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -800,7 +800,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfari"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -809,7 +809,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmeyv"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -818,7 +818,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tv4e"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -827,7 +827,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofimu"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -836,7 +836,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f4nm"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -845,7 +845,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg7l6"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -854,7 +854,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mokox"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -863,7 +863,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0k4q"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -872,7 +872,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lq2g"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -881,7 +881,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftw8s"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -890,7 +890,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e27yv"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -899,7 +899,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq8ui"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -908,7 +908,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaec4"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -917,7 +917,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0hx8"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -926,7 +926,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bej3s"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -935,7 +935,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3wch"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -944,7 +944,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uigs"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -953,7 +953,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wwbb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -962,7 +962,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66qph"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -971,7 +971,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bto8i"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -980,7 +980,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd7nl"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -989,7 +989,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v86q5"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -998,7 +998,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66jjb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1007,7 +1007,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8ad4"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1016,7 +1016,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjn4w"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1025,7 +1025,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t13ll"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1034,7 +1034,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnbi7"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1043,7 +1043,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yti6u"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1052,7 +1052,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7yn4"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1061,7 +1061,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytly4"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1070,7 +1070,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84mka"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1079,7 +1079,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a227"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1088,7 +1088,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84a8n"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1097,7 +1097,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2lsh"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1106,7 +1106,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgep1"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1115,7 +1115,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo51"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1124,7 +1124,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5keuh"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1133,7 +1133,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66dtf"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1142,7 +1142,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdjss"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1151,7 +1151,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4thep"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1160,7 +1160,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5w8vj"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1169,7 +1169,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3amp"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1178,7 +1178,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk6mq"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1187,7 +1187,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ik8x"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1196,7 +1196,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u815b"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1205,7 +1205,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7u1n"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1214,7 +1214,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlv8s"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1223,7 +1223,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16t2s"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1232,7 +1232,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwh4b"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1241,7 +1241,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aohtd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1250,7 +1250,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_681tx"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1259,7 +1259,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwfad"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1268,7 +1268,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f2qb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1277,7 +1277,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qer0s"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1286,7 +1286,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3g4f"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1295,7 +1295,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21m4m"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1304,7 +1304,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba8cm"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1313,7 +1313,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i82wy"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1322,7 +1322,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr1rb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1331,7 +1331,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fs21"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1340,7 +1340,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3guv2"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1349,7 +1349,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_badep"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1358,7 +1358,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l3nh"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1367,7 +1367,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq8vx"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1376,7 +1376,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nehb2"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1385,7 +1385,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5yw3"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1394,7 +1394,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biusd"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1403,7 +1403,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6osb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1412,7 +1412,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_178xq"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1421,7 +1421,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb17i"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1430,7 +1430,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a60qb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1439,7 +1439,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6saht"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1448,7 +1448,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlaqg"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1457,7 +1457,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb68u"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1466,7 +1466,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0prsi"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1475,7 +1475,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub8po"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1484,7 +1484,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0282"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1493,7 +1493,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldptr"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1502,7 +1502,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1k76b"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1511,7 +1511,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j43rc"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1520,7 +1520,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg8j5"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1529,7 +1529,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l13vj"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1538,7 +1538,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xvm0"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1547,7 +1547,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv7fu"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1556,7 +1556,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0apx"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1565,7 +1565,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dje3b"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1574,7 +1574,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0vrt"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1583,7 +1583,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2082"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1592,7 +1592,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_niedq"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1601,7 +1601,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg1ix"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1610,7 +1610,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76ue"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1619,7 +1619,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noki1"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1628,7 +1628,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uegq2"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1637,7 +1637,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnrd2"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1646,7 +1646,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lu8q"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1655,7 +1655,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlsve"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1664,7 +1664,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awbql"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1673,7 +1673,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tqdm"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1682,7 +1682,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ox15"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1691,7 +1691,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqboe"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1700,7 +1700,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjixu"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1709,7 +1709,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtn8v"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1718,7 +1718,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50wih"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1727,7 +1727,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8nyk"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1736,7 +1736,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grc51"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1745,7 +1745,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2un1g"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1754,7 +1754,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flj84"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1763,7 +1763,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hfqp"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1772,7 +1772,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bei0"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1781,7 +1781,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nbgb"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1790,7 +1790,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptp41"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1799,7 +1799,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rfft"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1808,7 +1808,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8agin"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1817,7 +1817,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg8c5"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1826,7 +1826,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2jwq"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1835,7 +1835,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5otl"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1844,7 +1844,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjnsw"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1853,7 +1853,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpl4w"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
@@ -1862,7 +1862,7 @@ refraction_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0jqy"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.745098, 0.745098, 0.745098, 1)
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 albedo_texture_force_srgb = true
 emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
