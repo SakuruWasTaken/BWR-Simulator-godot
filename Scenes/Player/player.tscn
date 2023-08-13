@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1w47b"]
 [ext_resource type="Texture2D" uid="uid://bgt5enm00co77" path="res://Assets/Textures/gear-solid.svg" id="2_ey8iu"]
 [ext_resource type="Script" path="res://Scenes/Player/Overlay.gd" id="2_rao3u"]
-[ext_resource type="Script" path="res://Assets/Scripts/Settings Button.gd" id="3_6f2kk"]
+[ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Settings Button.gd" id="4_biibc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emkox"]
 radius = 0.493347
@@ -64,7 +64,7 @@ texture = ExtResource("2_ey8iu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Head/Camera3d/Overlay/Settings Button"]
 input_pickable = true
-script = ExtResource("3_6f2kk")
+script = ExtResource("4_biibc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Camera3d/Overlay/Settings Button/StaticBody2D"]
 shape = SubResource("RectangleShape2D_vhc38")

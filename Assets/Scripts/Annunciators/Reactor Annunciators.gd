@@ -17,6 +17,8 @@ var cycle = 0
 var active_annunciators_lit
 var active_clear_annunciators_lit
 
+var testing = false
+
 func check_irm_downscale():
 	for irm_number in node_3d.intermidiate_range_monitors:
 		if node_3d.intermidiate_range_monitors[irm_number]["adjusted_power"] < 5:
@@ -167,7 +169,7 @@ func _ready():
 		annunciators[annunciator_name]["material"] = get_node(annunciator_path % [annunciator_info["box"], annunciator_info["lamp"]]).get_material()
 		
 		
-func control_button_pressed(parent):
+func control_button_pressed(parent, pressed):
 	# TODO: implement test button
 	if parent.name == "Ack_pb":
 		for annunciator_name in annunciators:
@@ -183,6 +185,9 @@ func control_button_pressed(parent):
 			var condition = call(annunciators[annunciator_name]["func"])
 			if condition == false:
 				annunciators[annunciator_name]["state"] = annunciator_state.CLEAR
+	elif parent.name == "Test_pb":
+		testing = pressed
+			
 
 
 func _on_timer_timeout():
@@ -190,7 +195,7 @@ func _on_timer_timeout():
 	active_clear_annunciators_lit = cycle/4 % 2 == 1 
 	var alarm = false
 	for annunciator_name in annunciators:
-		var condition = call(annunciators[annunciator_name]["func"])
+		var condition = call(annunciators[annunciator_name]["func"]) or testing
 		if condition == false:
 			if annunciators[annunciator_name]["state"] == annunciator_state.CLEAR:
 				annunciators[annunciator_name]["material"].emission_enabled = false

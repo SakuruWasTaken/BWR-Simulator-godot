@@ -486,9 +486,6 @@ func withdraw_selected_cr():
 			insertion = cr_target_insertion
 		else:
 			insertion += 0.0064
-		#if insertion == cr_target_insertion:
-			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 		control_rods[rod].cr_insertion=insertion
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
@@ -546,9 +543,6 @@ func insert_selected_cr():
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
 		
-	#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-		#$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
-
 	if not scram_active:
 		control_rods[rod].cr_insertion=cr_target_insertion
 		moving_rods.erase(rod)
@@ -598,9 +592,6 @@ func continuous_withdraw_selected_cr():
 		runs = 0
 		while runs < 14 and not self.scram_active: 
 			insertion += 0.1435
-			#if insertion == cr_target_insertion:
-				#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-					#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			control_rods[rod].cr_insertion=insertion
 			await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 			runs += 1
@@ -608,8 +599,6 @@ func continuous_withdraw_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_withdraw_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.WITHDRAWING and cr_target_insertion != 48:
-			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			cr_target_insertion += 2
 		else:
 			break
@@ -642,8 +631,6 @@ func continuous_withdraw_selected_cr():
 	cr_direction = cr_directions.NOT_MOVING
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 	
-	#if rod_select_error:
-		#rod_withdraw_block.append({"type": "wdr_error", "rod": rod, "correct_position": int(self.previous_insertion)})
 		
 func continuous_insert_selected_cr():
 	if rod_insert_block != [] or cr_direction != 0:
@@ -678,8 +665,6 @@ func continuous_insert_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_insert_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.INSERTING and cr_target_insertion != 0:
-			#if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-				#$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
 			cr_target_insertion -= 2
 		else:
 			break
