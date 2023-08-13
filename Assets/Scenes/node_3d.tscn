@@ -1,4 +1,4 @@
-[gd_scene load_steps=443 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=438 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -24,14 +24,9 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor Annunciator Button.gd" id="15_qx5fl"]
 [ext_resource type="Texture2D" uid="uid://b3n4wehhobo3m" path="res://Assets/Textures/reference diagrams/left top.png" id="15_tgb6v"]
 [ext_resource type="Material" uid="uid://b4lnxjtl58v6j" path="res://Assets/Materials/red metal.tres" id="16_0ckwa"]
-[ext_resource type="Texture2D" uid="uid://hukby6h0pkhi" path="res://Assets/Textures/Power Display Mesh.png" id="16_47fu1"]
 [ext_resource type="Texture2D" uid="uid://c5hotgpj8wk1l" path="res://Assets/Textures/1.PNG" id="16_bdn4j"]
 [ext_resource type="Texture2D" uid="uid://beqqlv1n26wjl" path="res://Assets/Textures/reference diagrams/left bottom.png" id="16_q3ggx"]
 [ext_resource type="Texture2D" uid="uid://cxlufikas88h7" path="res://Assets/Textures/2.PNG" id="17_ir5ie"]
-[ext_resource type="FontFile" uid="uid://jurw11mmjtbq" path="res://Assets/Fonts/PublicPixel.ttf" id="17_th8xm"]
-[ext_resource type="Texture2D" uid="uid://77nv46dqq8df" path="res://Assets/Textures/Power Display Background.png" id="18_12rln"]
-[ext_resource type="Texture2D" uid="uid://dcw77p7tx7qpt" path="res://Assets/Textures/Thermal Power Placard.png" id="19_pt3aj"]
-[ext_resource type="Texture2D" uid="uid://ovdpi0a6pnnf" path="res://Assets/Textures/Generator Load Placard.png" id="20_sst2y"]
 [ext_resource type="Material" uid="uid://bfcpxx4mjc36y" path="res://Assets/Materials/gold metal.tres" id="22_3oqyh"]
 [ext_resource type="Script" path="res://Assets/Scripts/Clock Text.gd" id="22_rjrtx"]
 [ext_resource type="Script" path="res://Assets/Scripts/Manual Scram Switch.gd" id="24_gbxvt"]
@@ -3084,15 +3079,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.0
 size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
-[node name="SpotLight3D34" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.73492, 2.98549, -12.3592)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.1487
-
 [node name="SpotLight3D38" type="OmniLight3D" parent="Control Room Lights/normal"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -8.34876)
 light_energy = 0.712
@@ -3120,42 +3106,6 @@ omni_attenuation = 1.1487
 transform = Transform3D(1, 0, 0, 0, 1, 8.35188e-23, 0, 8.35188e-23, 1, 0, 0, 0.042223)
 size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
-
-[node name="SpotLight3D22" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.744918, 2.98549, -14.3687)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.1487
-
-[node name="SpotLight3D47" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.26508, 2.98549, -14.3687)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.1487
-
-[node name="SpotLight3D50" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.26508, 2.98549, -12.3687)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.1487
-
-[node name="SpotLight3D51" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26508, 2.98549, -12.3687)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.1487
 
 [node name="SpotLight3D2" type="OmniLight3D" parent="Control Room Lights/normal"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.66084, 2.98549, 0.610332)
@@ -3272,51 +3222,6 @@ size = Vector3(1.9, 1.1, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D8"]
-light_energy = 2.368
-spot_attenuation = 0.732043
-spot_angle = 90.41
-spot_angle_attenuation = 2.54912
-
-[node name="SpotLight3D9" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.37901, 2.98549, -11.4619)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.93187
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D9"]
-light_energy = 2.368
-spot_attenuation = 0.732043
-spot_angle = 90.41
-spot_angle_attenuation = 2.54912
-
-[node name="SpotLight3D17" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.37901, 2.98549, -13.4926)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.93187
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D17"]
-light_energy = 2.368
-spot_attenuation = 0.732043
-spot_angle = 90.41
-spot_angle_attenuation = 2.54912
-
-[node name="SpotLight3D11" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.37837, 2.98549, -15.4976)
-light_energy = 0.712
-light_size = 0.5
-light_specular = 0.8
-light_bake_mode = 1
-omni_range = 6.5
-omni_attenuation = 1.93187
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Control Room Lights/normal/SpotLight3D11"]
 light_energy = 2.368
 spot_attenuation = 0.732043
 spot_angle = 90.41
@@ -3503,15 +3408,6 @@ radius = 0.218
 height = 0.126
 sides = 16
 material = SubResource("StandardMaterial3D_yrvow")
-
-[node name="SpotLight3D8" type="OmniLight3D" parent="Control Room Lights/emergency"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.83877, 3.29949, -4.14978)
-light_color = Color(1, 0.839216, 0.666667, 1)
-light_energy = 0.4
-light_size = 0.126
-light_bake_mode = 1
-omni_range = 20.0
-omni_attenuation = 1.56917
 
 [node name="Control Room Panels" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.9503)
@@ -9117,110 +9013,6 @@ stream = ExtResource("39_d4851")
 volume_db = 80.0
 max_db = 6.0
 max_distance = 22.0
-
-[node name="Panel Top Meters" type="Node3D" parent="Control Room Panels/Main Panel Center"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.658, 1.71238, -2.4)
-visible = false
-
-[node name="Thermal Power Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8)
-size = Vector3(0.448, 0.213652, 0.97415)
-material = ExtResource("5_0qdm2")
-
-[node name="Mesh" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224441, 0, 4.76837e-07)
-sorting_offset = 30.0
-sorting_use_aabb_center = false
-pixel_size = 0.0019
-shaded = true
-texture = ExtResource("16_47fu1")
-
-[node name="Power" type="Label3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225002, 0.00746608, -0.292204)
-sorting_offset = 20.0
-modulate = Color(0.768627, 0.313726, 0.337255, 1)
-text = "0"
-font = ExtResource("17_th8xm")
-font_size = 128
-horizontal_alignment = 2
-
-[node name="Unit" type="Label3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225002, 0.00773716, -0.422416)
-sorting_offset = 20.0
-modulate = Color(0.482353, 0.556863, 0.34902, 1)
-text = "%"
-font = ExtResource("17_th8xm")
-font_size = 128
-horizontal_alignment = 2
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224441, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0019
-shaded = true
-texture = ExtResource("18_12rln")
-
-[node name="Placard" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224442, 0.15956, 7.15256e-07)
-sorting_offset = 10.0
-pixel_size = 0.0009
-shaded = true
-texture = ExtResource("19_pt3aj")
-
-[node name="Stand" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Thermal Power Display"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.114321, 0)
-size = Vector3(0.386735, 0.0327153, 0.829682)
-material = ExtResource("5_0qdm2")
-
-[node name="Electric Power Display" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8)
-size = Vector3(0.448, 0.213652, 0.97415)
-material = ExtResource("5_0qdm2")
-
-[node name="Mesh" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224441, 0, 4.76837e-07)
-sorting_offset = 30.0
-sorting_use_aabb_center = false
-pixel_size = 0.0019
-shaded = true
-texture = ExtResource("16_47fu1")
-
-[node name="Power" type="Label3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225002, 0.00818086, -0.307641)
-sorting_offset = 20.0
-modulate = Color(0.768627, 0.313726, 0.337255, 1)
-text = "0"
-font = ExtResource("17_th8xm")
-font_size = 128
-horizontal_alignment = 2
-
-[node name="Unit" type="Label3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(0, 0, 0.19, 0, 0.19, 0, -0.19, 0, 0, 0.225006, -0.0226212, -0.429499)
-sorting_offset = 20.0
-modulate = Color(0.482353, 0.556863, 0.34902, 1)
-text = "MW"
-font = ExtResource("17_th8xm")
-font_size = 64
-horizontal_alignment = 2
-
-[node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224441, 0, 4.76837e-07)
-sorting_offset = 10.0
-pixel_size = 0.0019
-shaded = true
-texture = ExtResource("18_12rln")
-
-[node name="Placard" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.224442, 0.15956, 7.15256e-07)
-sorting_offset = 10.0
-pixel_size = 0.0009
-shaded = true
-texture = ExtResource("20_sst2y")
-
-[node name="Stand" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Panel Top Meters/Electric Power Display"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.114321, 0)
-size = Vector3(0.386735, 0.0327153, 0.829682)
-material = ExtResource("5_0qdm2")
 
 [node name="Rod Position Monitors" type="CSGBox3D" parent="Control Room Panels/Main Panel Center"]
 unique_name_in_owner = true
