@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dycxb0rbaestn"]
+[gd_scene load_steps=50 format=3 uid="uid://dhfsu6eigv231"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqlp2"]
 vertex_color_use_as_albedo = true

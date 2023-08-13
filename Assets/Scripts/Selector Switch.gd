@@ -45,27 +45,11 @@ var switches = {
 			2: -45,
 		},
 		"position": 1,
-		"momentary": false,
+		"momentary": false, # TODO: make it possible to specify a specific position to return to
+							# and, make it possible to use this on switches with less/more than three positions
 	},
 }
-@onready var pointer = $"/root/Node3d/Control Room Panels/Main Panel Center/Controls/Momentary Switch/EDG 14 KV/Pointer"
 @onready var node_3d = $"/root/Node3d"
-#@onready var on_light_material = $"../Lights/On/CSGSphere3D".get_material() if "Momentary" not in get_parent().name else ""
-#@onready var off_light_material = $"../Lights/Off/CSGSphere3D".get_material() if "Momentary" not in get_parent().name else ""
-var value = 3.0
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	#if "Momentary" in get_parent().name:
-	#	while true:
-	#		await get_tree().create_timer(0.05).timeout
-	#		if switch_position == 2:
-	#			value += 0.1
-	#		elif switch_position == 0:
-	#			value -= 0.1
-	#			
-	#		pointer.position.z = node_3d.calculate_vertical_scale_position(value, 5, 0.071, -0.071)
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -76,7 +60,7 @@ func breaker_switch_position_up(camera, event, position, normal, shape_idx):
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name
 		if mouse_click.pressed:
-			if not switches[name]["position"] == 2:
+			if switches[name]["position"] + 1 in switches[name]["positions"]:
 				switches[name]["position"] += 1
 				$"../AudioStreamPlayer3D".playing = true
 				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
@@ -94,7 +78,7 @@ func breaker_switch_position_down(camera, event, position, normal, shape_idx):
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name
 		if mouse_click.pressed:
-			if not switches[name]["position"] == 0:
+			if switches[name]["position"] - 1 in switches[name]["positions"]:
 				switches[name]["position"] -= 1
 				$"../AudioStreamPlayer3D".playing = true
 				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
