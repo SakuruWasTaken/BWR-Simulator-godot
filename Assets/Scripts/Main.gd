@@ -160,8 +160,6 @@ func generate_control_rods():
 				var full_in_material = full_in_node.get_material()
 				var drift_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
 				var drift_material = drift_node.get_material()
-				
-				
 
 				control_rods[rod_number] = {
 						"cr_insertion": 0.00,
@@ -276,9 +274,9 @@ func main_loop_timer_expire():
 	
 	# apply rod withdraw blocks
 	if reactor_mode == reactor_modes.SHUTDOWN:
-		add_withdraw_block("Mode Switch in Shutdown")
+		add_new_block("Mode Switch in Shutdown","withdraw_block")
 	else:
-		remove_withdraw_block("Mode Switch in Shutdown")
+		add_new_block("Mode Switch in Shutdown","r_withdraw_block")
 		
 	var irm_downscale = false
 	for irm_number in intermidiate_range_monitors:
@@ -287,9 +285,9 @@ func main_loop_timer_expire():
 			break
 			
 	if irm_downscale:
-		add_withdraw_block("IRM Downscale")
+		add_new_block("IRM Downscale","withdraw_block")
 	else:
-		remove_withdraw_block("IRM Downscale")
+		add_new_block("IRM Downscale","r_withdraw_block")
 		
 	
 	for rod_number in control_rods:
@@ -338,29 +336,27 @@ func main_loop_timer_fast_expire():
 						set_scram_reset_light_on = true
 					await get_tree().create_timer(0.1).timeout
 
-# TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
-func add_withdraw_block(type):
-	if type not in rod_withdraw_block:
-		rod_withdraw_block.append(type)
-	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
-	
-func add_insert_block(type):
-	if type not in rod_insert_block:
-		rod_insert_block.append(type)
-	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
+func add_new_block(type,act):
+	if act == "withdraw_block":
+		if type not in rod_withdraw_block:
+			rod_withdraw_block.append(type)
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
+	elif act == "insert_block":
+		if type not in rod_insert_block:
+			rod_insert_block.append(type)
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
+	elif act == "r_withdraw_block":
+		if type in rod_withdraw_block:
+			rod_withdraw_block.erase(type)
+		if rod_withdraw_block == []:
+			$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
+	elif act == "r_insert_block":
+		if type in rod_insert_block:
+			rod_insert_block.erase(type)
+		if rod_insert_block == []:
+			$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
 
-func remove_withdraw_block(type):
-	if type in rod_withdraw_block:
-		rod_withdraw_block.erase(type)
-	if rod_withdraw_block == []:
-		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
-	
-func remove_insert_block(type):
-	if type in rod_insert_block:
-		rod_insert_block.erase(type)
-	if rod_insert_block == []:
-		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
-		
+
 func calculate_vertical_scale_position(indicated_value, scale_max, meter_min_position = 0.071, meter_max_position = -0.071):
 	return clamp((((scale_max - indicated_value)/(scale_max/(meter_min_position*2))) - meter_min_position), meter_max_position, meter_min_position)
 
@@ -392,7 +388,7 @@ func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_obj
 	
 func scram(type):
 	scram_type = type
-	add_withdraw_block("SCRAM")
+	add_new_block("SCRAM","withdraw_block")
 	var rods_in = 0
 	while rods_in < 185:
 		rods_in = 0
@@ -762,7 +758,7 @@ func rod_motion_button_pressed(parent, pressed):
 			for rod_number in control_rods:
 				control_rods[rod_number].cr_scram = false
 				control_rods[rod_number].cr_accum_trouble = false
-			remove_withdraw_block("SCRAM")
+			add_new_block("SCRAM","r_withdraw_block")
 		
 	elif parent.name == "DriftTest_pb":
 		cr_drift_test = pressed
