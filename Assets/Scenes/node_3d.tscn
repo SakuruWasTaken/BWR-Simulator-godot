@@ -13763,6 +13763,7 @@ autoplay = true
 max_distance = 5.0
 
 [node name="reference diagrams" type="Node3D" parent="Control Room Panels/Main Panel Center"]
+visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/reference diagrams"]
 transform = Transform3D(-5.96046e-08, 0, 1.015, 0, 1.015, 0, -1.015, 0, -5.96046e-08, 0.999079, 0.948084, -2.29601)

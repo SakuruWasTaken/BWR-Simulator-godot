@@ -261,7 +261,6 @@ func open_scram_breakers(reason):
 	scram_breakers["B2"] = reason
 
 func reset_scram():
-	print("resetting scram")
 	scram_all_rods_in = false
 	scram_active = false
 	scram_breakers = {}
@@ -329,10 +328,8 @@ func main_loop_timer_fast_expire():
 		
 		if rps_b_scram:
 			if not "B1" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
-				print("b1breaker")
 				scram_breakers["B1"] = scram_breakers["B2"]
 			elif not "B2" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
-				print("b2breaker")
 				scram_breakers["B2"] = scram_breakers["B1"]
 				
 		manual_scram_pb_materials["A1"].emission_enabled = false
