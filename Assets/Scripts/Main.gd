@@ -259,7 +259,17 @@ func open_scram_breakers(reason):
 	scram_breakers["A2"] = reason
 	scram_breakers["B1"] = reason
 	scram_breakers["B2"] = reason
-	
+
+func reset_scram():
+	if scram_active and scram_breakers == {}:
+		scram_all_rods_in = false
+		scram_active = false
+		scram_breakers = {}
+		scram_timer = -1
+		add_new_block("SCRAM","r_withdraw_block")
+		for rod_number in control_rods:
+			control_rods[rod_number].cr_scram = false
+
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
 	if reactor_mode == reactor_modes.SHUTDOWN and not reactor_mode_shutdown_bypass and not scram_active:
@@ -297,6 +307,11 @@ func main_loop_timer_expire():
 			control_rods[rod_number]["cr_drift_alarm"] = true
 			control_rods[rod_number]["cr_drift_alarm_acknowledged"] = false
 
+var last_tick_a1 = false
+var last_tick_a2 = false
+var last_tick_b1 = false
+var last_tick_b2 = false
+
 func main_loop_timer_fast_expire():
 	if scram_breakers != {}:
 		var rps_a_scram = "A1" in scram_breakers or "A2" in scram_breakers
@@ -304,21 +319,26 @@ func main_loop_timer_fast_expire():
 		var full_scram = rps_a_scram and rps_b_scram
 		
 		if rps_a_scram:
-			if not "A1" in scram_breakers:
+			if not "A1" in scram_breakers and scram_timer > 0 or not "A1" in scram_breakers and not last_tick_a2:
 				scram_breakers["A1"] = scram_breakers["A2"]
-			elif not "A2" in scram_breakers:
+			elif not "A2" in scram_breakers and scram_timer > 0 or not "A2" in scram_breakers and not last_tick_a1:
 				scram_breakers["A2"] = scram_breakers["A1"]
 		
 		if rps_b_scram:
-			if not "B1" in scram_breakers:
+			if not "B1" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
 				scram_breakers["B1"] = scram_breakers["B2"]
-			elif not "B2" in scram_breakers:
+			elif not "B2" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
 				scram_breakers["B2"] = scram_breakers["B1"]
 				
+
 		manual_scram_pb_materials["A1"].emission_enabled = false
 		manual_scram_pb_materials["A2"].emission_enabled = false
 		manual_scram_pb_materials["B1"].emission_enabled = false
 		manual_scram_pb_materials["B2"].emission_enabled = false
+		last_tick_a1 = "A1" in scram_breakers
+		last_tick_a2 = "A2" in scram_breakers
+		last_tick_b1 = "B1" in scram_breakers
+		last_tick_b2 = "B2" in scram_breakers
 		
 		for breaker in scram_breakers:
 			manual_scram_pb_materials[breaker].emission_enabled = true
@@ -335,7 +355,14 @@ func main_loop_timer_fast_expire():
 						# small optimisation so we're not constantly getting the material and causing a bunch of lag
 						set_scram_reset_light_on = true
 					await get_tree().create_timer(0.1).timeout
-
+		else:
+			scram_all_rods_in = false
+			scram_active = false
+			scram_timer = -1
+			add_new_block("SCRAM","r_withdraw_block")
+			for rod_number in control_rods:
+				control_rods[rod_number].cr_scram = false
+			
 func add_new_block(type,act):
 	if act == "withdraw_block":
 		if type not in rod_withdraw_block:
