@@ -1,4 +1,4 @@
-[gd_scene load_steps=438 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=441 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Selector Switch.gd" id="19_hvp7g"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Rod Motion Button.gd" id="20_sgfvo"]
 [ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Rod Select Button.gd" id="21_er0jj"]
+[ext_resource type="Script" path="res://Assets/Scripts/Misc/Safety Covers.gd" id="21_xh57w"]
 [ext_resource type="Material" uid="uid://bfcpxx4mjc36y" path="res://Assets/Materials/gold metal.tres" id="22_3oqyh"]
 [ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="24_mqur0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Annunciators/Reactor Annunciator Button.gd" id="25_dg6x0"]
@@ -184,6 +185,14 @@ emission = Color(1, 1, 1, 1)
 clearcoat = 0.16
 clearcoat_roughness = 1.0
 refraction_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fcvd"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.180392)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7ni6"]
+size = Vector3(0.0601973, 0.0614711, 0.0373446)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmbjb"]
 vertex_color_use_as_albedo = true
@@ -4022,6 +4031,87 @@ script = ExtResource("20_sgfvo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
+
+[node name="Safety Covers" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel"]
+transform = Transform3D(1, -2.23517e-07, 0, -5.96046e-08, 1, 0, 0, 0, 1, -0.0373409, -7.62939e-06, -0.352068)
+
+[node name="Insert" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.47035e-08, -5.51343e-07, 1, 0, 1, 5.66244e-07, -1, 0, -3.72529e-08, -0.01, 0.185, 0.03)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Insert"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Insert/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
+
+[node name="Withdraw" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.47035e-08, -5.51343e-07, 1, 0, 1, 5.43892e-07, -1, 0, -4.47035e-08, -0.00999984, 0.185002, -0.0295587)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Withdraw"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Withdraw/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
+
+[node name="Continuous Insert" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.01, 0.185, 0.734)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Insert"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Insert/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
+
+[node name="Continuous Withdraw" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -7.45058e-09, -1, 0, -3.72529e-08, -0.00999987, 0.185, 0.673978)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Withdraw"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Withdraw/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
+
+[node name="Drift Reset" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -7.45058e-09, -1, 0, -3.72529e-08, -0.00999963, 0.0354357, 0.673978)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Reset"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Reset/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
+
+[node name="Drift Test" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers"]
+transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -7.45058e-09, -1, 0, -3.72529e-08, -0.0099996, 0.0354357, 0.733008)
+sorting_offset = 20.0
+size = Vector3(0.0500394, 0.0514165, 0.0182538)
+material = SubResource("StandardMaterial3D_8fcvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Test"]
+script = ExtResource("21_xh57w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Test/StaticBody3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 1.49012e-08, 0, -7.45058e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7ni6")
 
 [node name="Panel 1" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel"]
 transform = Transform3D(0.999998, -2.98023e-08, 0, -2.83122e-07, 1, 0, 0, 0, 1, -0.037, 0, 0.352)
@@ -9008,7 +9098,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.004583
 shape = SubResource("BoxShape3D_w8lsb")
 
 [node name="Reactor Alarm Loop" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
-transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.9441, 1.81654, -2.43126)
+transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.997807, 1.59001, -2.43126)
 stream = ExtResource("39_d4851")
 volume_db = 80.0
 max_db = 6.0
@@ -9082,7 +9172,7 @@ transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.008998
 sorting_offset = 20.0
 pixel_size = 0.0006
 modulate = Color(1, 0.772549, 0.560784, 1)
-text = "4   8"
+text = "8   8"
 font_size = 48
 
 [node name="Rod Position Monitor 2" type="Node3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
@@ -9119,7 +9209,7 @@ transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.008999
 sorting_offset = 20.0
 pixel_size = 0.0006
 modulate = Color(1, 0.772549, 0.560784, 1)
-text = "0   8"
+text = "8   8"
 font_size = 48
 
 [node name="Rod Position Monitor 3" type="Node3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
@@ -9156,7 +9246,7 @@ transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.008999
 sorting_offset = 20.0
 pixel_size = 0.0006
 modulate = Color(1, 0.772549, 0.560784, 1)
-text = "0   0"
+text = "8   8"
 font_size = 48
 
 [node name="Rod Position Monitor 4" type="Node3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
@@ -9179,7 +9269,7 @@ transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.008999
 sorting_offset = 20.0
 pixel_size = 0.0006
 modulate = Color(1, 0.772549, 0.560784, 1)
-text = "1   6"
+text = "8   8"
 font_size = 48
 
 [node name="4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors/Rod Position Monitor 4"]
@@ -13282,14 +13372,6 @@ transform = Transform3D(-0.000325181, -0.195946, 0.980615, -6.48797e-05, 0.98061
 size = Vector3(1.45098, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
 
-[node name="ambient audio" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, -2.94691)
-stream = ExtResource("5_7cq8b")
-volume_db = 25.0
-max_db = -8.0
-autoplay = true
-max_distance = 5.0
-
 [node name="Main Loop Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
@@ -13305,6 +13387,12 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Insert/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Insert/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Withdraw/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Withdraw/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Insert/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Insert/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Withdraw/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Continuous Withdraw/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Reset/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Reset/StaticBody3D" method="_on_input_event"]
+[connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Test/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Safety Covers/Drift Test/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_pb/StaticBody3D" method="_on_input_event"]
 [connection signal="input_event" from="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftTest_pb/StaticBody3D" to="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftTest_pb/StaticBody3D" method="_on_input_event"]
