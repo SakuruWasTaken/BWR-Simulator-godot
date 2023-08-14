@@ -269,9 +269,6 @@ func reset_scram():
 		add_new_block("SCRAM","r_withdraw_block")
 		for rod_number in control_rods:
 			control_rods[rod_number].cr_scram = false
-			#TODO: is this realistic?
-			#control_rods[rod_number].cr_accum_trouble = false
-			#control_rods[rod_number].cr_accum_trouble_acknowledged = true
 
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
@@ -333,6 +330,7 @@ func main_loop_timer_fast_expire():
 			elif not "B2" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
 				scram_breakers["B2"] = scram_breakers["B1"]
 				
+
 		manual_scram_pb_materials["A1"].emission_enabled = false
 		manual_scram_pb_materials["A2"].emission_enabled = false
 		manual_scram_pb_materials["B1"].emission_enabled = false
@@ -357,7 +355,14 @@ func main_loop_timer_fast_expire():
 						# small optimisation so we're not constantly getting the material and causing a bunch of lag
 						set_scram_reset_light_on = true
 					await get_tree().create_timer(0.1).timeout
-
+		else:
+			scram_all_rods_in = false
+			scram_active = false
+			scram_timer = -1
+			add_new_block("SCRAM","r_withdraw_block")
+			for rod_number in control_rods:
+				control_rods[rod_number].cr_scram = false
+			
 func add_new_block(type,act):
 	if act == "withdraw_block":
 		if type not in rod_withdraw_block:

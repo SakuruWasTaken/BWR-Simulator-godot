@@ -28,43 +28,35 @@ func control_room_normal_lighting_switch(position):
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
 
-func scram_reset_b(position):
-	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
+func scram_reset(position, name):
+	# TODO: timer for half-scram reset
+	var breakers = {
+		"scram_reset_a": {
+			"main": "A1",
+			"secondary": "A2",
+		},
+		"scram_reset_b": {
+			"main": "B2",
+			"secondary": "B1",
+		},
+		"scram_reset_c": {
+			"main": "A2",
+			"secondary": "A1",
+		},
+		"scram_reset_d": {
+			"main": "B1",
+			"secondary": "B2",
+		},
+	}
+	var full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
 	if position == 0:
-		node3d.scram_breakers.erase("B1")
-		node3d.manual_scram_pb_materials["B1"].emission_enabled = false
-		node3d.reset_scram()
-	#off
+		if breakers[name].main in node3d.scram_breakers and node3d.scram_timer < 1:
+			node3d.scram_breakers.erase(breakers[name].main)
+			node3d.manual_scram_pb_materials[breakers[name].main].emission_enabled = false
+			node3d.reset_scram()
 	else:
-		if "B2" in node3d.scram_breakers:
-			node3d.scram_breakers["B1"] = node3d.scram_breakers["B2"]
-func scram_reset_d(position):
-	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
-	if position == 0:
-		node3d.scram_breakers.erase("B2")
-		node3d.manual_scram_pb_materials["B2"].emission_enabled = false
-		node3d.reset_scram()
-	else:
-		if "B1" in node3d.scram_breakers:
-			node3d.scram_breakers["B2"] = node3d.scram_breakers["B1"]
-func scram_reset_c(position):
-	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
-	if position == 0:
-		node3d.scram_breakers.erase("A2")
-		node3d.manual_scram_pb_materials["A2"].emission_enabled = false
-		node3d.reset_scram()
-	else:
-		if "A1" in node3d.scram_breakers:
-			node3d.scram_breakers["A2"] = node3d.scram_breakers["A1"]
-func scram_reset_a(position):
-	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
-	if position == 0:
-		node3d.scram_breakers.erase("A1")
-		node3d.manual_scram_pb_materials["A1"].emission_enabled = false
-		node3d.reset_scram()
-	else:
-		if "A2" in node3d.scram_breakers:
-			node3d.scram_breakers["A1"] = node3d.scram_breakers["A2"]
+		if breakers[name].secondary in node3d.scram_breakers:
+			node3d.scram_breakers[breakers[name].main] = node3d.scram_breakers[breakers[name].secondary]
 
 var switches = {
 	"control_room_emergency_lighting": {
@@ -89,7 +81,7 @@ var switches = {
 							# and, make it possible to use this on switches with less/more than three positions
 	},
 	"scram_reset_a": {
-		"func": "scram_reset_a",
+		"func": "scram_reset",
 		"positions": {
 			0: 45,
 			1: 0,
@@ -98,7 +90,7 @@ var switches = {
 		"momentary": false,
 	},
 	"scram_reset_b": {
-		"func": "scram_reset_b",
+		"func": "scram_reset",
 		"positions": {
 			0: 45,
 			1: 0,
@@ -107,7 +99,7 @@ var switches = {
 		"momentary": false,
 	},
 	"scram_reset_c": {
-		"func": "scram_reset_c",
+		"func": "scram_reset",
 		"positions": {
 			0: 45,
 			1: 0,
@@ -116,7 +108,7 @@ var switches = {
 		"momentary": false,
 	},
 	"scram_reset_d": {
-		"func": "scram_reset_d",
+		"func": "scram_reset",
 		"positions": {
 			0: 45,
 			1: 0,
@@ -140,13 +132,13 @@ func breaker_switch_position_up(camera, event, position, normal, shape_idx):
 				switches[name]["position"] += 1
 				$"../AudioStreamPlayer3D".playing = true
 				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-				call(switches[name]["func"], switches[name]["position"])
+				call(switches[name]["func"], switches[name]["position"], name)
 		elif switches[name]["position"] == 2 and "Momentary" in get_parent().name:
 			switches[name]["position"] = 1
 			$"../AudioStreamPlayer3D".playing = true
 			$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
 			if "func" in switches[name]:
-				call(switches[name]["func"], switches[name]["position"])
+				call(switches[name]["func"], switches[name]["position"], name)
 					
 
 func breaker_switch_position_down(camera, event, position, normal, shape_idx):
@@ -158,11 +150,11 @@ func breaker_switch_position_down(camera, event, position, normal, shape_idx):
 				switches[name]["position"] -= 1
 				$"../AudioStreamPlayer3D".playing = true
 				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-				call(switches[name]["func"], switches[name]["position"])
+				call(switches[name]["func"], switches[name]["position"], name)
 		elif switches[name]["position"] == 0 and switches[name]["momentary"]:
 			switches[name]["position"] = 1
 			$"../AudioStreamPlayer3D".playing = true
 			$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
 			if "func" in switches[name]:
-				call(switches[name]["func"], switches[name]["position"])
+				call(switches[name]["func"], switches[name]["position"], name)
 
