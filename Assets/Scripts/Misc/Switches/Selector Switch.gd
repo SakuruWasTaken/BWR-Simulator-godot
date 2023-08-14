@@ -31,14 +31,9 @@ func control_room_normal_lighting_switch(position):
 func scram_reset_b(position):
 	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
 	if position == 0:
-		if "B1" in node3d.scram_breakers and not full_scram and node3d.scram_timer == -1:
-			node3d.scram_breakers.erase("B1")
-			node3d.manual_scram_pb_materials["B1"].emission_enabled = false
-		if "B1" in node3d.scram_breakers and node3d.scram_timer == 0:
-			node3d.scram_breakers.erase("B1")
-			node3d.manual_scram_pb_materials["B1"].emission_enabled = false
-			if node3d.scram_breakers == {} and node3d.scram_active:
-				node3d.reset_scram()
+		node3d.scram_breakers.erase("B1")
+		node3d.manual_scram_pb_materials["B1"].emission_enabled = false
+		node3d.reset_scram()
 	#off
 	else:
 		if "B2" in node3d.scram_breakers:
@@ -46,42 +41,27 @@ func scram_reset_b(position):
 func scram_reset_d(position):
 	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
 	if position == 0:
-		if "B2" in node3d.scram_breakers and not full_scram:
-			node3d.scram_breakers.erase("B2")
-			node3d.manual_scram_pb_materials["B2"].emission_enabled = false
-		if "B2" in node3d.scram_breakers and node3d.scram_timer == 0:
-			node3d.scram_breakers.erase("B2")
-			node3d.manual_scram_pb_materials["B2"].emission_enabled = false
-			if node3d.scram_breakers == {} and node3d.scram_active:
-				node3d.reset_scram()
+		node3d.scram_breakers.erase("B2")
+		node3d.manual_scram_pb_materials["B2"].emission_enabled = false
+		node3d.reset_scram()
 	else:
 		if "B1" in node3d.scram_breakers:
 			node3d.scram_breakers["B2"] = node3d.scram_breakers["B1"]
 func scram_reset_c(position):
 	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
 	if position == 0:
-		if "A2" in node3d.scram_breakers and not full_scram:
-			node3d.scram_breakers.erase("A2")
-			node3d.manual_scram_pb_materials["A2"].emission_enabled = false
-		if "A2" in node3d.scram_breakers and node3d.scram_timer == 0:
-			node3d.scram_breakers.erase("A2")
-			node3d.manual_scram_pb_materials["A2"].emission_enabled = false
-			if node3d.scram_breakers == {} and node3d.scram_active:
-				node3d.reset_scram()
+		node3d.scram_breakers.erase("A2")
+		node3d.manual_scram_pb_materials["A2"].emission_enabled = false
+		node3d.reset_scram()
 	else:
 		if "A1" in node3d.scram_breakers:
 			node3d.scram_breakers["A2"] = node3d.scram_breakers["A1"]
 func scram_reset_a(position):
 	var full_scram = "A1" in node3d.scram_breakers and "A2" in node3d.scram_breakers and "B1" in node3d.scram_breakers and "B2" in node3d.scram_breakers
 	if position == 0:
-		if "A1" in node3d.scram_breakers and not full_scram:
-			node3d.scram_breakers.erase("A1")
-			node3d.manual_scram_pb_materials["A1"].emission_enabled = false
-		if "A1" in node3d.scram_breakers and node3d.scram_timer == 0:
-			node3d.scram_breakers.erase("A1")
-			node3d.manual_scram_pb_materials["A1"].emission_enabled = false
-			if node3d.scram_breakers == {} and node3d.scram_active:
-				node3d.reset_scram()
+		node3d.scram_breakers.erase("A1")
+		node3d.manual_scram_pb_materials["A1"].emission_enabled = false
+		node3d.reset_scram()
 	else:
 		if "A2" in node3d.scram_breakers:
 			node3d.scram_breakers["A1"] = node3d.scram_breakers["A2"]

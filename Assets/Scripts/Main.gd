@@ -261,16 +261,17 @@ func open_scram_breakers(reason):
 	scram_breakers["B2"] = reason
 
 func reset_scram():
-	scram_all_rods_in = false
-	scram_active = false
-	scram_breakers = {}
-	scram_timer = -1
-	add_new_block("SCRAM","r_withdraw_block")
-	for rod_number in control_rods:
-		control_rods[rod_number].cr_scram = false
-		#TODO: is this realistic?
-		#control_rods[rod_number].cr_accum_trouble = false
-		#control_rods[rod_number].cr_accum_trouble_acknowledged = true
+	if scram_active and scram_breakers == {}:
+		scram_all_rods_in = false
+		scram_active = false
+		scram_breakers = {}
+		scram_timer = -1
+		add_new_block("SCRAM","r_withdraw_block")
+		for rod_number in control_rods:
+			control_rods[rod_number].cr_scram = false
+			#TODO: is this realistic?
+			#control_rods[rod_number].cr_accum_trouble = false
+			#control_rods[rod_number].cr_accum_trouble_acknowledged = true
 
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
