@@ -8713,6 +8713,7 @@ font_size = 11
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0101662, 0.0399157, 0.000132799)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "REFUEL"
 font_size = 16
 
@@ -8729,6 +8730,7 @@ font_size = 11
 transform = Transform3D(0, -5.96046e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -8.9407e-08, 0.0101657, 0.0114739, -0.0348918)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "RUN"
 font_size = 16
 
@@ -8825,6 +8827,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "RESET
 "
 font_size = 20
@@ -8833,6 +8836,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -8942,6 +8946,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "RESET
 "
 font_size = 20
@@ -8950,6 +8955,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -9059,6 +9065,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "RESET
 "
 font_size = 20
@@ -9067,6 +9074,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -9176,6 +9184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "RESET
 "
 font_size = 20
@@ -9184,6 +9193,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -13606,6 +13616,7 @@ transform = Transform3D(1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0, 1, 0.008000
 transform = Transform3D(-3.49246e-09, -5.96046e-08, 1, -0.707107, 0.707107, -4.47035e-08, -0.707107, -0.707107, -3.72529e-08, 0.0101658, 0.0327625, -0.0264907)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "ON"
 font_size = 20
 
@@ -13613,6 +13624,7 @@ font_size = 20
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -13620,6 +13632,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "AUTO"
 font_size = 20
 
@@ -13759,6 +13772,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800085, -0.00599456, 7.15
 transform = Transform3D(-3.49246e-09, -5.96046e-08, 1, -0.707107, 0.707107, -4.47035e-08, -0.707107, -0.707107, -3.72529e-08, 0.0101658, 0.0327625, -0.0264907)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "ON"
 font_size = 20
 
@@ -13766,6 +13780,7 @@ font_size = 20
 transform = Transform3D(-5.96046e-08, 4.65661e-10, 1, 0.707107, 0.707107, -4.47035e-08, -0.707107, 0.707107, -3.72529e-08, 0.0101666, 0.0327592, 0.0264406)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "OFF"
 font_size = 20
 
@@ -13773,6 +13788,7 @@ font_size = 20
 transform = Transform3D(-4.47035e-08, 0, 1, 0, 1, -8.9407e-08, -1, 0, -4.47035e-08, 0.0101661, 0.0436597, -5.126e-05)
 sorting_offset = 10.0
 pixel_size = 0.0003
+shaded = true
 text = "AUTO"
 font_size = 20
 
