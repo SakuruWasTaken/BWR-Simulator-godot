@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @onready var node3d = $"/root/Node3d"
 
-func control_room_emergency_lighting_switch(position):
+func control_room_emergency_lighting_switch(position, _name):
 	var lights_on = position in [1, 2]
 	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
 	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
@@ -14,7 +14,7 @@ func control_room_emergency_lighting_switch(position):
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
 
-func control_room_normal_lighting_switch(position):
+func control_room_normal_lighting_switch(position, _name):
 	var lights_on = position in [1, 2]
 	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
 	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()

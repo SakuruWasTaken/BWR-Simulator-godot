@@ -2841,15 +2841,16 @@ transform = Transform3D(-0.745325, 0, -0.666702, 0, 1, 0, 0.666702, 0, -0.745325
 
 [node name="wall" type="CSGBox3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.87195, 1.64062, 4.4364)
+visible = false
 use_collision = true
 size = Vector3(7.425, 3.42, 0.42)
 material = ExtResource("3_e4fug")
 
 [node name="room" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09111, 1.65787, -1.4847)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07381, 1.65787, -1.4847)
 use_collision = true
 flip_faces = true
-size = Vector3(17.9084, 3.31346, 16.0742)
+size = Vector3(20.1107, 3.31346, 17.4099)
 material = ExtResource("3_e4fug")
 
 [node name="Control Room Lights" type="Node" parent="."]
@@ -2900,7 +2901,7 @@ size = Vector3(1.5, 1.5, 0.052)
 material = SubResource("StandardMaterial3D_2igvy")
 
 [node name="SpotLight3D33" type="OmniLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, -6.91056, 2.98549, 3.80954)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.533, 2.985, 5.902)
 light_energy = 0.712
 light_size = 0.5
 light_specular = 0.8
@@ -3295,9 +3296,6 @@ spot_attenuation = 0.732043
 spot_angle = 90.41
 spot_angle_attenuation = 2.54912
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Control Room Lights/normal"]
-transform = Transform3D(1, 0, 0, 0, 0.0169638, 0.999856, 0, -0.999856, 0.0169638, -3.06046, 6.18344, -5.54462)
-
 [node name="emergency" type="Node3D" parent="Control Room Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07921, 0, -5.28047)
 
@@ -3452,7 +3450,7 @@ texture = ExtResource("12_5cl38")
 [node name="Main Panel Far Right Side" type="CSGPolygon3D" parent="Control Room Panels"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9487, 0.806, 15.7596)
 use_collision = true
-polygon = PackedVector2Array(0.998528, 0.108852, 0.999, 1.584, 0.072, 1.584, 0.072, -0.805, 1.612, -0.805, 1.612, -0.702, 1.73853, -0.0391665)
+polygon = PackedVector2Array(0.998528, 0.108852, 0.999, 1.584, -0.062, 1.584, -0.062, -0.805, 1.612, -0.805, 1.612, -0.702, 1.73853, -0.0391665)
 depth = 6.6
 material = ExtResource("5_0qdm2")
 
@@ -13514,7 +13512,8 @@ size = Vector3(1.45098, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.577, 1.195, 4.29138)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.42865, 1.195, 17.6971)
+use_collision = true
 size = Vector3(3.21739, 2.39, 0.927)
 material = ExtResource("5_0qdm2")
 
@@ -13830,7 +13829,7 @@ shape = SubResource("BoxShape3D_w8lsb")
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 7.228, 2.39, 4.943)
 use_collision = true
-polygon = PackedVector2Array(0.072, 3.89, 0.072, 0.96, 3.42944, -2.47482, 13.203, -2.475, 13.203, -1.583, 3.6211, -2.00192, 0.470073, 1.0652, 0.426829, 3.89049)
+polygon = PackedVector2Array(0.072, 3.89, 0.072, 0.86, 3.329, -2.475, 13.203, -2.475, 13.203, -1.583, 3.6211, -2.00192, 0.470073, 1.0652, 0.426829, 3.89049)
 depth = 2.4
 material = ExtResource("5_0qdm2")
 
