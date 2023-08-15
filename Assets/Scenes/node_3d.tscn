@@ -1,4 +1,4 @@
-[gd_scene load_steps=441 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=442 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -45,6 +45,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RWM/RWM Bypass Key Switch.gd" id="40_x7o7m"]
 [ext_resource type="Script" path="res://Assets/Scripts/Neutron Monitoring/RBM Meters.gd" id="41_dwscw"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Clock Text.gd" id="45_ifyrx"]
+[ext_resource type="PackedScene" uid="uid://dr1acw3vw7urm" path="res://Assets/Scenes/Digital Chart Recorder.tscn" id="47_rhokq"]
 [ext_resource type="Texture2D" uid="uid://00yvkya2csl6" path="res://Assets/Textures/reference diagrams/ML18041A0162.png" id="50_yf40r"]
 [ext_resource type="Texture2D" uid="uid://bcsu84r2hm3o8" path="res://Assets/Textures/reference diagrams/ML18041A01621.png" id="51_2cwqw"]
 [ext_resource type="Material" uid="uid://c7gnnnjikio6v" path="res://Assets/Materials/red plastic.tres" id="54_42qy7"]
@@ -13435,6 +13436,9 @@ font_size = 20
 outline_size = 0
 line_spacing = -2.0
 
+[node name="Chart Recorder (TODO)" parent="Control Room Panels/Main Panel Center/Meters" instance=ExtResource("47_rhokq")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.0707579, -0.389267, -0.0121298)
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
 stream = ExtResource("5_7cq8b")
@@ -13444,10 +13448,9 @@ autoplay = true
 max_distance = 5.0
 
 [node name="reference diagrams" type="Node3D" parent="Control Room Panels/Main Panel Center"]
-visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/reference diagrams"]
-transform = Transform3D(-5.96046e-08, 0, 1.015, 0, 1.015, 0, -1.015, 0, -5.96046e-08, 0.999079, 0.948084, -2.29601)
+transform = Transform3D(-5.96046e-08, 0, 1.015, 0, 1.015, 0, -1.015, 0, -5.96046e-08, 0.999, 0.948, -2.296)
 sorting_offset = 1.0
 pixel_size = 0.0007
 texture = ExtResource("50_yf40r")
@@ -13482,8 +13485,8 @@ size = Vector3(0.0166539, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
-transform = Transform3D(0.980616, -0.195946, 0, 0.195946, 0.980616, 0, 0, 0, 1, -0.786173, -0.275664, -1.39161)
-size = Vector3(0.961123, 0.002, 0.0106929)
+transform = Transform3D(0.980616, -0.195946, 0, 0.195946, 0.980616, 0, 0, 0, 1, -0.783516, -0.275135, -1.39161)
+size = Vector3(0.954279, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
@@ -13504,6 +13507,76 @@ material = ExtResource("35_r1uh5")
 [node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
 transform = Transform3D(-0.000325181, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 5.96046e-08, -0.000331581, -0.311279, -0.180774, -1.45151)
 size = Vector3(0.130358, 0.002, 0.0106929)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.712669, -0.26098, -1.49128)
+size = Vector3(0.196862, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.483186, -0.215125, -1.49136)
+size = Vector3(0.196862, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.806715, -0.279774, -1.82099)
+size = Vector3(0.478251, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.807095, -0.279849, -2.98769)
+size = Vector3(0.461563, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.356895, -0.18989, -2.18919)
+size = Vector3(0.251099, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.357, -0.19, -2.63232)
+size = Vector3(0.251099, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.000325188, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 1.19209e-07, -0.000331581, -0.604012, -0.23927, -2.40981)
+size = Vector3(0.197499, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.596325, -0.237731, -1.58719)
+size = Vector3(0.237594, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.853566, -0.289135, -1.58207)
+size = Vector3(0.102039, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.853314, -0.289085, -3.2153)
+size = Vector3(0.101107, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.581857, -0.234843, -2.06072)
+size = Vector3(0.465522, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.581749, -0.234823, -2.7603)
+size = Vector3(0.465522, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.479243, -0.214338, -2.3145)
+size = Vector3(0.255978, 0.002, 0.00681592)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-0.980615, -0.195946, 0.000154093, -0.195946, 0.980616, 3.08752e-05, -0.000157148, 5.96046e-08, -1, -0.481916, -0.214874, -2.51003)
+size = Vector3(0.255935, 0.002, 0.00681592)
 material = ExtResource("35_r1uh5")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
