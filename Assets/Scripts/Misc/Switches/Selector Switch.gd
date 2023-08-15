@@ -8,7 +8,7 @@ func control_room_emergency_lighting_switch(position, _name):
 	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
 	
 	for node in $"/root/Node3d/Control Room Lights/emergency".get_children():
-		node.light_energy = 0.3 if lights_on else 0
+		node.light_energy = 0.3 if lights_on else 0.0
 		for child_node in node.get_children():
 			child_node.get_material().emission_enabled = lights_on
 	on_light_material.emission_enabled = lights_on
@@ -19,12 +19,12 @@ func control_room_normal_lighting_switch(position, _name):
 	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
 	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
 	for node in $"/root/Node3d/Control Room Lights/normal".get_children():
-		node.light_energy = 0.712 if lights_on else 0
+		node.light_energy = 0.712 if lights_on else 0.0
 		for child_node in node.get_children():
 			if child_node is CSGBox3D:
 				child_node.get_material().emission_enabled = lights_on
 			elif child_node is SpotLight3D:
-				child_node.light_energy = 2.368 if lights_on else 0
+				child_node.light_energy = 2.368 if lights_on else 0.0
 	on_light_material.emission_enabled = lights_on
 	off_light_material.emission_enabled = !lights_on
 
@@ -48,7 +48,7 @@ func scram_reset(position, name):
 			"secondary": "B2",
 		},
 	}
-	var full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
+	var _full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
 	if position == 0:
 		if breakers[name].main in node3d.scram_breakers and node3d.scram_timer < 1:
 			node3d.scram_breakers.erase(breakers[name].main)
@@ -120,10 +120,10 @@ var switches = {
 @onready var node_3d = $"/root/Node3d"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func breaker_switch_position_up(camera, event, position, normal, shape_idx):
+func breaker_switch_position_up(_camera, event, _position, _normal, _shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name
@@ -141,7 +141,7 @@ func breaker_switch_position_up(camera, event, position, normal, shape_idx):
 				call(switches[name]["func"], switches[name]["position"], name)
 					
 
-func breaker_switch_position_down(camera, event, position, normal, shape_idx):
+func breaker_switch_position_down(_camera, event, _position, _normal, _shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().name

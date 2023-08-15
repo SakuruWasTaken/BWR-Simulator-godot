@@ -250,7 +250,7 @@ func _ready():
 			control_rods[rod_number]["cr_insertion"] = float(group_info["max_position"])
 
 #Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#print(Engine.get_frames_per_second())
 	pass
 
@@ -410,7 +410,7 @@ func change_selected_rod(rod):
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true if not $"Control Room Panels/Main Panel Center/Full Core Display/full core display lights".rpis_inop else false)
 		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
 
-func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
+func rod_selector_pressed(_camera, _event, _position, _normal, _shape_idx, parent_object):
 	change_selected_rod(parent_object.name)
 	
 func scram(type):
@@ -460,7 +460,6 @@ func withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
 	cr_target_insertion = insertion + 2
 
 	# TODO: rod overtravel check
@@ -529,7 +528,6 @@ func insert_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
 	cr_target_insertion = insertion - 2
 	
 	if int(insertion) <= 0:
@@ -583,7 +581,7 @@ func continuous_withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
+
 
 	# TODO: rod overtravel check
 	if int(insertion) >= 48:
@@ -665,7 +663,7 @@ func continuous_insert_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
+
 
 	# TODO: rod overtravel check
 	if int(insertion) <= 0:
