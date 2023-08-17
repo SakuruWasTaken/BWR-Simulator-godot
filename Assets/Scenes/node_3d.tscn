@@ -1,4 +1,4 @@
-[gd_scene load_steps=442 format=3 uid="uid://bn517fmhqrg3k"]
+[gd_scene load_steps=445 format=3 uid="uid://bn517fmhqrg3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Main.gd" id="1_eg7xd"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
@@ -23,9 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://c5hotgpj8wk1l" path="res://Assets/Textures/1.PNG" id="16_bdn4j"]
 [ext_resource type="Texture2D" uid="uid://beqqlv1n26wjl" path="res://Assets/Textures/reference diagrams/left bottom.png" id="16_q3ggx"]
 [ext_resource type="Texture2D" uid="uid://cxlufikas88h7" path="res://Assets/Textures/2.PNG" id="17_ir5ie"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Rod Control/Rod Motion Button.gd" id="17_k3g2q"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Rod Control/Rod Select Button.gd" id="19_0h7da"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Selector Switch.gd" id="19_hvp7g"]
-[ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Rod Motion Button.gd" id="20_sgfvo"]
-[ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Rod Select Button.gd" id="21_er0jj"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Safety Covers.gd" id="21_xh57w"]
 [ext_resource type="Material" uid="uid://bfcpxx4mjc36y" path="res://Assets/Materials/gold metal.tres" id="22_3oqyh"]
 [ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="24_mqur0"]
@@ -34,20 +34,22 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Manual Scram Switch.gd" id="30_mvkb0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Reactor Mode Switch.gd" id="32_oro6k"]
 [ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://Assets/Materials/black plastic 2.tres" id="33_11pre"]
-[ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Rod Position Monitors.gd" id="34_1sml7"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Rod Control/Rod Position Monitors.gd" id="35_4v6vf"]
 [ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="35_r1uh5"]
 [ext_resource type="Texture2D" uid="uid://cq75n3t4d1mx4" path="res://Assets/Textures/Vertical Meter Background.png" id="36_4fyjx"]
 [ext_resource type="Script" path="res://Assets/Scripts/Annunciators/Reactor Annunciators.gd" id="36_sdnxh"]
-[ext_resource type="Script" path="res://Assets/Scripts/RWM/RWM.gd" id="37_c3x1v"]
 [ext_resource type="Texture2D" uid="uid://ccx5ox8xjidwh" path="res://Assets/Textures/Vertical Meter Pointer.png" id="37_l1t2u"]
-[ext_resource type="Script" path="res://Assets/Scripts/RWM/RWM Button.gd" id="38_kxga0"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/RWM/RWM.gd" id="38_pb5xi"]
 [ext_resource type="AudioStream" uid="uid://o256lmfhvx62" path="res://Assets/Audio/reactor_alarm_loop.mp3" id="39_d4851"]
-[ext_resource type="Script" path="res://Assets/Scripts/RWM/RWM Bypass Key Switch.gd" id="40_x7o7m"]
-[ext_resource type="Script" path="res://Assets/Scripts/Neutron Monitoring/RBM Meters.gd" id="41_dwscw"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/RWM/RWM Button.gd" id="39_u2a68"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/RWM/RWM Bypass Key Switch.gd" id="41_0u3fv"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Neutron Monitoring/RBM Meters.gd" id="42_qr3h0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Clock Text.gd" id="45_ifyrx"]
 [ext_resource type="PackedScene" uid="uid://dr1acw3vw7urm" path="res://Assets/Scenes/Digital Chart Recorder.tscn" id="47_rhokq"]
+[ext_resource type="PackedScene" uid="uid://binlsswx01c43" path="res://Assets/Scenes/Reactor Panel Display.tscn" id="50_60hfa"]
 [ext_resource type="Texture2D" uid="uid://00yvkya2csl6" path="res://Assets/Textures/reference diagrams/ML18041A0162.png" id="50_yf40r"]
 [ext_resource type="Texture2D" uid="uid://bcsu84r2hm3o8" path="res://Assets/Textures/reference diagrams/ML18041A01621.png" id="51_2cwqw"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Reactor Panel Display.gd" id="51_3qadj"]
 [ext_resource type="Material" uid="uid://c7gnnnjikio6v" path="res://Assets/Materials/red plastic.tres" id="54_42qy7"]
 
 [sub_resource type="Environment" id="Environment_l5pxq"]
@@ -2801,6 +2803,9 @@ refraction_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlofu"]
 albedo_color = Color(0.152941, 0, 0, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_u77wx"]
+viewport_path = NodePath("Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D/SubViewport")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt48e"]
 metallic = 1.0
 
@@ -3571,7 +3576,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3594,7 +3599,7 @@ font_size = 48
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM/StaticBody3D"]
 transform = Transform3D(1, -4.47035e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.0233136, 0, 2.38419e-07)
@@ -3699,7 +3704,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Withdraw_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3811,7 +3816,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContInsert_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3851,7 +3856,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/ContWithdraw_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3873,7 +3878,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftTest_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftTest_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3897,7 +3902,7 @@ font_size = 10
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/AccumAck_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/AccumAck_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3919,7 +3924,7 @@ font_size = 12
 outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftReset_pb"]
-script = ExtResource("20_sgfvo")
+script = ExtResource("17_k3g2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 1/Lights and buttons/DriftReset_pb/StaticBody3D"]
 shape = SubResource("BoxShape3D_3e4rh")
@@ -3953,7 +3958,7 @@ material = SubResource("StandardMaterial3D_hu2xv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -3986,7 +3991,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4009,7 +4014,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4032,7 +4037,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4055,7 +4060,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4078,7 +4083,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4101,7 +4106,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4124,7 +4129,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4147,7 +4152,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4170,7 +4175,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4193,7 +4198,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4216,7 +4221,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4239,7 +4244,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4262,7 +4267,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4285,7 +4290,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4308,7 +4313,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4331,7 +4336,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4354,7 +4359,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4377,7 +4382,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4400,7 +4405,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4423,7 +4428,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4446,7 +4451,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4469,7 +4474,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4492,7 +4497,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4515,7 +4520,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4538,7 +4543,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4561,7 +4566,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4584,7 +4589,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4607,7 +4612,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4630,7 +4635,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4653,7 +4658,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4676,7 +4681,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4699,7 +4704,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4722,7 +4727,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4745,7 +4750,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4768,7 +4773,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4791,7 +4796,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-11"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4814,7 +4819,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4837,7 +4842,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4860,7 +4865,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4883,7 +4888,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4906,7 +4911,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4929,7 +4934,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4952,7 +4957,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4975,7 +4980,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -4998,7 +5003,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5021,7 +5026,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5044,7 +5049,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-51"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5067,7 +5072,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5090,7 +5095,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5113,7 +5118,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5136,7 +5141,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5159,7 +5164,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5182,7 +5187,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5205,7 +5210,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5228,7 +5233,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5251,7 +5256,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5274,7 +5279,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5297,7 +5302,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5320,7 +5325,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5343,7 +5348,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5366,7 +5371,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5389,7 +5394,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-03"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5412,7 +5417,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5435,7 +5440,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5458,7 +5463,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5481,7 +5486,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5504,7 +5509,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5527,7 +5532,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5550,7 +5555,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-59"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5573,7 +5578,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-07"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-07/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5596,7 +5601,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5619,7 +5624,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5642,7 +5647,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5665,7 +5670,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5688,7 +5693,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5711,7 +5716,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5734,7 +5739,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5757,7 +5762,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5780,7 +5785,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-55"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5803,7 +5808,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-15"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5826,7 +5831,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5849,7 +5854,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5872,7 +5877,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5895,7 +5900,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5918,7 +5923,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5941,7 +5946,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5964,7 +5969,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -5987,7 +5992,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6010,7 +6015,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6033,7 +6038,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6056,7 +6061,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6079,7 +6084,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6102,7 +6107,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-47"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6125,7 +6130,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-19"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6148,7 +6153,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6171,7 +6176,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6194,7 +6199,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6217,7 +6222,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6240,7 +6245,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6263,7 +6268,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6286,7 +6291,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6309,7 +6314,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6332,7 +6337,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6355,7 +6360,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6378,7 +6383,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6401,7 +6406,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6424,7 +6429,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6447,7 +6452,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6470,7 +6475,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-23"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6493,7 +6498,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6516,7 +6521,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6539,7 +6544,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6562,7 +6567,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6585,7 +6590,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6608,7 +6613,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6631,7 +6636,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6654,7 +6659,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6677,7 +6682,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6700,7 +6705,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6723,7 +6728,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6746,7 +6751,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6769,7 +6774,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6792,7 +6797,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6815,7 +6820,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-27"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6838,7 +6843,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6861,7 +6866,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6884,7 +6889,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6907,7 +6912,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6930,7 +6935,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6953,7 +6958,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6976,7 +6981,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -6999,7 +7004,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7022,7 +7027,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7045,7 +7050,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7068,7 +7073,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7091,7 +7096,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7114,7 +7119,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7137,7 +7142,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7160,7 +7165,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-31"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7183,7 +7188,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7206,7 +7211,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7229,7 +7234,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7252,7 +7257,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7275,7 +7280,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7298,7 +7303,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7321,7 +7326,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7344,7 +7349,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7367,7 +7372,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7390,7 +7395,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7413,7 +7418,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7436,7 +7441,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7459,7 +7464,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7482,7 +7487,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7505,7 +7510,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-35"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7528,7 +7533,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7551,7 +7556,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7574,7 +7579,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7597,7 +7602,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7620,7 +7625,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7643,7 +7648,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7666,7 +7671,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7689,7 +7694,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7712,7 +7717,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7735,7 +7740,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7758,7 +7763,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7781,7 +7786,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7804,7 +7809,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7827,7 +7832,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7850,7 +7855,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-43"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7873,7 +7878,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/02-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7896,7 +7901,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/06-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7919,7 +7924,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/10-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7942,7 +7947,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/14-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7965,7 +7970,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/18-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -7988,7 +7993,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/22-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8011,7 +8016,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/26-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8034,7 +8039,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/30-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8057,7 +8062,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/34-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8080,7 +8085,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/38-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8103,7 +8108,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/42-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8126,7 +8131,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/46-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8149,7 +8154,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/50-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8172,7 +8177,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/54-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8195,7 +8200,7 @@ outline_size = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39"]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
-script = ExtResource("21_er0jj")
+script = ExtResource("19_0h7da")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Rod Selectors/58-39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -9009,6 +9014,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
 shape = SubResource("BoxShape3D_w8lsb")
 
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Control Room Panels/Main Panel Center/Controls/scram_reset_b"]
+
 [node name="scram_reset_d" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls"]
 transform = Transform3D(-0.599995, 3.91863e-05, -0.00237317, -3.59267e-05, -0.599999, -0.000862777, -0.00237324, -0.000862658, 0.599995, 0.0619922, -0.221266, -0.66863)
 size = Vector3(0.0356622, 0.1, 0.1)
@@ -9259,7 +9266,7 @@ max_distance = 22.0
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.992807, 0.531463, -2.41088)
 size = Vector3(0.0290964, 0.24579, 0.269943)
 material = ExtResource("5_0qdm2")
-script = ExtResource("34_1sml7")
+script = ExtResource("35_4v6vf")
 
 [node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Rod Position Monitors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00199997, -0.00891972)
@@ -11743,7 +11750,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.915, 0.708, -2.4)
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0.0677881, 0.0627756, -0.632363)
 size = Vector3(0.043, 0.254, 0.323881)
 material = ExtResource("33_11pre")
-script = ExtResource("37_c3x1v")
+script = ExtResource("38_pb5xi")
 
 [node name="Indicators" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.0134407, -0.0651555)
@@ -11851,7 +11858,7 @@ line_spacing = -4.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT"]
 transform = Transform3D(1, 0, 0, -3.90799e-14, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("38_kxga0")
+script = ExtResource("39_u2a68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/OUT_OF_SEQ_SYS_INIT/StaticBody3D"]
 transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.00264883, 4.76837e-07)
@@ -11945,7 +11952,7 @@ line_spacing = -8.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT"]
 transform = Transform3D(1, 0, 0, -1.77636e-14, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("38_kxga0")
+script = ExtResource("39_u2a68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/ROD_TEST_SELECT/StaticBody3D"]
 transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.00264883, 4.76837e-07)
@@ -11956,7 +11963,7 @@ transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.6
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC"]
 transform = Transform3D(1, 0, 0, -1.77636e-14, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("38_kxga0")
+script = ExtResource("39_u2a68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/SYSTEM_DIAGNOSTIC/StaticBody3D"]
 transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.00264883, 4.76837e-07)
@@ -11983,7 +11990,7 @@ transform = Transform3D(-2.84124e-08, 0.65, 0, -0.65, -2.84124e-08, 0, 0, 0, 0.6
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM"]
 transform = Transform3D(1, 0, 0, -1.42109e-14, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("38_kxga0")
+script = ExtResource("39_u2a68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Indicators/RWM_COMP_PROGRAM/StaticBody3D"]
 transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 0, 0, 0, 1, 0.00720239, 0.00264883, 4.76837e-07)
@@ -12087,7 +12094,7 @@ size = Vector3(0.0223884, 0.0381755, 0.0100176)
 material = ExtResource("22_3oqyh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
-script = ExtResource("40_x7o7m")
+script = ExtResource("41_0u3fv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205894, -0.00141048, -0.0218034)
@@ -12095,7 +12102,7 @@ shape = SubResource("BoxShape3D_prwpi")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0402584)
-script = ExtResource("40_x7o7m")
+script = ExtResource("41_0u3fv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control Room Panels/Main Panel Center/Meters/RWM Box/Parts/Bypass/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205894, -0.00141048, -0.0218034)
@@ -12371,7 +12378,7 @@ line_spacing = -4.0
 
 [node name="LPRM Meters" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.0960274, -0.186353, -0.043231)
-script = ExtResource("41_dwscw")
+script = ExtResource("42_qr3h0")
 
 [node name="LPRM 1 D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/LPRM Meters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00340366, 0.10083, 0.384001)
@@ -13437,7 +13444,7 @@ outline_size = 0
 line_spacing = -2.0
 
 [node name="Chart Recorder (TODO)" parent="Control Room Panels/Main Panel Center/Meters" instance=ExtResource("47_rhokq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.0707579, -0.389267, -0.0121298)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073751, -0.383233, -0.0121293)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
@@ -13448,6 +13455,7 @@ autoplay = true
 max_distance = 5.0
 
 [node name="reference diagrams" type="Node3D" parent="Control Room Panels/Main Panel Center"]
+visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/reference diagrams"]
 transform = Transform3D(-5.96046e-08, 0, 1.015, 0, 1.015, 0, -1.015, 0, -5.96046e-08, 0.999, 0.948, -2.296)
@@ -13593,6 +13601,24 @@ material = ExtResource("35_r1uh5")
 transform = Transform3D(-0.000325181, -0.195946, 0.980615, -6.48797e-05, 0.980616, 0.195946, -1, 5.96046e-08, -0.000331581, -1.2535, -0.369049, -3.58436)
 size = Vector3(1.45098, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center"]
+transform = Transform3D(0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0, 1, 1.11744, 1.87656, -2.405)
+size = Vector3(0.0244642, 0.622, 1.07291)
+material = ExtResource("35_r1uh5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Control Room Panels/Main Panel Center/CSGBox3D"]
+transform = Transform3D(0, -5.96046e-08, 1, 1.49012e-08, 1, 4.47035e-08, -1, 0, -8.9407e-08, 0.0127416, 8.34465e-07, 7.15256e-07)
+sorting_offset = 20.0
+pixel_size = 0.0009
+texture = SubResource("ViewportTexture_u77wx")
+
+[node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D"]
+own_world_3d = true
+size = Vector2i(1152, 648)
+
+[node name="Reactor Display" parent="Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D/SubViewport" instance=ExtResource("50_60hfa")]
+script = ExtResource("51_3qadj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.42865, 1.195, 17.6971)
@@ -14161,3 +14187,5 @@ autostart = true
 [connection signal="input_event" from="Control Room Panels/CSGBox3D/Switches/control_room_emergency_lighting/StaticBody3D2" to="Control Room Panels/CSGBox3D/Switches/control_room_emergency_lighting/StaticBody3D" method="breaker_switch_position_down"]
 [connection signal="timeout" from="Main Loop Timer" to="." method="main_loop_timer_expire"]
 [connection signal="timeout" from="Main Loop Timer Fast" to="." method="main_loop_timer_fast_expire"]
+
+[editable path="Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D/SubViewport/Reactor Display"]

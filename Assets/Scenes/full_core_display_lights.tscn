@@ -1,6 +1,7 @@
 [gd_scene load_steps=1457 format=3 uid="uid://dyk86rtadlnxg"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Rod Control/Full Core Display.gd" id="1_j5htc"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Rod Control/Full Core Display.gd" id="1_j5htc"]
+
 
 [sub_resource type="GDScript" id="GDScript_fgurm"]
 
