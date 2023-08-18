@@ -106,7 +106,7 @@ horizontal_alignment = 1
 offset_top = 237.0
 offset_right = 345.0
 offset_bottom = 280.0
-text = "MWTH"
+text = "PSIG"
 label_settings = SubResource("LabelSettings_riidi")
 horizontal_alignment = 1
 
