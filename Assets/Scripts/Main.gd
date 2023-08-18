@@ -109,6 +109,25 @@ var intermidiate_range_monitors = {
 	"B2": $"Control Room Panels/Main Panel Center/Controls/SCRAM 2/switches/B2/CSGCylinder3D/Node3D/CSGCylinder3D3".get_material(),
 }	
 
+var chart_recorders = {
+	"srm_chart_recorder": {
+		"values": {
+			1: {
+				"name": "SRM Channel 1",
+				"color": Color(1, 0, 0),
+				"unit": "CPS",
+				"value": 0,
+			},
+			2: {
+				"name": "SRM Channel 2",
+				"color": Color(0, 0, 1),
+				"unit": "CPS",
+				"value": 0,
+			},
+		},
+	},
+}
+
 func generate_control_rods():
 	var x = 18
 	var y = 59

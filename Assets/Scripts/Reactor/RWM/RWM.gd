@@ -234,7 +234,6 @@ func calculate_data():
 	current_group = latched_group
 	
 	# calculate errors
-	# TODO: fix
 	insert_errors = {}
 	withdraw_errors = {}
 	for group_number in groups["sequence_a"]:

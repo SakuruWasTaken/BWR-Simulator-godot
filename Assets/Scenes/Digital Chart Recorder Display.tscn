@@ -52,12 +52,12 @@ font = ExtResource("1_4dmdk")
 font_size = 34
 font_color = Color(0, 0, 1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_l0ywb"]
+[sub_resource type="LabelSettings" id="LabelSettings_vann2"]
 font = ExtResource("1_4dmdk")
 font_size = 34
 font_color = Color(0, 0, 1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_vann2"]
+[sub_resource type="LabelSettings" id="LabelSettings_l0ywb"]
 font = ExtResource("1_4dmdk")
 font_size = 34
 font_color = Color(0, 0, 1, 1)
@@ -88,22 +88,22 @@ label_settings = SubResource("LabelSettings_ch202")
 [node name="Page Values 1" type="Node2D" parent="."]
 visible = false
 
-[node name="Value 1" type="Node2D" parent="Page Values 1"]
+[node name="1" type="Node2D" parent="Page Values 1"]
 position = Vector2(0, 48)
 
-[node name="Background" type="ColorRect" parent="Page Values 1/Value 1"]
+[node name="Background" type="ColorRect" parent="Page Values 1/1"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 1/Value 1"]
+[node name="Value Name" type="Label" parent="Page Values 1/1"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "1 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 1/Value 1"]
+[node name="Unit" type="Label" parent="Page Values 1/1"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -112,7 +112,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 1/Value 1"]
+[node name="Value" type="Label" parent="Page Values 1/1"]
 offset_top = -15.0
 offset_right = 320.0
 offset_bottom = 92.0
@@ -120,29 +120,30 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_2vj27")
 horizontal_alignment = 2
 
-[node name="Background3" type="ColorRect" parent="Page Values 1/Value 1"]
+[node name="Background3" type="ColorRect" parent="Page Values 1/1"]
 offset_top = 85.0
 offset_right = 320.0
 offset_bottom = 192.0
 
 [node name="Page Values 2" type="Node2D" parent="."]
+visible = false
 
-[node name="Value 1" type="Node2D" parent="Page Values 2"]
+[node name="1" type="Node2D" parent="Page Values 2"]
 position = Vector2(0, 48)
 
-[node name="Background" type="ColorRect" parent="Page Values 2/Value 1"]
+[node name="Background" type="ColorRect" parent="Page Values 2/1"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 2/Value 1"]
+[node name="Value Name" type="Label" parent="Page Values 2/1"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "1 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 2/Value 1"]
+[node name="Unit" type="Label" parent="Page Values 2/1"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -151,7 +152,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 2/Value 1"]
+[node name="Value" type="Label" parent="Page Values 2/1"]
 offset_top = -15.0
 offset_right = 320.0
 offset_bottom = 92.0
@@ -159,22 +160,22 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_i3lsh")
 horizontal_alignment = 2
 
-[node name="Value 2" type="Node2D" parent="Page Values 2"]
+[node name="2" type="Node2D" parent="Page Values 2"]
 position = Vector2(0, 157)
 
-[node name="Background3" type="ColorRect" parent="Page Values 2/Value 2"]
+[node name="Background3" type="ColorRect" parent="Page Values 2/2"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 2/Value 2"]
+[node name="Value Name" type="Label" parent="Page Values 2/2"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "2 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 2/Value 2"]
+[node name="Unit" type="Label" parent="Page Values 2/2"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -183,7 +184,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 2/Value 2"]
+[node name="Value" type="Label" parent="Page Values 2/2"]
 offset_top = -15.0
 offset_right = 320.0
 offset_bottom = 92.0
@@ -194,22 +195,22 @@ horizontal_alignment = 2
 [node name="Page Values 3" type="Node2D" parent="."]
 visible = false
 
-[node name="Value 1" type="Node2D" parent="Page Values 3"]
+[node name="1" type="Node2D" parent="Page Values 3"]
 position = Vector2(0, 48)
 
-[node name="Background" type="ColorRect" parent="Page Values 3/Value 1"]
+[node name="Background" type="ColorRect" parent="Page Values 3/1"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 47.0
 
-[node name="Value Name" type="Label" parent="Page Values 3/Value 1"]
+[node name="Value Name" type="Label" parent="Page Values 3/1"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "1 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 3/Value 1"]
+[node name="Unit" type="Label" parent="Page Values 3/1"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -218,7 +219,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 3/Value 1"]
+[node name="Value" type="Label" parent="Page Values 3/1"]
 offset_top = -22.0
 offset_right = 320.0
 offset_bottom = 85.0
@@ -226,22 +227,22 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_ltcyt")
 horizontal_alignment = 2
 
-[node name="Value 2" type="Node2D" parent="Page Values 3"]
+[node name="2" type="Node2D" parent="Page Values 3"]
 position = Vector2(0, 120)
 
-[node name="Background" type="ColorRect" parent="Page Values 3/Value 2"]
+[node name="Background" type="ColorRect" parent="Page Values 3/2"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 47.0
 
-[node name="Value Name" type="Label" parent="Page Values 3/Value 2"]
+[node name="Value Name" type="Label" parent="Page Values 3/2"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "2 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 3/Value 2"]
+[node name="Unit" type="Label" parent="Page Values 3/2"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -250,7 +251,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 3/Value 2"]
+[node name="Value" type="Label" parent="Page Values 3/2"]
 offset_top = -22.0
 offset_right = 320.0
 offset_bottom = 85.0
@@ -258,22 +259,22 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_i122i")
 horizontal_alignment = 2
 
-[node name="Value 3" type="Node2D" parent="Page Values 3"]
+[node name="3" type="Node2D" parent="Page Values 3"]
 position = Vector2(0, 192)
 
-[node name="Background" type="ColorRect" parent="Page Values 3/Value 3"]
+[node name="Background" type="ColorRect" parent="Page Values 3/3"]
 offset_top = -24.0
 offset_right = 320.0
 offset_bottom = 48.0
 
-[node name="Value Name" type="Label" parent="Page Values 3/Value 3"]
+[node name="Value Name" type="Label" parent="Page Values 3/3"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "3 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 3/Value 3"]
+[node name="Unit" type="Label" parent="Page Values 3/3"]
 offset_left = 78.0
 offset_top = -25.0
 offset_right = 317.998
@@ -282,7 +283,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 3/Value 3"]
+[node name="Value" type="Label" parent="Page Values 3/3"]
 offset_top = -22.0
 offset_right = 320.0
 offset_bottom = 85.0
@@ -293,22 +294,22 @@ horizontal_alignment = 2
 [node name="Page Values 4" type="Node2D" parent="."]
 visible = false
 
-[node name="Value 1" type="Node2D" parent="Page Values 4"]
+[node name="1" type="Node2D" parent="Page Values 4"]
 position = Vector2(0, 48)
 
-[node name="Background" type="ColorRect" parent="Page Values 4/Value 1"]
+[node name="Background" type="ColorRect" parent="Page Values 4/1"]
 offset_top = -24.0
 offset_right = 159.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 4/Value 1"]
+[node name="Value Name" type="Label" parent="Page Values 4/1"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "1 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 4/Value 1"]
+[node name="Unit" type="Label" parent="Page Values 4/1"]
 offset_left = 1.0
 offset_top = 28.0
 offset_right = 157.0
@@ -317,7 +318,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 4/Value 1"]
+[node name="Value" type="Label" parent="Page Values 4/1"]
 offset_top = -11.0
 offset_right = 157.0
 offset_bottom = 92.0
@@ -325,22 +326,22 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_q2rny")
 horizontal_alignment = 2
 
-[node name="Value 2" type="Node2D" parent="Page Values 4"]
+[node name="2" type="Node2D" parent="Page Values 4"]
 position = Vector2(0, 157)
 
-[node name="Background" type="ColorRect" parent="Page Values 4/Value 2"]
+[node name="Background" type="ColorRect" parent="Page Values 4/2"]
 offset_top = -24.0
 offset_right = 159.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 4/Value 2"]
+[node name="Value Name" type="Label" parent="Page Values 4/2"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "2 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 4/Value 2"]
+[node name="Unit" type="Label" parent="Page Values 4/2"]
 offset_left = 1.0
 offset_top = 28.0
 offset_right = 157.0
@@ -349,7 +350,7 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 4/Value 2"]
+[node name="Value" type="Label" parent="Page Values 4/2"]
 offset_top = -11.0
 offset_right = 157.0
 offset_bottom = 92.0
@@ -357,54 +358,22 @@ text = "VALUE"
 label_settings = SubResource("LabelSettings_kaa5w")
 horizontal_alignment = 2
 
-[node name="Value 4" type="Node2D" parent="Page Values 4"]
-position = Vector2(161, 157)
-
-[node name="Background" type="ColorRect" parent="Page Values 4/Value 4"]
-offset_top = -24.0
-offset_right = 159.0
-offset_bottom = 83.0
-
-[node name="Value Name" type="Label" parent="Page Values 4/Value 4"]
-offset_top = -25.0
-offset_right = 228.0
-offset_bottom = 35.0
-text = "4 VALUE NAME"
-label_settings = SubResource("LabelSettings_kx76a")
-
-[node name="Unit" type="Label" parent="Page Values 4/Value 4"]
-offset_left = 1.0
-offset_top = 28.0
-offset_right = 157.0
-offset_bottom = 83.0
-text = "UNIT"
-label_settings = SubResource("LabelSettings_kx76a")
-horizontal_alignment = 2
-
-[node name="Value" type="Label" parent="Page Values 4/Value 4"]
-offset_top = -11.0
-offset_right = 157.0
-offset_bottom = 92.0
-text = "VALUE"
-label_settings = SubResource("LabelSettings_l0ywb")
-horizontal_alignment = 2
-
-[node name="Value 3" type="Node2D" parent="Page Values 4"]
+[node name="3" type="Node2D" parent="Page Values 4"]
 position = Vector2(161, 48)
 
-[node name="Background" type="ColorRect" parent="Page Values 4/Value 3"]
+[node name="Background" type="ColorRect" parent="Page Values 4/3"]
 offset_top = -24.0
 offset_right = 159.0
 offset_bottom = 83.0
 
-[node name="Value Name" type="Label" parent="Page Values 4/Value 3"]
+[node name="Value Name" type="Label" parent="Page Values 4/3"]
 offset_top = -25.0
 offset_right = 228.0
 offset_bottom = 35.0
 text = "3 VALUE NAME"
 label_settings = SubResource("LabelSettings_kx76a")
 
-[node name="Unit" type="Label" parent="Page Values 4/Value 3"]
+[node name="Unit" type="Label" parent="Page Values 4/3"]
 offset_left = 1.0
 offset_top = 28.0
 offset_right = 157.0
@@ -413,10 +382,42 @@ text = "UNIT"
 label_settings = SubResource("LabelSettings_kx76a")
 horizontal_alignment = 2
 
-[node name="Value" type="Label" parent="Page Values 4/Value 3"]
+[node name="Value" type="Label" parent="Page Values 4/3"]
 offset_top = -11.0
 offset_right = 157.0
 offset_bottom = 92.0
 text = "VALUE"
 label_settings = SubResource("LabelSettings_vann2")
+horizontal_alignment = 2
+
+[node name="4" type="Node2D" parent="Page Values 4"]
+position = Vector2(161, 157)
+
+[node name="Background" type="ColorRect" parent="Page Values 4/4"]
+offset_top = -24.0
+offset_right = 159.0
+offset_bottom = 83.0
+
+[node name="Value Name" type="Label" parent="Page Values 4/4"]
+offset_top = -25.0
+offset_right = 228.0
+offset_bottom = 35.0
+text = "4 VALUE NAME"
+label_settings = SubResource("LabelSettings_kx76a")
+
+[node name="Unit" type="Label" parent="Page Values 4/4"]
+offset_left = 1.0
+offset_top = 28.0
+offset_right = 157.0
+offset_bottom = 83.0
+text = "UNIT"
+label_settings = SubResource("LabelSettings_kx76a")
+horizontal_alignment = 2
+
+[node name="Value" type="Label" parent="Page Values 4/4"]
+offset_top = -11.0
+offset_right = 157.0
+offset_bottom = 92.0
+text = "VALUE"
+label_settings = SubResource("LabelSettings_l0ywb")
 horizontal_alignment = 2
