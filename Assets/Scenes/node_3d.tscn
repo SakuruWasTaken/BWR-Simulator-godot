@@ -13652,8 +13652,8 @@ pixel_size = 0.0009
 texture = SubResource("ViewportTexture_u77wx")
 
 [node name="SubViewport" type="SubViewport" parent="Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D"]
-own_world_3d = true
 size = Vector2i(1152, 648)
+render_target_update_mode = 3
 
 [node name="Reactor Display" parent="Control Room Panels/Main Panel Center/CSGBox3D/Sprite3D/SubViewport" instance=ExtResource("50_60hfa")]
 script = ExtResource("51_3qadj")
