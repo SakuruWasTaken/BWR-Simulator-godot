@@ -126,7 +126,6 @@ offset_right = 320.0
 offset_bottom = 192.0
 
 [node name="Page Values 2" type="Node2D" parent="."]
-visible = false
 
 [node name="Value 1" type="Node2D" parent="Page Values 2"]
 position = Vector2(0, 48)
@@ -292,6 +291,7 @@ label_settings = SubResource("LabelSettings_ulkow")
 horizontal_alignment = 2
 
 [node name="Page Values 4" type="Node2D" parent="."]
+visible = false
 
 [node name="Value 1" type="Node2D" parent="Page Values 4"]
 position = Vector2(0, 48)

@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://llinshv0wouk"]
+
+[ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="1_dl7u5"]
+[ext_resource type="Material" uid="uid://c1j8toxlvfuds" path="res://Assets/Materials/black plastic 2.tres" id="2_bvks0"]
+[ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="3_sk7kt"]
+[ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Selector Switch.gd" id="4_flmvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67pb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8lsb"]
+size = Vector3(0.0715077, 0.0977977, 0.0507525)
+
+[node name="Switch" type="CSGBox3D"]
+transform = Transform3D(0.600002, 0, 0, 0, 0.600002, 0, 0, 0, 0.6, -4.76837e-07, 0.00028801, 0.000255585)
+size = Vector3(0.0356622, 0.1, 0.1)
+material = ExtResource("1_dl7u5")
+
+[node name="Handle" type="Node3D" parent="."]
+transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0, 1, 0.0584449, 2.38419e-06, -2.38419e-07)
+flip_faces = true
+radius = 0.00824928
+height = 0.084
+sides = 12
+material = ExtResource("2_bvks0")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0588125, 1.43051e-06, -4.76837e-07)
+radius = 0.014
+height = 0.084
+sides = 12
+material = ExtResource("2_bvks0")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Handle/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000374436, 9.53674e-07)
+flip_faces = true
+radius = 0.00781379
+height = 0.084
+sides = 12
+material = ExtResource("2_bvks0")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Handle"]
+transform = Transform3D(-4.47035e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.0218214, 1.43051e-06, -7.15256e-07)
+radius = 0.00888454
+height = 0.00273183
+sides = 12
+material = ExtResource("2_bvks0")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Handle"]
+transform = Transform3D(1, 0, 0, 1.49012e-08, 1, 0, 0, 0, 1, -1.47223e-05, 0.00403357, 0.0100591)
+polygon = PackedVector2Array(0.100728, -0.013248, 0.101953, -0.0752368, 0.0894667, -0.0741262, 0.0809256, -0.0633183, 0.0809014, -0.051302, 0.0866342, -0.0240092, 0.0870524, -0.012404)
+depth = 0.02
+material = ExtResource("2_bvks0")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Handle"]
+transform = Transform3D(-4.47035e-08, 2.23517e-07, 1.07, 0, 1.07, -3.72529e-08, -1.07, 0, -4.47035e-08, 0.021, 0.0469999, 0.101565)
+polygon = PackedVector2Array(0.108744, -0.0443115, 0.10631, -0.0371923, 0.0960698, -0.0126681, 0.0949333, -0.0117164, 0.0936432, -0.0129657, 0.0838408, -0.0366397, 0.081579, -0.0429978, 0.0833914, -0.051281, 0.0878973, -0.0555415, 0.0936937, -0.0579047, 0.101825, -0.0562472, 0.106539, -0.0519843)
+depth = 0.01
+material = SubResource("StandardMaterial3D_67pb6")
+
+[node name="Labels" type="Node3D" parent="."]
+transform = Transform3D(1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0, 1, 0.00800097, -0.00599575, 9.53674e-07)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Labels"]
+transform = Transform3D(-2.23517e-08, -0.999997, 0, 0.923878, -2.23517e-08, 0.382683, -0.382683, 2.23517e-08, 0.923879, 0.00507504, 0.00599289, -4.81606e-05)
+radius = 0.045
+height = 0.01
+material = ExtResource("2_bvks0")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Labels"]
+transform = Transform3D(7.45058e-09, -0.999997, -1.49012e-08, 0.923878, 3.72529e-08, 0.382683, -0.382683, 1.49012e-08, 0.923879, 0.00512251, 0.00599861, -2.38419e-07)
+sorting_offset = 10.0
+radius = 0.036
+height = 0.01
+material = ExtResource("1_dl7u5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_sk7kt")
+volume_db = -18.0
+max_db = 6.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+script = ExtResource("4_flmvq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[connection signal="input_event" from="StaticBody3D" to="StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="StaticBody3D2" to="StaticBody3D" method="breaker_switch_position_down"]

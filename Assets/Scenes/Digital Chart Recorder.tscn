@@ -77,3 +77,5 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0090
 polygon = PackedVector2Array(0.00465012, -0.00349331, 0.006, 0.005, -0.00141954, 0.00531244, -0.00118351, -0.0138183)
 depth = 0.1
 material = ExtResource("1_0ifk6")
+
+[editable path="Display/Sprite3D/SubViewport/Node2D"]

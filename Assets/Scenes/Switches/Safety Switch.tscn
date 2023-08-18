@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgyrptpdci517"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqvlnfeou3oru" path="res://Assets/Models/Safety Switch/base_part2.obj" id="1_pf2t3"]
+[ext_resource type="Material" uid="uid://dqms4q6oxflb7" path="res://Assets/Materials/silver metal 2.tres" id="2_jt2hi"]
+[ext_resource type="Material" uid="uid://c2raag84b6lqd" path="res://Assets/Materials/black metal.tres" id="3_u2m0k"]
+[ext_resource type="ArrayMesh" uid="uid://b55xd3je1q51g" path="res://Assets/Models/Safety Switch/base_part1.obj" id="4_esgms"]
+[ext_resource type="ArrayMesh" uid="uid://blbvk0qsa22vh" path="res://Assets/Models/Safety Switch/rotate_part.obj" id="5_3htdu"]
+[ext_resource type="AudioStream" uid="uid://b2n7at8y2c08j" path="res://Assets/Audio/breaker_switch.mp3" id="6_7fhbd"]
+[ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Selector Switch.gd" id="7_pdvvg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8lsb"]
+size = Vector3(0.0715077, 0.0977977, 0.0507525)
+
+[node name="Switch" type="Node3D"]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.0784044, -0.520271, 0.0521574)
+
+[node name="Label" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.31323e-10, 0.05, 7.45058e-09, 0.05, -4.65661e-09, -3.72529e-09, -9.31323e-09, 8.84756e-09, -0.05, 0.0352882, -1.90735e-06, -4.76837e-07)
+mesh = ExtResource("1_pf2t3")
+material = ExtResource("2_jt2hi")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Label"]
+transform = Transform3D(1, -4.02331e-07, -5.96046e-08, 5.96046e-08, 1, 1.49012e-07, -3.55271e-15, 0, 0.999998, 0.976006, -0.493317, 1.52588e-05)
+size = Vector3(0.372571, 0.002, 1.77257)
+material = ExtResource("3_u2m0k")
+
+[node name="Base" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.65661e-10, 0.05, 7.45058e-09, 0.05, -3.72529e-09, -3.72529e-09, -1.11759e-08, 8.84756e-09, -0.05, 0.0352881, -9.53674e-07, 0)
+mesh = ExtResource("4_esgms")
+material = ExtResource("2_jt2hi")
+
+[node name="Handle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81198e-05, -1.19209e-07, 0)
+
+[node name="Mesh" type="CSGMesh3D" parent="Handle"]
+transform = Transform3D(2.32831e-09, 0.05, 7.45058e-09, 0.05, -2.79397e-09, -1.86265e-09, -1.86265e-09, 7.45058e-09, -0.05, 0.0352884, 0, 9.53674e-07)
+mesh = ExtResource("5_3htdu")
+material = ExtResource("2_jt2hi")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Handle/Mesh"]
+transform = Transform3D(1, -8.19564e-08, 0, 0, 1, 4.47035e-08, 2.38419e-07, -7.45058e-08, 1, 0, -0.0723038, 0)
+inner_radius = 0.505
+outer_radius = 0.565
+sides = 24
+ring_sides = 3
+material = ExtResource("3_u2m0k")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Handle/Mesh"]
+transform = Transform3D(1, 0, -2.23517e-08, 0, -5.21541e-08, 1, 2.38419e-07, -1, -1.2666e-07, -0.345642, 0.14517, 0.0538177)
+polygon = PackedVector2Array(0, 0.079, 0.55, 0.079, 0.55, 0.15, 0.75, 0.055, 0.55, -0.05, 0.55, 0.02, 0, 0.02)
+depth = 0.05
+material = ExtResource("3_u2m0k")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_7fhbd")
+volume_db = -18.0
+max_db = 6.0
+max_distance = 10.0
+attenuation_filter_cutoff_hz = 15000.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+script = ExtResource("7_pdvvg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)
+shape = SubResource("BoxShape3D_w8lsb")
+
+[connection signal="input_event" from="StaticBody3D" to="StaticBody3D" method="breaker_switch_position_up"]
+[connection signal="input_event" from="StaticBody3D2" to="StaticBody3D" method="breaker_switch_position_down"]

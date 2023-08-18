@@ -4,8 +4,8 @@ extends StaticBody3D
 
 func control_room_emergency_lighting_switch(position, _name):
 	var lights_on = position in [1, 2]
-	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
-	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
+	var on_light_material = $"../../Lights/On/CSGSphere3D".get_material()
+	var off_light_material = $"../../Lights/Off/CSGSphere3D".get_material()
 	
 	for node in $"/root/Node3d/Control Room Lights/emergency".get_children():
 		node.light_energy = 0.3 if lights_on else 0.0
@@ -16,8 +16,8 @@ func control_room_emergency_lighting_switch(position, _name):
 
 func control_room_normal_lighting_switch(position, _name):
 	var lights_on = position in [1, 2]
-	var on_light_material = $"../Lights/On/CSGSphere3D".get_material()
-	var off_light_material = $"../Lights/Off/CSGSphere3D".get_material()
+	var on_light_material = $"../../Lights/On/CSGSphere3D".get_material()
+	var off_light_material = $"../../Lights/Off/CSGSphere3D".get_material()
 	for node in $"/root/Node3d/Control Room Lights/normal".get_children():
 		node.light_energy = 0.712 if lights_on else 0.0
 		for child_node in node.get_children():
@@ -58,6 +58,9 @@ func scram_reset(position, name):
 		if breakers[name].secondary in node3d.scram_breakers:
 			node3d.scram_breakers[breakers[name].main] = node3d.scram_breakers[breakers[name].secondary]
 
+func srm_channel_select(position, name):
+	pass
+	
 var switches = {
 	"control_room_emergency_lighting": {
 		"func": "control_room_emergency_lighting_switch",
@@ -116,17 +119,37 @@ var switches = {
 		"position": 0,
 		"momentary": false,
 	},
+	"srm_channel_select_a": {
+		"func": "srm_channel_select",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 2,
+		"momentary": false,
+	},
+	"srm_channel_select_b": {
+		"func": "srm_channel_select",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
 }
 @onready var node_3d = $"/root/Node3d"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _ready():
+	var name = get_parent().get_parent().name
+	$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
 
 func breaker_switch_position_up(_camera, event, _position, _normal, _shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
-		var name = get_parent().name
+		var name = get_parent().get_parent().name
 		if mouse_click.pressed:
 			if switches[name]["position"] + 1 in switches[name]["positions"]:
 				switches[name]["position"] += 1
@@ -144,7 +167,7 @@ func breaker_switch_position_up(_camera, event, _position, _normal, _shape_idx):
 func breaker_switch_position_down(_camera, event, _position, _normal, _shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
-		var name = get_parent().name
+		var name = get_parent().get_parent().name
 		if mouse_click.pressed:
 			if switches[name]["position"] - 1 in switches[name]["positions"]:
 				switches[name]["position"] -= 1
