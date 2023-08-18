@@ -1,11 +1,8 @@
 extends Node3D
 
-var power = 100.00
-
-var thread
+var starting_rwm_group = 1
 
 var selected_cr = "02-19"
-# TODO: 185 rods
 var control_rods = {}
 var moving_rods = []
 var cr_direction = cr_directions.NOT_MOVING
@@ -14,8 +11,7 @@ var cr_target_insertion = 0
 var cr_previous_insertion = 0
 var cr_drift_test = false
 var scram_timer = -1
-var all_rods_in = false
-var accum_trouble_ack = true
+var scram_all_rods_in = false
 
 
 # TODO: add enums for the block reason
@@ -164,13 +160,12 @@ func generate_control_rods():
 				var full_in_material = full_in_node.get_material()
 				var drift_node = get_node("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/DRIFT" % rod_number)
 				var drift_material = drift_node.get_material()
-				
-				
 
 				control_rods[rod_number] = {
 						"cr_insertion": 0.00,
 						"cr_scram": false,
 						"cr_accum_trouble": false,
+						"cr_accum_trouble_acknowledged": true,
 						"cr_drift_alarm": false,
 						# simulates the effect of some rods being slightly faster or slower than others
 						"cr_scram_insertion_speed": randf_range(2.15, 2.31),
@@ -245,9 +240,17 @@ func _ready():
 		}
 		lprm_number += 1
 	generate_control_rods()
-	
+	for group_number in $"Control Room Panels/Main Panel Center/Meters/RWM Box".groups["sequence_a"]:
+		if group_number >= starting_rwm_group:
+			break
+		var group_info = $"Control Room Panels/Main Panel Center/Meters/RWM Box".groups["sequence_a"][group_number]
+		for rod_number in $"Control Room Panels/Main Panel Center/Meters/RWM Box".group_rods["sequence_a"][group_info["rod_group"]]:
+			if "|" in rod_number:
+				rod_number = rod_number.split("|")[0]
+			control_rods[rod_number]["cr_insertion"] = float(group_info["max_position"])
+
 #Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#print(Engine.get_frames_per_second())
 	pass
 
@@ -256,7 +259,17 @@ func open_scram_breakers(reason):
 	scram_breakers["A2"] = reason
 	scram_breakers["B1"] = reason
 	scram_breakers["B2"] = reason
-	
+
+func reset_scram():
+	if scram_active and scram_breakers == {}:
+		scram_all_rods_in = false
+		scram_active = false
+		scram_breakers = {}
+		scram_timer = -1
+		add_new_block("SCRAM","r_withdraw_block")
+		for rod_number in control_rods:
+			control_rods[rod_number].cr_scram = false
+
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
 	if reactor_mode == reactor_modes.SHUTDOWN and not reactor_mode_shutdown_bypass and not scram_active:
@@ -271,9 +284,9 @@ func main_loop_timer_expire():
 	
 	# apply rod withdraw blocks
 	if reactor_mode == reactor_modes.SHUTDOWN:
-		add_withdraw_block("Mode Switch in Shutdown")
+		add_new_block("Mode Switch in Shutdown","withdraw_block")
 	else:
-		remove_withdraw_block("Mode Switch in Shutdown")
+		add_new_block("Mode Switch in Shutdown","r_withdraw_block")
 		
 	var irm_downscale = false
 	for irm_number in intermidiate_range_monitors:
@@ -282,75 +295,90 @@ func main_loop_timer_expire():
 			break
 			
 	if irm_downscale:
-		add_withdraw_block("IRM Downscale")
+		add_new_block("IRM Downscale","withdraw_block")
 	else:
-		remove_withdraw_block("IRM Downscale")
+		add_new_block("IRM Downscale","r_withdraw_block")
 		
 	
 	for rod_number in control_rods:
 		var rod_info = control_rods[rod_number]
 		# detect rods in odd numbered positions (drifting)
-		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or cr_drift_test):
+		if int(rod_info["cr_insertion"]) % 2 == 1 and (rod_number not in moving_rods or (cr_drift_test or scram_active)):
 			control_rods[rod_number]["cr_drift_alarm"] = true
+			control_rods[rod_number]["cr_drift_alarm_acknowledged"] = false
+
+var last_tick_a1 = false
+var last_tick_a2 = false
+var last_tick_b1 = false
+var last_tick_b2 = false
 
 func main_loop_timer_fast_expire():
 	if scram_breakers != {}:
-		var scram_breakers_open = 0
-		if "A1" in scram_breakers or "A2" in scram_breakers:
-			scram_breakers_open += 1
-			if not "A1" in scram_breakers:
-				scram_breakers["A1"] = scram_breakers["A2"]
-			else:
-				scram_breakers["A2"] = scram_breakers["A1"]
-			if scram_breakers["A1"] == scram_types.MANUAL:
-				manual_scram_pb_materials["A1"].emission_enabled = true
-				manual_scram_pb_materials["A2"].emission_enabled = true
-				
-		if "B1" in scram_breakers or "B2" in scram_breakers:
-			scram_breakers_open += 1
-			if not "B1" in scram_breakers:
-				scram_breakers["B1"] = scram_breakers["B2"]
-			else:
-				scram_breakers["B2"] = scram_breakers["B1"]
-			if scram_breakers["B1"] == scram_types.MANUAL:
-				manual_scram_pb_materials["B1"].emission_enabled = true
-				manual_scram_pb_materials["B2"].emission_enabled = true
-			if scram_breakers_open == 2:
-				if not scram_active:
-					var set_scram_reset_light_on = false
-					scram(scram_types.MANUAL)
-					while scram_active == true:
-						if scram_timer >= 1:
-							scram_timer -= 1
-						elif set_scram_reset_light_on == false:
-							set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
-							# small optimisation so we're not constantly getting the material and causing a bunch of lag
-							set_scram_reset_light_on = true
-						await get_tree().create_timer(0.1).timeout
-
-# TODO: figure out a better way to do this so i don't have four functions all doing pretty much the same thing
-func add_withdraw_block(type):
-	if type not in rod_withdraw_block:
-		rod_withdraw_block.append(type)
-	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
-	
-func add_insert_block(type):
-	if type not in rod_insert_block:
-		rod_insert_block.append(type)
-	$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
-
-func remove_withdraw_block(type):
-	if type in rod_withdraw_block:
-		rod_withdraw_block.erase(type)
-	if rod_withdraw_block == []:
-		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
-	
-func remove_insert_block(type):
-	if type in rod_insert_block:
-		rod_insert_block.erase(type)
-	if rod_insert_block == []:
-		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
+		var rps_a_scram = "A1" in scram_breakers or "A2" in scram_breakers
+		var rps_b_scram = "B1" in scram_breakers or "B2" in scram_breakers
+		var full_scram = rps_a_scram and rps_b_scram
 		
+		if rps_a_scram:
+			if not "A1" in scram_breakers and scram_timer > 0 or not "A1" in scram_breakers and not last_tick_a2:
+				scram_breakers["A1"] = scram_breakers["A2"]
+			elif not "A2" in scram_breakers and scram_timer > 0 or not "A2" in scram_breakers and not last_tick_a1:
+				scram_breakers["A2"] = scram_breakers["A1"]
+		
+		if rps_b_scram:
+			if not "B1" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
+				scram_breakers["B1"] = scram_breakers["B2"]
+			elif not "B2" in scram_breakers and scram_timer > 0 or not "B1" in scram_breakers and not last_tick_b2:
+				scram_breakers["B2"] = scram_breakers["B1"]
+				
+
+		manual_scram_pb_materials["A1"].emission_enabled = false
+		manual_scram_pb_materials["A2"].emission_enabled = false
+		manual_scram_pb_materials["B1"].emission_enabled = false
+		manual_scram_pb_materials["B2"].emission_enabled = false
+		last_tick_a1 = "A1" in scram_breakers
+		last_tick_a2 = "A2" in scram_breakers
+		last_tick_b1 = "B1" in scram_breakers
+		last_tick_b2 = "B2" in scram_breakers
+		
+		for breaker in scram_breakers:
+			manual_scram_pb_materials[breaker].emission_enabled = true
+		
+		if full_scram:
+			if not scram_active:
+				scram(scram_types.MANUAL)
+				while scram_active == true:
+					if scram_timer >= 1:
+						scram_timer -= 1
+					await get_tree().create_timer(0.1).timeout
+		else:
+			scram_all_rods_in = false
+			scram_active = false
+			scram_timer = -1
+			add_new_block("SCRAM","r_withdraw_block")
+			for rod_number in control_rods:
+				control_rods[rod_number].cr_scram = false
+			
+func add_new_block(type,act):
+	if act == "withdraw_block":
+		if type not in rod_withdraw_block:
+			rod_withdraw_block.append(type)
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = true
+	elif act == "insert_block":
+		if type not in rod_insert_block:
+			rod_insert_block.append(type)
+		$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = true
+	elif act == "r_withdraw_block":
+		if type in rod_withdraw_block:
+			rod_withdraw_block.erase(type)
+		if rod_withdraw_block == []:
+			$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/WithdrawBlock_lt".get_material().emission_enabled = false
+	elif act == "r_insert_block":
+		if type in rod_insert_block:
+			rod_insert_block.erase(type)
+		if rod_insert_block == []:
+			$"Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/InsertBlock_lt".get_material().emission_enabled = false
+
+
 func calculate_vertical_scale_position(indicated_value, scale_max, meter_min_position = 0.071, meter_max_position = -0.071):
 	return clamp((((scale_max - indicated_value)/(scale_max/(meter_min_position*2))) - meter_min_position), meter_max_position, meter_min_position)
 
@@ -377,12 +405,12 @@ func change_selected_rod(rod):
 		set_object_emission("Control Room Panels/Main Panel Center/Full Core Display/full core display lights/%s/ROD_DRIFT_IND/ROD" % selected_cr, true if not $"Control Room Panels/Main Panel Center/Full Core Display/full core display lights".rpis_inop else false)
 		$"Control Room Panels/Main Panel Center/Rod Position Monitors".selected_rod_changed(selected_cr)
 
-func rod_selector_pressed(camera, event, position, normal, shape_idx, parent_object):
+func rod_selector_pressed(_camera, _event, _position, _normal, _shape_idx, parent_object):
 	change_selected_rod(parent_object.name)
 	
 func scram(type):
 	scram_type = type
-	add_withdraw_block("SCRAM")
+	add_new_block("SCRAM","withdraw_block")
 	var rods_in = 0
 	while rods_in < 185:
 		rods_in = 0
@@ -391,20 +419,18 @@ func scram(type):
 			var rod_info = control_rods[rod_number]
 			var cr_insertion = rod_info["cr_insertion"]
 			var cr_accum_trouble = rod_info["cr_accum_trouble"]
-			var cr_drift_alarm = rod_info["cr_drift_alarm"]
+			var cr_accum_trouble_acknowledged = rod_info["cr_accum_trouble_acknowledged"]
 
 			if scram_timer == -1:
 				scram_timer = 120
-			elif scram_timer == 110 and randi_range(1, 20) == 15 and cr_insertion != 0:
-				cr_drift_alarm = true
 			elif scram_timer < 106:
 				cr_accum_trouble = true
-				accum_trouble_ack = false
+				cr_accum_trouble_acknowledged = false
 			if cr_insertion != 0:
-				if cr_insertion != 0 and scram_timer < 114:
+				if scram_timer < 114:
 					if not rod_number in moving_rods:
 						moving_rods.append(rod_number)
-					# TODO: insertion time changes with RPV pressure
+					# TODO: insertion time changes with RPV pressure and CRD system/accumulator pressure
 					# the time from full out to full in is around ~2.6 seconds
 					cr_insertion -= rod_info["cr_scram_insertion_speed"]
 					if cr_insertion <= 0:
@@ -418,12 +444,10 @@ func scram(type):
 			control_rods[rod_number].cr_insertion=cr_insertion
 			control_rods[rod_number].cr_scram=true
 			control_rods[rod_number].cr_accum_trouble=cr_accum_trouble
-			control_rods[rod_number].cr_drift_alarm=cr_drift_alarm
+			control_rods[rod_number].cr_accum_trouble_acknowledged=cr_accum_trouble_acknowledged
 		await get_tree().create_timer(0.1).timeout
-	accum_trouble_ack = false
-	for rod_number in control_rods:
-		control_rods[rod_number].cr_accum_trouble = true
-	all_rods_in = true
+
+	scram_all_rods_in = true
 
 func withdraw_selected_cr():
 	if rod_withdraw_block != [] or cr_direction != 0:
@@ -431,7 +455,6 @@ func withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
 	cr_target_insertion = insertion + 2
 
 	# TODO: rod overtravel check
@@ -484,9 +507,6 @@ func withdraw_selected_cr():
 			insertion = cr_target_insertion
 		else:
 			insertion += 0.0064
-		if insertion == cr_target_insertion:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 		control_rods[rod].cr_insertion=insertion
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
@@ -503,7 +523,6 @@ func insert_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
 	cr_target_insertion = insertion - 2
 	
 	if int(insertion) <= 0:
@@ -544,9 +563,6 @@ func insert_selected_cr():
 		await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 		runs += 1
 		
-	if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-		$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
-
 	if not scram_active:
 		control_rods[rod].cr_insertion=cr_target_insertion
 		moving_rods.erase(rod)
@@ -560,7 +576,7 @@ func continuous_withdraw_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
+
 
 	# TODO: rod overtravel check
 	if int(insertion) >= 48:
@@ -596,9 +612,6 @@ func continuous_withdraw_selected_cr():
 		runs = 0
 		while runs < 14 and not self.scram_active: 
 			insertion += 0.1435
-			if insertion == cr_target_insertion:
-				if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-					$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			control_rods[rod].cr_insertion=insertion
 			await get_tree().create_timer(randf_range(0.090, 0.11)).timeout
 			runs += 1
@@ -606,8 +619,6 @@ func continuous_withdraw_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_withdraw_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.WITHDRAWING and cr_target_insertion != 48:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error[rod] = int(correct_insertion)
 			cr_target_insertion += 2
 		else:
 			break
@@ -640,8 +651,6 @@ func continuous_withdraw_selected_cr():
 	cr_direction = cr_directions.NOT_MOVING
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Settle_lt", false)
 	
-	#if rod_select_error:
-		#rod_withdraw_block.append({"type": "wdr_error", "rod": rod, "correct_position": int(self.previous_insertion)})
 		
 func continuous_insert_selected_cr():
 	if rod_insert_block != [] or cr_direction != 0:
@@ -649,7 +658,7 @@ func continuous_insert_selected_cr():
 
 	var rod = selected_cr
 	var insertion = control_rods[rod]["cr_insertion"]
-	var correct_insertion = insertion
+
 
 	# TODO: rod overtravel check
 	if int(insertion) <= 0:
@@ -676,8 +685,6 @@ func continuous_insert_selected_cr():
 		cr_previous_insertion = cr_target_insertion
 
 		if rod_insert_block == [] and not scram_active and cr_continuous_mode == cr_continuous_modes.INSERTING and cr_target_insertion != 0:
-			if $"Control Room Panels/Main Panel Center/Meters/RWM Box".select_error and not rod in $"Control Room Panels/Main Panel Center/Meters/RWM Box".withdraw_error:
-				$"Control Room Panels/Main Panel Center/Meters/RWM Box".insert_error[rod] = int(correct_insertion)
 			cr_target_insertion -= 2
 		else:
 			break
@@ -736,29 +743,6 @@ func rod_motion_button_pressed(parent, pressed):
 			continuous_insert_selected_cr()
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
-	elif parent.name == "Reset SCRAM":
-		if not scram_active:
-			scram_breakers = {}
-			manual_scram_pb_materials["B1"].emission_enabled = false
-			manual_scram_pb_materials["B2"].emission_enabled = false
-			manual_scram_pb_materials["A1"].emission_enabled = false
-			manual_scram_pb_materials["A2"].emission_enabled = false
-		if scram_active and self.scram_timer == 0 and pressed:
-			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
-			all_rods_in = false
-			scram_active = false
-			scram_timer = -1
-			scram_breakers = {}
-			manual_scram_pb_materials["B1"].emission_enabled = false
-			manual_scram_pb_materials["B2"].emission_enabled = false
-			manual_scram_pb_materials["A1"].emission_enabled = false
-			manual_scram_pb_materials["A2"].emission_enabled = false
-			for rod_number in control_rods:
-				control_rods[rod_number].cr_scram = false
-				control_rods[rod_number].cr_accum_trouble = false
-				accum_trouble_ack = true
-			remove_withdraw_block("SCRAM")
-		
 	elif parent.name == "DriftTest_pb":
 		cr_drift_test = pressed
 	elif parent.name == "DriftReset_pb":
@@ -766,6 +750,5 @@ func rod_motion_button_pressed(parent, pressed):
 			for rod_number in control_rods:
 				control_rods[rod_number]["cr_drift_alarm"] = false
 	elif parent.name == "AccumAck_pb":
-		accum_trouble_ack = true
-		
-		
+		for rod_number in control_rods:
+			control_rods[rod_number].cr_accum_trouble_acknowledged = true

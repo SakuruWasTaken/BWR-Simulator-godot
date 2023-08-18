@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1w47b"]
 [ext_resource type="Texture2D" uid="uid://bgt5enm00co77" path="res://Assets/Textures/gear-solid.svg" id="2_ey8iu"]
 [ext_resource type="Script" path="res://Scenes/Player/Overlay.gd" id="2_rao3u"]
-[ext_resource type="Script" path="res://Assets/Scripts/Settings Button.gd" id="3_6f2kk"]
+[ext_resource type="Script" path="res://Assets/Scripts/Misc/Switches/Settings Button.gd" id="4_biibc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emkox"]
 radius = 0.493347
@@ -36,13 +36,13 @@ mesh = SubResource("CapsuleMesh_6b3ky")
 [node name="Head" type="Node3D" parent="."]
 
 [node name="Camera3d" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0375881, 0.603194, -0.38563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603, -0.386)
 current = true
 near = 0.035
 far = 48.01
 
 [node name="RayCast3d" type="RayCast3D" parent="Head/Camera3d"]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -0.00588068, 0.463024)
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -0.00588065, 0.463024)
 target_position = Vector3(60, 0, 0)
 
 [node name="Overlay" type="Node2D" parent="Head/Camera3d"]
@@ -64,7 +64,7 @@ texture = ExtResource("2_ey8iu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Head/Camera3d/Overlay/Settings Button"]
 input_pickable = true
-script = ExtResource("3_6f2kk")
+script = ExtResource("4_biibc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Camera3d/Overlay/Settings Button/StaticBody2D"]
 shape = SubResource("RectangleShape2D_vhc38")

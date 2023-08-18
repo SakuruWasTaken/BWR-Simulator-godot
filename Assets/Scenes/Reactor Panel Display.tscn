@@ -1,0 +1,5928 @@
+[gd_scene load_steps=5 format=3 uid="uid://binlsswx01c43"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h587f"]
+font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_4aywf"]
+font_size = 102
+
+[sub_resource type="LabelSettings" id="LabelSettings_riidi"]
+font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_freb8"]
+font_size = 17
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.0431373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 636.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 697.0
+offset_top = 96.0
+offset_right = 704.0
+offset_bottom = 637.0
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 345.0
+offset_top = 100.0
+offset_right = 352.0
+offset_bottom = 641.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 103.0
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_top = 276.0
+offset_right = 697.0
+offset_bottom = 283.0
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_top = 456.0
+offset_right = 697.0
+offset_bottom = 463.0
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Main Parameters" type="Node2D" parent="UI"]
+
+[node name="Thermal Power" type="Node2D" parent="UI/Main Parameters"]
+
+[node name="Name" type="Label" parent="UI/Main Parameters/Thermal Power"]
+offset_left = 6.0
+offset_top = 103.0
+offset_right = 337.0
+offset_bottom = 133.0
+text = "THERMAL POWER"
+label_settings = SubResource("LabelSettings_h587f")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="UI/Main Parameters/Thermal Power"]
+offset_top = 113.0
+offset_right = 345.0
+offset_bottom = 277.0
+text = "0"
+label_settings = SubResource("LabelSettings_4aywf")
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="UI/Main Parameters/Thermal Power"]
+offset_top = 237.0
+offset_right = 345.0
+offset_bottom = 280.0
+text = "MWTH"
+label_settings = SubResource("LabelSettings_riidi")
+horizontal_alignment = 1
+
+[node name="RPV Pressure" type="Node2D" parent="UI/Main Parameters"]
+position = Vector2(0, 179)
+
+[node name="Name" type="Label" parent="UI/Main Parameters/RPV Pressure"]
+offset_left = 6.0
+offset_top = 103.0
+offset_right = 337.0
+offset_bottom = 133.0
+text = "RPV PRESSURE"
+label_settings = SubResource("LabelSettings_h587f")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="UI/Main Parameters/RPV Pressure"]
+offset_top = 113.0
+offset_right = 345.0
+offset_bottom = 277.0
+text = "0"
+label_settings = SubResource("LabelSettings_4aywf")
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="UI/Main Parameters/RPV Pressure"]
+offset_top = 237.0
+offset_right = 345.0
+offset_bottom = 280.0
+text = "MWTH"
+label_settings = SubResource("LabelSettings_riidi")
+horizontal_alignment = 1
+
+[node name="RPV Level" type="Node2D" parent="UI/Main Parameters"]
+position = Vector2(0, 359)
+
+[node name="Name" type="Label" parent="UI/Main Parameters/RPV Level"]
+offset_left = 6.0
+offset_top = 103.0
+offset_right = 337.0
+offset_bottom = 133.0
+text = "RPV LEVEL"
+label_settings = SubResource("LabelSettings_h587f")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="UI/Main Parameters/RPV Level"]
+offset_top = 113.0
+offset_right = 345.0
+offset_bottom = 277.0
+text = "197"
+label_settings = SubResource("LabelSettings_4aywf")
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="UI/Main Parameters/RPV Level"]
+offset_top = 237.0
+offset_right = 345.0
+offset_bottom = 280.0
+text = "IN"
+label_settings = SubResource("LabelSettings_riidi")
+horizontal_alignment = 1
+
+[node name="Generator Load" type="Node2D" parent="UI/Main Parameters"]
+position = Vector2(352, 0)
+
+[node name="Name" type="Label" parent="UI/Main Parameters/Generator Load"]
+offset_left = 6.0
+offset_top = 103.0
+offset_right = 337.0
+offset_bottom = 133.0
+text = "GENERATOR LOAD"
+label_settings = SubResource("LabelSettings_h587f")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="UI/Main Parameters/Generator Load"]
+offset_top = 113.0
+offset_right = 345.0
+offset_bottom = 277.0
+text = "0"
+label_settings = SubResource("LabelSettings_4aywf")
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="UI/Main Parameters/Generator Load"]
+offset_top = 237.0
+offset_right = 345.0
+offset_bottom = 280.0
+text = "MWE"
+label_settings = SubResource("LabelSettings_riidi")
+horizontal_alignment = 1
+
+[node name="Core Display" type="Node2D" parent="UI"]
+position = Vector2(1, -9)
+
+[node name="Labels" type="Node2D" parent="UI/Core Display"]
+
+[node name="Y" type="Node2D" parent="UI/Core Display/Labels"]
+
+[node name="59" type="Node2D" parent="UI/Core Display/Labels/Y"]
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/59"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/59"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "59"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="55" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 27)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/55"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/55"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "55"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="51" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 54)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/51"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/51"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "51"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="47" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 81)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/47"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/47"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "47"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="43" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 108)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/43"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/43"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "43"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="39" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 135)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/39"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/39"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "39"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="35" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 162)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/35"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/35"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "35"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="31" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 189)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/31"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/31"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "31"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="27" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 216)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/27"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/27"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "27"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="23" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 243)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/23"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/23"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "23"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="19" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 270)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/19"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/19"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "19"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="15" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 297)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/15"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/15"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "15"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="11" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 324)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/11"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/11"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "11"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="07" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 351)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/07"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/07"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "07"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="03" type="Node2D" parent="UI/Core Display/Labels/Y"]
+position = Vector2(0, 378)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/Y/03"]
+offset_left = 735.0
+offset_top = 127.0
+offset_right = 1147.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/Y/03"]
+offset_left = 700.0
+offset_top = 115.0
+offset_right = 740.0
+offset_bottom = 141.0
+text = "03"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Node2D" parent="UI/Core Display/Labels"]
+
+[node name="02" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(37, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/02"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/02"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "02"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="06" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(64, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/06"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/06"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "06"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="10" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(91, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/10"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/10"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "10"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="14" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(118, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/14"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/14"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "14"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="18" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(145, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/18"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/18"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "18"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="22" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(172, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/22"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/22"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "22"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="26" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(199, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/26"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/26"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "26"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="30" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(226, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/30"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/30"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "30"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="34" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(253, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/34"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/34"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "34"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="38" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(280, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/38"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/38"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "38"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="42" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(307, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/42"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/42"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "42"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="46" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(334, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/46"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/46"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "46"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="50" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(361, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/50"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/50"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "50
+"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="54" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(388, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/54"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/54"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "54"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="58" type="Node2D" parent="UI/Core Display/Labels/X"]
+position = Vector2(415, 405)
+
+[node name="Line" type="ColorRect" parent="UI/Core Display/Labels/X/58"]
+offset_left = 718.0
+offset_top = -289.0
+offset_right = 721.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="UI/Core Display/Labels/X/58"]
+offset_left = 700.0
+offset_top = 121.0
+offset_right = 740.0
+offset_bottom = 148.0
+text = "58"
+label_settings = SubResource("LabelSettings_freb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rods" type="Node2D" parent="UI/Core Display"]
+
+[node name="42-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 116.0
+offset_right = 1039.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 116.0
+offset_right = 1012.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 116.0
+offset_right = 985.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 116.0
+offset_right = 958.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 116.0
+offset_right = 931.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 116.0
+offset_right = 877.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-59" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 116.0
+offset_right = 904.0
+offset_bottom = 141.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-59"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-59/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-59/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-59/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-59/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 143.0
+offset_right = 1066.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 143.0
+offset_right = 1039.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 143.0
+offset_right = 1012.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 143.0
+offset_right = 985.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 143.0
+offset_right = 958.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 143.0
+offset_right = 931.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 143.0
+offset_right = 877.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 143.0
+offset_right = 904.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-55" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 143.0
+offset_right = 850.0
+offset_bottom = 168.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-55"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-55/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-55/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-55/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-55/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 170.0
+offset_right = 1093.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 170.0
+offset_right = 1066.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 170.0
+offset_right = 1039.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 170.0
+offset_right = 1012.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 170.0
+offset_right = 985.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 170.0
+offset_right = 958.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 170.0
+offset_right = 931.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 170.0
+offset_right = 877.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 170.0
+offset_right = 904.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 170.0
+offset_right = 850.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-51" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 170.0
+offset_right = 823.0
+offset_bottom = 195.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-51"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-51/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-51/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-51/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-51/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 197.0
+offset_right = 1120.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 197.0
+offset_right = 1093.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 197.0
+offset_right = 1066.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 197.0
+offset_right = 1039.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 197.0
+offset_right = 1012.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 197.0
+offset_right = 985.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 197.0
+offset_right = 958.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 197.0
+offset_right = 931.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 197.0
+offset_right = 904.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 197.0
+offset_right = 877.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 197.0
+offset_right = 850.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 197.0
+offset_right = 823.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-47" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 197.0
+offset_right = 796.0
+offset_bottom = 222.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-47"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-47/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-47/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-47/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-47/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 413.0
+offset_right = 1120.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 413.0
+offset_right = 1093.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 413.0
+offset_right = 1066.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 413.0
+offset_right = 1039.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 413.0
+offset_right = 1012.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 413.0
+offset_right = 985.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 413.0
+offset_right = 958.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 413.0
+offset_right = 931.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 413.0
+offset_right = 904.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 413.0
+offset_right = 877.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 413.0
+offset_right = 850.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 413.0
+offset_right = 823.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 440.0
+offset_right = 1093.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 440.0
+offset_right = 1066.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 440.0
+offset_right = 1039.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 440.0
+offset_right = 1012.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 440.0
+offset_right = 985.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 440.0
+offset_right = 958.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 440.0
+offset_right = 931.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 440.0
+offset_right = 904.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 440.0
+offset_right = 877.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 440.0
+offset_right = 850.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 467.0
+offset_right = 1066.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 467.0
+offset_right = 1039.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 467.0
+offset_right = 1012.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 467.0
+offset_right = 985.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 467.0
+offset_right = 958.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 467.0
+offset_right = 931.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 467.0
+offset_right = 904.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 467.0
+offset_right = 877.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 494.0
+offset_right = 1039.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 494.0
+offset_right = 1012.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 494.0
+offset_right = 985.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 494.0
+offset_right = 958.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 494.0
+offset_right = 931.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 494.0
+offset_right = 904.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-03" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 494.0
+offset_right = 877.0
+offset_bottom = 519.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-03"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-03/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-03/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-03/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-03/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-07" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 467.0
+offset_right = 850.0
+offset_bottom = 492.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-07"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-07/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-07/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-07/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-07/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-11" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 440.0
+offset_right = 823.0
+offset_bottom = 465.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-11/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-11/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-11/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-11/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-15" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 413.0
+offset_right = 796.0
+offset_bottom = 438.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-15"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-15/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-15/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-15/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-15/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 224.0
+offset_right = 1147.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 224.0
+offset_right = 1120.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 224.0
+offset_right = 1093.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 224.0
+offset_right = 1066.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 224.0
+offset_right = 1039.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 224.0
+offset_right = 1012.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 224.0
+offset_right = 985.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 224.0
+offset_right = 958.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 224.0
+offset_right = 931.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 224.0
+offset_right = 877.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 224.0
+offset_right = 904.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 224.0
+offset_right = 850.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 224.0
+offset_right = 823.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 224.0
+offset_right = 796.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-43" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 224.0
+offset_right = 769.0
+offset_bottom = 249.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-43"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-43/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-43/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-43/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-43/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 251.0
+offset_right = 1147.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 251.0
+offset_right = 1120.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 251.0
+offset_right = 1093.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 251.0
+offset_right = 1066.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 251.0
+offset_right = 1039.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 251.0
+offset_right = 1012.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 251.0
+offset_right = 985.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 251.0
+offset_right = 958.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 251.0
+offset_right = 931.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 251.0
+offset_right = 877.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 251.0
+offset_right = 904.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 251.0
+offset_right = 850.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 251.0
+offset_right = 823.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 251.0
+offset_right = 796.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-39" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 251.0
+offset_right = 769.0
+offset_bottom = 276.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-39"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-39/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-39/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-39/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-39/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 278.0
+offset_right = 1147.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 278.0
+offset_right = 1120.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 278.0
+offset_right = 1093.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 278.0
+offset_right = 1066.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 278.0
+offset_right = 1039.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 278.0
+offset_right = 1012.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 278.0
+offset_right = 985.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 278.0
+offset_right = 958.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 278.0
+offset_right = 931.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 278.0
+offset_right = 877.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 278.0
+offset_right = 904.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 278.0
+offset_right = 850.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 278.0
+offset_right = 823.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 278.0
+offset_right = 796.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-35" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 278.0
+offset_right = 769.0
+offset_bottom = 303.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-35"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-35/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-35/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-35/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-35/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 305.0
+offset_right = 1147.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 305.0
+offset_right = 1120.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 305.0
+offset_right = 1093.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 305.0
+offset_right = 1066.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 305.0
+offset_right = 1039.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 305.0
+offset_right = 1012.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 305.0
+offset_right = 985.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 305.0
+offset_right = 958.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 305.0
+offset_right = 931.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 305.0
+offset_right = 904.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 305.0
+offset_right = 877.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 305.0
+offset_right = 850.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 305.0
+offset_right = 823.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 305.0
+offset_right = 796.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-31" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 305.0
+offset_right = 769.0
+offset_bottom = 330.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-31"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-31/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-31/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-31/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-31/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 332.0
+offset_right = 1147.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 332.0
+offset_right = 1120.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 332.0
+offset_right = 1093.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 332.0
+offset_right = 1066.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 332.0
+offset_right = 1039.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 332.0
+offset_right = 1012.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 332.0
+offset_right = 985.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 332.0
+offset_right = 958.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 332.0
+offset_right = 931.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 332.0
+offset_right = 877.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 332.0
+offset_right = 904.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 332.0
+offset_right = 850.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 332.0
+offset_right = 823.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 332.0
+offset_right = 796.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-27" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 332.0
+offset_right = 769.0
+offset_bottom = 357.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-27"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-27/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-27/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-27/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-27/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 359.0
+offset_right = 1147.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 359.0
+offset_right = 1120.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 359.0
+offset_right = 1093.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 359.0
+offset_right = 1066.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 359.0
+offset_right = 1039.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 359.0
+offset_right = 1012.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 359.0
+offset_right = 985.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 359.0
+offset_right = 958.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 359.0
+offset_right = 931.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 359.0
+offset_right = 904.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 359.0
+offset_right = 877.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 359.0
+offset_right = 850.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 359.0
+offset_right = 823.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 359.0
+offset_right = 796.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-23" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 359.0
+offset_right = 769.0
+offset_bottom = 384.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-23"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-23/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-23/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-23/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-23/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="58-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1122.0
+offset_top = 386.0
+offset_right = 1147.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/58-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/58-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/58-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/58-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/58-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="54-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1095.0
+offset_top = 386.0
+offset_right = 1120.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/54-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/54-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/54-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/54-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/54-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="50-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1068.0
+offset_top = 386.0
+offset_right = 1093.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/50-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/50-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/50-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/50-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/50-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="46-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1041.0
+offset_top = 386.0
+offset_right = 1066.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/46-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/46-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/46-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/46-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/46-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="42-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 1014.0
+offset_top = 386.0
+offset_right = 1039.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/42-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/42-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/42-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/42-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/42-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="38-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 987.0
+offset_top = 386.0
+offset_right = 1012.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/38-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/38-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/38-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/38-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/38-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="34-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 960.0
+offset_top = 386.0
+offset_right = 985.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/34-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/34-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/34-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/34-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/34-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="30-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 933.0
+offset_top = 386.0
+offset_right = 958.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/30-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/30-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/30-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/30-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/30-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="26-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 906.0
+offset_top = 386.0
+offset_right = 931.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/26-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/26-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/26-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/26-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/26-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="18-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 852.0
+offset_top = 386.0
+offset_right = 877.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/18-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/18-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/18-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/18-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/18-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="22-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 879.0
+offset_top = 386.0
+offset_right = 904.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/22-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/22-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/22-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/22-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/22-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="14-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 825.0
+offset_top = 386.0
+offset_right = 850.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/14-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/14-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/14-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/14-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/14-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="10-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 798.0
+offset_top = 386.0
+offset_right = 823.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/10-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/10-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/10-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/10-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/10-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="06-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 771.0
+offset_top = 386.0
+offset_right = 796.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/06-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/06-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/06-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/06-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/06-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
+
+[node name="02-19" type="ColorRect" parent="UI/Core Display/Rods"]
+offset_left = 744.0
+offset_top = 386.0
+offset_right = 769.0
+offset_bottom = 411.0
+color = Color(0, 1, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="UI/Core Display/Rods/02-19"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/Core Display/Rods/02-19/Node2D"]
+offset_right = 25.0
+offset_bottom = 4.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Core Display/Rods/02-19/Node2D"]
+offset_top = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Core Display/Rods/02-19/Node2D"]
+offset_left = 21.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Core Display/Rods/02-19/Node2D"]
+offset_right = 4.0
+offset_bottom = 25.0
