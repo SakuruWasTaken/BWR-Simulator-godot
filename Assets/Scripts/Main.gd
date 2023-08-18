@@ -345,15 +345,10 @@ func main_loop_timer_fast_expire():
 		
 		if full_scram:
 			if not scram_active:
-				var set_scram_reset_light_on = false
 				scram(scram_types.MANUAL)
 				while scram_active == true:
 					if scram_timer >= 1:
 						scram_timer -= 1
-					elif set_scram_reset_light_on == false:
-						set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", true)
-						# small optimisation so we're not constantly getting the material and causing a bunch of lag
-						set_scram_reset_light_on = true
 					await get_tree().create_timer(0.1).timeout
 		else:
 			scram_all_rods_in = false
@@ -748,28 +743,6 @@ func rod_motion_button_pressed(parent, pressed):
 			continuous_insert_selected_cr()
 		else:
 			cr_continuous_mode = cr_continuous_modes.NOT_MOVING
-	elif parent.name == "Reset SCRAM":
-		if not scram_active:
-			scram_breakers = {}
-			manual_scram_pb_materials["B1"].emission_enabled = false
-			manual_scram_pb_materials["B2"].emission_enabled = false
-			manual_scram_pb_materials["A1"].emission_enabled = false
-			manual_scram_pb_materials["A2"].emission_enabled = false
-		if scram_active and self.scram_timer == 0 and pressed:
-			set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Reset SCRAM", false)
-			scram_all_rods_in = false
-			scram_active = false
-			scram_timer = -1
-			scram_breakers = {}
-			manual_scram_pb_materials["B1"].emission_enabled = false
-			manual_scram_pb_materials["B2"].emission_enabled = false
-			manual_scram_pb_materials["A1"].emission_enabled = false
-			manual_scram_pb_materials["A2"].emission_enabled = false
-			for rod_number in control_rods:
-				control_rods[rod_number].cr_scram = false
-				control_rods[rod_number].cr_accum_trouble = false
-			add_new_block("SCRAM","r_withdraw_block")
-		
 	elif parent.name == "DriftTest_pb":
 		cr_drift_test = pressed
 	elif parent.name == "DriftReset_pb":

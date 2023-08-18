@@ -49,7 +49,7 @@ func scram_reset(position, name):
 		},
 	}
 	var _full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
-	if position == 0:
+	if position == 1:
 		if breakers[name].main in node3d.scram_breakers and node3d.scram_timer < 1:
 			node3d.scram_breakers.erase(breakers[name].main)
 			node3d.manual_scram_pb_materials[breakers[name].main].emission_enabled = false
@@ -84,36 +84,36 @@ var switches = {
 		"func": "scram_reset",
 		"positions": {
 			0: 45,
-			1: 0,
+			1: -45,
 		},
-		"position": 1,
+		"position": 0,
 		"momentary": false,
 	},
 	"scram_reset_b": {
 		"func": "scram_reset",
 		"positions": {
 			0: 45,
-			1: 0,
+			1: -45,
 		},
-		"position": 1,
+		"position": 0,
 		"momentary": false,
 	},
 	"scram_reset_c": {
 		"func": "scram_reset",
 		"positions": {
 			0: 45,
-			1: 0,
+			1: -45,
 		},
-		"position": 1,
+		"position": 0,
 		"momentary": false,
 	},
 	"scram_reset_d": {
 		"func": "scram_reset",
 		"positions": {
 			0: 45,
-			1: 0,
+			1: -45,
 		},
-		"position": 1,
+		"position": 0,
 		"momentary": false,
 	},
 }

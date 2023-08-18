@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blbvk0qsa22vh"
+path="res://.godot/imported/rotate_part.obj-a52686fd4911ada1eb0b02fd3c9c42c1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rotate_part.obj-a52686fd4911ada1eb0b02fd3c9c42c1.mesh"]
+
+source_file="res://Assets/Models/Safety Switch/rotate_part.obj"
+dest_files=["res://.godot/imported/rotate_part.obj-a52686fd4911ada1eb0b02fd3c9c42c1.mesh", "res://.godot/imported/rotate_part.obj-a52686fd4911ada1eb0b02fd3c9c42c1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
