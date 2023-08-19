@@ -9139,7 +9139,7 @@ transform = Transform3D(0, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0, 1.00228, 1.1063, -2
 transform = Transform3D(-1.77636e-15, 1.78814e-07, -1.1, 1.1, -4.80825e-08, -5.73188e-15, -4.80825e-08, -1.1, -1.78814e-07, -0.481903, -0.141908, -0.272004)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Full Core Display"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00373006, 0.00500011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00373006, 0.00457096)
 size = Vector3(1.20895, 1.19438, 0.002)
 material = ExtResource("33_11pre")
 
@@ -13104,7 +13104,7 @@ size = Vector3(0.0774589, 0.0191207, 0.00717134)
 material = ExtResource("12_nfrwy")
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/Thermal Power/CSGBox3D2"]
-transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -2.38419e-07, 0, 0.00378227)
 pixel_size = 0.0003
 modulate = Color(0, 0, 0, 1)
 text = "REACTOR THERMAL
@@ -13122,6 +13122,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.00931883, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0739999, -0.405298, 4.76837e-07)
 
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088532, -0.459025, 0.0216238)
+size = Vector3(0.002, 0.022011, 0.0623299)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder/Labels/CSGBox3D"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -8.9407e-08, 0.00101995, 0.00208664, 0.0296578)
+sorting_offset = 1.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "Point 1: SRM A or C (Red)
+Point 2: SRM B or D (Blue)"
+font_size = 14
+outline_size = 0
+horizontal_alignment = 0
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
 transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.508573, 0.000317574)

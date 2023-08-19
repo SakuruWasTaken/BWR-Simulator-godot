@@ -57,111 +57,30 @@ func scram_reset(position, name):
 	else:
 		if breakers[name].secondary in node3d.scram_breakers:
 			node3d.scram_breakers[breakers[name].main] = node3d.scram_breakers[breakers[name].secondary]
-
-func srm_channel_select(position, name):
-	pass
 	
-var switches = {
-	"control_room_emergency_lighting": {
-		"func": "control_room_emergency_lighting_switch",
-		"positions": {
-			0: 45,
-			1: 0,
-			2: -45,
-		},
-		"position": 1,
-		"momentary": false,
-	},
-	"control_room_normal_lighting": {
-		"func": "control_room_normal_lighting_switch",
-		"positions": {
-			0: 45,
-			1: 0,
-			2: -45,
-		},
-		"position": 1,
-		"momentary": false, # TODO: make it possible to specify a specific position to return to
-							# and, make it possible to use this on switches with less/more than three positions
-	},
-	"scram_reset_a": {
-		"func": "scram_reset",
-		"positions": {
-			0: 45,
-			1: -45,
-		},
-		"position": 0,
-		"momentary": false,
-	},
-	"scram_reset_b": {
-		"func": "scram_reset",
-		"positions": {
-			0: 45,
-			1: -45,
-		},
-		"position": 0,
-		"momentary": false,
-	},
-	"scram_reset_c": {
-		"func": "scram_reset",
-		"positions": {
-			0: 45,
-			1: -45,
-		},
-		"position": 0,
-		"momentary": false,
-	},
-	"scram_reset_d": {
-		"func": "scram_reset",
-		"positions": {
-			0: 45,
-			1: -45,
-		},
-		"position": 0,
-		"momentary": false,
-	},
-	"srm_channel_select_a": {
-		"func": "srm_channel_select",
-		"positions": {
-			0: 45,
-			1: 0,
-			2: -45,
-		},
-		"position": 2,
-		"momentary": false,
-	},
-	"srm_channel_select_b": {
-		"func": "srm_channel_select",
-		"positions": {
-			0: 45,
-			1: 0,
-			2: -45,
-		},
-		"position": 0,
-		"momentary": false,
-	},
-}
 @onready var node_3d = $"/root/Node3d"
 
 func _ready():
 	var name = get_parent().get_parent().name
-	$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
+	$"../Handle".set_rotation_degrees(Vector3(node_3d.selector_switches[name]["positions"][node_3d.selector_switches[name]["position"]], 0, 0))
 
 func breaker_switch_position_up(_camera, event, _position, _normal, _shape_idx):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().get_parent().name
 		if mouse_click.pressed:
-			if switches[name]["position"] + 1 in switches[name]["positions"]:
-				switches[name]["position"] += 1
+			if node_3d.selector_switches[name]["position"] + 1 in node_3d.selector_switches[name]["positions"]:
+				node_3d.selector_switches[name]["position"] += 1
 				$"../AudioStreamPlayer3D".playing = true
-				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-				call(switches[name]["func"], switches[name]["position"], name)
-		elif switches[name]["position"] == 2 and "Momentary" in get_parent().name:
-			switches[name]["position"] = 1
+				$"../Handle".set_rotation_degrees(Vector3(node_3d.selector_switches[name]["positions"][node_3d.selector_switches[name]["position"]], 0, 0))
+				if "func" in node_3d.selector_switches[name]:
+					call(node_3d.selector_switches[name]["func"], node_3d.selector_switches[name]["position"], name)
+		elif node_3d.selector_switches[name]["position"] == 2 and "Momentary" in get_parent().name:
+			node_3d.selector_switches[name]["position"] = 1
 			$"../AudioStreamPlayer3D".playing = true
-			$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-			if "func" in switches[name]:
-				call(switches[name]["func"], switches[name]["position"], name)
+			$"../Handle".set_rotation_degrees(Vector3(node_3d.selector_switches[name]["positions"][node_3d.selector_switches[name]["position"]], 0, 0))
+			if "func" in node_3d.selector_switches[name]:
+				call(node_3d.selector_switches[name]["func"], node_3d.selector_switches[name]["position"], name)
 					
 
 func breaker_switch_position_down(_camera, event, _position, _normal, _shape_idx):
@@ -169,15 +88,16 @@ func breaker_switch_position_down(_camera, event, _position, _normal, _shape_idx
 	if mouse_click and mouse_click.button_index == 1:
 		var name = get_parent().get_parent().name
 		if mouse_click.pressed:
-			if switches[name]["position"] - 1 in switches[name]["positions"]:
-				switches[name]["position"] -= 1
+			if node_3d.selector_switches[name]["position"] - 1 in node_3d.selector_switches[name]["positions"]:
+				node_3d.selector_switches[name]["position"] -= 1
 				$"../AudioStreamPlayer3D".playing = true
-				$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-				call(switches[name]["func"], switches[name]["position"], name)
-		elif switches[name]["position"] == 0 and switches[name]["momentary"]:
-			switches[name]["position"] = 1
+				$"../Handle".set_rotation_degrees(Vector3(node_3d.selector_switches[name]["positions"][node_3d.selector_switches[name]["position"]], 0, 0))
+				if "func" in node_3d.selector_switches[name]:
+					call(node_3d.selector_switches[name]["func"], node_3d.selector_switches[name]["position"], name)
+		elif node_3d.selector_switches[name]["position"] == 0 and node_3d.selector_switches[name]["momentary"]:
+			node_3d.selector_switches[name]["position"] = 1
 			$"../AudioStreamPlayer3D".playing = true
-			$"../Handle".set_rotation_degrees(Vector3(switches[name]["positions"][switches[name]["position"]], 0, 0))
-			if "func" in switches[name]:
-				call(switches[name]["func"], switches[name]["position"], name)
+			$"../Handle".set_rotation_degrees(Vector3(node_3d.selector_switches[name]["positions"][node_3d.selector_switches[name]["position"]], 0, 0))
+			if "func" in node_3d.selector_switches[name]:
+				call(node_3d.selector_switches[name]["func"], node_3d.selector_switches[name]["position"], name)
 

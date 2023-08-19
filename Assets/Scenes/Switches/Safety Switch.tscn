@@ -12,7 +12,7 @@
 size = Vector3(0.0715077, 0.0977977, 0.0507525)
 
 [node name="Switch" type="Node3D"]
-transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.0784044, -0.520271, 0.0521574)
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0, 0, 0)
 
 [node name="Label" type="CSGMesh3D" parent="."]
 transform = Transform3D(9.31323e-10, 0.05, 7.45058e-09, 0.05, -4.65661e-09, -3.72529e-09, -9.31323e-09, 8.84756e-09, -0.05, 0.0352882, -1.90735e-06, -4.76837e-07)
@@ -59,7 +59,7 @@ max_distance = 10.0
 attenuation_filter_cutoff_hz = 15000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0, 0.0256267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0210422)
 script = ExtResource("7_pdvvg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.004583
 shape = SubResource("BoxShape3D_w8lsb")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0300938)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0133681, 0, 0.00458384)

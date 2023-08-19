@@ -52,6 +52,29 @@ var scram_type
 
 var scram_breakers = {}
 
+var source_range_monitors = {
+	"A": {
+		"bypassed": false,
+		"retraction": 0,
+		"value": 0,
+	},
+	"B": {
+		"bypassed": false,
+		"retraction": 0,
+		"value": 0,
+	},
+	"C": {
+		"bypassed": false,
+		"retraction": 0,
+		"value": 0,
+	},
+	"D": {
+		"bypassed": false,
+		"retraction": 0,
+		"value": 0,
+	},
+}
+
 var average_power_range_monitors = {
 	"A": 0.00,
 	"B": 0.00,
@@ -113,18 +136,100 @@ var chart_recorders = {
 	"srm_chart_recorder": {
 		"values": {
 			1: {
-				"name": "SRM Channel 1",
+				"name": "SRM A - C",
 				"color": Color(1, 0, 0),
 				"unit": "CPS",
-				"value": 0,
+				"value_source": "func",
+				#"value": 0,
+				"func": "srm_recorder_value"
 			},
 			2: {
-				"name": "SRM Channel 2",
+				"name": "SRM B - D",
 				"color": Color(0, 0, 1),
 				"unit": "CPS",
-				"value": 0,
+				"value_source": "func",
+				#"value": 0,
+				"func": "srm_recorder_value"
 			},
 		},
+	},
+}
+
+var selector_switches = {
+	"control_room_emergency_lighting": {
+		"func": "control_room_emergency_lighting_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false,
+	},
+	"control_room_normal_lighting": {
+		"func": "control_room_normal_lighting_switch",
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 1,
+		"momentary": false, # TODO: make it possible to specify a specific position to return to
+							# and, make it possible to use this on switches with less/more than three positions
+	},
+	"scram_reset_a": {
+		"func": "scram_reset",
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"scram_reset_b": {
+		"func": "scram_reset",
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"scram_reset_c": {
+		"func": "scram_reset",
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"scram_reset_d": {
+		"func": "scram_reset",
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"srm_channel_select_a": {
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 2,
+		"momentary": false,
+	},
+	"srm_channel_select_b": {
+		"positions": {
+			0: 45,
+			1: 0,
+			2: -45,
+		},
+		"position": 0,
+		"momentary": false,
 	},
 }
 

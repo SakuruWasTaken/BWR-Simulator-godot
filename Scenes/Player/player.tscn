@@ -96,7 +96,7 @@ offset_top = 1026.67
 offset_right = 650.333
 offset_bottom = 1251.67
 scale = Vector2(10, 10)
-text = "Rod Worth Monitor (cannot be reset)"
+text = "Rod Worth Minimizer (not resettable)"
 label_settings = SubResource("LabelSettings_p4jnw")
 
 [node name="RWM" type="CheckBox" parent="Head/Camera3d/Overlay/Settings Button/Settings Menu/RWM"]
