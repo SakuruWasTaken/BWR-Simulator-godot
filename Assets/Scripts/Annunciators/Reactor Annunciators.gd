@@ -49,19 +49,11 @@ func check_lprm_downscale():
 				return true
 	return false
 func check_manual_scram_a_trip():
-	if "A1" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["A1"] in [0, 1]
-	elif "A2" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["A2"] in [0, 1]
-	return false
+	return node_3d.rps["a"]["trip"] #build this out later
 func check_manual_scram_b_trip():
-	if "B1" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["B1"] in [0, 1]
-	elif "B2" in node_3d.scram_breakers:
-		return node_3d.scram_breakers["B2"] in [0, 1]
-	return false
-func check_auto_scram_a_trip(): return true if "A1" in node_3d.scram_breakers else true if "A2" in node_3d.scram_breakers else false
-func check_auto_scram_b_trip(): return true if "B1" in node_3d.scram_breakers else true if "B2" in node_3d.scram_breakers else false
+	return node_3d.rps["b"]["trip"] #build this out later
+func check_auto_scram_a_trip(): return node_3d.rps["a"]["trip"]
+func check_auto_scram_b_trip(): return node_3d.rps["b"]["trip"]
 func check_reactor_mode_shutdown_bypass():
 	return node_3d.reactor_mode_shutdown_bypass
 
