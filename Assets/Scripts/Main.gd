@@ -80,9 +80,11 @@ var average_power_range_monitors = {
 	"B": 0.00,
 	"C": 0.00,
 	"D": 0.00,
+	"E": 0.00,
+	"F": 0.00,
 }
 var local_power_range_monitors = {}
-var intermidiate_range_monitors = {
+var intermediate_range_monitors = {
 	"A": {
 		"scale": 1,
 		"power": 0.00,
@@ -140,7 +142,6 @@ var chart_recorders = {
 				"color": Color(1, 0, 0),
 				"unit": "CPS",
 				"value_source": "func",
-				#"value": 0,
 				"func": "srm_recorder_value"
 			},
 			2: {
@@ -148,8 +149,79 @@ var chart_recorders = {
 				"color": Color(0, 0, 1),
 				"unit": "CPS",
 				"value_source": "func",
-				#"value": 0,
 				"func": "srm_recorder_value"
+			},
+		},
+	},
+	"irm_aprm_a_c_chart_recorder": {
+		"values": {
+			1: {
+				"name": "IRM A - APRM A",
+				"color": Color(1, 0, 0),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+			2: {
+				"name": "IRM C - APRM C",
+				"color": Color(0, 0, 1),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+		},
+	},
+	"irm_aprm_b_d_chart_recorder": {
+		"values": {
+			1: {
+				"name": "IRM B - APRM B",
+				"color": Color(1, 0, 0),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+			2: {
+				"name": "IRM D - APRM D",
+				"color": Color(0, 0, 1),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+		},
+	},
+	"irm_aprm_rbm_e_g_a_chart_recorder": {
+		"values": {
+			1: {
+				"name": "IRM E - APRM E",
+				"color": Color(1, 0, 0),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+			2: {
+				"name": "IRM G - RBM A",
+				"color": Color(0, 0, 1),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+		},
+	},
+	"irm_aprm_rbm_f_h_b_chart_recorder": {
+		"values": {
+			1: {
+				"name": "IRM F - APRM F",
+				"color": Color(1, 0, 0),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
+			},
+			2: {
+				"name": "IRM H - RBM B",
+				"color": Color(0, 0, 1),
+				"unit": "%",
+				"value_source": "func",
+				"func": "irm_aprm_rbm_recorder_value"
 			},
 		},
 	},
@@ -227,6 +299,70 @@ var selector_switches = {
 			0: 45,
 			1: 0,
 			2: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_a": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_b": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_c": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_d": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_e": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_aprm_select_f": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_rbm_select_g_a": {
+		"positions": {
+			0: 45,
+			1: -45,
+		},
+		"position": 0,
+		"momentary": false,
+	},
+	"irm_rbm_select_h_b": {
+		"positions": {
+			0: 45,
+			1: -45,
 		},
 		"position": 0,
 		"momentary": false,
@@ -413,8 +549,8 @@ func main_loop_timer_expire():
 		add_new_block("Mode Switch in Shutdown","r_withdraw_block")
 		
 	var irm_downscale = false
-	for irm_number in intermidiate_range_monitors:
-		if intermidiate_range_monitors[irm_number]["adjusted_power"] < 5 and not intermidiate_range_monitors[irm_number]["scale"] == 1:
+	for irm_number in intermediate_range_monitors:
+		if intermediate_range_monitors[irm_number]["adjusted_power"] < 5 and not intermediate_range_monitors[irm_number]["scale"] == 1:
 			irm_downscale = true
 			break
 			

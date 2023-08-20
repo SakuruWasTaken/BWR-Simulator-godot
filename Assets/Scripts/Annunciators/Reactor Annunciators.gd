@@ -20,8 +20,8 @@ var active_clear_annunciators_lit
 var testing = false
 
 func check_irm_downscale():
-	for irm_number in node_3d.intermidiate_range_monitors:
-		if node_3d.intermidiate_range_monitors[irm_number]["adjusted_power"] < 5:
+	for irm_number in node_3d.intermediate_range_monitors:
+		if node_3d.intermediate_range_monitors[irm_number]["adjusted_power"] < 5:
 			return true
 	return false
 func check_aprm_downscale():

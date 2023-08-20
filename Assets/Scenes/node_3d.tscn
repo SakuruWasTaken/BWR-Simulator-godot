@@ -13099,7 +13099,7 @@ font_size = 164
 outline_size = 0
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/Thermal Power"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.010787, -0.0853788, -0.000441551)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.010787, -0.0853788, -0.000441313)
 size = Vector3(0.0774589, 0.0191207, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -13114,17 +13114,17 @@ outline_size = 0
 line_spacing = -2.0
 
 [node name="SRM Chart Recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.00931883, -0.011867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34058e-05, -0.389876, -0.0118656)
 
 [node name="srm_chart_recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
 
 [node name="Chart Recorder" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder" instance=ExtResource("47_rhokq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0739999, -0.405298, 4.76837e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074, 0, 0)
 
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_chart_recorder/Labels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088532, -0.459025, 0.0216238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889997, -0.053866, 0.0220003)
 size = Vector3(0.002, 0.022011, 0.0623299)
 material = ExtResource("12_nfrwy")
 
@@ -13140,7 +13140,7 @@ outline_size = 0
 horizontal_alignment = 0
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
-transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.508573, 0.000317574)
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.103805, 0.000317574)
 size = Vector3(0.0502475, 0.0241429, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -13156,7 +13156,7 @@ outline_size = 0
 line_spacing = -4.0
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
-transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.568, 0.064)
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0819998, -0.148376, 0.0640001)
 size = Vector3(0.0364545, 0.00959551, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -13170,7 +13170,7 @@ outline_size = 0
 line_spacing = -4.0
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
-transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.568, -0.064)
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0819998, -0.148376, -0.0640001)
 size = Vector3(0.0364545, 0.00959551, 0.00717134)
 material = ExtResource("12_nfrwy")
 
@@ -13184,10 +13184,10 @@ outline_size = 0
 line_spacing = -4.0
 
 [node name="srm_channel_select_a" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00899994, 0.0640001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.116532, 0.0640001)
 
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_a"]
-transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, -0.493699, 4.76837e-07)
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_a/Labels"]
 transform = Transform3D(3.00352e-08, 1, 2.90805e-07, -2.98023e-08, 2.08209e-07, 1, 1, -6.98492e-10, -2.98023e-07, 0, 0.501, 0)
@@ -13224,13 +13224,13 @@ font_size = 38
 outline_size = 0
 
 [node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_a" instance=ExtResource("52_7s2i6")]
-transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.0779996, -0.52, 4.76837e-07)
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
 
 [node name="srm_channel_select_b" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009, -0.064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, -0.116047, -0.0639997)
 
 [node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_b"]
-transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703435, -0.493694, -4.76837e-07)
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
 
 [node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_b/Labels"]
 transform = Transform3D(3.00352e-08, 1, 2.90805e-07, -2.98023e-08, 2.08209e-07, 1, 1, -6.98492e-10, -2.98023e-07, 0, 0.501, 0)
@@ -13267,7 +13267,731 @@ font_size = 38
 outline_size = 0
 
 [node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/SRM Chart Recorder/srm_channel_select_b" instance=ExtResource("52_7s2i6")]
-transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.0779996, -0.52, 4.76837e-07)
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="IRM-APRM A-C Chart Recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34058e-05, -0.203568, 0.68066)
+
+[node name="irm_aprm_a_c_chart_recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+
+[node name="Chart Recorder" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_a_c_chart_recorder" instance=ExtResource("47_rhokq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_a_c_chart_recorder"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_a_c_chart_recorder/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889997, -0.053866, 0.0220003)
+size = Vector3(0.002, 0.022011, 0.0623299)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_a_c_chart_recorder/Labels/CSGBox3D"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -8.9407e-08, 0.00101995, 0.00208664, 0.0296578)
+sorting_offset = 1.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "Point 1: IRM A or APRM A (Red)
+Point 2: IRM C or APRM C (Blue)"
+font_size = 13
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.101796, 0.000317574)
+size = Vector3(0.199918, 0.0252555, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2"]
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.86102e-06, 0, 0.00262737)
+size = Vector3(0.199831, 0.002, 0.00223079)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.035593, -0.00663733, 0.0026288)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.036, -0.007, 0.003)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -1.90735e-06, 0.00671899, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "IRM/APRM LEVEL"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0934033, -0.00679588, 0.00378561)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "A"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0436454, -0.00679588, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "A"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.044, -0.007, 0.004)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "C"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.092608, -0.00679588, 0.0037837)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "C"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="irm_aprm_select_a" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.150218, 0.0703816)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_a"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_a/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_a/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_a/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_a" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="irm_aprm_select_c" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.07)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_c"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_c/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_c/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_c/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/irm_aprm_select_c" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, 0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "RED PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, -0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM A-C Chart Recorder/CSGBox3D4"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "BLUE PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="IRM-APRM-RBM E-G-A Chart Recorder2" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34058e-05, -0.203568, 0.463004)
+
+[node name="irm_aprm_rbm_e_g_a_chart_recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+
+[node name="Chart Recorder" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_rbm_e_g_a_chart_recorder" instance=ExtResource("47_rhokq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_rbm_e_g_a_chart_recorder"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_rbm_e_g_a_chart_recorder/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889997, -0.053866, 0.0220003)
+size = Vector3(0.002, 0.022011, 0.0623299)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_rbm_e_g_a_chart_recorder/Labels/CSGBox3D"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -8.9407e-08, 0.00101995, 0.00208664, 0.0296578)
+sorting_offset = 1.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "Point 1: IRM E or APRM E (Red)
+Point 2: IRM G or RBM A (Blue)"
+font_size = 13
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.101796, 0.000317574)
+size = Vector3(0.199918, 0.0252555, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2"]
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.86102e-06, 0, 0.00262737)
+size = Vector3(0.199831, 0.002, 0.00223079)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.035593, -0.00663733, 0.0026288)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.036, -0.007, 0.003)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -1.90735e-06, 0.00671899, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "IRM/APRM LEVEL"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0934033, -0.00679588, 0.00378561)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "E"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0436454, -0.00679588, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "E"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.044, -0.007, 0.004)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "G"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.092608, -0.00679588, 0.0037837)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "A"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="irm_aprm_select_e" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.150218, 0.0703816)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_select_e"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_select_e/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_select_e/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_select_e/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_aprm_select_e" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="irm_rbm_select_g_a" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.07)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_rbm_select_g_a"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_rbm_select_g_a/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_rbm_select_g_a/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_rbm_select_g_a/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "RBM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/irm_rbm_select_g_a" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, 0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "RED PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, -0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM E-G-A Chart Recorder2/CSGBox3D4"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "BLUE PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="IRM-APRM-RBM F-H-B Chart Recorder3" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34058e-05, -0.203568, -0.696347)
+
+[node name="irm_aprm_rbm_f_h_b_chart_recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+
+[node name="Chart Recorder" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_rbm_f_h_b_chart_recorder" instance=ExtResource("47_rhokq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_rbm_f_h_b_chart_recorder"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_rbm_f_h_b_chart_recorder/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889997, -0.053866, 0.0220003)
+size = Vector3(0.002, 0.022011, 0.0623299)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_rbm_f_h_b_chart_recorder/Labels/CSGBox3D"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -8.9407e-08, 0.00101995, 0.00208664, 0.0296578)
+sorting_offset = 1.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "Point 1: IRM F or APRM F (Red)
+Point 2: IRM H or RBM B (Blue)"
+font_size = 13
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.101796, 0.000317574)
+size = Vector3(0.199918, 0.0252555, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2"]
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.86102e-06, 0, 0.00262737)
+size = Vector3(0.199831, 0.002, 0.00223079)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.035593, -0.00663733, 0.0026288)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.036, -0.007, 0.003)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -1.90735e-06, 0.00671899, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "IRM/APRM LEVEL"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0934033, -0.00679588, 0.00378561)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "F"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0436454, -0.00679588, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "F"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.044, -0.007, 0.004)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "H"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.092608, -0.00679588, 0.0037837)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "B"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="irm_aprm_select_f" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.150218, 0.0703816)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_select_f"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_select_f/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_select_f/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_select_f/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_aprm_select_f" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="irm_rbm_select_h_b" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.07)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_rbm_select_h_b"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_rbm_select_h_b/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_rbm_select_h_b/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_rbm_select_h_b/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "RBM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/irm_rbm_select_h_b" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, 0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "RED PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, -0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM-RBM F-H-B Chart Recorder3/CSGBox3D4"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "BLUE PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="IRM-APRM B-D Chart Recorder2" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24521e-05, -0.203568, -0.48362)
+
+[node name="irm_aprm_b_d_chart_recorder" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+
+[node name="Chart Recorder" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_b_d_chart_recorder" instance=ExtResource("47_rhokq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074, 0, 0)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_b_d_chart_recorder"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_b_d_chart_recorder/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889997, -0.053866, 0.0220003)
+size = Vector3(0.002, 0.022011, 0.0623299)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_b_d_chart_recorder/Labels/CSGBox3D"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -8.9407e-08, 0.00101995, 0.00208664, 0.0296578)
+sorting_offset = 1.0
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "Point 1: IRM B or APRM B (Red)
+Point 2: IRM D or APRM D (Blue)"
+font_size = 13
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.0820141, -0.101796, 0.000317574)
+size = Vector3(0.199918, 0.0252555, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Node3D" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2"]
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.86102e-06, 0, 0.00262737)
+size = Vector3(0.199831, 0.002, 0.00223079)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.035593, -0.00663733, 0.0026288)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.036, -0.007, 0.003)
+size = Vector3(0.002, 0.002, 0.0120113)
+material = ExtResource("35_r1uh5")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -1.90735e-06, 0.00671899, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "IRM/APRM LEVEL"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0934033, -0.00679588, 0.00378561)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "B"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -0.0436454, -0.00679588, 0.00378466)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "B"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D4" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.044, -0.007, 0.004)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "D"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="Label3D5" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D2/Node3D"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, 0.092608, -0.00679588, 0.0037837)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "D"
+font_size = 22
+outline_size = 0
+line_spacing = -4.0
+
+[node name="irm_aprm_select_b" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.150218, 0.0703816)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_b"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_b/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_b/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_b/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_b" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="irm_aprm_select_d" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.07)
+
+[node name="Labels" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_d"]
+transform = Transform3D(2.11224e-09, 0.027, 2.79397e-09, 0.027, -1.33775e-08, -3.62098e-09, -5.02914e-09, 5.58794e-09, -0.027, 0.0703635, 0.0264065, 4.76837e-07)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_d/Labels"]
+transform = Transform3D(1, 4.50529e-08, 1.19675e-07, 6.98498e-09, 1, 2.98023e-08, 2.9453e-08, -3.27826e-07, 1, 0, 0.505, 0)
+size = Vector3(0.372571, 0.002, 0.0260583)
+material = ExtResource("34_7vuab")
+
+[node name="Label3D2" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_d/Labels"]
+transform = Transform3D(3.01515e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501, -0.447)
+sorting_offset = 10.0
+shaded = true
+text = "IRM"
+font_size = 48
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_d/Labels"]
+transform = Transform3D(3.01514e-08, 1, 3.9523e-07, 2.98023e-08, 2.89932e-07, 1, 1, 1.18453e-07, -3.27826e-07, 0, 0.501022, 0.446625)
+sorting_offset = 10.0
+shaded = true
+text = "APRM"
+font_size = 48
+outline_size = 0
+
+[node name="Switch" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/irm_aprm_select_d" instance=ExtResource("52_7s2i6")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.078, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, 0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D3"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "RED PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2"]
+transform = Transform3D(-8.9407e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -8.9407e-08, 0.082, -0.193, -0.07)
+size = Vector3(0.0364545, 0.00959551, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Meters/IRM-APRM B-D Chart Recorder2/CSGBox3D4"]
+transform = Transform3D(0.999999, 2.98023e-08, 0, 0, 1, 0, 0, 1.49012e-08, 0.999999, -9.53674e-07, 0, 0.0037818)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "BLUE PEN"
+font_size = 20
+outline_size = 0
+line_spacing = -4.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1.18248, -2.93437)
