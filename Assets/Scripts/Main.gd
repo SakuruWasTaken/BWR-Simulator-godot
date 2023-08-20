@@ -17,14 +17,14 @@ var rps = {
 		"reset_permit": false,
 		"triptime": -1,
 		"reasons": {},
-		"bypasses": {}
+		"bypasses": {"SHUTDOWN": true}
 	},
 	"b": {
 		"trip": false,
 		"reset_permit": false,
 		"triptime": -1,
 		"reasons": {},
-		"bypasses": {}
+		"bypasses": {"SHUTDOWN": true}
 	},
 }
 
@@ -59,8 +59,6 @@ enum reactor_modes {
 }
 
 var reactor_mode = reactor_modes.SHUTDOWN
-var reactor_mode_shutdown_bypass = true
-var reactor_mode_shutdown_timer = 0
 
 var scram_active = false
 var scram_type
@@ -419,17 +417,20 @@ func reset_scram():
 
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
-	if reactor_mode == reactor_modes.SHUTDOWN and not reactor_mode_shutdown_bypass and not scram_active:
-		reactor_mode_shutdown_timer = 100
-		trip_rps_a(scram_types.MODE_SHUTDOWN)
-		trip_rps_b(scram_types.MODE_SHUTDOWN)
-	elif reactor_mode == reactor_modes.SHUTDOWN and scram_active and reactor_mode_shutdown_bypass != true:
-		reactor_mode_shutdown_timer -= 1
-		if reactor_mode_shutdown_timer == 0:
-			reactor_mode_shutdown_bypass = true
-	elif reactor_mode != reactor_modes.SHUTDOWN and reactor_mode_shutdown_bypass:
-		reactor_mode_shutdown_bypass = false
-	
+	if reactor_mode == reactor_modes.SHUTDOWN:
+		if not "SHUTDOWN" in rps["a"]["bypasses"]:
+			trip_rps_a("SHUTDOWN")
+		if not "SHUTDOWN" in rps["b"]["bypasses"]:
+			trip_rps_b("SHUTDOWN")
+		if rps["a"]["triptime"] == 0:
+			rps["a"]["bypasses"]["SHUTDOWN"] = true
+		if rps["b"]["triptime"] == 0:
+			rps["b"]["bypasses"]["SHUTDOWN"] = true
+	elif reactor_mode != reactor_modes.SHUTDOWN:
+		if "SHUTDOWN" in rps["a"]["bypasses"]:
+			rps["a"]["bypasses"].erase("SHUTDOWN")
+		if "SHUTDOWN" in rps["b"]["bypasses"]:
+			rps["b"]["bypasses"].erase("SHUTDOWN")
 	# apply rod withdraw blocks
 	if reactor_mode == reactor_modes.SHUTDOWN:
 		add_new_block("Mode Switch in Shutdown","withdraw_block")

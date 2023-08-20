@@ -29,6 +29,7 @@ func control_room_normal_lighting_switch(position, _name):
 	off_light_material.emission_enabled = !lights_on
 
 func scram_reset(position, name):
+	#TODO: do not permit RPS reset when RPS still has a trip reason
 	var breakers = {
 		"scram_reset_a": {
 			"main": "A1",

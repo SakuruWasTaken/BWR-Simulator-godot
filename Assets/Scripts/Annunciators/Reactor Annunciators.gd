@@ -54,8 +54,10 @@ func check_manual_scram_b_trip():
 	return node_3d.rps["b"]["trip"] #build this out later
 func check_auto_scram_a_trip(): return node_3d.rps["a"]["trip"]
 func check_auto_scram_b_trip(): return node_3d.rps["b"]["trip"]
-func check_reactor_mode_shutdown_bypass():
-	return node_3d.reactor_mode_shutdown_bypass
+func check_reactor_mode_shutdown_bypass_a():
+	return true if "SHUTDOWN" in node_3d.rps["a"]["bypasses"] else false
+func check_reactor_mode_shutdown_bypass_b():
+	return true if "SHUTDOWN" in node_3d.rps["b"]["bypasses"] else false
 
 var annunciators = {
 	"irm_downscale": {
@@ -128,14 +130,20 @@ var annunciators = {
 		"state": annunciator_state.CLEAR,
 		"func": "check_manual_scram_a_trip"
 	},
-	# TODO: multiple RPS systems for this trip
-	#"reactor_mode_shutdown_bypass": {
-	#	"box": 2,
-	#	"lamp": "D1",
-	#	"material": null,
-	#	"state": annunciator_state.ACKNOWLEDGED,
-	#	"func": "check_reactor_mode_shutdown_bypass"
-	#},
+	"reactor_mode_shutdown_bypass_a": {
+		"box": 1,
+		"lamp": "H3",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_reactor_mode_shutdown_bypass_a"
+	},
+	"reactor_mode_shutdown_bypass_b": {
+		"box": 4,
+		"lamp": "H3",
+		"material": null,
+		"state": annunciator_state.ACKNOWLEDGED,
+		"func": "check_reactor_mode_shutdown_bypass_b"
+	},
 	"manual_scram_b_trip": {
 		"box": 4,
 		"lamp": "C2",
