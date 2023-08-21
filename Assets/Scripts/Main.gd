@@ -57,21 +57,25 @@ var source_range_monitors = {
 		"bypassed": false,
 		"retraction": 0,
 		"value": 0,
+		"period": -9999.00,
 	},
 	"B": {
 		"bypassed": false,
 		"retraction": 0,
 		"value": 0,
+		"period": -9999.00,
 	},
 	"C": {
 		"bypassed": false,
 		"retraction": 0,
 		"value": 0,
+		"period": -9999.00,
 	},
 	"D": {
 		"bypassed": false,
 		"retraction": 0,
 		"value": 0,
+		"period": -9999.00,
 	},
 }
 
