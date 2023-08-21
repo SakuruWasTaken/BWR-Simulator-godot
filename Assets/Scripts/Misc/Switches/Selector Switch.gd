@@ -29,30 +29,38 @@ func control_room_normal_lighting_switch(position, _name):
 	off_light_material.emission_enabled = !lights_on
 
 func scram_reset(position, name):
-	# TODO: timer for half-scram reset
+	#TODO: do not permit RPS reset when RPS still has a trip reason
 	var breakers = {
 		"scram_reset_a": {
 			"main": "A1",
 			"secondary": "A2",
+			"rps": "a"
 		},
 		"scram_reset_b": {
 			"main": "B2",
 			"secondary": "B1",
+			"rps": "b"
 		},
 		"scram_reset_c": {
 			"main": "A2",
 			"secondary": "A1",
+			"rps": "a"
 		},
 		"scram_reset_d": {
 			"main": "B1",
 			"secondary": "B2",
+			"rps": "b"
 		},
 	}
 	var _full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
 	if position == 1:
-		if breakers[name].main in node3d.scram_breakers and node3d.scram_timer < 1:
+		if breakers[name].main in node3d.scram_breakers and node3d.rps[breakers[name].rps]["trip_timer"] == 0:
 			node3d.scram_breakers.erase(breakers[name].main)
 			node3d.manual_scram_pb_materials[breakers[name].main].emission_enabled = false
+			if not breakers[name].secondary in node3d.scram_breakers:
+				node3d.rps[breakers[name].rps]["trip"] = false
+				node3d.rps[breakers[name].rps]["reasons"] = {}
+				node3d.rps[breakers[name].rps]["triptime"] = -1
 			node3d.reset_scram()
 	else:
 		if breakers[name].secondary in node3d.scram_breakers:
