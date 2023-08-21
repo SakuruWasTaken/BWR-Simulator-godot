@@ -11,20 +11,26 @@ var cr_target_insertion = 0
 var cr_previous_insertion = 0
 var cr_drift_test = false
 var scram_all_rods_in = false
+var mode_switch_shutdown_timer = -1
+
 var rps = {
 	"a": {
 		"trip": false,
 		"reset_permit": false,
-		"triptime": -1,
+		"trip_timer": -1,
 		"reasons": {},
-		"bypasses": {"SHUTDOWN": true}
+		"bypasses": {
+			"mode_switch_shutdown": true,
+		},
 	},
 	"b": {
 		"trip": false,
 		"reset_permit": false,
-		"triptime": -1,
+		"trip_timer": -1,
 		"reasons": {},
-		"bypasses": {"SHUTDOWN": true}
+		"bypasses": {
+			"mode_switch_shutdown": true,
+		},
 	},
 }
 
@@ -393,15 +399,16 @@ func _process(_delta):
 	
 func trip_rps_a(reason):
 	rps["a"]["reasons"][reason] = true
-	if rps["a"]["triptime"] == -1:
-		rps["a"]["triptime"] = 120
+	if rps["a"]["trip_timer"] == -1:
+		rps["a"]["trip_timer"] = 120
 	if not "A1" in scram_breakers and not "A2" in scram_breakers:
 		scram_breakers["A1"] = reason
 		scram_breakers["A2"] = reason
+
 func trip_rps_b(reason):
 	rps["b"]["reasons"][reason] = true
-	if rps["b"]["triptime"] == -1:
-		rps["b"]["triptime"] = 120
+	if rps["b"]["trip_timer"] == -1:
+		rps["b"]["trip_timer"] = 120
 	if not "B1" in scram_breakers and not "B2" in scram_breakers:
 		scram_breakers["B1"] = reason
 		scram_breakers["B2"] = reason
@@ -417,20 +424,50 @@ func reset_scram():
 
 func main_loop_timer_expire():
 	# mode switch shutdown scram logic
+	
 	if reactor_mode == reactor_modes.SHUTDOWN:
-		if not "SHUTDOWN" in rps["a"]["bypasses"]:
-			trip_rps_a("SHUTDOWN")
-		if not "SHUTDOWN" in rps["b"]["bypasses"]:
-			trip_rps_b("SHUTDOWN")
-		if rps["a"]["triptime"] == 0:
-			rps["a"]["bypasses"]["SHUTDOWN"] = true
-		if rps["b"]["triptime"] == 0:
-			rps["b"]["bypasses"]["SHUTDOWN"] = true
+		if mode_switch_shutdown_timer == -1:
+			mode_switch_shutdown_timer = 100
+			
+		if mode_switch_shutdown_timer != 0:
+			mode_switch_shutdown_timer -= 1
+		
+		if not "mode_switch_shutdown" in rps["a"]["bypasses"]:
+			trip_rps_a("mode_switch_shutdown")
+			
+		if mode_switch_shutdown_timer == 0:
+			rps["a"]["bypasses"]["mode_switch_shutdown"] = true
+
+		if not "mode_switch_shutdown" in rps["b"]["bypasses"]:
+			trip_rps_b("mode_switch_shutdown")
+			
+		if mode_switch_shutdown_timer == 0:
+			rps["b"]["bypasses"]["mode_switch_shutdown"] = true
+			
 	elif reactor_mode != reactor_modes.SHUTDOWN:
-		if "SHUTDOWN" in rps["a"]["bypasses"]:
-			rps["a"]["bypasses"].erase("SHUTDOWN")
-		if "SHUTDOWN" in rps["b"]["bypasses"]:
-			rps["b"]["bypasses"].erase("SHUTDOWN")
+		mode_switch_shutdown_timer = -1
+		if "mode_switch_shutdown" in rps["a"]["bypasses"]:
+			rps["a"]["bypasses"].erase("mode_switch_shutdown")
+			
+		if "mode_switch_shutdown" in rps["b"]["bypasses"]:
+			rps["b"]["bypasses"].erase("mode_switch_shutdown")
+			
+	if rps["a"]["trip"]:
+		if rps["a"]["trip_timer"] > 0:
+			rps["a"]["trip_timer"] -= 1
+		if not "A1" in scram_breakers and rps["a"]["trip_timer"] > 0:
+			scram_breakers["A1"] = scram_breakers["A2"]
+		elif not "A2" in scram_breakers and rps["a"]["trip_timer"] > 0:
+			scram_breakers["A2"] = scram_breakers["A1"]
+		
+	if rps["b"]["trip"]:
+		if rps["b"]["trip_timer"] > 0:
+			rps["b"]["trip_timer"] -= 1
+		if not "B1" in scram_breakers and rps["b"]["trip_timer"] > 0:
+			scram_breakers["B1"] = scram_breakers["B2"]
+		elif not "B2" in scram_breakers and rps["b"]["trip_timer"] > 0:
+			scram_breakers["B2"] = scram_breakers["B1"]
+			
 	# apply rod withdraw blocks
 	if reactor_mode == reactor_modes.SHUTDOWN:
 		add_new_block("Mode Switch in Shutdown","withdraw_block")
@@ -456,50 +493,28 @@ func main_loop_timer_expire():
 			control_rods[rod_number]["cr_drift_alarm"] = true
 			control_rods[rod_number]["cr_drift_alarm_acknowledged"] = false
 
-#var last_tick_a1 = false
-#var last_tick_a2 = false
-#var last_tick_b1 = false
-#var last_tick_b2 = false
-
 func main_loop_timer_fast_expire():
 	if scram_breakers != {}:
-		
-		#if "A1" in scram_breakers or "A2" in scram_breakers:
-		#	rps["a"]["reasons"].append(scram_breakers["A1"] or scram_breakers["A2"])
-		#if "B1" in scram_breakers or "B2" in scram_breakers:
-		#	rps["b"]["reasons"].append(scram_breakers["B1"] or scram_breakers["A2"])
 		var full_scram = rps["a"]["trip"] and rps["b"]["trip"]
 		
-		if rps["a"]["trip"]:
-			if rps["a"]["triptime"] > 0:
-				rps["a"]["triptime"] -= 1
-			if not "A1" in scram_breakers and rps["a"]["triptime"] > 0:
-				scram_breakers["A1"] = scram_breakers["A2"]
-			elif not "A2" in scram_breakers and rps["a"]["triptime"] > 0:
-				scram_breakers["A2"] = scram_breakers["A1"]
-		
-		if rps["b"]["trip"]:
-			if rps["b"]["triptime"] > 0:
-				rps["b"]["triptime"] -= 1
-			if not "B1" in scram_breakers and rps["b"]["triptime"] > 0:
-				scram_breakers["B1"] = scram_breakers["B2"]
-			elif not "B2" in scram_breakers and rps["b"]["triptime"] > 0:
-				scram_breakers["B2"] = scram_breakers["B1"]
-				
 		if not rps["a"]["trip"] and rps["a"]["reasons"] != {}:
 			rps["a"]["trip"] = true
+			
 		elif rps["a"]["trip"] and rps["a"]["reasons"] == {}:
 			rps["a"]["trip"] = false
-			rps["a"]["triptime"] = -1
+			rps["a"]["trip_timer"] = -1
+			
 		if not rps["b"]["trip"] and rps["b"]["reasons"] != {}:
 			rps["b"]["trip"] = true
+			
 		elif rps["b"]["trip"] and rps["b"]["reasons"] == {}:
 			rps["b"]["trip"] = false
-			rps["b"]["triptime"] = -1
+			rps["b"]["trip_timer"] = -1
 		
-		if rps["a"]["triptime"] == 0:
+		if rps["a"]["trip_timer"] == 0:
 			rps["a"]["reset_permit"] = true
-		if rps["b"]["triptime"] == 0:
+			
+		if rps["b"]["trip_timer"] == 0:
 			rps["b"]["reset_permit"] = true
 		
 		manual_scram_pb_materials["A1"].emission_enabled = false
@@ -578,7 +593,7 @@ func scram(type):
 	scram_type = type
 	add_new_block("SCRAM","withdraw_block")
 	var rods_in = 0
-	var beginmove = false
+	var begin_scram_rod_movement = false
 	while rods_in < 185:
 		rods_in = 0
 		for rod_number in control_rods:
@@ -593,7 +608,7 @@ func scram(type):
 			cr_accum_trouble_acknowledged = false
 			
 			if cr_insertion != 0:
-				if beginmove == true:
+				if begin_scram_rod_movement == true:
 					if not rod_number in moving_rods:
 						moving_rods.append(rod_number)
 					# TODO: insertion time changes with RPV pressure and CRD system/accumulator pressure
@@ -603,7 +618,7 @@ func scram(type):
 						cr_insertion = 0
 				else:
 					await get_tree().create_timer(0.3).timeout
-					beginmove = true
+					begin_scram_rod_movement = true
 			else:
 				if rod_number in moving_rods:
 					moving_rods.erase(rod_number)

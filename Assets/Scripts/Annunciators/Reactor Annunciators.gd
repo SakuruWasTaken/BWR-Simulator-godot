@@ -55,9 +55,9 @@ func check_manual_scram_b_trip():
 func check_auto_scram_a_trip(): return node_3d.rps["a"]["trip"]
 func check_auto_scram_b_trip(): return node_3d.rps["b"]["trip"]
 func check_reactor_mode_shutdown_bypass_a():
-	return true if "SHUTDOWN" in node_3d.rps["a"]["bypasses"] else false
+	return "mode_switch_shutdown" in node_3d.rps["a"]["bypasses"]
 func check_reactor_mode_shutdown_bypass_b():
-	return true if "SHUTDOWN" in node_3d.rps["b"]["bypasses"] else false
+	return "mode_switch_shutdown" in node_3d.rps["b"]["bypasses"]
 
 var annunciators = {
 	"irm_downscale": {

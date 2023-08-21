@@ -54,7 +54,7 @@ func scram_reset(position, name):
 	}
 	var _full_scram = ("A1" in node3d.scram_breakers or "A2" in node3d.scram_breakers) and ("B1" in node3d.scram_breakers or "B2" in node3d.scram_breakers)
 	if position == 1:
-		if breakers[name].main in node3d.scram_breakers and node3d.rps[breakers[name].rps]["triptime"] == 0:
+		if breakers[name].main in node3d.scram_breakers and node3d.rps[breakers[name].rps]["trip_timer"] == 0:
 			node3d.scram_breakers.erase(breakers[name].main)
 			node3d.manual_scram_pb_materials[breakers[name].main].emission_enabled = false
 			if not breakers[name].secondary in node3d.scram_breakers:
