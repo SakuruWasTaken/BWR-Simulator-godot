@@ -14596,6 +14596,36 @@ transform = Transform3D(-0.000325181, -0.195946, 0.980615, -6.48797e-05, 0.98061
 size = Vector3(1.45098, 0.002, 0.0106929)
 material = ExtResource("35_r1uh5")
 
+[node name="CSGBox3D17" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-4.47035e-08, -0.980615, -0.195946, 0, -0.195946, 0.980614, -1, 4.45587e-08, 0, -1.20281, -0.357174, -3.19574)
+size = Vector3(0.151211, 0.0360568, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Labels/CSGBox3D17"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "REACTOR
+CONTROL BOARD"
+font_size = 28
+outline_size = 0
+line_spacing = -4.0
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Labels"]
+transform = Transform3D(-4.47035e-08, -0.980615, -0.195946, 0, -0.195946, 0.980614, -1, 4.45587e-08, 0, -1.12991, -0.342608, -3.19574)
+size = Vector3(0.112392, 0.0240087, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Labels/CSGBox3D29"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "S&W 2CEC*PNL603
+G.E. H13-603"
+font_size = 28
+outline_size = 0
+line_spacing = -4.0
+
 [node name="CSGBox3D" type="CSGBox3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0, 1, 1.11744, 1.87656, -2.405)
 size = Vector3(0.0244642, 0.622, 1.07291)
