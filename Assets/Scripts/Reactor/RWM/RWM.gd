@@ -246,18 +246,19 @@ func calculate_data():
 			if "|" in rod_number:
 				rod_number = rod_number.split("|")[0]
 				
+			var rod_position = int(node_3d.control_rods[rod_number]["cr_insertion"])
 			
 			var insert_error = false
 			var withdraw_error = false
 			if group_number == current_group:
-				insert_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) < insert_limit and int(node_3d.control_rods[rod_number]["cr_insertion"]) < alternate_insert_limit
-				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > withdraw_limit
+				insert_error = rod_position < insert_limit and rod_position < alternate_insert_limit
+				withdraw_error = rod_position > withdraw_limit
 			elif group_number < current_group:
-				insert_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) < withdraw_limit and int(node_3d.control_rods[rod_number]["cr_insertion"]) < alternate_withdraw_limit
-				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > withdraw_limit
+				insert_error = rod_position < withdraw_limit and rod_position < alternate_withdraw_limit
+				withdraw_error = rod_position > withdraw_limit
 			elif group_number > current_group:
 				insert_error = false
-				withdraw_error = int(node_3d.control_rods[rod_number]["cr_insertion"]) > insert_limit
+				withdraw_error = rod_position > insert_limit
 			
 			if rod_number in withdraw_errors and not withdraw_error:
 				withdraw_errors.erase(rod_number)
