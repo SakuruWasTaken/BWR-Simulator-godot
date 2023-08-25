@@ -373,11 +373,13 @@ func _on_timer_timeout():
 		if rod_number != "none":
 			final_string = ""
 			var first_number = true
-			if rod_number in node_3d.moving_rods and not node_3d.scram_active:
-				insertion = node_3d.cr_previous_insertion
-			else:
-				insertion = node_3d.control_rods[rod_number]["cr_insertion"]
-			for number in node_3d.make_string_two_digit(str(int(insertion))):
+
+			insertion = int(node_3d.control_rods[rod_number]["cr_insertion"])
+			
+			if insertion % 2:
+				insertion = "- -"
+			
+			for number in node_3d.make_string_two_digit(str(insertion)):
 				if first_number == true:
 					final_string = "%s%s   " % [final_string, number]
 				else:

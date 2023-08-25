@@ -996,7 +996,7 @@ func continuous_insert_selected_cr():
 	cr_direction = cr_directions.INSERT
 	set_object_emission("Control Room Panels/Main Panel Center/Controls/Rod Select Panel/Panel 2/Lights and buttons/Insert_lt", true)
 	
-	# withdraw for 1.4 seconds each cycle
+	# insert for 1.4 seconds each cycle
 	while cr_continuous_mode == cr_continuous_modes.INSERTING and rod_insert_block == [] and not scram_active and cr_target_insertion >= 2 or cr_target_insertion == 0:
 		var runs = 0
 		while runs < 24 and not self.scram_active: 
