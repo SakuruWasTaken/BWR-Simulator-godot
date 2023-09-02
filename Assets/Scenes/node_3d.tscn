@@ -46,7 +46,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Reactor/Neutron Monitoring/RBM Meters.gd" id="42_qr3h0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Misc/Clock Text.gd" id="45_ifyrx"]
 [ext_resource type="PackedScene" uid="uid://dr1acw3vw7urm" path="res://Assets/Scenes/Digital Chart Recorder.tscn" id="47_rhokq"]
-[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Neutron Monitoring/SRM Period Meter.gd" id="48_14jpa"]
+[ext_resource type="Script" path="res://Assets/Scripts/Reactor/Neutron Monitoring/SRM Meters.gd" id="48_n5irb"]
 [ext_resource type="Texture2D" uid="uid://bo47e13gw3j0k" path="res://Assets/Textures/Meters/Meter 2.png" id="49_mrskh"]
 [ext_resource type="Texture2D" uid="uid://nb4v3p7wt0g7" path="res://Assets/Textures/Meters/Meter Period.png" id="49_ovu7s"]
 [ext_resource type="PackedScene" uid="uid://binlsswx01c43" path="res://Assets/Scenes/Reactor Panel Display.tscn" id="50_60hfa"]
@@ -9413,7 +9413,7 @@ font_size = 18
 outline_size = 0
 
 [node name="SRM-IRM Position Controls" type="Node3D" parent="Control Room Panels/Main Panel Center/Controls"]
-transform = Transform3D(-5.96046e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.050117, -0.144771, 0.799445)
+transform = Transform3D(-7.45058e-08, -1, 0, 1, -4.47035e-08, 0, 0, 0, 1, 0.050117, -0.144771, 0.799445)
 script = ExtResource("35_ps01k")
 
 [node name="Retract Permit SRM A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SRM-IRM Position Controls"]
@@ -10364,6 +10364,21 @@ outline_size = 16
 transform = Transform3D(1, -2.98023e-08, 0, 0, 1, 0, 0, 0, 1, 0, -0.00399071, 0)
 size = Vector3(0.162111, 0.002, 0.0958307)
 material = ExtResource("34_7vuab")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Controls/SRM-IRM Position Controls"]
+transform = Transform3D(-8.9407e-08, -1, -5.96046e-08, -7.45058e-09, 7.45058e-09, 1, -1, 8.9407e-08, 0, -0.094944, -0.00452149, -0.000449181)
+size = Vector3(0.0737988, 0.0175803, 0.00717134)
+material = ExtResource("12_nfrwy")
+
+[node name="Label3D" type="Label3D" parent="Control Room Panels/Main Panel Center/Controls/SRM-IRM Position Controls/CSGBox3D2"]
+transform = Transform3D(0.999999, 2.98023e-08, -1.49012e-08, 0, 1, 0, -2.98023e-08, 1.49012e-08, 0.999999, -4.76837e-07, 0, 0.00378251)
+pixel_size = 0.0003
+modulate = Color(0, 0, 0, 1)
+text = "SRM/IRM
+DETECTOR POS"
+font_size = 18
+outline_size = 0
+line_spacing = -4.0
 
 [node name="Reactor Alarm Loop" type="AudioStreamPlayer3D" parent="Control Room Panels/Main Panel Center"]
 transform = Transform3D(-0.990268, 0.139173, 0, 0.139173, 0.990268, 0, 0, 0, -1, 0.997807, 1.59001, -2.43126)
@@ -14490,10 +14505,10 @@ outline_size = 0
 line_spacing = -2.0
 
 [node name="SRM Indicators" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters"]
+script = ExtResource("48_n5irb")
 
 [node name="Period" type="Node3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Indicators"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285217, 0.726419)
-script = ExtResource("48_14jpa")
 
 [node name="A" type="CSGBox3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Indicators/Period"]
 transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, -0.8, 0, 0.8, -3.49691e-08, 0.0900002, 0, -0.00995541)
@@ -15030,7 +15045,7 @@ shaded = true
 texture = ExtResource("49_mrskh")
 
 [node name="Pointer" type="CSGPolygon3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Indicators/Level/A"]
-transform = Transform3D(0, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.003, -0.006, 0.07)
+transform = Transform3D(0, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.00299931, -0.00600052, 0.0699999)
 polygon = PackedVector2Array(-0.004, 0, 0.004, -0.004, 0.004, 0.004)
 depth = 0.01
 
@@ -15389,7 +15404,7 @@ outline_size = 0
 line_spacing = -4.0
 
 [node name="Background" type="Sprite3D" parent="Control Room Panels/Main Panel Center/Meters/SRM Indicators/Level/C"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
+transform = Transform3D(-8.9407e-08, 0, 1, 1.77636e-15, 1, 0, -1, 0, -8.9407e-08, 0.0125999, 0, -9.53674e-07)
 sorting_offset = 1.0
 pixel_size = 0.0004
 shaded = true

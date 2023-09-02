@@ -5,10 +5,11 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	while true:
-		for meter_node in self.get_children():
+		for meter_node in $Period.get_children():
 			var period = node_3d.source_range_monitors[meter_node.name].period
 			var pointer = meter_node.get_node("Pointer")
 			var new_position = 0.059
+			# TODO: convert to a proper logarithmic scale
 			if period < 0:
 				new_position = node_3d.calculate_vertical_scale_position((period*-1)-100, 400, 0.072, 0.059)
 			elif period <= 12:
@@ -25,6 +26,13 @@ func _ready():
 				new_position = node_3d.calculate_vertical_scale_position(period-50, 50, 0.033, 0.046)
 			elif period >= 100:
 				new_position = node_3d.calculate_vertical_scale_position(period-100, 400, 0.046, 0.059)
+			pointer.position.z = new_position
+			
+		for meter_node in $Level.get_children():
+			var value = node_3d.source_range_monitors[meter_node.name].value
+			var pointer = meter_node.get_node("Pointer")
+			var new_position = 0.059
+			new_position = node_3d.calculate_vertical_scale_position((log(value)/log(10))+1, 7, 0.07, -0.07)
 			pointer.position.z = new_position
 			
 		await get_tree().create_timer(0.05).timeout
